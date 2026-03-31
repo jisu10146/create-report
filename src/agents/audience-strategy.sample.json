@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "agentId": "audience-strategy",
+    "agentName": "오디언스 전략",
+    "createdAt": "2026-03-31T09:00:00.000Z"
+  },
+  "executiveSummary": {
+    "keyFindings": [
+      "핵심 세그먼트(25-34세 직장인)가 전체 매출의 42%를 차지하며 가장 높은 LTV를 보입니다.",
+      "모바일 채널을 통한 전환율이 데스크톱 대비 2.3배 높습니다.",
+      "구독 갱신율이 전분기 대비 8%p 하락해 리텐션 강화가 시급합니다.",
+      "신규 확장 타겟으로 35-44세 자영업자 세그먼트가 유망합니다."
+    ],
+    "distributions": [
+      {
+        "label": "세그먼트 분포",
+        "data": {
+          "25-34세 직장인": 42,
+          "35-44세 직장인": 28,
+          "45세 이상": 18,
+          "25세 미만": 12
+        }
+      }
+    ]
+  },
+  "tabs": [
+    {
+      "id": "analysis-report",
+      "label": "분석 리포트",
+      "sections": [
+        {
+          "id": "kpi-overview",
+          "label": "KPI 개요",
+          "componentType": "MetricCard",
+          "data": {
+            "items": [
+              { "label": "월간 활성 사용자", "value": "24,831", "unit": "명" },
+              { "label": "평균 LTV", "value": "186,400", "unit": "원" },
+              { "label": "구독 전환율", "value": 8.4, "unit": "%" },
+              { "label": "월간 이탈률", "value": 3.2, "unit": "%" }
+            ]
+          }
+        },
+        {
+          "id": "segment-score",
+          "label": "세그먼트 점수",
+          "componentType": "ScoreCard",
+          "data": {
+            "score": 78,
+            "maxScore": 100,
+            "badge": "High Potential",
+            "badgeColor": "green",
+            "bullets": [
+              "구매 빈도 상위 20% 집중",
+              "이메일 오픈율 41% (업계 평균 22% 대비 +19%p)",
+              "리뷰 작성 비율 34% — 브랜드 앰배서더 가능성 높음"
+            ]
+          }
+        },
+        {
+          "id": "do-dont",
+          "label": "DO / DON'T",
+          "componentType": "DoDontCard",
+          "data": {
+            "dos": [
+              "모바일 퍼스트 크리에이티브 우선 제작",
+              "구독 첫 30일 온보딩 강화",
+              "리뷰 작성자 인센티브 프로그램 운영",
+              "커뮤니티 기능 강조로 네트워크 효과 극대화"
+            ],
+            "donts": [
+              "데스크톱 전용 프로모션 집행",
+              "가격 할인 위주의 단기 프로모션 반복",
+              "획일적 메시지로 전 세그먼트 동일 접근",
+              "갱신 알림을 만료 당일에만 발송"
+            ]
+          }
+        },
+        {
+          "id": "sample-customers",
+          "label": "샘플 고객",
+          "componentType": "SampleCard",
+          "data": {
+            "items": [
+              {
+                "id": "USR-00142",
+                "bullets": [
+                  "월 3.2회 구매, 평균 단가 58,000원",
+                  "모바일 앱 주 사용, 세션 12분/일",
+                  "뷰티·라이프스타일 카테고리 집중",
+                  "추천인 코드로 3명 유입"
+                ]
+              },
+              {
+                "id": "USR-00389",
+                "bullets": [
+                  "월 1.8회 구매, 평균 단가 92,000원",
+                  "PC 웹 주 사용, 위시리스트 14개",
+                  "테크·가전 카테고리 선호",
+                  "리뷰 12건 작성, 평점 4.7"
+                ]
+              },
+              {
+                "id": "USR-00561",
+                "bullets": [
+                  "연간 구독 플랜, 자동 갱신 2회",
+                  "모바일 앱 알림 수신 동의",
+                  "브랜드 SNS 팔로워",
+                  "쿠폰 사용률 78%"
+                ]
+              },
+              {
+                "id": "USR-00724",
+                "bullets": [
+                  "지난 45일 미접속, 이탈 위험 신호",
+                  "마지막 구매 76일 전",
+                  "CS 문의 2건 (배송 지연)",
+                  "재활성화 이메일 미오픈"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "population-expansion",
+      "label": "오디언스 확장",
+      "sections": [
+        {
+          "id": "expansion-segments",
+          "label": "확장 세그먼트",
+          "componentType": "BulletCard",
+          "data": {
+            "title": "1순위 확장 타겟: 35-44세 자영업자",
+            "bullets": [
+              "현재 세그먼트 대비 객단가 1.4배 높음 (추정 평균 단가 82,000원)",
+              "비즈니스 솔루션 카테고리 수요 급증 (+34% YoY)",
+              "소셜 미디어 광고 CTR 업계 평균 3.1% vs 목표 세그먼트 4.8%",
+              "B2B 기능 추가 시 소규모 팀 구독 전환 가능성",
+              "추천 채널: 비즈니스 커뮤니티, 링크드인, 업무 관련 뉴스레터"
+            ]
+          }
+        },
+        {
+          "id": "segment-metrics",
+          "label": "세그먼트 KPI",
+          "componentType": "MetricCard",
+          "data": {
+            "items": [
+              { "label": "추정 시장 규모", "value": "128,000", "unit": "명" },
+              { "label": "예상 전환율", "value": 5.2, "unit": "%" },
+              { "label": "예상 추가 MAU", "value": "6,656", "unit": "명" },
+              { "label": "예상 월 추가 매출", "value": "5.46", "unit": "억원" }
+            ]
+          }
+        },
+        {
+          "id": "strategy-table",
+          "label": "실행 계획",
+          "componentType": "StrategyTable",
+          "data": {
+            "immediate": [
+              {
+                "action": "확장 세그먼트 전용 랜딩페이지 제작",
+                "owner": "마케팅팀",
+                "metric": "랜딩 전환율 5% 이상",
+                "priority": "P0"
+              },
+              {
+                "action": "비즈니스 카테고리 MD 큐레이션 강화",
+                "owner": "MD팀",
+                "metric": "카테고리 GMV +20%",
+                "priority": "P0"
+              }
+            ],
+            "short": [
+              {
+                "action": "링크드인 타겟 광고 캠페인 런칭",
+                "owner": "퍼포먼스마케팅팀",
+                "metric": "CPA 15,000원 이하",
+                "priority": "P1"
+              },
+              {
+                "action": "자영업자 전용 할인 쿠폰 발급",
+                "owner": "CRM팀",
+                "metric": "쿠폰 사용률 40% 이상",
+                "priority": "P1"
+              }
+            ],
+            "mid": [
+              {
+                "action": "팀 구독 기능 개발 및 출시",
+                "owner": "프로덕트팀",
+                "metric": "팀 구독 전환 500건",
+                "priority": "P2"
+              },
+              {
+                "action": "비즈니스 파트너십 프로그램 구축",
+                "owner": "파트너십팀",
+                "metric": "파트너사 20개 확보",
+                "priority": "P2"
+              }
+            ]
+          }
+        },
+        {
+          "id": "revenue-scenario",
+          "label": "수익 시나리오",
+          "componentType": "RevenueScenarioBar",
+          "data": {
+            "unit": "억원",
+            "scenarios": [
+              {
+                "label": "Upside",
+                "value": 78,
+                "description": "전환율 7%+, 팀 구독 조기 출시"
+              },
+              {
+                "label": "Base",
+                "value": 54,
+                "description": "전환율 5.2%, 계획대로 실행"
+              },
+              {
+                "label": "Downside",
+                "value": 31,
+                "description": "전환율 3%, 경쟁 심화 시"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

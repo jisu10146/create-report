@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "agentId": "churn-prediction",
+    "agentName": "고객 이탈 예측",
+    "createdAt": "2026-03-31T09:00:00.000Z"
+  },
+  "executiveSummary": {
+    "keyFindings": [
+      "전체 고객 중 18.4%가 향후 30일 내 이탈 고위험군으로 분류됩니다.",
+      "고위험군의 주요 이탈 신호는 '접속 빈도 급감'(62%), '구매 미발생 45일+'(48%)입니다.",
+      "즉각적인 개입 시 예상 이탈의 40-60%를 방어할 수 있습니다.",
+      "리텐션 캠페인 실행 시 연간 54억원의 매출 방어 효과가 기대됩니다."
+    ]
+  },
+  "sections": [
+    {
+      "id": "executive-summary",
+      "label": "Executive Summary",
+      "componentType": "ExecutiveSummary",
+      "data": {
+        "keyFindings": [
+          "전체 고객 중 18.4%가 향후 30일 내 이탈 고위험군으로 분류됩니다.",
+          "고위험군의 주요 이탈 신호는 '접속 빈도 급감'(62%), '구매 미발생 45일+'(48%)입니다.",
+          "즉각적인 개입 시 예상 이탈의 40-60%를 방어할 수 있습니다.",
+          "리텐션 캠페인 실행 시 연간 54억원의 매출 방어 효과가 기대됩니다."
+        ],
+        "churnRate": 18.4,
+        "atRiskCount": 4571
+      }
+    },
+    {
+      "id": "cluster-overview",
+      "label": "클러스터 개요",
+      "componentType": "MetricCard",
+      "data": {
+        "items": [
+          { "label": "전체 분석 고객", "value": "24,831", "unit": "명" },
+          { "label": "고위험군 (Tier 1)", "value": "2,284", "unit": "명" },
+          { "label": "중위험군 (Tier 2)", "value": "2,287", "unit": "명" },
+          { "label": "고위험군 평균 LTV", "value": "94,200", "unit": "원" },
+          { "label": "예상 방어 가능 매출", "value": "21.5", "unit": "억원" },
+          { "label": "모델 정확도", "value": 87.3, "unit": "%" }
+        ]
+      }
+    },
+    {
+      "id": "high-risk-deep-dive",
+      "label": "고위험 고객 분석",
+      "componentType": "BulletCard",
+      "data": {
+        "title": "Tier 1 고위험군 공통 특성 (2,284명)",
+        "bullets": [
+          "최근 30일 내 접속 횟수 평균 1.2회 (전체 평균 8.4회 대비 -86%)",
+          "마지막 구매 시점 평균 52일 전 (정상 고객 평균 14일)",
+          "CS 문의 발생률 28% — 배송·환불 이슈 집중",
+          "구독 자동 갱신 해제 비율 41%",
+          "이메일 오픈율 6.2% (정상 고객 34.8% 대비 극히 저조)",
+          "앱 푸시 알림 비활성화 비율 73%"
+        ]
+      }
+    },
+    {
+      "id": "signal-cards",
+      "label": "이탈 신호",
+      "componentType": "SignalCard",
+      "data": {
+        "items": [
+          {
+            "signalName": "접속 빈도 급감",
+            "bullets": [
+              "전월 대비 접속 50% 이상 감소",
+              "주간 활성 세션 1회 미만",
+              "알림 비활성화 동반 시 위험도 +40%"
+            ],
+            "badge": "HIGH RISK",
+            "badgeColor": "red"
+          },
+          {
+            "signalName": "구매 공백 45일+",
+            "bullets": [
+              "마지막 구매로부터 45일 초과",
+              "위시리스트 업데이트 없음",
+              "장바구니 방치 14일 이상"
+            ],
+            "badge": "HIGH RISK",
+            "badgeColor": "red"
+          },
+          {
+            "signalName": "CS 불만 신호",
+            "bullets": [
+              "최근 90일 내 CS 문의 2건 이상",
+              "배송/환불 관련 이슈",
+              "낮은 만족도 점수 (3점 이하)"
+            ],
+            "badge": "MEDIUM RISK",
+            "badgeColor": "orange"
+          },
+          {
+            "signalName": "구독 갱신 해제",
+            "bullets": [
+              "자동 갱신 옵션 비활성화",
+              "다운그레이드 플랜 변경",
+              "무료 플랜 전환 시도"
+            ],
+            "badge": "CRITICAL",
+            "badgeColor": "red"
+          },
+          {
+            "signalName": "이메일 무반응",
+            "bullets": [
+              "최근 10회 발송 중 오픈 0회",
+              "마케팅 수신 동의 철회 조짐",
+              "링크 클릭 전무"
+            ],
+            "badge": "MEDIUM RISK",
+            "badgeColor": "orange"
+          },
+          {
+            "signalName": "경쟁사 탐색 신호",
+            "bullets": [
+              "비교 검색 키워드 유입 증가",
+              "가격 비교 페이지 체류 증가",
+              "SNS 경쟁사 팔로우 감지"
+            ],
+            "badge": "WATCH",
+            "badgeColor": "yellow"
+          }
+        ]
+      }
+    },
+    {
+      "id": "strategy-table",
+      "label": "리텐션 실행 계획",
+      "componentType": "StrategyTable",
+      "data": {
+        "immediate": [
+          {
+            "action": "Tier 1 고위험군 긴급 Win-Back 이메일 발송",
+            "owner": "CRM팀",
+            "metric": "이메일 오픈율 15%+",
+            "priority": "P0"
+          },
+          {
+            "action": "CS 불만 고객 1:1 전담 상담 연결",
+            "owner": "CS팀",
+            "metric": "만족도 점수 4점 이상 회복",
+            "priority": "P0"
+          },
+          {
+            "action": "구독 해제 시도 고객 인터셉트 팝업",
+            "owner": "프로덕트팀",
+            "metric": "해지 취소율 20%+",
+            "priority": "P0"
+          }
+        ],
+        "short": [
+          {
+            "action": "접속 빈도 기반 자동 푸시 알림 트리거 구축",
+            "owner": "마케팅엔지니어링팀",
+            "metric": "재접속 전환율 12%+",
+            "priority": "P1"
+          },
+          {
+            "action": "개인화 혜택 쿠폰 자동 발급 (구매 공백 30일 기준)",
+            "owner": "CRM팀",
+            "metric": "쿠폰 사용 후 재구매율 35%+",
+            "priority": "P1"
+          },
+          {
+            "action": "이탈 예측 대시보드 CS팀 공유",
+            "owner": "데이터팀",
+            "metric": "CS 선제 대응 건수 월 500건",
+            "priority": "P1"
+          }
+        ],
+        "mid": [
+          {
+            "action": "로열티 프로그램 리뉴얼 (포인트 → 혜택 중심)",
+            "owner": "프로덕트팀",
+            "metric": "재구매율 +8%p",
+            "priority": "P2"
+          },
+          {
+            "action": "이탈 예측 모델 월간 재학습 자동화",
+            "owner": "ML팀",
+            "metric": "모델 정확도 90%+ 유지",
+            "priority": "P2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "revenue-scenario",
+      "label": "수익 영향 시나리오",
+      "componentType": "RevenueScenarioBar",
+      "data": {
+        "unit": "억원 (연간)",
+        "scenarios": [
+          {
+            "label": "Upside",
+            "value": 78,
+            "description": "이탈 방어율 60% 달성, 로열티 프로그램 조기 성과"
+          },
+          {
+            "label": "Base",
+            "value": 54,
+            "description": "이탈 방어율 40%, 계획 실행 기준"
+          },
+          {
+            "label": "Downside",
+            "value": 28,
+            "description": "이탈 방어율 20%, 실행 지연 또는 경쟁 심화"
+          }
+        ]
+      }
+    }
+  ]
+}

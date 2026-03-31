@@ -1,0 +1,72 @@
+{
+  "id": "audience-strategy",
+  "name": "오디언스 전략",
+  "description": "현재 고객 데이터를 분석해 핵심 세그먼트를 파악하고 신규 타겟 오디언스 확장 전략을 제시합니다.",
+  "category": "strategy",
+  "inputType": "none",
+  "layout": "tab-grid",
+  "modalType": "tab-detail",
+  "reportTabs": [
+    {
+      "id": "analysis-report",
+      "label": "분석 리포트",
+      "sections": [
+        {
+          "id": "kpi-overview",
+          "label": "KPI 개요",
+          "componentType": "MetricCard",
+          "hasViewDetail": false
+        },
+        {
+          "id": "segment-score",
+          "label": "세그먼트 점수",
+          "componentType": "ScoreCard",
+          "hasViewDetail": false
+        },
+        {
+          "id": "do-dont",
+          "label": "DO / DON'T",
+          "componentType": "DoDontCard",
+          "hasViewDetail": false
+        },
+        {
+          "id": "sample-customers",
+          "label": "샘플 고객",
+          "componentType": "SampleCard",
+          "hasViewDetail": false
+        }
+      ]
+    },
+    {
+      "id": "population-expansion",
+      "label": "오디언스 확장",
+      "sections": [
+        {
+          "id": "expansion-segments",
+          "label": "확장 세그먼트",
+          "componentType": "BulletCard",
+          "hasViewDetail": true
+        },
+        {
+          "id": "segment-metrics",
+          "label": "세그먼트 KPI",
+          "componentType": "MetricCard",
+          "hasViewDetail": true
+        },
+        {
+          "id": "strategy-table",
+          "label": "실행 계획",
+          "componentType": "StrategyTable",
+          "hasViewDetail": false
+        },
+        {
+          "id": "revenue-scenario",
+          "label": "수익 시나리오",
+          "componentType": "RevenueScenarioBar",
+          "hasViewDetail": false
+        }
+      ]
+    }
+  ],
+  "promptTemplate": "당신은 B2B SaaS 데이터 분석 전문가입니다.\n다음 입력 정보를 기반으로 오디언스 전략 리포트 데이터를 생성해주세요.\n\n입력: {input}\n\n아래 ReportSchema JSON 구조를 정확히 따르는 JSON만 반환하세요. 설명 없이 JSON만:\n{\n  \"meta\": { \"agentId\": \"audience-strategy\", \"agentName\": \"오디언스 전략\", \"createdAt\": \"ISO날짜\" },\n  \"executiveSummary\": {\n    \"keyFindings\": [\"핵심 발견 3-5개\"],\n    \"distributions\": [{ \"label\": \"세그먼트 분포\", \"data\": {} }]\n  },\n  \"tabs\": [\n    {\n      \"id\": \"analysis-report\",\n      \"label\": \"분석 리포트\",\n      \"sections\": [\n        { \"id\": \"kpi-overview\", \"label\": \"KPI 개요\", \"componentType\": \"MetricCard\", \"data\": { \"items\": [{\"label\": string, \"value\": string|number, \"unit\": string}] } },\n        { \"id\": \"segment-score\", \"label\": \"세그먼트 점수\", \"componentType\": \"ScoreCard\", \"data\": { \"score\": number, \"maxScore\": 100, \"badge\": string, \"bullets\": [string] } },\n        { \"id\": \"do-dont\", \"label\": \"DO / DON'T\", \"componentType\": \"DoDontCard\", \"data\": { \"dos\": [string], \"donts\": [string] } },\n        { \"id\": \"sample-customers\", \"label\": \"샘플 고객\", \"componentType\": \"SampleCard\", \"data\": { \"items\": [{\"id\": string, \"bullets\": [string]}] } }\n      ]\n    },\n    {\n      \"id\": \"population-expansion\",\n      \"label\": \"오디언스 확장\",\n      \"sections\": [\n        { \"id\": \"expansion-segments\", \"label\": \"확장 세그먼트\", \"componentType\": \"BulletCard\", \"data\": { \"title\": string, \"bullets\": [string] } },\n        { \"id\": \"segment-metrics\", \"label\": \"세그먼트 KPI\", \"componentType\": \"MetricCard\", \"data\": { \"items\": [{\"label\": string, \"value\": string|number, \"unit\": string}] } },\n        { \"id\": \"strategy-table\", \"label\": \"실행 계획\", \"componentType\": \"StrategyTable\", \"data\": { \"immediate\": [], \"short\": [], \"mid\": [] } },\n        { \"id\": \"revenue-scenario\", \"label\": \"수익 시나리오\", \"componentType\": \"RevenueScenarioBar\", \"data\": { \"unit\": \"억원\", \"scenarios\": [{\"label\": \"Upside\", \"value\": number}, {\"label\": \"Base\", \"value\": number}, {\"label\": \"Downside\", \"value\": number}] } }\n      ]\n    }\n  ]\n}"
+}

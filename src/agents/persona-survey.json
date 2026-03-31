@@ -1,0 +1,36 @@
+{
+  "id": "persona-survey",
+  "name": "페르소나 서베이",
+  "description": "서베이 응답 데이터를 분석해 주요 페르소나 유형과 행동 패턴을 도출합니다.",
+  "category": "research",
+  "inputType": "survey-form",
+  "layout": "single-repeat",
+  "modalType": "persona-detail",
+  "reportSections": [
+    {
+      "id": "executive-summary",
+      "label": "Executive Summary",
+      "componentType": "ExecutiveSummary",
+      "repeatsPerItem": false
+    },
+    {
+      "id": "survey-chart",
+      "label": "응답 분포",
+      "componentType": "HorizontalBarChart",
+      "repeatsPerItem": true
+    },
+    {
+      "id": "ai-interpretation",
+      "label": "AI 해석",
+      "componentType": "InterpretationBlock",
+      "repeatsPerItem": true
+    },
+    {
+      "id": "persona-cards",
+      "label": "가상 페르소나",
+      "componentType": "SyntheticPersonaCard",
+      "repeatsPerItem": true
+    }
+  ],
+  "promptTemplate": "당신은 UX 리서치 전문가입니다.\n다음 서베이 응답 데이터를 분석해 페르소나 리포트를 생성해주세요.\n\n입력: {input}\n\n아래 ReportSchema JSON 구조를 정확히 따르는 JSON만 반환하세요:\n{\n  \"meta\": { \"agentId\": \"persona-survey\", \"agentName\": \"페르소나 서베이\", \"createdAt\": \"ISO날짜\" },\n  \"executiveSummary\": {\n    \"keyFindings\": [\"핵심 발견 3-5개\"]\n  },\n  \"sections\": [\n    { \"id\": \"executive-summary\", \"label\": \"Executive Summary\", \"componentType\": \"ExecutiveSummary\", \"data\": { \"keyFindings\": [string], \"totalResponses\": number } },\n    {\n      \"id\": \"survey-chart-1\",\n      \"label\": \"구매 결정 요인\",\n      \"componentType\": \"HorizontalBarChart\",\n      \"data\": { \"question\": string, \"items\": [{\"label\": string, \"value\": number}] }\n    },\n    {\n      \"id\": \"ai-interpretation-1\",\n      \"label\": \"AI 해석\",\n      \"componentType\": \"InterpretationBlock\",\n      \"data\": { \"text\": string }\n    },\n    {\n      \"id\": \"persona-cards-1\",\n      \"label\": \"가상 페르소나\",\n      \"componentType\": \"SyntheticPersonaCard\",\n      \"data\": {\n        \"items\": [\n          {\n            \"id\": string,\n            \"name\": string,\n            \"gender\": string,\n            \"age\": number,\n            \"job\": string,\n            \"summary\": string,\n            \"tabs\": [\n              {\"label\": \"Personality\", \"content\": string},\n              {\"label\": \"Lifestyle\", \"content\": string},\n              {\"label\": \"Consumption\", \"content\": string}\n            ]\n          }\n        ]\n      }\n    }\n  ]\n}"
+}

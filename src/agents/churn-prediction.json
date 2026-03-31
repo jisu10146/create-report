@@ -1,0 +1,48 @@
+{
+  "id": "churn-prediction",
+  "name": "고객 이탈 예측",
+  "description": "고객 행동 데이터를 분석해 이탈 위험 고객을 예측하고 구체적인 리텐션 전략을 제시합니다.",
+  "category": "prediction",
+  "inputType": "none",
+  "layout": "single-section",
+  "modalType": "none",
+  "reportSections": [
+    {
+      "id": "executive-summary",
+      "label": "Executive Summary",
+      "componentType": "ExecutiveSummary",
+      "repeatsPerItem": false
+    },
+    {
+      "id": "cluster-overview",
+      "label": "클러스터 개요",
+      "componentType": "MetricCard",
+      "repeatsPerItem": false
+    },
+    {
+      "id": "high-risk-deep-dive",
+      "label": "고위험 고객 분석",
+      "componentType": "BulletCard",
+      "repeatsPerItem": false
+    },
+    {
+      "id": "signal-cards",
+      "label": "이탈 신호",
+      "componentType": "SignalCard",
+      "repeatsPerItem": false
+    },
+    {
+      "id": "strategy-table",
+      "label": "리텐션 실행 계획",
+      "componentType": "StrategyTable",
+      "repeatsPerItem": false
+    },
+    {
+      "id": "revenue-scenario",
+      "label": "수익 영향 시나리오",
+      "componentType": "RevenueScenarioBar",
+      "repeatsPerItem": false
+    }
+  ],
+  "promptTemplate": "당신은 고객 데이터 분석 전문가입니다.\n다음 고객 행동 데이터를 기반으로 이탈 예측 리포트를 생성해주세요.\n\n입력: {input}\n\n아래 ReportSchema JSON 구조를 정확히 따르는 JSON만 반환하세요:\n{\n  \"meta\": { \"agentId\": \"churn-prediction\", \"agentName\": \"고객 이탈 예측\", \"createdAt\": \"ISO날짜\" },\n  \"executiveSummary\": {\n    \"keyFindings\": [\"핵심 발견 3-5개\"]\n  },\n  \"sections\": [\n    {\n      \"id\": \"executive-summary\",\n      \"label\": \"Executive Summary\",\n      \"componentType\": \"ExecutiveSummary\",\n      \"data\": { \"keyFindings\": [string], \"churnRate\": number, \"atRiskCount\": number }\n    },\n    {\n      \"id\": \"cluster-overview\",\n      \"label\": \"클러스터 개요\",\n      \"componentType\": \"MetricCard\",\n      \"data\": { \"items\": [{\"label\": string, \"value\": string|number, \"unit\": string}] }\n    },\n    {\n      \"id\": \"high-risk-deep-dive\",\n      \"label\": \"고위험 고객 분석\",\n      \"componentType\": \"BulletCard\",\n      \"data\": { \"title\": string, \"bullets\": [string] }\n    },\n    {\n      \"id\": \"signal-cards\",\n      \"label\": \"이탈 신호\",\n      \"componentType\": \"SignalCard\",\n      \"data\": {\n        \"items\": [\n          { \"signalName\": string, \"bullets\": [string], \"badge\": string }\n        ]\n      }\n    },\n    {\n      \"id\": \"strategy-table\",\n      \"label\": \"리텐션 실행 계획\",\n      \"componentType\": \"StrategyTable\",\n      \"data\": {\n        \"immediate\": [{\"action\": string, \"owner\": string, \"metric\": string, \"priority\": string}],\n        \"short\": [{\"action\": string, \"owner\": string, \"metric\": string, \"priority\": string}],\n        \"mid\": [{\"action\": string, \"owner\": string, \"metric\": string, \"priority\": string}]\n      }\n    },\n    {\n      \"id\": \"revenue-scenario\",\n      \"label\": \"수익 영향 시나리오\",\n      \"componentType\": \"RevenueScenarioBar\",\n      \"data\": {\n        \"unit\": \"억원\",\n        \"scenarios\": [\n          {\"label\": \"Upside\", \"value\": number, \"description\": string},\n          {\"label\": \"Base\", \"value\": number, \"description\": string},\n          {\"label\": \"Downside\", \"value\": number, \"description\": string}\n        ]\n      }\n    }\n  ]\n}"
+}
