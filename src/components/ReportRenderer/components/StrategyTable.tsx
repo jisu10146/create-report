@@ -1,9 +1,11 @@
+import { Badge } from "@cubig/design-system";
 import type { StrategyTableData } from "@/types";
+import type { BadgeVariant } from "@cubig/design-system";
 
-const PHASES: Array<{ key: keyof StrategyTableData; label: string; color: string }> = [
-  { key: "immediate", label: "즉시 (0-2주)", color: "bg-red-50 text-red-700" },
-  { key: "short", label: "단기 (1-3개월)", color: "bg-orange-50 text-orange-700" },
-  { key: "mid", label: "중기 (3-6개월)", color: "bg-blue-50 text-blue-700" },
+const PHASES: Array<{ key: keyof StrategyTableData; label: string; variant: BadgeVariant }> = [
+  { key: "immediate", label: "즉시 (0-2주)", variant: "negative" },
+  { key: "short", label: "단기 (1-3개월)", variant: "cautionary" },
+  { key: "mid", label: "중기 (3-6개월)", variant: "info" },
 ];
 
 export default function StrategyTable({ data }: { data: StrategyTableData }) {
@@ -12,7 +14,7 @@ export default function StrategyTable({ data }: { data: StrategyTableData }) {
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-gray-200 bg-gray-50">
-            <th className="text-left px-4 py-3 font-semibold text-gray-700 w-24">단계</th>
+            <th className="text-left px-4 py-3 font-semibold text-gray-700 w-28">단계</th>
             <th className="text-left px-4 py-3 font-semibold text-gray-700">실행 항목</th>
             <th className="text-left px-4 py-3 font-semibold text-gray-700 w-28">담당</th>
             <th className="text-left px-4 py-3 font-semibold text-gray-700 w-32">측정 지표</th>
@@ -31,11 +33,7 @@ export default function StrategyTable({ data }: { data: StrategyTableData }) {
                     rowSpan={data[phase.key].length}
                     className="px-4 py-3 align-top"
                   >
-                    <span
-                      className={`text-xs font-semibold px-2 py-1 rounded-full whitespace-nowrap ${phase.color}`}
-                    >
-                      {phase.label}
-                    </span>
+                    <Badge variant={phase.variant} type="solid" size="small" text={phase.label} />
                   </td>
                 ) : null}
                 <td className="px-4 py-3 text-gray-800">{row.action}</td>

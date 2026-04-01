@@ -1,18 +1,19 @@
+import { Badge } from "@cubig/design-system";
 import type { SignalCardData } from "@/types";
+import type { BadgeVariant } from "@cubig/design-system";
 
-const BADGE_COLORS: Record<string, string> = {
-  red: "bg-red-100 text-red-700",
-  orange: "bg-orange-100 text-orange-700",
-  yellow: "bg-yellow-100 text-yellow-700",
-  green: "bg-green-100 text-green-700",
+const BADGE_VARIANT_MAP: Record<string, BadgeVariant> = {
+  red: "negative",
+  orange: "cautionary",
+  yellow: "cautionary",
+  green: "positive",
 };
 
 export default function SignalCard({ data }: { data: SignalCardData }) {
   return (
     <div className="grid grid-cols-3 gap-3">
       {data.items.map((signal, i) => {
-        const badgeClass =
-          BADGE_COLORS[signal.badgeColor ?? "red"] ?? BADGE_COLORS.red;
+        const variant = BADGE_VARIANT_MAP[signal.badgeColor ?? "red"] ?? "negative";
         return (
           <div
             key={i}
@@ -23,11 +24,7 @@ export default function SignalCard({ data }: { data: SignalCardData }) {
                 {signal.signalName}
               </span>
               {signal.badge && (
-                <span
-                  className={`text-xs font-bold px-2 py-0.5 rounded-full shrink-0 ${badgeClass}`}
-                >
-                  {signal.badge}
-                </span>
+                <Badge variant={variant} type="solid" size="small" text={signal.badge} />
               )}
             </div>
             <ul className="space-y-1.5">

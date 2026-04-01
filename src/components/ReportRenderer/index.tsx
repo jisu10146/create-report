@@ -1,3 +1,5 @@
+"use client";
+
 import type { ReportSchema, AgentDefinition } from "@/types";
 import TabGridLayout from "./layouts/TabGridLayout";
 import SingleRepeatLayout from "./layouts/SingleRepeatLayout";

@@ -1,0 +1,19 @@
+{
+  "id": "content-optimizer",
+  "name": "콘텐츠 성능 최적화 도구",
+  "description": "참여 패턴을 기반으로 콘텐츠 전략을 최적화합니다.",
+  "category": "strategy",
+  "inputType": "none",
+  "layout": "single-section",
+  "modalType": "none",
+  "reportSections": [
+    { "id": "executive-summary", "label": "Executive Summary", "componentType": "ExecutiveSummary" },
+    { "id": "content-kpi", "label": "콘텐츠 성과 지표", "componentType": "MetricCard" },
+    { "id": "engagement-chart", "label": "유형별 참여율 분포", "componentType": "HorizontalBarChart" },
+    { "id": "chart-interpretation", "label": "", "componentType": "InterpretationBlock" },
+    { "id": "content-do-dont", "label": "콘텐츠 전략 DO / DON'T", "componentType": "DoDontCard" },
+    { "id": "execution-plan", "label": "실행 계획", "componentType": "StrategyTable" },
+    { "id": "impact-scenario", "label": "성과 시나리오", "componentType": "RevenueScenarioBar" }
+  ],
+  "promptTemplate": ""
+}

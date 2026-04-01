@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { ReportSchema, AgentDefinition, TabDetailData } from "@/types";
+import { Tab, TabItem, Chip } from "@cubig/design-system";
 import { renderComponent } from "../components";
 import DetailModalA from "../modals/DetailModalA";
 
@@ -12,25 +13,20 @@ interface Props {
 
 export default function TabGridLayout({ report, agent }: Props) {
   const tabs = agent.reportTabs ?? [];
-  const [activeTab, setActiveTab] = useState(tabs[0]?.id ?? "");
+  const [activeTabIdx, setActiveTabIdx] = useState(0);
   const [modalData, setModalData] = useState<TabDetailData | null>(null);
 
-  const currentTabDef = tabs.find((t) => t.id === activeTab);
-  const currentTabData = report.tabs?.find((t) => t.id === activeTab);
+  const activeTabId = tabs[activeTabIdx]?.id ?? "";
+  const currentTabDef = tabs[activeTabIdx];
+  const currentTabData = report.tabs?.find((t) => t.id === activeTabId);
 
   const openDetail = (sectionId: string) => {
     const section = currentTabData?.sections.find((s) => s.id === sectionId);
     if (!section) return;
-
-    // Build a simple tab-detail modal with just this section's data
     const modalPayload: TabDetailData = {
       title: section.label,
       tabs: [
-        {
-          id: "detail",
-          label: "상세 데이터",
-          sections: [section],
-        },
+        { id: "detail", label: "상세 데이터", sections: [section] },
       ],
     };
     setModalData(modalPayload);
@@ -44,9 +40,7 @@ export default function TabGridLayout({ report, agent }: Props) {
           <h2 className="text-xl font-semibold text-gray-900">{agent.name}</h2>
           <p className="text-sm text-gray-500 mt-1">{agent.description}</p>
         </div>
-        <button className="text-sm border border-gray-300 rounded-lg px-4 py-2 hover:border-gray-400 transition-colors">
-          내보내기
-        </button>
+        <Chip type="outline" size="medium" text="내보내기" radius="rounded-2" />
       </div>
 
       {/* Executive Summary */}
@@ -66,22 +60,14 @@ export default function TabGridLayout({ report, agent }: Props) {
         </div>
       )}
 
-      {/* Tabs */}
-      <div className="flex border-b border-gray-200 mb-6">
+      {/* Tabs — design system Tab */}
+      <Tab value={activeTabIdx} onChange={setActiveTabIdx} showDivider>
         {tabs.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={`py-3 px-5 text-sm font-medium border-b-2 transition-colors ${
-              activeTab === tab.id
-                ? "border-black text-black"
-                : "border-transparent text-gray-500 hover:text-gray-700"
-            }`}
-          >
-            {tab.label}
-          </button>
+          <TabItem key={tab.id}>{tab.label}</TabItem>
         ))}
-      </div>
+      </Tab>
+
+      <div className="mt-6" />
 
       {/* Grid sections */}
       <div className="grid grid-cols-2 gap-4">

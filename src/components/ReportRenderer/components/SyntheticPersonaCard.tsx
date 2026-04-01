@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Avatar, Badge, Modal, ChipTabs, Chip } from "@cubig/design-system";
 import type { SyntheticPersonaCardData } from "@/types";
 
 interface PersonaDetailModalProps {
@@ -9,70 +10,46 @@ interface PersonaDetailModalProps {
 }
 
 function PersonaDetailModal({ persona, onClose }: PersonaDetailModalProps) {
-  const [activeTab, setActiveTab] = useState(persona.tabs[0]?.label ?? "");
+  const [activeTabIdx, setActiveTabIdx] = useState(0);
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"
-      onClick={onClose}
+    <Modal
+      open
+      onClose={onClose}
+      title={persona.name ?? persona.id}
+      size="small"
+      position="center"
+      showCloseButton
     >
-      <div
-        className="bg-white rounded-2xl w-full max-w-lg mx-4 overflow-hidden shadow-xl"
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* Header */}
-        <div className="p-6 border-b border-gray-200">
-          <div className="flex items-start justify-between">
-            <div>
-              <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs font-semibold bg-gray-100 text-gray-600 rounded-md px-2 py-0.5">
-                  {persona.id}
-                </span>
-              </div>
-              <h3 className="font-semibold text-gray-900 text-lg">{persona.name}</h3>
-              <p className="text-sm text-gray-500 mt-0.5">
-                {persona.gender} · {persona.age}세 · {persona.job}
-              </p>
-            </div>
-            <button
-              onClick={onClose}
-              className="text-gray-400 hover:text-gray-600 text-xl leading-none"
-            >
-              ✕
-            </button>
-          </div>
-          {persona.summary && (
-            <p className="text-sm text-gray-600 mt-3 leading-relaxed">{persona.summary}</p>
-          )}
-        </div>
-        {/* Tabs */}
-        <div className="flex gap-2 px-6 pt-4 pb-2">
-          {persona.tabs.map((tab) => (
-            <button
-              key={tab.label}
-              onClick={() => setActiveTab(tab.label)}
-              className={`text-sm px-3 py-1 rounded-full border transition-colors ${
-                activeTab === tab.label
-                  ? "bg-black text-white border-black"
-                  : "border-gray-300 text-gray-600 hover:border-gray-400"
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-        {/* Content */}
-        <div className="px-6 pb-6 pt-3">
-          {persona.tabs
-            .filter((t) => t.label === activeTab)
-            .map((tab) => (
-              <p key={tab.label} className="text-sm text-gray-700 leading-relaxed">
-                {tab.content}
-              </p>
-            ))}
+      {/* Profile */}
+      <div className="flex items-center gap-3 mb-4">
+        <Avatar type="initial" size="medium" value={persona.name ?? persona.id} />
+        <div>
+          <Badge variant="secondary" type="outline" size="small" text={persona.id} />
+          <p className="text-sm text-gray-500 mt-1">
+            {persona.gender} · {persona.age}세 · {persona.job}
+          </p>
         </div>
       </div>
-    </div>
+
+      {persona.summary && (
+        <p className="text-sm text-gray-600 mb-4 leading-relaxed">{persona.summary}</p>
+      )}
+
+      {/* Tabs */}
+      <ChipTabs value={activeTabIdx} onChange={setActiveTabIdx}>
+        {persona.tabs.map((tab) => (
+          <Chip key={tab.label} text={tab.label} size="small" radius="rounded-full" />
+        ))}
+      </ChipTabs>
+
+      {/* Content */}
+      <div className="mt-4">
+        <p className="text-sm text-gray-700 leading-relaxed">
+          {persona.tabs[activeTabIdx]?.content}
+        </p>
+      </div>
+    </Modal>
   );
 }
 
@@ -90,23 +67,28 @@ export default function SyntheticPersonaCard({ data }: { data: SyntheticPersonaC
             className="bg-white border border-gray-200 rounded-xl p-4 cursor-pointer hover:border-gray-400 transition-colors"
             onClick={() => setSelected(persona)}
           >
-            <span className="inline-block text-xs font-semibold bg-gray-100 text-gray-600 rounded-md px-2 py-0.5 mb-2">
-              {persona.id}
-            </span>
-            {persona.name && (
-              <p className="font-semibold text-gray-900 text-sm">{persona.name}</p>
-            )}
-            {(persona.gender || persona.age || persona.job) && (
-              <p className="text-xs text-gray-500 mt-0.5">
-                {[persona.gender, persona.age && `${persona.age}세`, persona.job]
-                  .filter(Boolean)
-                  .join(" · ")}
-              </p>
-            )}
+            <div className="flex items-center gap-3 mb-3">
+              <Avatar type="initial" size="small" value={persona.name ?? persona.id} />
+              <div className="min-w-0">
+                <div className="flex items-center gap-2">
+                  {persona.name && (
+                    <p className="font-semibold text-gray-900 text-sm">{persona.name}</p>
+                  )}
+                  <Badge variant="secondary" type="outline" size="small" text={persona.id} />
+                </div>
+                {(persona.gender || persona.age || persona.job) && (
+                  <p className="text-xs text-gray-500 mt-0.5">
+                    {[persona.gender, persona.age && `${persona.age}세`, persona.job]
+                      .filter(Boolean)
+                      .join(" · ")}
+                  </p>
+                )}
+              </div>
+            </div>
             {persona.summary && (
-              <p className="text-xs text-gray-600 mt-2 line-clamp-2">{persona.summary}</p>
+              <p className="text-xs text-gray-600 line-clamp-2">{persona.summary}</p>
             )}
-            <span className="mt-3 inline-block text-xs text-gray-400 underline">
+            <span className="mt-2 inline-block text-xs text-gray-400 underline">
               View Detail →
             </span>
           </div>

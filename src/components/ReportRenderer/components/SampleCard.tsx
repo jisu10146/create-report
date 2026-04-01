@@ -1,3 +1,4 @@
+import { Badge } from "@cubig/design-system";
 import type { SampleCardData } from "@/types";
 
 export default function SampleCard({ data }: { data: SampleCardData }) {
@@ -8,9 +9,9 @@ export default function SampleCard({ data }: { data: SampleCardData }) {
           key={item.id}
           className="bg-white border border-gray-200 rounded-xl p-4"
         >
-          <span className="inline-block text-xs font-semibold bg-gray-100 text-gray-600 rounded-md px-2 py-0.5 mb-3">
-            {item.id}
-          </span>
+          <div className="mb-3">
+            <Badge variant="secondary" type="outline" size="small" text={item.id} />
+          </div>
           <ul className="space-y-1.5">
             {item.bullets.map((bullet, i) => (
               <li key={i} className="flex items-start gap-2 text-sm text-gray-700">

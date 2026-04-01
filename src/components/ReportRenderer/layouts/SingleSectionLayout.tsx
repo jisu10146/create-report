@@ -1,4 +1,7 @@
+"use client";
+
 import type { ReportSchema, AgentDefinition } from "@/types";
+import { Chip } from "@cubig/design-system";
 import { renderComponent } from "../components";
 
 interface Props {
@@ -17,12 +20,10 @@ export default function SingleSectionLayout({ report, agent }: Props) {
           <h2 className="text-xl font-semibold text-gray-900">{agent.name}</h2>
           <p className="text-sm text-gray-500 mt-1">{agent.description}</p>
         </div>
-        <button className="text-sm border border-gray-300 rounded-lg px-4 py-2 hover:border-gray-400 transition-colors">
-          내보내기
-        </button>
+        <Chip type="outline" size="medium" text="내보내기" radius="rounded-2" />
       </div>
 
-      {/* Sequential sections, no drilldown */}
+      {/* Sequential sections */}
       <div className="space-y-8">
         {sections.map((section) => (
           <div key={section.id}>
