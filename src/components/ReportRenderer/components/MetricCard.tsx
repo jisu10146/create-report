@@ -6,13 +6,13 @@ export default function MetricCard({ data }: { data: MetricCardData }) {
       {data.items.map((item, i) => (
         <div
           key={i}
-          className="bg-white border border-gray-200 rounded-xl p-4 flex flex-col gap-1"
+          className="bg-report-card border border-report-border rounded-card p-4 flex flex-col gap-1 shadow-card"
         >
-          <span className="text-sm text-gray-500">{item.label}</span>
+          <span className="text-sm text-report-text-secondary">{item.label}</span>
           <div className="flex items-baseline gap-1">
-            <span className="font-bold text-2xl text-gray-900">{item.value}</span>
+            <span className="font-bold text-2xl text-report-text-primary">{item.value}</span>
             {item.unit && (
-              <span className="text-sm text-gray-500">{item.unit}</span>
+              <span className="text-sm text-report-text-secondary">{item.unit}</span>
             )}
           </div>
         </div>

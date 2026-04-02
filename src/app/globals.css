@@ -4,6 +4,70 @@
 
 @import "tailwindcss";
 
+/* ─── Report Design System Tokens ─── */
+
+@theme {
+  /* Colors – Background */
+  --color-report-bg: #f7f7f8;
+  --color-report-card: #ffffff;
+
+  /* Colors – Border */
+  --color-report-border: #e6e7e9;
+
+  /* Colors – Text */
+  --color-report-text-primary: #171719;
+  --color-report-text-secondary: #7b7e85;
+  --color-report-text-muted: #cacccf;
+
+  /* Colors – Chart Palette */
+  --color-chart-blue: #2b7fff;
+  --color-chart-blue-light: #bedbff;
+  --color-chart-blue-mid: #8ec5ff;
+  --color-chart-green: #7ccf00;
+  --color-chart-teal: #00bba7;
+  --color-chart-purple: #9f8deb;
+  --color-chart-yellow: #fdc700;
+
+  /* Border Radius */
+  --radius-chip: 6px;
+  --radius-sm: 8px;
+  --radius-card: 16px;
+  --radius-container: 20px;
+
+  /* Shadows */
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-elevated: 0 6px 20px rgba(0, 0, 0, 0.1);
+
+  /* Spacing Scale */
+  --spacing-1: 2px;
+  --spacing-2: 4px;
+  --spacing-3: 6px;
+  --spacing-4: 8px;
+  --spacing-5: 10px;
+  --spacing-6: 12px;
+  --spacing-7: 16px;
+  --spacing-8: 20px;
+  --spacing-9: 24px;
+  --spacing-10: 32px;
+  --spacing-11: 40px;
+  --spacing-12: 50px;
+  --spacing-13: 60px;
+  --spacing-14: 70px;
+
+  /* Font Size */
+  --font-size-body-s: 14px;
+  --font-size-body-m: 16px;
+  --font-size-heading-m: 18px;
+  --font-size-heading-l: 20px;
+
+  /* Line Height */
+  --leading-body-s: 20px;
+  --leading-body-m: 24px;
+  --leading-heading-m: 26px;
+  --leading-heading-l: 28px;
+}
+
 *,
 *::before,
 *::after {

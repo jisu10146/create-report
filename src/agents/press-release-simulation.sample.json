@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "agentId": "press-release-simulation",
+    "agentName": "Press Release Simulation",
+    "createdAt": "2026-04-02T10:00:00.000Z"
+  },
+  "executiveSummary": {
+    "keyFindings": [
+      "현재 보도자료 초안의 메시지 명확성 종합 점수는 68/100으로, 핵심 메시지가 리드 문단에 부재합니다.",
+      "톤이 기술적 서술(42%) 위주로 구성되어 일반 매체 게재 적합도가 낮습니다.",
+      "역피라미드 구조 적용 및 독자 친화적 톤 보강 시 매체 게재율 2배 이상 향상이 기대됩니다.",
+      "메시징 전략 DO/DON'T 기반으로 헤드라인·리드·본문을 단계적으로 개선할 수 있습니다."
+    ]
+  },
+  "sections": [
+    {
+      "id": "executive-summary",
+      "label": "Executive Summary",
+      "componentType": "ExecutiveSummary",
+      "data": {
+        "keyFindings": [
+          "현재 보도자료 초안의 메시지 명확성 종합 점수는 68/100으로, 핵심 메시지가 리드 문단에 부재합니다.",
+          "톤이 기술적 서술(42%) 위주로 구성되어 일반 매체 게재 적합도가 낮습니다.",
+          "역피라미드 구조 적용 및 독자 친화적 톤 보강 시 매체 게재율 2배 이상 향상이 기대됩니다.",
+          "메시징 전략 DO/DON'T 기반으로 헤드라인·리드·본문을 단계적으로 개선할 수 있습니다."
+        ]
+      }
+    },
+    {
+      "id": "kpi-overview",
+      "label": "핵심 지표",
+      "componentType": "MetricCard",
+      "data": {
+        "items": [
+          { "label": "메시지 명확성", "value": 68, "unit": "점" },
+          { "label": "헤드라인 임팩트", "value": 62, "unit": "점" },
+          { "label": "톤 적합도", "value": 55, "unit": "점" },
+          { "label": "CTA 명확성", "value": 71, "unit": "점" },
+          { "label": "데이터 뒷받침", "value": 84, "unit": "점" },
+          { "label": "매체 게재 적합도", "value": 48, "unit": "%" }
+        ]
+      }
+    },
+    {
+      "id": "main-chart",
+      "label": "데이터 분석",
+      "componentType": "HorizontalBarChart",
+      "data": {
+        "question": "보도자료 톤 구성 비율 (%)",
+        "items": [
+          { "label": "기술적/전문적", "value": 42 },
+          { "label": "공식적/격식체", "value": 24 },
+          { "label": "독자 친화적", "value": 18 },
+          { "label": "감성적/스토리텔링", "value": 11 },
+          { "label": "긴급/시의성", "value": 5 }
+        ]
+      }
+    },
+    {
+      "id": "ai-interpretation",
+      "label": "",
+      "componentType": "InterpretationBlock",
+      "data": {
+        "text": "기술적·전문적 톤이 42%로 지배적입니다. IT 전문매체에는 적합하나, 경제지·종합일간지 게재를 목표로 한다면 독자 친화적 서술 비중을 30% 이상으로 높여야 합니다. 리드 문단에서 '사용자에게 어떤 변화가 생기는지'를 먼저 서술하고, 기술 디테일은 중반 이후로 배치하는 역피라미드 구조가 필요합니다. 고객 사례나 비포/애프터 스토리텔링 요소를 추가하면 기자의 기사화 가능성이 높아집니다."
+      }
+    },
+    {
+      "id": "do-dont",
+      "label": "DO / DON'T",
+      "componentType": "DoDontCard",
+      "data": {
+        "dos": [
+          "핵심 메시지를 1문단 첫 문장에 배치 (역피라미드 구조)",
+          "구체적 수치로 임팩트 표현 (예: '처리 속도 3.2배 향상')",
+          "고객 사례·인용문을 포함해 신뢰도 확보",
+          "매체별 버전 분리 (전문매체 vs 일반매체)"
+        ],
+        "donts": [
+          "기술 용어를 설명 없이 사용 (일반 매체용)",
+          "검증 불가능한 최상급 표현 ('최고', '유일한')",
+          "3개 이상의 핵심 메시지를 동시에 전달 시도",
+          "경쟁사를 직접 언급하며 비교하는 표현"
+        ]
+      }
+    },
+    {
+      "id": "strategy-table",
+      "label": "실행 계획",
+      "componentType": "StrategyTable",
+      "data": {
+        "immediate": [
+          { "action": "헤드라인 A/B 안 3종 작성 및 내부 투표", "owner": "PR팀", "metric": "최종 헤드라인 확정", "priority": "P0" },
+          { "action": "리드 문단 역피라미드 구조로 재작성", "owner": "PR팀", "metric": "명확성 점수 85+", "priority": "P0" },
+          { "action": "법무팀 최상급 표현 검토 요청", "owner": "법무팀", "metric": "리스크 표현 0건", "priority": "P0" }
+        ],
+        "short": [
+          { "action": "매체별 맞춤 버전 제작 (전문매체/경제지/종합지)", "owner": "PR팀", "metric": "3개 버전 완성", "priority": "P1" },
+          { "action": "기자 사전 브리핑 (주요 5개 매체)", "owner": "PR팀", "metric": "사전 커버리지 확보 3건+", "priority": "P1" },
+          { "action": "인포그래픽 및 SNS 공유용 시각 자료 제작", "owner": "디자인팀", "metric": "자료 3종 완성", "priority": "P1" }
+        ],
+        "mid": [
+          { "action": "보도 후 미디어 모니터링 및 톤 분석", "owner": "PR팀", "metric": "긍정 보도 비율 70%+", "priority": "P2" },
+          { "action": "후속 보도자료 시리즈 기획 (고객 사례 중심)", "owner": "마케팅팀", "metric": "월 1건 후속 보도", "priority": "P2" }
+        ]
+      }
+    }
+  ]
+}

@@ -26,14 +26,14 @@ function PersonaDetailModal({ persona, onClose }: PersonaDetailModalProps) {
         <Avatar type="initial" size="medium" value={persona.name ?? persona.id} />
         <div>
           <Badge variant="secondary" type="outline" size="small" text={persona.id} />
-          <p className="text-sm text-gray-500 mt-1">
+          <p className="text-sm text-report-text-secondary mt-1">
             {persona.gender} · {persona.age}세 · {persona.job}
           </p>
         </div>
       </div>
 
       {persona.summary && (
-        <p className="text-sm text-gray-600 mb-4 leading-relaxed">{persona.summary}</p>
+        <p className="text-sm text-report-text-secondary mb-4 leading-relaxed">{persona.summary}</p>
       )}
 
       {/* Tabs */}
@@ -45,7 +45,7 @@ function PersonaDetailModal({ persona, onClose }: PersonaDetailModalProps) {
 
       {/* Content */}
       <div className="mt-4">
-        <p className="text-sm text-gray-700 leading-relaxed">
+        <p className="text-sm text-report-text-primary leading-relaxed">
           {persona.tabs[activeTabIdx]?.content}
         </p>
       </div>
@@ -64,7 +64,7 @@ export default function SyntheticPersonaCard({ data }: { data: SyntheticPersonaC
         {data.items.map((persona) => (
           <div
             key={persona.id}
-            className="bg-white border border-gray-200 rounded-xl p-4 cursor-pointer hover:border-gray-400 transition-colors"
+            className="bg-report-card border border-report-border rounded-card p-4 shadow-card cursor-pointer hover:border-report-text-muted transition-colors"
             onClick={() => setSelected(persona)}
           >
             <div className="flex items-center gap-3 mb-3">
@@ -72,12 +72,12 @@ export default function SyntheticPersonaCard({ data }: { data: SyntheticPersonaC
               <div className="min-w-0">
                 <div className="flex items-center gap-2">
                   {persona.name && (
-                    <p className="font-semibold text-gray-900 text-sm">{persona.name}</p>
+                    <p className="font-semibold text-report-text-primary text-sm">{persona.name}</p>
                   )}
                   <Badge variant="secondary" type="outline" size="small" text={persona.id} />
                 </div>
                 {(persona.gender || persona.age || persona.job) && (
-                  <p className="text-xs text-gray-500 mt-0.5">
+                  <p className="text-xs text-report-text-secondary mt-0.5">
                     {[persona.gender, persona.age && `${persona.age}세`, persona.job]
                       .filter(Boolean)
                       .join(" · ")}
@@ -86,9 +86,9 @@ export default function SyntheticPersonaCard({ data }: { data: SyntheticPersonaC
               </div>
             </div>
             {persona.summary && (
-              <p className="text-xs text-gray-600 line-clamp-2">{persona.summary}</p>
+              <p className="text-xs text-report-text-secondary line-clamp-2">{persona.summary}</p>
             )}
-            <span className="mt-2 inline-block text-xs text-gray-400 underline">
+            <span className="mt-2 inline-block text-xs text-report-text-muted underline">
               View Detail →
             </span>
           </div>

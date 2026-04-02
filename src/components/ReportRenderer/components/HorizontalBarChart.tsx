@@ -2,6 +2,8 @@
 
 import { ResponsiveBar } from "@nivo/bar";
 import type { HorizontalBarChartData } from "@/types";
+import { CHART_SPECS } from "@/lib/report-chart-spec";
+import { reportNivoTheme, NIVO_TOKEN } from "@/lib/report-nivo-theme";
 
 export default function HorizontalBarChart({ data }: { data: HorizontalBarChartData }) {
   const maxVal = Math.max(...data.items.map((i) => i.value));
@@ -17,10 +19,14 @@ export default function HorizontalBarChart({ data }: { data: HorizontalBarChartD
     data.items.filter((i) => i.value === maxVal).map((i) => i.label)
   );
 
+  const spec = CHART_SPECS["HorizontalBarChart:default"];
+  const topColor = spec.series[0].color;
+  const otherColor = spec.series[1].color;
+
   return (
-    <div className="bg-white border border-gray-200 rounded-xl p-5">
+    <div className="bg-report-card border border-report-border rounded-card p-5 shadow-card">
       {data.question && (
-        <p className="text-sm font-semibold text-gray-900 mb-3">{data.question}</p>
+        <p className="text-sm font-semibold text-report-text-primary mb-3">{data.question}</p>
       )}
       <div style={{ height: Math.max(chartData.length * 44, 160) }}>
         <ResponsiveBar
@@ -32,7 +38,7 @@ export default function HorizontalBarChart({ data }: { data: HorizontalBarChartD
           padding={0.35}
           valueScale={{ type: "linear", min: 0, max: 100 }}
           colors={(bar) => {
-            return topLabels.has(bar.indexValue as string) ? "#111827" : "#d1d5db";
+            return topLabels.has(bar.indexValue as string) ? topColor : otherColor;
           }}
           borderRadius={4}
           enableGridX={false}
@@ -47,20 +53,14 @@ export default function HorizontalBarChart({ data }: { data: HorizontalBarChartD
           label={(d) => `${d.value}%`}
           labelSkipWidth={24}
           labelTextColor={(d) => {
-            return topLabels.has(d.data.indexValue as string) ? "#ffffff" : "#374151";
+            return topLabels.has(d.data.indexValue as string) ? "#ffffff" : NIVO_TOKEN.textPrimary;
           }}
           tooltip={({ value, indexValue }) => (
-            <div className="bg-white shadow-lg rounded-lg px-3 py-2 text-sm border border-gray-200">
+            <div className="bg-report-card shadow-elevated rounded-sm px-3 py-2 text-sm border border-report-border">
               <strong>{indexValue}</strong>: {value}%
             </div>
           )}
-          theme={{
-            axis: {
-              ticks: {
-                text: { fontSize: 13, fill: "#4b5563" },
-              },
-            },
-          }}
+          theme={reportNivoTheme}
           animate={true}
           motionConfig="gentle"
         />

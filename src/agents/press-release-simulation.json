@@ -1,0 +1,42 @@
+{
+  "id": "press-release-simulation",
+  "name": "Press Release Simulation",
+  "description": "Simulate press releases and assess messaging clarity, tone, and potential impact.",
+  "category": "analysis",
+  "inputType": "none",
+  "layout": "single-section",
+  "modalType": "none",
+  "reportSections": [
+    {
+      "id": "executive-summary",
+      "label": "Executive Summary",
+      "componentType": "ExecutiveSummary"
+    },
+    {
+      "id": "kpi-overview",
+      "label": "핵심 지표",
+      "componentType": "MetricCard"
+    },
+    {
+      "id": "main-chart",
+      "label": "데이터 분석",
+      "componentType": "HorizontalBarChart"
+    },
+    {
+      "id": "ai-interpretation",
+      "label": "",
+      "componentType": "InterpretationBlock"
+    },
+    {
+      "id": "do-dont",
+      "label": "DO / DON'T",
+      "componentType": "DoDontCard"
+    },
+    {
+      "id": "strategy-table",
+      "label": "실행 계획",
+      "componentType": "StrategyTable"
+    }
+  ],
+  "promptTemplate": ""
+}

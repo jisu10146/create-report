@@ -2,12 +2,13 @@
 
 import { ResponsiveBar } from "@nivo/bar";
 import type { RevenueScenarioBarData } from "@/types";
+import { CHART_SPECS } from "@/lib/report-chart-spec";
+import { reportNivoTheme } from "@/lib/report-nivo-theme";
 
-const SCENARIO_COLORS: Record<string, string> = {
-  Upside: "#22c55e",
-  Base: "#374151",
-  Downside: "#f87171",
-};
+const spec = CHART_SPECS["RevenueScenarioBar:default"];
+const SCENARIO_COLORS: Record<string, string> = Object.fromEntries(
+  spec.series.map((s) => [s.name, s.color])
+);
 
 export default function RevenueScenarioBar({ data }: { data: RevenueScenarioBarData }) {
   const chartData = [...data.scenarios].reverse().map((s) => ({
@@ -19,7 +20,7 @@ export default function RevenueScenarioBar({ data }: { data: RevenueScenarioBarD
   const maxVal = Math.max(...data.scenarios.map((s) => s.value));
 
   return (
-    <div className="bg-white border border-gray-200 rounded-xl p-5">
+    <div className="bg-report-card border border-report-border rounded-card p-5 shadow-card">
       <div style={{ height: Math.max(chartData.length * 64, 160) }}>
         <ResponsiveBar
           data={chartData}
@@ -48,23 +49,29 @@ export default function RevenueScenarioBar({ data }: { data: RevenueScenarioBarD
             return `${d.value}${unit}`;
           }}
           labelSkipWidth={32}
-          labelTextColor="#ffffff"
+          labelTextColor={"#ffffff"}
           tooltip={({ value, indexValue }) => {
             const scenario = data.scenarios.find((s) => s.label === indexValue);
             return (
-              <div className="bg-white shadow-lg rounded-lg px-3 py-2 text-sm border border-gray-200">
+              <div className="bg-report-card shadow-elevated rounded-sm px-3 py-2 text-sm border border-report-border">
                 <strong>{indexValue}</strong>: {value}
                 {data.unit && ` ${data.unit}`}
                 {scenario?.description && (
-                  <p className="text-gray-500 text-xs mt-1">{scenario.description}</p>
+                  <p className="text-report-text-secondary text-xs mt-1">{scenario.description}</p>
                 )}
               </div>
             );
           }}
           theme={{
+            ...reportNivoTheme,
             axis: {
+              ...reportNivoTheme.axis,
               ticks: {
-                text: { fontSize: 13, fontWeight: 600, fill: "#374151" },
+                ...reportNivoTheme.axis?.ticks,
+                text: {
+                  ...(reportNivoTheme.axis?.ticks?.text as object),
+                  fontWeight: 600,
+                },
               },
             },
           }}
@@ -77,12 +84,12 @@ export default function RevenueScenarioBar({ data }: { data: RevenueScenarioBarD
         <div className="mt-3 space-y-1">
           {data.scenarios.map((s) =>
             s.description ? (
-              <p key={s.label} className="text-xs text-gray-500">
+              <p key={s.label} className="text-xs text-report-text-secondary">
                 <span
                   className="inline-block w-2 h-2 rounded-full mr-1.5"
                   style={{ backgroundColor: SCENARIO_COLORS[s.label] ?? "#9ca3af" }}
                 />
-                <span className="font-medium text-gray-600">{s.label}:</span> {s.description}
+                <span className="font-medium text-report-text-primary">{s.label}:</span> {s.description}
               </p>
             ) : null
           )}

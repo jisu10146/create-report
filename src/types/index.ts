@@ -63,6 +63,8 @@ export interface ReportMeta {
 
 export interface ExecutiveSummary {
   keyFindings: string[];
+  description?: string;
+  topMetrics?: Array<{ label: string; value: string | number }>;
   distributions?: Array<{ label: string; data: Record<string, unknown> }>;
 }
 

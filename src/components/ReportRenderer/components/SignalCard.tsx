@@ -17,10 +17,10 @@ export default function SignalCard({ data }: { data: SignalCardData }) {
         return (
           <div
             key={i}
-            className="bg-white border border-gray-200 rounded-xl p-4"
+            className="bg-report-card border border-report-border rounded-card p-4 shadow-card"
           >
             <div className="flex items-start justify-between gap-2 mb-3">
-              <span className="font-semibold text-sm text-gray-900 leading-snug">
+              <span className="font-semibold text-sm text-report-text-primary leading-snug">
                 {signal.signalName}
               </span>
               {signal.badge && (
@@ -31,9 +31,9 @@ export default function SignalCard({ data }: { data: SignalCardData }) {
               {signal.bullets.map((bullet, j) => (
                 <li
                   key={j}
-                  className="flex items-start gap-1.5 text-xs text-gray-600"
+                  className="flex items-start gap-1.5 text-xs text-report-text-secondary"
                 >
-                  <span className="mt-1.5 w-1 h-1 rounded-full bg-gray-400 shrink-0" />
+                  <span className="mt-1.5 w-1 h-1 rounded-full bg-report-text-muted shrink-0" />
                   {bullet}
                 </li>
               ))}

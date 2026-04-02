@@ -37,19 +37,19 @@ export default function TabGridLayout({ report, agent }: Props) {
       {/* Page header */}
       <div className="flex items-start justify-between mb-6">
         <div>
-          <h2 className="text-xl font-semibold text-gray-900">{agent.name}</h2>
-          <p className="text-sm text-gray-500 mt-1">{agent.description}</p>
+          <h2 className="text-xl font-semibold text-report-text-primary">{agent.name}</h2>
+          <p className="text-sm text-report-text-secondary mt-1">{agent.description}</p>
         </div>
         <Chip type="outline" size="medium" text="내보내기" radius="rounded-2" />
       </div>
 
       {/* Executive Summary */}
       {report.executiveSummary?.keyFindings?.length > 0 && (
-        <div className="bg-white border border-gray-200 rounded-xl p-5 mb-6">
-          <h3 className="font-semibold text-gray-900 mb-3">Executive Summary</h3>
+        <div className="bg-report-card border border-report-border rounded-card p-5 mb-6 shadow-card">
+          <h3 className="font-semibold text-report-text-primary mb-3">Executive Summary</h3>
           <ul className="space-y-2">
             {report.executiveSummary.keyFindings.map((finding, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
+              <li key={i} className="flex items-start gap-3 text-sm text-report-text-primary">
                 <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-gray-900 text-white text-xs flex items-center justify-center font-bold">
                   {i + 1}
                 </span>
@@ -89,13 +89,13 @@ export default function TabGridLayout({ report, agent }: Props) {
               }`}
             >
               <div className="flex items-center justify-between mb-2">
-                <h4 className="text-sm font-semibold text-gray-700">
+                <h4 className="text-sm font-semibold text-report-text-secondary">
                   {sectionDef.label}
                 </h4>
                 {sectionDef.hasViewDetail && (
                   <button
                     onClick={() => openDetail(sectionDef.id)}
-                    className="text-xs text-gray-500 underline hover:text-gray-700"
+                    className="text-xs text-report-text-muted underline hover:text-report-text-secondary"
                   >
                     View Detail →
                   </button>
