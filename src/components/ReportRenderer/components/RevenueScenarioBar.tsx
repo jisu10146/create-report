@@ -1,100 +1,90 @@
 "use client";
 
-import { ResponsiveBar } from "@nivo/bar";
 import type { RevenueScenarioBarData } from "@/types";
-import { CHART_SPECS } from "@/lib/report-chart-spec";
-import { reportNivoTheme } from "@/lib/report-nivo-theme";
 
-const spec = CHART_SPECS["RevenueScenarioBar:default"];
-const SCENARIO_COLORS: Record<string, string> = Object.fromEntries(
-  spec.series.map((s) => [s.name, s.color])
-);
+/**
+ * RevenueScenarioBar — 피그마 bar graph (Revenue) (6:1769)
+ *
+ * 카드: bg #ffffff, radius 16, padding 40/60, gap 40 (vertical)
+ * 내부: horizontal, gap 32, 3개 Bar Container
+ * Bar Container: vertical, padding 10/40/0/40, gap 20
+ *   - label: vertical, gap 16
+ *     - Badge: radius 8, pad 4/8, bg #f0f0f2
+ *     - details: 18px/400 #171719
+ *     - highlight: 18px/600 #171719
+ *   - Bar: vertical, gap 12
+ *     - 배경 Bar: bg #f7f7f8
+ *     - 실제 Bar: 높이 비례
+ *   - Bar Label: 16px/400 #171719
+ *
+ * 색상: Upside=#2b7fff, Base=#7ccf00, Downside=#e6e7e9
+ */
+
+const SCENARIO_COLORS: Record<string, string> = {
+  Upside: "#2b7fff",
+  Base: "#7ccf00",
+  Downside: "#e6e7e9",
+};
+
+const MAX_BAR_HEIGHT = 200;
 
 export default function RevenueScenarioBar({ data }: { data: RevenueScenarioBarData }) {
-  const chartData = [...data.scenarios].reverse().map((s) => ({
-    label: s.label,
-    value: s.value,
-    description: s.description ?? "",
-  }));
-
-  const maxVal = Math.max(...data.scenarios.map((s) => s.value));
+  const maxVal = Math.max(...data.scenarios.map((s) => s.value), 1);
 
   return (
-    <div className="bg-report-card border border-report-border rounded-card p-5 shadow-card">
-      <div style={{ height: Math.max(chartData.length * 64, 160) }}>
-        <ResponsiveBar
-          data={chartData}
-          keys={["value"]}
-          indexBy="label"
-          layout="horizontal"
-          margin={{ top: 0, right: 80, bottom: 0, left: 100 }}
-          padding={0.4}
-          valueScale={{ type: "linear", min: 0, max: maxVal * 1.15 }}
-          colors={(bar) => {
-            const d = bar.data as (typeof chartData)[number];
-            return SCENARIO_COLORS[d.label] ?? "#9ca3af";
-          }}
-          borderRadius={6}
-          enableGridX={false}
-          enableGridY={false}
-          axisTop={null}
-          axisRight={null}
-          axisBottom={null}
-          axisLeft={{
-            tickSize: 0,
-            tickPadding: 16,
-          }}
-          label={(d) => {
-            const unit = data.unit ? ` ${data.unit}` : "";
-            return `${d.value}${unit}`;
-          }}
-          labelSkipWidth={32}
-          labelTextColor={"#ffffff"}
-          tooltip={({ value, indexValue }) => {
-            const scenario = data.scenarios.find((s) => s.label === indexValue);
-            return (
-              <div className="bg-report-card shadow-elevated rounded-sm px-3 py-2 text-sm border border-report-border">
-                <strong>{indexValue}</strong>: {value}
-                {data.unit && ` ${data.unit}`}
-                {scenario?.description && (
-                  <p className="text-report-text-secondary text-xs mt-1">{scenario.description}</p>
+    <div className="bg-report-card rounded-card px-[60px] py-[40px]">
+      <div className="flex gap-[32px]">
+        {data.scenarios.map((scenario, i) => {
+          const barHeight = Math.round((scenario.value / maxVal) * MAX_BAR_HEIGHT);
+          const color = SCENARIO_COLORS[scenario.label] ?? "#e6e7e9";
+
+          return (
+            <div
+              key={i}
+              className="flex-1 flex flex-col gap-[20px] px-[40px] pt-[10px]"
+            >
+              {/* Label area */}
+              <div className="flex flex-col gap-[16px]">
+                {scenario.badge && (
+                  <span className="self-start inline-flex items-center text-[14px] font-medium leading-[20px] rounded-[8px] px-[8px] py-[4px] bg-[#f0f0f2] text-report-text-secondary">
+                    {scenario.badge}
+                  </span>
                 )}
+                <div className="flex flex-col">
+                  {scenario.details?.map((detail, j) => (
+                    <span key={j} className="text-[18px] font-normal leading-[26px] text-report-text-primary">
+                      {detail}
+                    </span>
+                  ))}
+                  {scenario.highlight && (
+                    <span className="text-[18px] font-semibold leading-[26px] text-report-text-primary">
+                      {scenario.highlight}
+                    </span>
+                  )}
+                </div>
               </div>
-            );
-          }}
-          theme={{
-            ...reportNivoTheme,
-            axis: {
-              ...reportNivoTheme.axis,
-              ticks: {
-                ...reportNivoTheme.axis?.ticks,
-                text: {
-                  ...(reportNivoTheme.axis?.ticks?.text as object),
-                  fontWeight: 600,
-                },
-              },
-            },
-          }}
-          animate={true}
-          motionConfig="gentle"
-        />
+
+              {/* Bar */}
+              <div className="flex flex-col gap-[12px]">
+                <div
+                  className="relative w-full rounded-[4px] bg-[#f7f7f8]"
+                  style={{ height: MAX_BAR_HEIGHT }}
+                >
+                  <div
+                    className="absolute bottom-0 left-0 right-0 rounded-[4px]"
+                    style={{ height: barHeight, backgroundColor: color }}
+                  />
+                </div>
+              </div>
+
+              {/* Bar Label */}
+              <span className="text-[16px] font-normal leading-[24px] text-report-text-primary">
+                {scenario.label} scenario
+              </span>
+            </div>
+          );
+        })}
       </div>
-      {/* Descriptions below chart */}
-      {data.scenarios.some((s) => s.description) && (
-        <div className="mt-3 space-y-1">
-          {data.scenarios.map((s) =>
-            s.description ? (
-              <p key={s.label} className="text-xs text-report-text-secondary">
-                <span
-                  className="inline-block w-2 h-2 rounded-full mr-1.5"
-                  style={{ backgroundColor: SCENARIO_COLORS[s.label] ?? "#9ca3af" }}
-                />
-                <span className="font-medium text-report-text-primary">{s.label}:</span> {s.description}
-              </p>
-            ) : null
-          )}
-        </div>
-      )}
     </div>
   );
 }

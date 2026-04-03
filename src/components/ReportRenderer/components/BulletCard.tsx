@@ -1,5 +1,4 @@
 import type { BulletCardData } from "@/types";
-import BulletText from "./BulletText";
 
 export default function BulletCard({ data }: { data: BulletCardData }) {
   return (
@@ -20,7 +19,14 @@ export default function BulletCard({ data }: { data: BulletCardData }) {
 
         {/* 오른쪽: bullet 리스트 */}
         <div className="flex-1">
-          <BulletText items={data.bullets} />
+          <ul className="flex flex-col gap-[8px]">
+            {data.bullets.map((bullet, i) => (
+              <li key={i} className="flex items-start gap-[8px] text-[16px] leading-[24px] text-report-text-primary">
+                <span className="mt-[10px] w-[4px] h-[4px] rounded-full bg-report-text-muted shrink-0" />
+                {bullet}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>

@@ -1,0 +1,5536 @@
+{
+  "id": "2:74",
+  "name": "User Card",
+  "type": "FRAME",
+  "scrollBehavior": "SCROLLS",
+  "boundVariables": {
+    "fills": [
+      {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:71b8a1024dfacdcd906d5f0cadcc8c0f97d52490/7470:2504"
+      }
+    ],
+    "strokes": [
+      {
+        "type": "VARIABLE_ALIAS",
+        "id": "VariableID:14d64190499728257b0c314168bc472ba0962da5/7470:2813"
+      }
+    ]
+  },
+  "children": [
+    {
+      "id": "2:75",
+      "name": "User",
+      "type": "FRAME",
+      "scrollBehavior": "SCROLLS",
+      "children": [
+        {
+          "id": "2:76",
+          "name": "icon",
+          "type": "FRAME",
+          "scrollBehavior": "SCROLLS",
+          "boundVariables": {
+            "fills": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:4bc1a162ed1e333b41ca9ad7a185d7ef80287aa0/7470:2732"
+              }
+            ],
+            "strokes": [
+              {
+                "type": "VARIABLE_ALIAS",
+                "id": "VariableID:d9fa3a0b63a39d53d9223a84906a0fd764f8d46f/7470:2507"
+              }
+            ]
+          },
+          "children": [
+            {
+              "id": "2:77",
+              "name": "icon_identity-platform",
+              "type": "INSTANCE",
+              "scrollBehavior": "SCROLLS",
+              "componentId": "1:5983",
+              "componentProperties": {
+                "Size": {
+                  "value": "24",
+                  "type": "VARIANT",
+                  "boundVariables": {}
+                },
+                "Fill": {
+                  "value": "False",
+                  "type": "VARIANT",
+                  "boundVariables": {}
+                }
+              },
+              "overrides": [
+                {
+                  "id": "I2:77;8423:1841",
+                  "overriddenFields": [
+                    "fills"
+                  ]
+                }
+              ],
+              "children": [
+                {
+                  "id": "I2:77;8423:1841",
+                  "name": "Vector",
+                  "type": "VECTOR",
+                  "scrollBehavior": "SCROLLS",
+                  "boundVariables": {
+                    "fills": [
+                      {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:e01d3f4e299ad1c0d60161e23e8230c0665979c1/7470:2762"
+                      }
+                    ]
+                  },
+                  "blendMode": "PASS_THROUGH",
+                  "fills": [
+                    {
+                      "blendMode": "NORMAL",
+                      "type": "SOLID",
+                      "color": {
+                        "r": 0.48235294222831726,
+                        "g": 0.4941176474094391,
+                        "b": 0.5215686559677124,
+                        "a": 1.0
+                      },
+                      "boundVariables": {
+                        "color": {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:e01d3f4e299ad1c0d60161e23e8230c0665979c1/7470:2762"
+                        }
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "strokeWeight": 0.02500000037252903,
+                  "strokeAlign": "INSIDE",
+                  "absoluteBoundingBox": {
+                    "x": 2855.5,
+                    "y": 2360.3828125,
+                    "width": 17.0,
+                    "height": 19.234500885009766
+                  },
+                  "absoluteRenderBounds": {
+                    "x": 2855.5,
+                    "y": 2360.3828125,
+                    "width": 17.0,
+                    "height": 19.234619140625
+                  },
+                  "constraints": {
+                    "vertical": "SCALE",
+                    "horizontal": "SCALE"
+                  },
+                  "effects": [],
+                  "interactions": [],
+                  "complexStrokeProperties": {
+                    "strokeType": "BASIC"
+                  }
+                }
+              ],
+              "blendMode": "PASS_THROUGH",
+              "clipsContent": true,
+              "background": [
+                {
+                  "blendMode": "NORMAL",
+                  "visible": false,
+                  "type": "SOLID",
+                  "color": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  }
+                }
+              ],
+              "fills": [
+                {
+                  "blendMode": "NORMAL",
+                  "visible": false,
+                  "type": "SOLID",
+                  "color": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  }
+                }
+              ],
+              "strokes": [],
+              "strokeWeight": 1.0,
+              "strokeAlign": "INSIDE",
+              "backgroundColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+              },
+              "absoluteBoundingBox": {
+                "x": 2852.0,
+                "y": 2358.0,
+                "width": 24.0,
+                "height": 24.0
+              },
+              "absoluteRenderBounds": {
+                "x": 2852.0,
+                "y": 2358.0,
+                "width": 24.0,
+                "height": 24.0
+              },
+              "constraints": {
+                "vertical": "TOP",
+                "horizontal": "LEFT"
+              },
+              "effects": [],
+              "interactions": [],
+              "complexStrokeProperties": {
+                "strokeType": "BASIC"
+              }
+            }
+          ],
+          "blendMode": "PASS_THROUGH",
+          "clipsContent": true,
+          "background": [
+            {
+              "blendMode": "NORMAL",
+              "type": "SOLID",
+              "color": {
+                "r": 0.9686274528503418,
+                "g": 0.9686274528503418,
+                "b": 0.9725490212440491,
+                "a": 1.0
+              },
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:4bc1a162ed1e333b41ca9ad7a185d7ef80287aa0/7470:2732"
+                }
+              }
+            }
+          ],
+          "fills": [
+            {
+              "blendMode": "NORMAL",
+              "type": "SOLID",
+              "color": {
+                "r": 0.9686274528503418,
+                "g": 0.9686274528503418,
+                "b": 0.9725490212440491,
+                "a": 1.0
+              },
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:4bc1a162ed1e333b41ca9ad7a185d7ef80287aa0/7470:2732"
+                }
+              }
+            }
+          ],
+          "strokes": [
+            {
+              "blendMode": "NORMAL",
+              "type": "SOLID",
+              "color": {
+                "r": 0.9019607901573181,
+                "g": 0.9058823585510254,
+                "b": 0.9137254953384399,
+                "a": 1.0
+              },
+              "boundVariables": {
+                "color": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:d9fa3a0b63a39d53d9223a84906a0fd764f8d46f/7470:2507"
+                }
+              }
+            }
+          ],
+          "cornerRadius": 12.0,
+          "cornerSmoothing": 0.0,
+          "strokeWeight": 1.0,
+          "strokeAlign": "OUTSIDE",
+          "backgroundColor": {
+            "r": 0.9686274528503418,
+            "g": 0.9686274528503418,
+            "b": 0.9725490212440491,
+            "a": 1.0
+          },
+          "absoluteBoundingBox": {
+            "x": 2840.0,
+            "y": 2346.0,
+            "width": 48.0,
+            "height": 48.0
+          },
+          "absoluteRenderBounds": {
+            "x": 2839.0,
+            "y": 2345.0,
+            "width": 50.0,
+            "height": 50.0
+          },
+          "constraints": {
+            "vertical": "TOP",
+            "horizontal": "LEFT"
+          },
+          "layoutAlign": "INHERIT",
+          "layoutGrow": 0.0,
+          "layoutSizingHorizontal": "FIXED",
+          "layoutSizingVertical": "FIXED",
+          "effects": [],
+          "interactions": [],
+          "complexStrokeProperties": {
+            "strokeType": "BASIC"
+          }
+        },
+        {
+          "id": "2:78",
+          "name": "User",
+          "type": "FRAME",
+          "scrollBehavior": "SCROLLS",
+          "children": [
+            {
+              "id": "2:80",
+              "name": "Jung Minju",
+              "type": "TEXT",
+              "scrollBehavior": "SCROLLS",
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:d2d9b957187a983e72bee82711b28c6e053a1e86/7470:2666"
+                  }
+                ],
+                "lineHeight": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:ecf9614f600890d123e7980c3cf9e981d889191e/7525:1189"
+                  }
+                ],
+                "letterSpacing": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7403bfdb74e77b4aa10756489f7bd17eb0a1c72b/532:416"
+                  }
+                ],
+                "fontWeight": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:ac262566629936072fa57dceb560c924d3251c50/1930:385"
+                  }
+                ],
+                "fontFamily": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:2e4351b7d1e31bfc5ed1e078a87008196be7c855/4180:0"
+                  }
+                ],
+                "fontSize": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:0078e26e6f0e0f179169b2896d7e698144c0cf01/1930:45"
+                  }
+                ]
+              },
+              "blendMode": "PASS_THROUGH",
+              "fills": [
+                {
+                  "blendMode": "NORMAL",
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.09019608050584793,
+                    "g": 0.09019608050584793,
+                    "b": 0.09803921729326248,
+                    "a": 1.0
+                  },
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:d2d9b957187a983e72bee82711b28c6e053a1e86/7470:2666"
+                    }
+                  }
+                }
+              ],
+              "strokes": [],
+              "strokeWeight": 1.0,
+              "strokeAlign": "OUTSIDE",
+              "absoluteBoundingBox": {
+                "x": 2904.0,
+                "y": 2346.0,
+                "width": 724.0,
+                "height": 26.0
+              },
+              "absoluteRenderBounds": {
+                "x": 2904.439453125,
+                "y": 2351.658203125,
+                "width": 89.6484375,
+                "height": 17.12109375
+              },
+              "constraints": {
+                "vertical": "TOP",
+                "horizontal": "LEFT"
+              },
+              "layoutAlign": "STRETCH",
+              "layoutGrow": 0.0,
+              "layoutSizingHorizontal": "FILL",
+              "layoutSizingVertical": "HUG",
+              "characters": "Jung Minju",
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {},
+              "lineTypes": [
+                "NONE"
+              ],
+              "lineIndentations": [
+                0
+              ],
+              "style": {
+                "fontFamily": "Pretendard",
+                "fontPostScriptName": "Pretendard-SemiBold",
+                "fontStyle": "SemiBold",
+                "fontWeight": 600,
+                "textAutoResize": "HEIGHT",
+                "fontSize": 18.0,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0.0,
+                "lineHeightPx": 26.0,
+                "lineHeightPercent": 121.04019165039062,
+                "lineHeightPercentFontSize": 144.44444274902344,
+                "lineHeightUnit": "PIXELS"
+              },
+              "layoutVersion": 5,
+              "styles": {
+                "text": "1:766"
+              },
+              "effects": [],
+              "interactions": [],
+              "complexStrokeProperties": {
+                "strokeType": "BASIC"
+              }
+            },
+            {
+              "id": "2:81",
+              "name": "Text",
+              "type": "TEXT",
+              "scrollBehavior": "SCROLLS",
+              "boundVariables": {
+                "fills": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:ce46a47ee6be89acdd7ebeb957cb2b5051a1c79c/7470:2667"
+                  }
+                ],
+                "lineHeight": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:f5ea3e2e41672ba6ceffc4562d00030c4a8edb3a/7525:1187"
+                  }
+                ],
+                "letterSpacing": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:7403bfdb74e77b4aa10756489f7bd17eb0a1c72b/532:416"
+                  }
+                ],
+                "fontWeight": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:df676acf54be7dddbc161fc75bcb49e142f3350f/1930:314"
+                  }
+                ],
+                "fontFamily": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:2e4351b7d1e31bfc5ed1e078a87008196be7c855/4180:0"
+                  }
+                ],
+                "fontSize": [
+                  {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:4806fded066af8c2c5146631daf25ee9510f24a4/1930:27"
+                  }
+                ]
+              },
+              "blendMode": "PASS_THROUGH",
+              "fills": [
+                {
+                  "blendMode": "NORMAL",
+                  "type": "SOLID",
+                  "color": {
+                    "r": 0.48235294222831726,
+                    "g": 0.4941176474094391,
+                    "b": 0.5215686559677124,
+                    "a": 1.0
+                  },
+                  "boundVariables": {
+                    "color": {
+                      "type": "VARIABLE_ALIAS",
+                      "id": "VariableID:ce46a47ee6be89acdd7ebeb957cb2b5051a1c79c/7470:2667"
+                    }
+                  }
+                }
+              ],
+              "strokes": [],
+              "strokeWeight": 1.0,
+              "strokeAlign": "OUTSIDE",
+              "absoluteBoundingBox": {
+                "x": 2904.0,
+                "y": 2374.0,
+                "width": 724.0,
+                "height": 20.0
+              },
+              "absoluteRenderBounds": {
+                "x": 2905.09375,
+                "y": 2378.96484375,
+                "width": 166.783203125,
+                "height": 12.974609375
+              },
+              "constraints": {
+                "vertical": "TOP",
+                "horizontal": "LEFT"
+              },
+              "layoutAlign": "STRETCH",
+              "layoutGrow": 0.0,
+              "layoutSizingHorizontal": "FILL",
+              "layoutSizingVertical": "HUG",
+              "characters": "Female, Age 32, Developer",
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {},
+              "lineTypes": [
+                "NONE"
+              ],
+              "lineIndentations": [
+                0
+              ],
+              "style": {
+                "fontFamily": "Pretendard",
+                "fontPostScriptName": "Pretendard-Regular",
+                "fontStyle": "Regular",
+                "fontWeight": 400,
+                "textAutoResize": "HEIGHT",
+                "fontSize": 14.0,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0.0,
+                "lineHeightPx": 20.0,
+                "lineHeightPercent": 119.71007537841797,
+                "lineHeightPercentFontSize": 142.85714721679688,
+                "lineHeightUnit": "PIXELS"
+              },
+              "layoutVersion": 5,
+              "styles": {
+                "text": "1:124"
+              },
+              "effects": [],
+              "interactions": [],
+              "complexStrokeProperties": {
+                "strokeType": "BASIC"
+              }
+            }
+          ],
+          "blendMode": "PASS_THROUGH",
+          "clipsContent": false,
+          "background": [],
+          "fills": [],
+          "strokes": [],
+          "strokeWeight": 1.0,
+          "strokeAlign": "INSIDE",
+          "backgroundColor": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "layoutMode": "VERTICAL",
+          "counterAxisSizingMode": "FIXED",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 2.0,
+          "layoutWrap": "NO_WRAP",
+          "absoluteBoundingBox": {
+            "x": 2904.0,
+            "y": 2346.0,
+            "width": 724.0,
+            "height": 48.0
+          },
+          "absoluteRenderBounds": {
+            "x": 2904.0,
+            "y": 2346.0,
+            "width": 724.0,
+            "height": 48.0
+          },
+          "constraints": {
+            "vertical": "TOP",
+            "horizontal": "LEFT"
+          },
+          "layoutAlign": "INHERIT",
+          "layoutGrow": 1.0,
+          "layoutSizingHorizontal": "FILL",
+          "layoutSizingVertical": "HUG",
+          "effects": [],
+          "interactions": [],
+          "complexStrokeProperties": {
+            "strokeType": "BASIC"
+          }
+        }
+      ],
+      "blendMode": "PASS_THROUGH",
+      "clipsContent": false,
+      "background": [],
+      "fills": [],
+      "strokes": [],
+      "strokeWeight": 1.0,
+      "strokeAlign": "INSIDE",
+      "backgroundColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "layoutMode": "HORIZONTAL",
+      "primaryAxisSizingMode": "FIXED",
+      "counterAxisAlignItems": "CENTER",
+      "itemSpacing": 16.0,
+      "layoutWrap": "NO_WRAP",
+      "absoluteBoundingBox": {
+        "x": 2840.0,
+        "y": 2346.0,
+        "width": 788.0,
+        "height": 48.0
+      },
+      "absoluteRenderBounds": {
+        "x": 2839.0,
+        "y": 2345.0,
+        "width": 789.0,
+        "height": 50.0
+      },
+      "constraints": {
+        "vertical": "TOP",
+        "horizontal": "LEFT"
+      },
+      "layoutAlign": "STRETCH",
+      "layoutGrow": 0.0,
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "effects": [],
+      "interactions": [],
+      "complexStrokeProperties": {
+        "strokeType": "BASIC"
+      }
+    },
+    {
+      "id": "2:82",
+      "name": "Divider",
+      "type": "VECTOR",
+      "scrollBehavior": "SCROLLS",
+      "boundVariables": {
+        "strokes": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:19b20d8805b8e85dfc68187fdeaadf366a19066b/7470:2719"
+          }
+        ]
+      },
+      "blendMode": "PASS_THROUGH",
+      "fills": [],
+      "strokes": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.9019607901573181,
+            "g": 0.9058823585510254,
+            "b": 0.9137254953384399,
+            "a": 1.0
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:19b20d8805b8e85dfc68187fdeaadf366a19066b/7470:2719"
+            }
+          }
+        }
+      ],
+      "strokeWeight": 1.0,
+      "strokeAlign": "CENTER",
+      "absoluteBoundingBox": {
+        "x": 2840.0,
+        "y": 2414.0,
+        "width": 788.0,
+        "height": 0.0
+      },
+      "absoluteRenderBounds": {
+        "x": 2840.0,
+        "y": 2413.5,
+        "width": 788.0,
+        "height": 1.0
+      },
+      "constraints": {
+        "vertical": "TOP",
+        "horizontal": "LEFT"
+      },
+      "layoutAlign": "STRETCH",
+      "layoutGrow": 0.0,
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "FIXED",
+      "effects": [],
+      "interactions": [],
+      "complexStrokeProperties": {
+        "strokeType": "BASIC"
+      }
+    },
+    {
+      "id": "2:83",
+      "name": "Text",
+      "type": "TEXT",
+      "scrollBehavior": "SCROLLS",
+      "boundVariables": {
+        "fills": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:8cf8cd17c80026852ed2ab6435d35d0ad4455a3f/7470:2761"
+          }
+        ],
+        "lineHeight": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:812f4e8ba1807c58a63df31e2b8d39b6283b2b3e/7525:1188"
+          }
+        ],
+        "letterSpacing": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:7403bfdb74e77b4aa10756489f7bd17eb0a1c72b/532:416"
+          }
+        ],
+        "fontWeight": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:df676acf54be7dddbc161fc75bcb49e142f3350f/1930:314"
+          }
+        ],
+        "fontFamily": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:2e4351b7d1e31bfc5ed1e078a87008196be7c855/4180:0"
+          }
+        ],
+        "fontSize": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:e772f87b3c9228009c491e31f53b72523ad6ecff/1930:36"
+          }
+        ]
+      },
+      "blendMode": "PASS_THROUGH",
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.09019608050584793,
+            "g": 0.09019608050584793,
+            "b": 0.09803921729326248,
+            "a": 1.0
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:8cf8cd17c80026852ed2ab6435d35d0ad4455a3f/7470:2761"
+            }
+          }
+        }
+      ],
+      "strokes": [],
+      "strokeWeight": 1.0,
+      "strokeAlign": "OUTSIDE",
+      "absoluteBoundingBox": {
+        "x": 2840.0,
+        "y": 2434.0,
+        "width": 788.0,
+        "height": 48.0
+      },
+      "absoluteRenderBounds": {
+        "x": 2840.671875,
+        "y": 2439.265625,
+        "width": 761.640625,
+        "height": 40.09375
+      },
+      "constraints": {
+        "vertical": "TOP",
+        "horizontal": "LEFT"
+      },
+      "layoutAlign": "STRETCH",
+      "layoutGrow": 0.0,
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "characters": "Selected $10\u2013$14.99. Uses the service daily during work hours and values stable performance and content quality. Willing to pay slightly more for a reliable, ad-free experience.",
+      "characterStyleOverrides": [],
+      "styleOverrideTable": {},
+      "lineTypes": [
+        "NONE"
+      ],
+      "lineIndentations": [
+        0
+      ],
+      "style": {
+        "fontFamily": "Pretendard",
+        "fontPostScriptName": "Pretendard-Regular",
+        "fontStyle": "Regular",
+        "fontWeight": 400,
+        "textAutoResize": "HEIGHT",
+        "fontSize": 16.0,
+        "textAlignHorizontal": "LEFT",
+        "textAlignVertical": "TOP",
+        "letterSpacing": 0.0,
+        "lineHeightPx": 24.0,
+        "lineHeightPercent": 125.69558715820312,
+        "lineHeightPercentFontSize": 150.0,
+        "lineHeightUnit": "PIXELS"
+      },
+      "layoutVersion": 5,
+      "styles": {
+        "text": "1:1557"
+      },
+      "effects": [],
+      "interactions": [],
+      "complexStrokeProperties": {
+        "strokeType": "BASIC"
+      }
+    },
+    {
+      "id": "2:84",
+      "name": "Button/\bSolid ",
+      "type": "INSTANCE",
+      "scrollBehavior": "SCROLLS",
+      "boundVariables": {
+        "paddingLeft": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:b7125f4442592c189c33801eebdb516f7333fd17/10055:45"
+        },
+        "paddingTop": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:fea885a367aa3346a1f42152bacf1329b43f69d1/10055:43"
+        },
+        "paddingRight": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:b7125f4442592c189c33801eebdb516f7333fd17/10055:45"
+        },
+        "paddingBottom": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:fea885a367aa3346a1f42152bacf1329b43f69d1/10055:43"
+        },
+        "rectangleCornerRadii": {
+          "RECTANGLE_TOP_LEFT_CORNER_RADIUS": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:95eb50afda67e44c3f63e57a0847b6c8e2d6b07b/10055:61"
+          },
+          "RECTANGLE_TOP_RIGHT_CORNER_RADIUS": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:95eb50afda67e44c3f63e57a0847b6c8e2d6b07b/10055:61"
+          },
+          "RECTANGLE_BOTTOM_LEFT_CORNER_RADIUS": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:95eb50afda67e44c3f63e57a0847b6c8e2d6b07b/10055:61"
+          },
+          "RECTANGLE_BOTTOM_RIGHT_CORNER_RADIUS": {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:95eb50afda67e44c3f63e57a0847b6c8e2d6b07b/10055:61"
+          }
+        },
+        "fills": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:4bc1a162ed1e333b41ca9ad7a185d7ef80287aa0/7470:2732"
+          }
+        ],
+        "strokes": [
+          {
+            "type": "VARIABLE_ALIAS",
+            "id": "VariableID:14d64190499728257b0c314168bc472ba0962da5/7470:2813"
+          }
+        ]
+      },
+      "explicitVariableModes": {
+        "VariableCollectionId:2e03cbe48368eaeee9746b406e6f871b5de60ca1/7470:2503": "532:1"
+      },
+      "componentId": "1:3001",
+      "componentProperties": {
+        " \u2517 Trailing Icon(16)#7514:681": {
+          "type": "INSTANCE_SWAP",
+          "value": "1:58",
+          "preferredValues": [
+            {
+              "type": "COMPONENT_SET",
+              "key": "16bc59f706f74fd46b03f84702d35d27fe80921f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bfc661d2f13d55f4bfe9c44f5c5ed4f1e482e9ea"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a7015456f2986e78e4ae6ad4e6908f8c82478b5c"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "351b04063a6cd4e5ffc6058d9919faa1e9c5cebc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "dfa98cc5b007f8249e54338f25bcff9078933876"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7b24143d416dd87f694fb98826d1fe7d158ea948"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "788c058d58c525099ad0736a4ded107f94b07138"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "cc65c3a9c68a6afc94c3769319c81e2551144724"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "626075d4c86cdbcc7c5053ede7ae91c774c9bf3f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "da60d3c490a9063a1edd1cc0e5bf87e8553d7619"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b942fe7811bb6f32f46170348d6c3c839c28cf78"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "28dc820125e90e23978e48dba4602bce249b2cc6"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "03790e7da4434c33bb0fb33e6c7a956338481d51"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "053762c1f01625ad9628f596e2c462a1d4aff8ab"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "4bc8db10187bee90103c040fbbd624e3ca0bb307"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d7b2ed5b997c3ba6359387614f6b77b22f50dc64"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "937ce317c098aef9050fb9051315eb70538fb7bc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ace23ca66be973835132642065e473589f7ad40e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "16052bbc5d0e45bb7b732274d317d4587b5cdec4"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "670af94a386cd718d232a3e480107f938f17bd67"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "acdad833abdf6252a95f0ec49724e0eb19d9d566"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a535bcbf875bdf1bbfb4876b972fab61015db138"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d995296db02fdfd068b812d7c88d5aa03f209260"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9d0d80bd7e223a3840e0320f32e5b18dcc395718"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "864afcc7f896c34db3c01af3b2554ed0ffc65098"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f18544c86fe29774124171bb62a46b0233bc14ed"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b84725bfac51e147cefa3eeb6c7eb9eeb05a31c7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "18f93cdab4568b6db6b2d41549072082df99ed08"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b67a6e6f455b71b170ef37e9cb41f43a89c3087b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "c85aaef50b495a1b2ffc89dcd30cf966c3723f72"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9c47199482fb5826ce49ea2f61c843b8192f5b90"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "21d7279bdd826a00409774e7720cc6e846f4f1ad"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ff686e8799271bfb5e4c8b3dc6d806d88fe0cb50"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ff91b25916859d2f8db0df27be575b9e2781b965"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7b8eb3be4ea99b7fa6ab8a793d090cdf38724d8f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "adcb608e50b2f18c1eadf175364ebd91851edddf"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "4487ce6f27a3de9036884c96b0f60c0a46f906c3"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "c675c20c69730b48211733aad5ec44f34d217edd"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "47de2bba2781b2b90e6d34da73efe17241c19896"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e1bd90b456447dc4b82244d726f272aa2f5b2a59"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d9afc05917a8c498964c410c801cb7f06b5ec6ab"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "3b1799107b7fd3684757f024bf5e1e66585f84b1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "66074cb313137da53d3c1ab3fef1b6472a21158d"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "36912614723c46d0e83d99988499175eadd38e90"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "2aa6bf69f27ce8434e0970dc9ebb0e1a083ab5cc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e3a4bb589f74bfc5afb452cadaacae65a2347ab1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "3124e200411e9928a88a82aab125a827e43a8663"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "05255da45662e7df39aecd20e9d2bf93db1b4993"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "89cb35d3ebfc65ee82cca1744c51a12259eafb2e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5b351c420afdd7c1b197cf686f46d1f4d9717639"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "3b6fc52c4c7dc3afee17357e89078c9fdc780bb7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e7c6d8c9571cf22553b66376072ee9a28a869539"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f91b4c078c2f80e58ad4d718d018cac73ba485a4"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "07b6e68b2aa2dfd0a86011389161ccf0a2254be5"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bc139d34230718eb07a4ebbcc34c9e48c91b161b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "15985c1df19ff7da2d3c20a0a53206b7fdeb5365"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a8d33d4ebaa9cda75fb554eecabc2a031b0656db"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7ffe558e6592403029916e4c7c0e691f64efe1b7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e8c93db9cae2b38e6afa8b4a63185e6bd0ed3e47"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "1f158ed8f60f0899c8c8ff55a269504204af452f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5f3addb4c1a9533d33fcd235e4c02f4dc01b159c"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7a0f5b2cedd548dfca5c084baddd13efd7e38ef2"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "61eb31259bcdad4efa0d62491b83dabcaed3685e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "76f0d95f1bb3e18ff064cfbf65a5a133912317cc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "13a196468ef02ce741aa2993f6577892bc9a44a1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "1c085e87df88480a6afec4bae6925ae53eacaf54"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "8d02a8a242ff6fc6606d50ebf7cbd66abaa537b7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "8c5a93aa1fe8674b1e7de4873249c6756287f15b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "18fdeff36fbf3154ac67dc3b06dbdd3e8c0c4c4f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "4eb985a445b38a151aafde5682d62e97038d57e8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "60a396afa57e46ba2ddd337c526b063244a819ba"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "07109c1302e734c1e0971cc1a365c7f793fea086"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "dd43c363a9d8b5a07a4ab2a880c51f4576e32081"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "1982f9fcd722d3453b90a18efcdb47e461f2794a"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9aa3d3b2b246e7677e136b8611a852028de198cf"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f856a5d6ae7fc8b17d2c04c28be507ec1ffd18c7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a519756c3368caf485fe185c694288f77c8470b9"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "fa357ec41db0f137753791595eeab8dfcb5d5c3d"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ab651db5b1fb7ce7c817a441689ec2d3c63653ce"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9d0c581aa35873c6349cf54f088e9250261c9ead"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "074308b8ba66d9a0180175358af9cd3ec5ac942b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d8463f4ca9124f9fff5c13398638cfedb503cb89"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b49948f7371c9a09cbc2be55fbfa6c6c1800c569"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "fbf9177f7fce2c271e88eb11a734d021006b8bae"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bc77bd0b1cba43d6c004a209d9ec2f45af09ae57"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d33b92eebdd62cfb92a1b43a1b1d201f53de2dc4"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "698ec48d3ff2dbe63b1caa4eac3f9e4760d0540c"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9a6a3b9dc391763629dc0edb5974b8b70747091a"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d20059cec9444e5b840eb3f10936ec21f93227ac"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bdb1b9c99f504935c3bc2432abdb0344805542cd"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "096ed87e7f103923b2222251e1991865d22b5cf1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "fdc7c423a7b6f33c663d578e81d4c0cc544cfca8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5110ae565dfc28f0f683788e3f7e2e95bcf603c8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bcfb45743ea23bb254d22cf039a0f04331bf9878"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "0c20146cc1a00dc0fa732b4283cbed8e4ac24d14"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e5622066d4074d1603bba2d953ebe5dc26e88271"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "87173bca15cfd8940cd265d4f26ac5889aef71cd"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "6de0388f1b0cf947f8283d64423f6caaf7173b79"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9e5160103620ab7cdee5bb82c6b5e6bd08c8e668"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "6ec5b977d4182f33faf421a1e104eb0058262209"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "18c3369ba3eb0b26ca217373ee24a1ea294dd80e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "c478e86af30f57146f10c6e2604c6026d4b247aa"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "12d9a089debc56558abfd9350f2cf6232f06e974"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "8eff5a3ffb51488a77dc7e59f44034aacd1c66fc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ee903d989e3c3dd955f798368178e68dcd630884"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d119c402840450bdd38c832f1b877e2450f726b8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "28fa59e21dcef186aa5dd12262dfd0756f0b961b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "26a8fd606e79e31dc149627a2df1c7ce0b4ce743"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f3dbd63facd41651213b4da5e93841a0a11f5dd2"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "639c4827e222e6299247d700828b559a0fccdd80"
+            }
+          ]
+        },
+        " \u2517 Leading Icon(16)#7514:590": {
+          "type": "INSTANCE_SWAP",
+          "value": "1:58",
+          "preferredValues": [
+            {
+              "type": "COMPONENT_SET",
+              "key": "1c085e87df88480a6afec4bae6925ae53eacaf54"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "60a396afa57e46ba2ddd337c526b063244a819ba"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "16bc59f706f74fd46b03f84702d35d27fe80921f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bfc661d2f13d55f4bfe9c44f5c5ed4f1e482e9ea"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a7015456f2986e78e4ae6ad4e6908f8c82478b5c"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "351b04063a6cd4e5ffc6058d9919faa1e9c5cebc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "dfa98cc5b007f8249e54338f25bcff9078933876"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7b24143d416dd87f694fb98826d1fe7d158ea948"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "788c058d58c525099ad0736a4ded107f94b07138"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "cc65c3a9c68a6afc94c3769319c81e2551144724"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "626075d4c86cdbcc7c5053ede7ae91c774c9bf3f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "da60d3c490a9063a1edd1cc0e5bf87e8553d7619"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b942fe7811bb6f32f46170348d6c3c839c28cf78"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "28dc820125e90e23978e48dba4602bce249b2cc6"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "03790e7da4434c33bb0fb33e6c7a956338481d51"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "053762c1f01625ad9628f596e2c462a1d4aff8ab"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "4bc8db10187bee90103c040fbbd624e3ca0bb307"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d7b2ed5b997c3ba6359387614f6b77b22f50dc64"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "8a371a28af007ceda035ca4006755ffe83ec7129"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "937ce317c098aef9050fb9051315eb70538fb7bc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ace23ca66be973835132642065e473589f7ad40e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "16052bbc5d0e45bb7b732274d317d4587b5cdec4"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b6389e5c1e22810ca068cd2a51de77a466d5ba29"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "670af94a386cd718d232a3e480107f938f17bd67"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "acdad833abdf6252a95f0ec49724e0eb19d9d566"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a535bcbf875bdf1bbfb4876b972fab61015db138"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d995296db02fdfd068b812d7c88d5aa03f209260"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9d0d80bd7e223a3840e0320f32e5b18dcc395718"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "864afcc7f896c34db3c01af3b2554ed0ffc65098"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "90a0a180fc3164a0eeba127e403e34b65a48026f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f18544c86fe29774124171bb62a46b0233bc14ed"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b84725bfac51e147cefa3eeb6c7eb9eeb05a31c7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "18f93cdab4568b6db6b2d41549072082df99ed08"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b67a6e6f455b71b170ef37e9cb41f43a89c3087b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "c85aaef50b495a1b2ffc89dcd30cf966c3723f72"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9c47199482fb5826ce49ea2f61c843b8192f5b90"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "21d7279bdd826a00409774e7720cc6e846f4f1ad"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ff686e8799271bfb5e4c8b3dc6d806d88fe0cb50"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ff91b25916859d2f8db0df27be575b9e2781b965"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7b8eb3be4ea99b7fa6ab8a793d090cdf38724d8f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "36be8e24794f1d82c6b4f0cc6b8ca7db14eea0a8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ff3580daf81e1a7deb4a571ce2203d990580145f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "adcb608e50b2f18c1eadf175364ebd91851edddf"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "4487ce6f27a3de9036884c96b0f60c0a46f906c3"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "c675c20c69730b48211733aad5ec44f34d217edd"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "47de2bba2781b2b90e6d34da73efe17241c19896"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e1bd90b456447dc4b82244d726f272aa2f5b2a59"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d9afc05917a8c498964c410c801cb7f06b5ec6ab"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "3b1799107b7fd3684757f024bf5e1e66585f84b1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "2c45580cf8b95e208094556f35e0ee31d62e2e28"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "66074cb313137da53d3c1ab3fef1b6472a21158d"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "639c4827e222e6299247d700828b559a0fccdd80"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "36912614723c46d0e83d99988499175eadd38e90"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "2aa6bf69f27ce8434e0970dc9ebb0e1a083ab5cc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e3a4bb589f74bfc5afb452cadaacae65a2347ab1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "3124e200411e9928a88a82aab125a827e43a8663"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "05255da45662e7df39aecd20e9d2bf93db1b4993"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "89cb35d3ebfc65ee82cca1744c51a12259eafb2e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "0f755fccf4d62ee60b7631c2572fefd14aa11c2b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5b351c420afdd7c1b197cf686f46d1f4d9717639"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "3b6fc52c4c7dc3afee17357e89078c9fdc780bb7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e7c6d8c9571cf22553b66376072ee9a28a869539"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f91b4c078c2f80e58ad4d718d018cac73ba485a4"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "07b6e68b2aa2dfd0a86011389161ccf0a2254be5"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bc139d34230718eb07a4ebbcc34c9e48c91b161b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "15985c1df19ff7da2d3c20a0a53206b7fdeb5365"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a8d33d4ebaa9cda75fb554eecabc2a031b0656db"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7ffe558e6592403029916e4c7c0e691f64efe1b7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e8c93db9cae2b38e6afa8b4a63185e6bd0ed3e47"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "1f158ed8f60f0899c8c8ff55a269504204af452f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5f3addb4c1a9533d33fcd235e4c02f4dc01b159c"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7a0f5b2cedd548dfca5c084baddd13efd7e38ef2"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "61eb31259bcdad4efa0d62491b83dabcaed3685e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "76f0d95f1bb3e18ff064cfbf65a5a133912317cc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "13a196468ef02ce741aa2993f6577892bc9a44a1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5f595e2a13853d742572e2f8d12cfe45c95f38e5"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "574ec9392319e5e7febd53d6155e9474da849ac3"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "8d02a8a242ff6fc6606d50ebf7cbd66abaa537b7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "8c5a93aa1fe8674b1e7de4873249c6756287f15b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bf4f3eb4f66560cd0300a919506dbe92981bef5e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "18fdeff36fbf3154ac67dc3b06dbdd3e8c0c4c4f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "4eb985a445b38a151aafde5682d62e97038d57e8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5fb7a3b6b9420ae718b34c6db1396b7d685dbedd"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "397a68ba96fe1f8dc14f3a13330e19cd36853296"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "07109c1302e734c1e0971cc1a365c7f793fea086"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "dd43c363a9d8b5a07a4ab2a880c51f4576e32081"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "1982f9fcd722d3453b90a18efcdb47e461f2794a"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9aa3d3b2b246e7677e136b8611a852028de198cf"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bdfaae22f57cead3149492ec59520e180a5b8a45"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f856a5d6ae7fc8b17d2c04c28be507ec1ffd18c7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a519756c3368caf485fe185c694288f77c8470b9"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "fa357ec41db0f137753791595eeab8dfcb5d5c3d"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ab651db5b1fb7ce7c817a441689ec2d3c63653ce"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9d0c581aa35873c6349cf54f088e9250261c9ead"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "074308b8ba66d9a0180175358af9cd3ec5ac942b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "2182f60903108d9ae62fc63b768bdb767caf6810"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d8463f4ca9124f9fff5c13398638cfedb503cb89"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b49948f7371c9a09cbc2be55fbfa6c6c1800c569"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "fbf9177f7fce2c271e88eb11a734d021006b8bae"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bc77bd0b1cba43d6c004a209d9ec2f45af09ae57"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d33b92eebdd62cfb92a1b43a1b1d201f53de2dc4"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "698ec48d3ff2dbe63b1caa4eac3f9e4760d0540c"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9a6a3b9dc391763629dc0edb5974b8b70747091a"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d20059cec9444e5b840eb3f10936ec21f93227ac"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bdb1b9c99f504935c3bc2432abdb0344805542cd"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "04faaba449a693535727587857b5086aaf6d23a5"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "59b0ed01fdda30953d4bce73029e5bd06997bd63"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "096ed87e7f103923b2222251e1991865d22b5cf1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "fdc7c423a7b6f33c663d578e81d4c0cc544cfca8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5110ae565dfc28f0f683788e3f7e2e95bcf603c8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bcfb45743ea23bb254d22cf039a0f04331bf9878"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "0c20146cc1a00dc0fa732b4283cbed8e4ac24d14"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e5622066d4074d1603bba2d953ebe5dc26e88271"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "87173bca15cfd8940cd265d4f26ac5889aef71cd"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "687e6a3ab564da00d588ce12242e8cfd796b2114"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "6de0388f1b0cf947f8283d64423f6caaf7173b79"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9e5160103620ab7cdee5bb82c6b5e6bd08c8e668"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "6ec5b977d4182f33faf421a1e104eb0058262209"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "18c3369ba3eb0b26ca217373ee24a1ea294dd80e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "c478e86af30f57146f10c6e2604c6026d4b247aa"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "12d9a089debc56558abfd9350f2cf6232f06e974"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "8eff5a3ffb51488a77dc7e59f44034aacd1c66fc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ee903d989e3c3dd955f798368178e68dcd630884"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d119c402840450bdd38c832f1b877e2450f726b8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "28fa59e21dcef186aa5dd12262dfd0756f0b961b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "26a8fd606e79e31dc149627a2df1c7ce0b4ce743"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f3dbd63facd41651213b4da5e93841a0a11f5dd2"
+            }
+          ]
+        },
+        " \u2517 Trailing Icon(20)#7514:772": {
+          "type": "INSTANCE_SWAP",
+          "value": "1:66",
+          "preferredValues": [
+            {
+              "type": "COMPONENT_SET",
+              "key": "16bc59f706f74fd46b03f84702d35d27fe80921f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bfc661d2f13d55f4bfe9c44f5c5ed4f1e482e9ea"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a7015456f2986e78e4ae6ad4e6908f8c82478b5c"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "351b04063a6cd4e5ffc6058d9919faa1e9c5cebc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "dfa98cc5b007f8249e54338f25bcff9078933876"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7b24143d416dd87f694fb98826d1fe7d158ea948"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "788c058d58c525099ad0736a4ded107f94b07138"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "cc65c3a9c68a6afc94c3769319c81e2551144724"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "626075d4c86cdbcc7c5053ede7ae91c774c9bf3f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "da60d3c490a9063a1edd1cc0e5bf87e8553d7619"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b942fe7811bb6f32f46170348d6c3c839c28cf78"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "28dc820125e90e23978e48dba4602bce249b2cc6"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "03790e7da4434c33bb0fb33e6c7a956338481d51"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "053762c1f01625ad9628f596e2c462a1d4aff8ab"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "4bc8db10187bee90103c040fbbd624e3ca0bb307"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d7b2ed5b997c3ba6359387614f6b77b22f50dc64"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "937ce317c098aef9050fb9051315eb70538fb7bc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ace23ca66be973835132642065e473589f7ad40e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "16052bbc5d0e45bb7b732274d317d4587b5cdec4"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "670af94a386cd718d232a3e480107f938f17bd67"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "acdad833abdf6252a95f0ec49724e0eb19d9d566"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a535bcbf875bdf1bbfb4876b972fab61015db138"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d995296db02fdfd068b812d7c88d5aa03f209260"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9d0d80bd7e223a3840e0320f32e5b18dcc395718"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "864afcc7f896c34db3c01af3b2554ed0ffc65098"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f18544c86fe29774124171bb62a46b0233bc14ed"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b84725bfac51e147cefa3eeb6c7eb9eeb05a31c7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "18f93cdab4568b6db6b2d41549072082df99ed08"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b67a6e6f455b71b170ef37e9cb41f43a89c3087b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "c85aaef50b495a1b2ffc89dcd30cf966c3723f72"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9c47199482fb5826ce49ea2f61c843b8192f5b90"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "21d7279bdd826a00409774e7720cc6e846f4f1ad"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ff686e8799271bfb5e4c8b3dc6d806d88fe0cb50"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ff91b25916859d2f8db0df27be575b9e2781b965"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7b8eb3be4ea99b7fa6ab8a793d090cdf38724d8f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "adcb608e50b2f18c1eadf175364ebd91851edddf"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "4487ce6f27a3de9036884c96b0f60c0a46f906c3"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "c675c20c69730b48211733aad5ec44f34d217edd"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "47de2bba2781b2b90e6d34da73efe17241c19896"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e1bd90b456447dc4b82244d726f272aa2f5b2a59"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d9afc05917a8c498964c410c801cb7f06b5ec6ab"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "3b1799107b7fd3684757f024bf5e1e66585f84b1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "66074cb313137da53d3c1ab3fef1b6472a21158d"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "36912614723c46d0e83d99988499175eadd38e90"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "2aa6bf69f27ce8434e0970dc9ebb0e1a083ab5cc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e3a4bb589f74bfc5afb452cadaacae65a2347ab1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "3124e200411e9928a88a82aab125a827e43a8663"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "05255da45662e7df39aecd20e9d2bf93db1b4993"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "89cb35d3ebfc65ee82cca1744c51a12259eafb2e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5b351c420afdd7c1b197cf686f46d1f4d9717639"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "3b6fc52c4c7dc3afee17357e89078c9fdc780bb7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e7c6d8c9571cf22553b66376072ee9a28a869539"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f91b4c078c2f80e58ad4d718d018cac73ba485a4"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "07b6e68b2aa2dfd0a86011389161ccf0a2254be5"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bc139d34230718eb07a4ebbcc34c9e48c91b161b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "15985c1df19ff7da2d3c20a0a53206b7fdeb5365"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a8d33d4ebaa9cda75fb554eecabc2a031b0656db"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7ffe558e6592403029916e4c7c0e691f64efe1b7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e8c93db9cae2b38e6afa8b4a63185e6bd0ed3e47"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "1f158ed8f60f0899c8c8ff55a269504204af452f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5f3addb4c1a9533d33fcd235e4c02f4dc01b159c"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7a0f5b2cedd548dfca5c084baddd13efd7e38ef2"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "61eb31259bcdad4efa0d62491b83dabcaed3685e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "76f0d95f1bb3e18ff064cfbf65a5a133912317cc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "13a196468ef02ce741aa2993f6577892bc9a44a1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "1c085e87df88480a6afec4bae6925ae53eacaf54"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "8d02a8a242ff6fc6606d50ebf7cbd66abaa537b7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "8c5a93aa1fe8674b1e7de4873249c6756287f15b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "18fdeff36fbf3154ac67dc3b06dbdd3e8c0c4c4f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "4eb985a445b38a151aafde5682d62e97038d57e8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "60a396afa57e46ba2ddd337c526b063244a819ba"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "07109c1302e734c1e0971cc1a365c7f793fea086"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "dd43c363a9d8b5a07a4ab2a880c51f4576e32081"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "1982f9fcd722d3453b90a18efcdb47e461f2794a"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9aa3d3b2b246e7677e136b8611a852028de198cf"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f856a5d6ae7fc8b17d2c04c28be507ec1ffd18c7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a519756c3368caf485fe185c694288f77c8470b9"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "fa357ec41db0f137753791595eeab8dfcb5d5c3d"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ab651db5b1fb7ce7c817a441689ec2d3c63653ce"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9d0c581aa35873c6349cf54f088e9250261c9ead"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "074308b8ba66d9a0180175358af9cd3ec5ac942b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d8463f4ca9124f9fff5c13398638cfedb503cb89"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b49948f7371c9a09cbc2be55fbfa6c6c1800c569"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "fbf9177f7fce2c271e88eb11a734d021006b8bae"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bc77bd0b1cba43d6c004a209d9ec2f45af09ae57"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d33b92eebdd62cfb92a1b43a1b1d201f53de2dc4"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "698ec48d3ff2dbe63b1caa4eac3f9e4760d0540c"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9a6a3b9dc391763629dc0edb5974b8b70747091a"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d20059cec9444e5b840eb3f10936ec21f93227ac"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bdb1b9c99f504935c3bc2432abdb0344805542cd"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "096ed87e7f103923b2222251e1991865d22b5cf1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "fdc7c423a7b6f33c663d578e81d4c0cc544cfca8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5110ae565dfc28f0f683788e3f7e2e95bcf603c8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bcfb45743ea23bb254d22cf039a0f04331bf9878"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "0c20146cc1a00dc0fa732b4283cbed8e4ac24d14"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e5622066d4074d1603bba2d953ebe5dc26e88271"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "87173bca15cfd8940cd265d4f26ac5889aef71cd"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "6de0388f1b0cf947f8283d64423f6caaf7173b79"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9e5160103620ab7cdee5bb82c6b5e6bd08c8e668"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "6ec5b977d4182f33faf421a1e104eb0058262209"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "18c3369ba3eb0b26ca217373ee24a1ea294dd80e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "c478e86af30f57146f10c6e2604c6026d4b247aa"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "12d9a089debc56558abfd9350f2cf6232f06e974"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "8eff5a3ffb51488a77dc7e59f44034aacd1c66fc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ee903d989e3c3dd955f798368178e68dcd630884"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d119c402840450bdd38c832f1b877e2450f726b8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "28fa59e21dcef186aa5dd12262dfd0756f0b961b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "26a8fd606e79e31dc149627a2df1c7ce0b4ce743"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f3dbd63facd41651213b4da5e93841a0a11f5dd2"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "639c4827e222e6299247d700828b559a0fccdd80"
+            }
+          ]
+        },
+        " \u2517 Leading Icon(20)#7514:499": {
+          "type": "INSTANCE_SWAP",
+          "value": "1:66",
+          "preferredValues": [
+            {
+              "type": "COMPONENT_SET",
+              "key": "1c085e87df88480a6afec4bae6925ae53eacaf54"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "60a396afa57e46ba2ddd337c526b063244a819ba"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "16bc59f706f74fd46b03f84702d35d27fe80921f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bfc661d2f13d55f4bfe9c44f5c5ed4f1e482e9ea"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a7015456f2986e78e4ae6ad4e6908f8c82478b5c"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "351b04063a6cd4e5ffc6058d9919faa1e9c5cebc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "dfa98cc5b007f8249e54338f25bcff9078933876"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7b24143d416dd87f694fb98826d1fe7d158ea948"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "788c058d58c525099ad0736a4ded107f94b07138"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "cc65c3a9c68a6afc94c3769319c81e2551144724"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "626075d4c86cdbcc7c5053ede7ae91c774c9bf3f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "da60d3c490a9063a1edd1cc0e5bf87e8553d7619"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b942fe7811bb6f32f46170348d6c3c839c28cf78"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "28dc820125e90e23978e48dba4602bce249b2cc6"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "03790e7da4434c33bb0fb33e6c7a956338481d51"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "053762c1f01625ad9628f596e2c462a1d4aff8ab"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "4bc8db10187bee90103c040fbbd624e3ca0bb307"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d7b2ed5b997c3ba6359387614f6b77b22f50dc64"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "8a371a28af007ceda035ca4006755ffe83ec7129"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "937ce317c098aef9050fb9051315eb70538fb7bc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ace23ca66be973835132642065e473589f7ad40e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "16052bbc5d0e45bb7b732274d317d4587b5cdec4"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b6389e5c1e22810ca068cd2a51de77a466d5ba29"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "670af94a386cd718d232a3e480107f938f17bd67"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "acdad833abdf6252a95f0ec49724e0eb19d9d566"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a535bcbf875bdf1bbfb4876b972fab61015db138"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d995296db02fdfd068b812d7c88d5aa03f209260"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9d0d80bd7e223a3840e0320f32e5b18dcc395718"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "864afcc7f896c34db3c01af3b2554ed0ffc65098"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "90a0a180fc3164a0eeba127e403e34b65a48026f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f18544c86fe29774124171bb62a46b0233bc14ed"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b84725bfac51e147cefa3eeb6c7eb9eeb05a31c7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "18f93cdab4568b6db6b2d41549072082df99ed08"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b67a6e6f455b71b170ef37e9cb41f43a89c3087b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "c85aaef50b495a1b2ffc89dcd30cf966c3723f72"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9c47199482fb5826ce49ea2f61c843b8192f5b90"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "21d7279bdd826a00409774e7720cc6e846f4f1ad"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ff686e8799271bfb5e4c8b3dc6d806d88fe0cb50"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ff91b25916859d2f8db0df27be575b9e2781b965"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7b8eb3be4ea99b7fa6ab8a793d090cdf38724d8f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "36be8e24794f1d82c6b4f0cc6b8ca7db14eea0a8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ff3580daf81e1a7deb4a571ce2203d990580145f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "adcb608e50b2f18c1eadf175364ebd91851edddf"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "4487ce6f27a3de9036884c96b0f60c0a46f906c3"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "c675c20c69730b48211733aad5ec44f34d217edd"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "47de2bba2781b2b90e6d34da73efe17241c19896"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e1bd90b456447dc4b82244d726f272aa2f5b2a59"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d9afc05917a8c498964c410c801cb7f06b5ec6ab"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "3b1799107b7fd3684757f024bf5e1e66585f84b1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "2c45580cf8b95e208094556f35e0ee31d62e2e28"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "66074cb313137da53d3c1ab3fef1b6472a21158d"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "639c4827e222e6299247d700828b559a0fccdd80"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "36912614723c46d0e83d99988499175eadd38e90"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "2aa6bf69f27ce8434e0970dc9ebb0e1a083ab5cc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e3a4bb589f74bfc5afb452cadaacae65a2347ab1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "3124e200411e9928a88a82aab125a827e43a8663"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "05255da45662e7df39aecd20e9d2bf93db1b4993"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "89cb35d3ebfc65ee82cca1744c51a12259eafb2e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "0f755fccf4d62ee60b7631c2572fefd14aa11c2b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5b351c420afdd7c1b197cf686f46d1f4d9717639"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "3b6fc52c4c7dc3afee17357e89078c9fdc780bb7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e7c6d8c9571cf22553b66376072ee9a28a869539"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f91b4c078c2f80e58ad4d718d018cac73ba485a4"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "07b6e68b2aa2dfd0a86011389161ccf0a2254be5"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bc139d34230718eb07a4ebbcc34c9e48c91b161b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "15985c1df19ff7da2d3c20a0a53206b7fdeb5365"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a8d33d4ebaa9cda75fb554eecabc2a031b0656db"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7ffe558e6592403029916e4c7c0e691f64efe1b7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e8c93db9cae2b38e6afa8b4a63185e6bd0ed3e47"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "1f158ed8f60f0899c8c8ff55a269504204af452f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5f3addb4c1a9533d33fcd235e4c02f4dc01b159c"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7a0f5b2cedd548dfca5c084baddd13efd7e38ef2"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "61eb31259bcdad4efa0d62491b83dabcaed3685e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "76f0d95f1bb3e18ff064cfbf65a5a133912317cc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "13a196468ef02ce741aa2993f6577892bc9a44a1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5f595e2a13853d742572e2f8d12cfe45c95f38e5"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "574ec9392319e5e7febd53d6155e9474da849ac3"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "8d02a8a242ff6fc6606d50ebf7cbd66abaa537b7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "8c5a93aa1fe8674b1e7de4873249c6756287f15b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bf4f3eb4f66560cd0300a919506dbe92981bef5e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "18fdeff36fbf3154ac67dc3b06dbdd3e8c0c4c4f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "4eb985a445b38a151aafde5682d62e97038d57e8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5fb7a3b6b9420ae718b34c6db1396b7d685dbedd"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "397a68ba96fe1f8dc14f3a13330e19cd36853296"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "07109c1302e734c1e0971cc1a365c7f793fea086"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "dd43c363a9d8b5a07a4ab2a880c51f4576e32081"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "1982f9fcd722d3453b90a18efcdb47e461f2794a"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9aa3d3b2b246e7677e136b8611a852028de198cf"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bdfaae22f57cead3149492ec59520e180a5b8a45"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f856a5d6ae7fc8b17d2c04c28be507ec1ffd18c7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a519756c3368caf485fe185c694288f77c8470b9"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "fa357ec41db0f137753791595eeab8dfcb5d5c3d"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ab651db5b1fb7ce7c817a441689ec2d3c63653ce"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9d0c581aa35873c6349cf54f088e9250261c9ead"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "074308b8ba66d9a0180175358af9cd3ec5ac942b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "2182f60903108d9ae62fc63b768bdb767caf6810"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d8463f4ca9124f9fff5c13398638cfedb503cb89"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b49948f7371c9a09cbc2be55fbfa6c6c1800c569"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "fbf9177f7fce2c271e88eb11a734d021006b8bae"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bc77bd0b1cba43d6c004a209d9ec2f45af09ae57"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d33b92eebdd62cfb92a1b43a1b1d201f53de2dc4"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "698ec48d3ff2dbe63b1caa4eac3f9e4760d0540c"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9a6a3b9dc391763629dc0edb5974b8b70747091a"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d20059cec9444e5b840eb3f10936ec21f93227ac"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bdb1b9c99f504935c3bc2432abdb0344805542cd"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "04faaba449a693535727587857b5086aaf6d23a5"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "59b0ed01fdda30953d4bce73029e5bd06997bd63"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "096ed87e7f103923b2222251e1991865d22b5cf1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "fdc7c423a7b6f33c663d578e81d4c0cc544cfca8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5110ae565dfc28f0f683788e3f7e2e95bcf603c8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bcfb45743ea23bb254d22cf039a0f04331bf9878"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "0c20146cc1a00dc0fa732b4283cbed8e4ac24d14"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e5622066d4074d1603bba2d953ebe5dc26e88271"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "87173bca15cfd8940cd265d4f26ac5889aef71cd"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "687e6a3ab564da00d588ce12242e8cfd796b2114"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "6de0388f1b0cf947f8283d64423f6caaf7173b79"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9e5160103620ab7cdee5bb82c6b5e6bd08c8e668"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "6ec5b977d4182f33faf421a1e104eb0058262209"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "18c3369ba3eb0b26ca217373ee24a1ea294dd80e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "c478e86af30f57146f10c6e2604c6026d4b247aa"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "12d9a089debc56558abfd9350f2cf6232f06e974"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "8eff5a3ffb51488a77dc7e59f44034aacd1c66fc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ee903d989e3c3dd955f798368178e68dcd630884"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d119c402840450bdd38c832f1b877e2450f726b8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "28fa59e21dcef186aa5dd12262dfd0756f0b961b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "26a8fd606e79e31dc149627a2df1c7ce0b4ce743"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f3dbd63facd41651213b4da5e93841a0a11f5dd2"
+            }
+          ]
+        },
+        "Trailing Icon#1790:229": {
+          "type": "BOOLEAN",
+          "value": false
+        },
+        "Leading Icon#1790:153": {
+          "type": "BOOLEAN",
+          "value": false
+        },
+        " \u2517 Trailing Icon(24)#7514:863": {
+          "type": "INSTANCE_SWAP",
+          "value": "1:74",
+          "preferredValues": [
+            {
+              "type": "COMPONENT_SET",
+              "key": "16bc59f706f74fd46b03f84702d35d27fe80921f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bfc661d2f13d55f4bfe9c44f5c5ed4f1e482e9ea"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a7015456f2986e78e4ae6ad4e6908f8c82478b5c"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "351b04063a6cd4e5ffc6058d9919faa1e9c5cebc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "dfa98cc5b007f8249e54338f25bcff9078933876"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7b24143d416dd87f694fb98826d1fe7d158ea948"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "788c058d58c525099ad0736a4ded107f94b07138"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "cc65c3a9c68a6afc94c3769319c81e2551144724"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "626075d4c86cdbcc7c5053ede7ae91c774c9bf3f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "da60d3c490a9063a1edd1cc0e5bf87e8553d7619"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b942fe7811bb6f32f46170348d6c3c839c28cf78"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "28dc820125e90e23978e48dba4602bce249b2cc6"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "03790e7da4434c33bb0fb33e6c7a956338481d51"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "053762c1f01625ad9628f596e2c462a1d4aff8ab"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "4bc8db10187bee90103c040fbbd624e3ca0bb307"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d7b2ed5b997c3ba6359387614f6b77b22f50dc64"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "937ce317c098aef9050fb9051315eb70538fb7bc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ace23ca66be973835132642065e473589f7ad40e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "16052bbc5d0e45bb7b732274d317d4587b5cdec4"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "670af94a386cd718d232a3e480107f938f17bd67"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "acdad833abdf6252a95f0ec49724e0eb19d9d566"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a535bcbf875bdf1bbfb4876b972fab61015db138"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d995296db02fdfd068b812d7c88d5aa03f209260"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9d0d80bd7e223a3840e0320f32e5b18dcc395718"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "864afcc7f896c34db3c01af3b2554ed0ffc65098"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f18544c86fe29774124171bb62a46b0233bc14ed"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b84725bfac51e147cefa3eeb6c7eb9eeb05a31c7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "18f93cdab4568b6db6b2d41549072082df99ed08"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b67a6e6f455b71b170ef37e9cb41f43a89c3087b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "c85aaef50b495a1b2ffc89dcd30cf966c3723f72"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9c47199482fb5826ce49ea2f61c843b8192f5b90"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "21d7279bdd826a00409774e7720cc6e846f4f1ad"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ff686e8799271bfb5e4c8b3dc6d806d88fe0cb50"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ff91b25916859d2f8db0df27be575b9e2781b965"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7b8eb3be4ea99b7fa6ab8a793d090cdf38724d8f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "adcb608e50b2f18c1eadf175364ebd91851edddf"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "4487ce6f27a3de9036884c96b0f60c0a46f906c3"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "c675c20c69730b48211733aad5ec44f34d217edd"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "47de2bba2781b2b90e6d34da73efe17241c19896"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e1bd90b456447dc4b82244d726f272aa2f5b2a59"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d9afc05917a8c498964c410c801cb7f06b5ec6ab"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "3b1799107b7fd3684757f024bf5e1e66585f84b1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "66074cb313137da53d3c1ab3fef1b6472a21158d"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "36912614723c46d0e83d99988499175eadd38e90"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "2aa6bf69f27ce8434e0970dc9ebb0e1a083ab5cc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e3a4bb589f74bfc5afb452cadaacae65a2347ab1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "3124e200411e9928a88a82aab125a827e43a8663"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "05255da45662e7df39aecd20e9d2bf93db1b4993"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "89cb35d3ebfc65ee82cca1744c51a12259eafb2e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5b351c420afdd7c1b197cf686f46d1f4d9717639"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "3b6fc52c4c7dc3afee17357e89078c9fdc780bb7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e7c6d8c9571cf22553b66376072ee9a28a869539"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f91b4c078c2f80e58ad4d718d018cac73ba485a4"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "07b6e68b2aa2dfd0a86011389161ccf0a2254be5"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bc139d34230718eb07a4ebbcc34c9e48c91b161b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "15985c1df19ff7da2d3c20a0a53206b7fdeb5365"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a8d33d4ebaa9cda75fb554eecabc2a031b0656db"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7ffe558e6592403029916e4c7c0e691f64efe1b7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e8c93db9cae2b38e6afa8b4a63185e6bd0ed3e47"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "1f158ed8f60f0899c8c8ff55a269504204af452f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5f3addb4c1a9533d33fcd235e4c02f4dc01b159c"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7a0f5b2cedd548dfca5c084baddd13efd7e38ef2"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "61eb31259bcdad4efa0d62491b83dabcaed3685e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "76f0d95f1bb3e18ff064cfbf65a5a133912317cc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "13a196468ef02ce741aa2993f6577892bc9a44a1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "1c085e87df88480a6afec4bae6925ae53eacaf54"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "8d02a8a242ff6fc6606d50ebf7cbd66abaa537b7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "8c5a93aa1fe8674b1e7de4873249c6756287f15b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "18fdeff36fbf3154ac67dc3b06dbdd3e8c0c4c4f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "4eb985a445b38a151aafde5682d62e97038d57e8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "60a396afa57e46ba2ddd337c526b063244a819ba"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "07109c1302e734c1e0971cc1a365c7f793fea086"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "dd43c363a9d8b5a07a4ab2a880c51f4576e32081"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "1982f9fcd722d3453b90a18efcdb47e461f2794a"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9aa3d3b2b246e7677e136b8611a852028de198cf"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f856a5d6ae7fc8b17d2c04c28be507ec1ffd18c7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a519756c3368caf485fe185c694288f77c8470b9"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "fa357ec41db0f137753791595eeab8dfcb5d5c3d"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ab651db5b1fb7ce7c817a441689ec2d3c63653ce"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9d0c581aa35873c6349cf54f088e9250261c9ead"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "074308b8ba66d9a0180175358af9cd3ec5ac942b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d8463f4ca9124f9fff5c13398638cfedb503cb89"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b49948f7371c9a09cbc2be55fbfa6c6c1800c569"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "fbf9177f7fce2c271e88eb11a734d021006b8bae"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bc77bd0b1cba43d6c004a209d9ec2f45af09ae57"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d33b92eebdd62cfb92a1b43a1b1d201f53de2dc4"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "698ec48d3ff2dbe63b1caa4eac3f9e4760d0540c"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9a6a3b9dc391763629dc0edb5974b8b70747091a"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d20059cec9444e5b840eb3f10936ec21f93227ac"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bdb1b9c99f504935c3bc2432abdb0344805542cd"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "096ed87e7f103923b2222251e1991865d22b5cf1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "fdc7c423a7b6f33c663d578e81d4c0cc544cfca8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5110ae565dfc28f0f683788e3f7e2e95bcf603c8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bcfb45743ea23bb254d22cf039a0f04331bf9878"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "0c20146cc1a00dc0fa732b4283cbed8e4ac24d14"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e5622066d4074d1603bba2d953ebe5dc26e88271"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "87173bca15cfd8940cd265d4f26ac5889aef71cd"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "6de0388f1b0cf947f8283d64423f6caaf7173b79"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9e5160103620ab7cdee5bb82c6b5e6bd08c8e668"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "6ec5b977d4182f33faf421a1e104eb0058262209"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "18c3369ba3eb0b26ca217373ee24a1ea294dd80e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "c478e86af30f57146f10c6e2604c6026d4b247aa"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "12d9a089debc56558abfd9350f2cf6232f06e974"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "8eff5a3ffb51488a77dc7e59f44034aacd1c66fc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ee903d989e3c3dd955f798368178e68dcd630884"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d119c402840450bdd38c832f1b877e2450f726b8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "28fa59e21dcef186aa5dd12262dfd0756f0b961b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "26a8fd606e79e31dc149627a2df1c7ce0b4ce743"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f3dbd63facd41651213b4da5e93841a0a11f5dd2"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "639c4827e222e6299247d700828b559a0fccdd80"
+            }
+          ]
+        },
+        " \u2517 Leading Icon(24)#7514:408": {
+          "type": "INSTANCE_SWAP",
+          "value": "1:74",
+          "preferredValues": [
+            {
+              "type": "COMPONENT_SET",
+              "key": "1c085e87df88480a6afec4bae6925ae53eacaf54"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "60a396afa57e46ba2ddd337c526b063244a819ba"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "16bc59f706f74fd46b03f84702d35d27fe80921f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bfc661d2f13d55f4bfe9c44f5c5ed4f1e482e9ea"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a7015456f2986e78e4ae6ad4e6908f8c82478b5c"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "351b04063a6cd4e5ffc6058d9919faa1e9c5cebc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "dfa98cc5b007f8249e54338f25bcff9078933876"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7b24143d416dd87f694fb98826d1fe7d158ea948"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "788c058d58c525099ad0736a4ded107f94b07138"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "cc65c3a9c68a6afc94c3769319c81e2551144724"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "626075d4c86cdbcc7c5053ede7ae91c774c9bf3f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "da60d3c490a9063a1edd1cc0e5bf87e8553d7619"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b942fe7811bb6f32f46170348d6c3c839c28cf78"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "28dc820125e90e23978e48dba4602bce249b2cc6"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "03790e7da4434c33bb0fb33e6c7a956338481d51"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "053762c1f01625ad9628f596e2c462a1d4aff8ab"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "4bc8db10187bee90103c040fbbd624e3ca0bb307"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d7b2ed5b997c3ba6359387614f6b77b22f50dc64"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "8a371a28af007ceda035ca4006755ffe83ec7129"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "937ce317c098aef9050fb9051315eb70538fb7bc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ace23ca66be973835132642065e473589f7ad40e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "16052bbc5d0e45bb7b732274d317d4587b5cdec4"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b6389e5c1e22810ca068cd2a51de77a466d5ba29"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "670af94a386cd718d232a3e480107f938f17bd67"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "acdad833abdf6252a95f0ec49724e0eb19d9d566"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a535bcbf875bdf1bbfb4876b972fab61015db138"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d995296db02fdfd068b812d7c88d5aa03f209260"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9d0d80bd7e223a3840e0320f32e5b18dcc395718"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "864afcc7f896c34db3c01af3b2554ed0ffc65098"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "90a0a180fc3164a0eeba127e403e34b65a48026f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f18544c86fe29774124171bb62a46b0233bc14ed"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b84725bfac51e147cefa3eeb6c7eb9eeb05a31c7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "18f93cdab4568b6db6b2d41549072082df99ed08"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b67a6e6f455b71b170ef37e9cb41f43a89c3087b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "c85aaef50b495a1b2ffc89dcd30cf966c3723f72"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9c47199482fb5826ce49ea2f61c843b8192f5b90"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "21d7279bdd826a00409774e7720cc6e846f4f1ad"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ff686e8799271bfb5e4c8b3dc6d806d88fe0cb50"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ff91b25916859d2f8db0df27be575b9e2781b965"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7b8eb3be4ea99b7fa6ab8a793d090cdf38724d8f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "36be8e24794f1d82c6b4f0cc6b8ca7db14eea0a8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ff3580daf81e1a7deb4a571ce2203d990580145f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "adcb608e50b2f18c1eadf175364ebd91851edddf"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "4487ce6f27a3de9036884c96b0f60c0a46f906c3"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "c675c20c69730b48211733aad5ec44f34d217edd"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "47de2bba2781b2b90e6d34da73efe17241c19896"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e1bd90b456447dc4b82244d726f272aa2f5b2a59"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d9afc05917a8c498964c410c801cb7f06b5ec6ab"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "3b1799107b7fd3684757f024bf5e1e66585f84b1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "2c45580cf8b95e208094556f35e0ee31d62e2e28"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "66074cb313137da53d3c1ab3fef1b6472a21158d"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "639c4827e222e6299247d700828b559a0fccdd80"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "36912614723c46d0e83d99988499175eadd38e90"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "2aa6bf69f27ce8434e0970dc9ebb0e1a083ab5cc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e3a4bb589f74bfc5afb452cadaacae65a2347ab1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "3124e200411e9928a88a82aab125a827e43a8663"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "05255da45662e7df39aecd20e9d2bf93db1b4993"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "89cb35d3ebfc65ee82cca1744c51a12259eafb2e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "0f755fccf4d62ee60b7631c2572fefd14aa11c2b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5b351c420afdd7c1b197cf686f46d1f4d9717639"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "3b6fc52c4c7dc3afee17357e89078c9fdc780bb7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e7c6d8c9571cf22553b66376072ee9a28a869539"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f91b4c078c2f80e58ad4d718d018cac73ba485a4"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "07b6e68b2aa2dfd0a86011389161ccf0a2254be5"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bc139d34230718eb07a4ebbcc34c9e48c91b161b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "15985c1df19ff7da2d3c20a0a53206b7fdeb5365"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a8d33d4ebaa9cda75fb554eecabc2a031b0656db"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7ffe558e6592403029916e4c7c0e691f64efe1b7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e8c93db9cae2b38e6afa8b4a63185e6bd0ed3e47"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "1f158ed8f60f0899c8c8ff55a269504204af452f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5f3addb4c1a9533d33fcd235e4c02f4dc01b159c"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "7a0f5b2cedd548dfca5c084baddd13efd7e38ef2"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "61eb31259bcdad4efa0d62491b83dabcaed3685e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "76f0d95f1bb3e18ff064cfbf65a5a133912317cc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "13a196468ef02ce741aa2993f6577892bc9a44a1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5f595e2a13853d742572e2f8d12cfe45c95f38e5"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "574ec9392319e5e7febd53d6155e9474da849ac3"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "8d02a8a242ff6fc6606d50ebf7cbd66abaa537b7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "8c5a93aa1fe8674b1e7de4873249c6756287f15b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bf4f3eb4f66560cd0300a919506dbe92981bef5e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "18fdeff36fbf3154ac67dc3b06dbdd3e8c0c4c4f"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "4eb985a445b38a151aafde5682d62e97038d57e8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5fb7a3b6b9420ae718b34c6db1396b7d685dbedd"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "397a68ba96fe1f8dc14f3a13330e19cd36853296"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "07109c1302e734c1e0971cc1a365c7f793fea086"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "dd43c363a9d8b5a07a4ab2a880c51f4576e32081"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "1982f9fcd722d3453b90a18efcdb47e461f2794a"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9aa3d3b2b246e7677e136b8611a852028de198cf"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bdfaae22f57cead3149492ec59520e180a5b8a45"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f856a5d6ae7fc8b17d2c04c28be507ec1ffd18c7"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "a519756c3368caf485fe185c694288f77c8470b9"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "fa357ec41db0f137753791595eeab8dfcb5d5c3d"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ab651db5b1fb7ce7c817a441689ec2d3c63653ce"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9d0c581aa35873c6349cf54f088e9250261c9ead"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "074308b8ba66d9a0180175358af9cd3ec5ac942b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "2182f60903108d9ae62fc63b768bdb767caf6810"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d8463f4ca9124f9fff5c13398638cfedb503cb89"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "b49948f7371c9a09cbc2be55fbfa6c6c1800c569"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "fbf9177f7fce2c271e88eb11a734d021006b8bae"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bc77bd0b1cba43d6c004a209d9ec2f45af09ae57"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d33b92eebdd62cfb92a1b43a1b1d201f53de2dc4"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "698ec48d3ff2dbe63b1caa4eac3f9e4760d0540c"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9a6a3b9dc391763629dc0edb5974b8b70747091a"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d20059cec9444e5b840eb3f10936ec21f93227ac"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bdb1b9c99f504935c3bc2432abdb0344805542cd"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "04faaba449a693535727587857b5086aaf6d23a5"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "59b0ed01fdda30953d4bce73029e5bd06997bd63"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "096ed87e7f103923b2222251e1991865d22b5cf1"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "fdc7c423a7b6f33c663d578e81d4c0cc544cfca8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "5110ae565dfc28f0f683788e3f7e2e95bcf603c8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "bcfb45743ea23bb254d22cf039a0f04331bf9878"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "0c20146cc1a00dc0fa732b4283cbed8e4ac24d14"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "e5622066d4074d1603bba2d953ebe5dc26e88271"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "87173bca15cfd8940cd265d4f26ac5889aef71cd"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "687e6a3ab564da00d588ce12242e8cfd796b2114"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "6de0388f1b0cf947f8283d64423f6caaf7173b79"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "9e5160103620ab7cdee5bb82c6b5e6bd08c8e668"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "6ec5b977d4182f33faf421a1e104eb0058262209"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "18c3369ba3eb0b26ca217373ee24a1ea294dd80e"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "c478e86af30f57146f10c6e2604c6026d4b247aa"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "12d9a089debc56558abfd9350f2cf6232f06e974"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "8eff5a3ffb51488a77dc7e59f44034aacd1c66fc"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "ee903d989e3c3dd955f798368178e68dcd630884"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "d119c402840450bdd38c832f1b877e2450f726b8"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "28fa59e21dcef186aa5dd12262dfd0756f0b961b"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "26a8fd606e79e31dc149627a2df1c7ce0b4ce743"
+            },
+            {
+              "type": "COMPONENT_SET",
+              "key": "f3dbd63facd41651213b4da5e93841a0a11f5dd2"
+            }
+          ]
+        },
+        "Loading#1790:77": {
+          "type": "BOOLEAN",
+          "value": false
+        },
+        "Label#1790:1": {
+          "type": "TEXT",
+          "value": "View Detail"
+        },
+        "Variant": {
+          "value": "Tertiary",
+          "type": "VARIANT",
+          "boundVariables": {}
+        },
+        "Size": {
+          "value": "Large",
+          "type": "VARIANT",
+          "boundVariables": {}
+        },
+        "Radius": {
+          "value": "Small",
+          "type": "VARIANT",
+          "boundVariables": {}
+        },
+        "State": {
+          "value": "Default",
+          "type": "VARIANT",
+          "boundVariables": {}
+        },
+        "Disable": {
+          "value": "False",
+          "type": "VARIANT",
+          "boundVariables": {}
+        }
+      },
+      "overrides": [
+        {
+          "id": "2:84",
+          "overriddenFields": [
+            "fills",
+            "height",
+            "primaryAxisSizingMode",
+            "transitionDuration",
+            "transitionEasing",
+            "transitionNodeID",
+            "width"
+          ]
+        }
+      ],
+      "children": [
+        {
+          "id": "I2:84;7443:31028",
+          "name": "Loading",
+          "visible": false,
+          "type": "FRAME",
+          "scrollBehavior": "SCROLLS",
+          "componentPropertyReferences": {
+            "visible": "Loading#1790:77"
+          },
+          "boundVariables": {
+            "itemSpacing": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:64fd31b4c3963fbb6213bd41926398e6d3bdcce6/10055:40"
+            }
+          },
+          "children": [
+            {
+              "id": "I2:84;7443:31029",
+              "name": "Wrapper",
+              "type": "FRAME",
+              "scrollBehavior": "SCROLLS",
+              "children": [
+                {
+                  "id": "I2:84;7443:31030",
+                  "name": "Icon_progress",
+                  "type": "FRAME",
+                  "scrollBehavior": "SCROLLS",
+                  "children": [
+                    {
+                      "id": "I2:84;7443:31031",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "scrollBehavior": "SCROLLS",
+                      "boundVariables": {
+                        "fills": [
+                          {
+                            "type": "VARIABLE_ALIAS",
+                            "id": "VariableID:4d3715526d9d1f8b79ce27ee9159fea3d49d7fd4/7470:2665"
+                          }
+                        ]
+                      },
+                      "blendMode": "PASS_THROUGH",
+                      "fills": [
+                        {
+                          "blendMode": "NORMAL",
+                          "type": "SOLID",
+                          "color": {
+                            "r": 0.05882352963089943,
+                            "g": 0.05882352963089943,
+                            "b": 0.062745101749897,
+                            "a": 1.0
+                          },
+                          "boundVariables": {
+                            "color": {
+                              "type": "VARIABLE_ALIAS",
+                              "id": "VariableID:4d3715526d9d1f8b79ce27ee9159fea3d49d7fd4/7470:2665"
+                            }
+                          }
+                        }
+                      ],
+                      "strokes": [],
+                      "strokeWeight": 0.02083333395421505,
+                      "strokeAlign": "INSIDE",
+                      "absoluteBoundingBox": {
+                        "x": 3227.933349609375,
+                        "y": 2519.933349609375,
+                        "width": 12.133333206176758,
+                        "height": 12.133333206176758
+                      },
+                      "absoluteRenderBounds": null,
+                      "constraints": {
+                        "vertical": "SCALE",
+                        "horizontal": "SCALE"
+                      },
+                      "effects": [],
+                      "interactions": [],
+                      "complexStrokeProperties": {
+                        "strokeType": "BASIC"
+                      }
+                    }
+                  ],
+                  "blendMode": "PASS_THROUGH",
+                  "clipsContent": true,
+                  "background": [
+                    {
+                      "blendMode": "NORMAL",
+                      "visible": false,
+                      "type": "SOLID",
+                      "color": {
+                        "r": 1.0,
+                        "g": 1.0,
+                        "b": 1.0,
+                        "a": 1.0
+                      }
+                    }
+                  ],
+                  "fills": [
+                    {
+                      "blendMode": "NORMAL",
+                      "visible": false,
+                      "type": "SOLID",
+                      "color": {
+                        "r": 1.0,
+                        "g": 1.0,
+                        "b": 1.0,
+                        "a": 1.0
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "strokeWeight": 1.0,
+                  "strokeAlign": "INSIDE",
+                  "backgroundColor": {
+                    "r": 0.0,
+                    "g": 0.0,
+                    "b": 0.0,
+                    "a": 0.0
+                  },
+                  "absoluteBoundingBox": {
+                    "x": 3226.0,
+                    "y": 2518.0,
+                    "width": 16.0,
+                    "height": 16.0
+                  },
+                  "absoluteRenderBounds": null,
+                  "targetAspectRatio": {
+                    "x": 20.0,
+                    "y": 20.0
+                  },
+                  "constraints": {
+                    "vertical": "TOP",
+                    "horizontal": "LEFT"
+                  },
+                  "layoutAlign": "INHERIT",
+                  "layoutGrow": 0.0,
+                  "layoutSizingHorizontal": "FIXED",
+                  "layoutSizingVertical": "FIXED",
+                  "effects": [],
+                  "interactions": [],
+                  "complexStrokeProperties": {
+                    "strokeType": "BASIC"
+                  }
+                }
+              ],
+              "blendMode": "PASS_THROUGH",
+              "clipsContent": false,
+              "background": [],
+              "fills": [],
+              "strokes": [],
+              "strokeWeight": 1.0,
+              "strokeAlign": "INSIDE",
+              "backgroundColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+              },
+              "layoutMode": "HORIZONTAL",
+              "counterAxisAlignItems": "CENTER",
+              "primaryAxisAlignItems": "CENTER",
+              "paddingLeft": 2.0,
+              "paddingRight": 2.0,
+              "layoutWrap": "NO_WRAP",
+              "absoluteBoundingBox": {
+                "x": 3224.0,
+                "y": 2518.0,
+                "width": 20.0,
+                "height": 16.0
+              },
+              "absoluteRenderBounds": null,
+              "constraints": {
+                "vertical": "TOP",
+                "horizontal": "LEFT"
+              },
+              "layoutAlign": "INHERIT",
+              "layoutGrow": 0.0,
+              "layoutSizingHorizontal": "HUG",
+              "layoutSizingVertical": "HUG",
+              "effects": [],
+              "interactions": [],
+              "complexStrokeProperties": {
+                "strokeType": "BASIC"
+              }
+            }
+          ],
+          "blendMode": "PASS_THROUGH",
+          "clipsContent": false,
+          "background": [],
+          "fills": [],
+          "strokes": [],
+          "strokeWeight": 1.0,
+          "strokeAlign": "INSIDE",
+          "backgroundColor": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "layoutMode": "HORIZONTAL",
+          "counterAxisSizingMode": "FIXED",
+          "primaryAxisSizingMode": "FIXED",
+          "counterAxisAlignItems": "CENTER",
+          "primaryAxisAlignItems": "CENTER",
+          "itemSpacing": 6.0,
+          "layoutWrap": "NO_WRAP",
+          "absoluteBoundingBox": {
+            "x": 3211.0,
+            "y": 2514.0,
+            "width": 46.0,
+            "height": 24.0
+          },
+          "absoluteRenderBounds": null,
+          "constraints": {
+            "vertical": "TOP",
+            "horizontal": "CENTER"
+          },
+          "layoutAlign": "INHERIT",
+          "layoutGrow": 0.0,
+          "layoutPositioning": "ABSOLUTE",
+          "layoutSizingHorizontal": "FIXED",
+          "layoutSizingVertical": "FIXED",
+          "effects": [],
+          "interactions": [],
+          "complexStrokeProperties": {
+            "strokeType": "BASIC"
+          }
+        },
+        {
+          "id": "I2:84;7443:31032",
+          "name": "Mask",
+          "visible": false,
+          "type": "RECTANGLE",
+          "scrollBehavior": "SCROLLS",
+          "componentPropertyReferences": {
+            "visible": "Loading#1790:77"
+          },
+          "blendMode": "PASS_THROUGH",
+          "fills": [],
+          "strokes": [],
+          "strokeWeight": 1.0,
+          "strokeAlign": "INSIDE",
+          "absoluteBoundingBox": {
+            "x": 2840.0,
+            "y": 2502.0,
+            "width": 424.30767822265625,
+            "height": 9.999999747378752e-05
+          },
+          "absoluteRenderBounds": null,
+          "constraints": {
+            "vertical": "TOP",
+            "horizontal": "SCALE"
+          },
+          "layoutAlign": "INHERIT",
+          "layoutGrow": 0.0,
+          "layoutPositioning": "ABSOLUTE",
+          "layoutSizingHorizontal": "FIXED",
+          "layoutSizingVertical": "FIXED",
+          "effects": [],
+          "isMask": true,
+          "maskType": "ALPHA",
+          "interactions": [],
+          "complexStrokeProperties": {
+            "strokeType": "BASIC"
+          }
+        },
+        {
+          "id": "I2:84;7443:31033",
+          "name": "Container",
+          "type": "FRAME",
+          "scrollBehavior": "SCROLLS",
+          "boundVariables": {
+            "itemSpacing": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:cd8b45885adfb10ceef71c80bc97f87a083ca0a5/10055:39"
+            }
+          },
+          "children": [
+            {
+              "id": "I2:84;7443:31034",
+              "name": "Leading Icon",
+              "visible": false,
+              "type": "FRAME",
+              "scrollBehavior": "SCROLLS",
+              "componentPropertyReferences": {
+                "visible": "Leading Icon#1790:153"
+              },
+              "boundVariables": {
+                "paddingTop": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:cd8b45885adfb10ceef71c80bc97f87a083ca0a5/10055:39"
+                },
+                "paddingBottom": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:cd8b45885adfb10ceef71c80bc97f87a083ca0a5/10055:39"
+                }
+              },
+              "children": [
+                {
+                  "id": "I2:84;7443:31035",
+                  "name": "Leading Content",
+                  "type": "FRAME",
+                  "scrollBehavior": "SCROLLS",
+                  "children": [
+                    {
+                      "id": "I2:84;7443:31036",
+                      "name": "Icon_blank",
+                      "type": "INSTANCE",
+                      "scrollBehavior": "SCROLLS",
+                      "componentPropertyReferences": {
+                        "mainComponent": " \u2517 Leading Icon(24)#7514:408"
+                      },
+                      "componentId": "1:74",
+                      "componentProperties": {
+                        "Size": {
+                          "value": "24",
+                          "type": "VARIANT",
+                          "boundVariables": {}
+                        }
+                      },
+                      "overrides": [],
+                      "children": [
+                        {
+                          "id": "I2:84;7443:31036;2070:2250",
+                          "name": "Ratio",
+                          "type": "FRAME",
+                          "scrollBehavior": "SCROLLS",
+                          "children": [
+                            {
+                              "id": "I2:84;7443:31036;2070:2251",
+                              "name": "Ratio",
+                              "type": "FRAME",
+                              "locked": true,
+                              "scrollBehavior": "SCROLLS",
+                              "rotation": -0.3398369175758464,
+                              "children": [
+                                {
+                                  "id": "I2:84;7443:31036;2070:2252",
+                                  "name": "Ratio",
+                                  "type": "VECTOR",
+                                  "scrollBehavior": "SCROLLS",
+                                  "rotation": -0.7853981212506008,
+                                  "blendMode": "PASS_THROUGH",
+                                  "fills": [],
+                                  "strokes": [],
+                                  "strokeWeight": 1.0,
+                                  "strokeAlign": "CENTER",
+                                  "absoluteBoundingBox": {
+                                    "x": 3192.171630859375,
+                                    "y": 2520.828369140625,
+                                    "width": 21.65685510635376,
+                                    "height": 10.343146562576294
+                                  },
+                                  "absoluteRenderBounds": null,
+                                  "constraints": {
+                                    "vertical": "TOP",
+                                    "horizontal": "LEFT"
+                                  },
+                                  "layoutAlign": "INHERIT",
+                                  "layoutGrow": 1.0,
+                                  "layoutSizingHorizontal": "FIXED",
+                                  "layoutSizingVertical": "FILL",
+                                  "effects": [],
+                                  "interactions": [],
+                                  "complexStrokeProperties": {
+                                    "strokeType": "BASIC"
+                                  }
+                                }
+                              ],
+                              "blendMode": "PASS_THROUGH",
+                              "clipsContent": false,
+                              "background": [],
+                              "fills": [],
+                              "strokes": [],
+                              "strokeWeight": 1.0,
+                              "strokeAlign": "CENTER",
+                              "backgroundColor": {
+                                "r": 0.0,
+                                "g": 0.0,
+                                "b": 0.0,
+                                "a": 0.0
+                              },
+                              "layoutMode": "VERTICAL",
+                              "primaryAxisSizingMode": "FIXED",
+                              "counterAxisAlignItems": "CENTER",
+                              "primaryAxisAlignItems": "CENTER",
+                              "layoutWrap": "NO_WRAP",
+                              "absoluteBoundingBox": {
+                                "x": 3191.0,
+                                "y": 2511.857794275179,
+                                "width": 23.99999957837008,
+                                "height": 28.28427124987593
+                              },
+                              "absoluteRenderBounds": null,
+                              "constraints": {
+                                "vertical": "TOP",
+                                "horizontal": "LEFT"
+                              },
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 1.0,
+                              "layoutSizingHorizontal": "HUG",
+                              "layoutSizingVertical": "FILL",
+                              "effects": [],
+                              "interactions": [],
+                              "complexStrokeProperties": {
+                                "strokeType": "BASIC"
+                              }
+                            }
+                          ],
+                          "blendMode": "PASS_THROUGH",
+                          "clipsContent": true,
+                          "background": [],
+                          "fills": [],
+                          "strokes": [],
+                          "strokeWeight": 1.0,
+                          "strokeAlign": "INSIDE",
+                          "backgroundColor": {
+                            "r": 0.0,
+                            "g": 0.0,
+                            "b": 0.0,
+                            "a": 0.0
+                          },
+                          "layoutGrids": [
+                            {
+                              "pattern": "COLUMNS",
+                              "sectionSize": 24.0,
+                              "visible": true,
+                              "color": {
+                                "r": 1.0,
+                                "g": 0.25999999046325684,
+                                "b": 0.25999999046325684,
+                                "a": 0.07999999821186066
+                              },
+                              "alignment": "STRETCH",
+                              "gutterSize": 20.0,
+                              "offset": 0.0,
+                              "count": 1
+                            }
+                          ],
+                          "styles": {
+                            "grid": "1:53"
+                          },
+                          "layoutMode": "VERTICAL",
+                          "primaryAxisSizingMode": "FIXED",
+                          "layoutWrap": "NO_WRAP",
+                          "absoluteBoundingBox": {
+                            "x": 3191.0,
+                            "y": 2514.0,
+                            "width": 24.0,
+                            "height": 24.0
+                          },
+                          "absoluteRenderBounds": null,
+                          "constraints": {
+                            "vertical": "TOP",
+                            "horizontal": "LEFT"
+                          },
+                          "layoutAlign": "INHERIT",
+                          "layoutGrow": 0.0,
+                          "layoutSizingHorizontal": "HUG",
+                          "layoutSizingVertical": "FIXED",
+                          "effects": [],
+                          "interactions": [],
+                          "complexStrokeProperties": {
+                            "strokeType": "BASIC"
+                          }
+                        },
+                        {
+                          "id": "I2:84;7443:31036;2070:2253",
+                          "name": "Shape",
+                          "type": "FRAME",
+                          "scrollBehavior": "SCROLLS",
+                          "children": [
+                            {
+                              "id": "I2:84;7443:31036;2070:2254",
+                              "name": "Union",
+                              "visible": false,
+                              "type": "BOOLEAN_OPERATION",
+                              "scrollBehavior": "SCROLLS",
+                              "children": [
+                                {
+                                  "id": "I2:84;7443:31036;2070:2255",
+                                  "name": "Vector",
+                                  "type": "VECTOR",
+                                  "scrollBehavior": "SCROLLS",
+                                  "boundVariables": {
+                                    "fills": [
+                                      {
+                                        "type": "VARIABLE_ALIAS",
+                                        "id": "VariableID:f0ef0173d73ffab6c587aa6a4aad0d462d712e5c/7470:2760"
+                                      }
+                                    ]
+                                  },
+                                  "blendMode": "PASS_THROUGH",
+                                  "fills": [
+                                    {
+                                      "blendMode": "NORMAL",
+                                      "type": "SOLID",
+                                      "color": {
+                                        "r": 0.05882352963089943,
+                                        "g": 0.05882352963089943,
+                                        "b": 0.062745101749897,
+                                        "a": 1.0
+                                      },
+                                      "boundVariables": {
+                                        "color": {
+                                          "type": "VARIABLE_ALIAS",
+                                          "id": "VariableID:f0ef0173d73ffab6c587aa6a4aad0d462d712e5c/7470:2760"
+                                        }
+                                      }
+                                    }
+                                  ],
+                                  "strokes": [
+                                    {
+                                      "blendMode": "NORMAL",
+                                      "type": "SOLID",
+                                      "color": {
+                                        "r": 0.0,
+                                        "g": 0.0,
+                                        "b": 0.0,
+                                        "a": 1.0
+                                      }
+                                    }
+                                  ],
+                                  "strokeWeight": 1.7999999523162842,
+                                  "strokeAlign": "CENTER",
+                                  "strokeJoin": "ROUND",
+                                  "strokeCap": "ROUND",
+                                  "absoluteBoundingBox": {
+                                    "x": 3194.25,
+                                    "y": 2517.25,
+                                    "width": 17.49993324279785,
+                                    "height": 17.5
+                                  },
+                                  "absoluteRenderBounds": null,
+                                  "constraints": {
+                                    "vertical": "SCALE",
+                                    "horizontal": "SCALE"
+                                  },
+                                  "effects": [],
+                                  "interactions": [],
+                                  "complexStrokeProperties": {
+                                    "strokeType": "BASIC"
+                                  }
+                                }
+                              ],
+                              "blendMode": "PASS_THROUGH",
+                              "fills": [
+                                {
+                                  "blendMode": "NORMAL",
+                                  "type": "SOLID",
+                                  "color": {
+                                    "r": 0.0,
+                                    "g": 0.0,
+                                    "b": 0.0,
+                                    "a": 1.0
+                                  }
+                                }
+                              ],
+                              "strokes": [],
+                              "strokeWeight": 1.0,
+                              "strokeAlign": "INSIDE",
+                              "booleanOperation": "UNION",
+                              "absoluteBoundingBox": {
+                                "x": 3193.35009765625,
+                                "y": 2516.35009765625,
+                                "width": 19.300216674804688,
+                                "height": 19.300212860107422
+                              },
+                              "absoluteRenderBounds": null,
+                              "constraints": {
+                                "vertical": "TOP",
+                                "horizontal": "LEFT"
+                              },
+                              "effects": [],
+                              "interactions": []
+                            },
+                            {
+                              "id": "I2:84;7443:31036;2070:2256",
+                              "name": "Normal",
+                              "type": "VECTOR",
+                              "scrollBehavior": "SCROLLS",
+                              "boundVariables": {
+                                "fills": [
+                                  {
+                                    "type": "VARIABLE_ALIAS",
+                                    "id": "VariableID:f0ef0173d73ffab6c587aa6a4aad0d462d712e5c/7470:2760"
+                                  }
+                                ]
+                              },
+                              "blendMode": "PASS_THROUGH",
+                              "fills": [
+                                {
+                                  "blendMode": "NORMAL",
+                                  "type": "SOLID",
+                                  "color": {
+                                    "r": 0.05882352963089943,
+                                    "g": 0.05882352963089943,
+                                    "b": 0.062745101749897,
+                                    "a": 1.0
+                                  },
+                                  "boundVariables": {
+                                    "color": {
+                                      "type": "VARIABLE_ALIAS",
+                                      "id": "VariableID:f0ef0173d73ffab6c587aa6a4aad0d462d712e5c/7470:2760"
+                                    }
+                                  }
+                                }
+                              ],
+                              "fillOverrideTable": {
+                                "2": null
+                              },
+                              "strokes": [],
+                              "strokeWeight": 1.0,
+                              "strokeAlign": "INSIDE",
+                              "absoluteBoundingBox": {
+                                "x": 3193.35009765625,
+                                "y": 2516.35009765625,
+                                "width": 19.29994010925293,
+                                "height": 19.300006866455078
+                              },
+                              "absoluteRenderBounds": null,
+                              "constraints": {
+                                "vertical": "SCALE",
+                                "horizontal": "SCALE"
+                              },
+                              "effects": [],
+                              "interactions": [],
+                              "complexStrokeProperties": {
+                                "strokeType": "BASIC"
+                              }
+                            }
+                          ],
+                          "blendMode": "PASS_THROUGH",
+                          "clipsContent": false,
+                          "background": [],
+                          "fills": [],
+                          "strokes": [],
+                          "strokeWeight": 1.0,
+                          "strokeAlign": "INSIDE",
+                          "backgroundColor": {
+                            "r": 0.0,
+                            "g": 0.0,
+                            "b": 0.0,
+                            "a": 0.0
+                          },
+                          "layoutGrids": [
+                            {
+                              "pattern": "COLUMNS",
+                              "sectionSize": 24.0,
+                              "visible": false,
+                              "color": {
+                                "r": 1.0,
+                                "g": 0.25999999046325684,
+                                "b": 0.25999999046325684,
+                                "a": 0.07999999821186066
+                              },
+                              "alignment": "STRETCH",
+                              "gutterSize": 20.0,
+                              "offset": 0.0,
+                              "count": 1
+                            }
+                          ],
+                          "absoluteBoundingBox": {
+                            "x": 3191.0,
+                            "y": 2514.0,
+                            "width": 24.0,
+                            "height": 24.0
+                          },
+                          "absoluteRenderBounds": null,
+                          "constraints": {
+                            "vertical": "SCALE",
+                            "horizontal": "SCALE"
+                          },
+                          "layoutAlign": "INHERIT",
+                          "layoutGrow": 0.0,
+                          "layoutPositioning": "ABSOLUTE",
+                          "layoutSizingHorizontal": "FIXED",
+                          "layoutSizingVertical": "FIXED",
+                          "effects": [],
+                          "interactions": [],
+                          "complexStrokeProperties": {
+                            "strokeType": "BASIC"
+                          }
+                        }
+                      ],
+                      "blendMode": "PASS_THROUGH",
+                      "clipsContent": false,
+                      "background": [],
+                      "fills": [],
+                      "strokes": [],
+                      "strokeWeight": 1.0,
+                      "strokeAlign": "INSIDE",
+                      "backgroundColor": {
+                        "r": 0.0,
+                        "g": 0.0,
+                        "b": 0.0,
+                        "a": 0.0
+                      },
+                      "layoutMode": "VERTICAL",
+                      "counterAxisAlignItems": "CENTER",
+                      "primaryAxisAlignItems": "CENTER",
+                      "layoutWrap": "NO_WRAP",
+                      "absoluteBoundingBox": {
+                        "x": 3191.0,
+                        "y": 2514.0,
+                        "width": 24.0,
+                        "height": 24.0
+                      },
+                      "absoluteRenderBounds": null,
+                      "constraints": {
+                        "vertical": "TOP",
+                        "horizontal": "LEFT"
+                      },
+                      "layoutAlign": "INHERIT",
+                      "layoutGrow": 0.0,
+                      "layoutSizingHorizontal": "HUG",
+                      "layoutSizingVertical": "HUG",
+                      "effects": [],
+                      "interactions": [],
+                      "complexStrokeProperties": {
+                        "strokeType": "BASIC"
+                      }
+                    }
+                  ],
+                  "blendMode": "PASS_THROUGH",
+                  "clipsContent": false,
+                  "background": [],
+                  "fills": [],
+                  "strokes": [],
+                  "strokeWeight": 1.0,
+                  "strokeAlign": "INSIDE",
+                  "backgroundColor": {
+                    "r": 0.0,
+                    "g": 0.0,
+                    "b": 0.0,
+                    "a": 0.0
+                  },
+                  "layoutMode": "HORIZONTAL",
+                  "counterAxisAlignItems": "CENTER",
+                  "itemSpacing": 10.0,
+                  "layoutWrap": "NO_WRAP",
+                  "absoluteBoundingBox": {
+                    "x": 3191.0,
+                    "y": 2514.0,
+                    "width": 24.0,
+                    "height": 24.0
+                  },
+                  "absoluteRenderBounds": null,
+                  "constraints": {
+                    "vertical": "TOP",
+                    "horizontal": "LEFT"
+                  },
+                  "layoutAlign": "INHERIT",
+                  "layoutGrow": 0.0,
+                  "layoutSizingHorizontal": "HUG",
+                  "layoutSizingVertical": "HUG",
+                  "effects": [],
+                  "interactions": [],
+                  "complexStrokeProperties": {
+                    "strokeType": "BASIC"
+                  }
+                }
+              ],
+              "blendMode": "PASS_THROUGH",
+              "clipsContent": false,
+              "background": [],
+              "fills": [],
+              "strokes": [],
+              "strokeWeight": 1.0,
+              "strokeAlign": "INSIDE",
+              "backgroundColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+              },
+              "layoutMode": "HORIZONTAL",
+              "counterAxisSizingMode": "FIXED",
+              "counterAxisAlignItems": "CENTER",
+              "primaryAxisAlignItems": "CENTER",
+              "paddingTop": 4.0,
+              "paddingBottom": 4.0,
+              "layoutWrap": "NO_WRAP",
+              "absoluteBoundingBox": {
+                "x": 3191.0,
+                "y": 2514.0,
+                "width": 24.0,
+                "height": 24.0
+              },
+              "absoluteRenderBounds": null,
+              "constraints": {
+                "vertical": "TOP",
+                "horizontal": "LEFT"
+              },
+              "layoutAlign": "STRETCH",
+              "layoutGrow": 0.0,
+              "layoutSizingHorizontal": "HUG",
+              "layoutSizingVertical": "FIXED",
+              "effects": [],
+              "interactions": [],
+              "complexStrokeProperties": {
+                "strokeType": "BASIC"
+              }
+            },
+            {
+              "id": "I2:84;7443:31037",
+              "name": "Wrapper",
+              "type": "FRAME",
+              "scrollBehavior": "SCROLLS",
+              "children": [
+                {
+                  "id": "I2:84;7443:31038",
+                  "name": "Text Area",
+                  "type": "TEXT",
+                  "scrollBehavior": "SCROLLS",
+                  "componentPropertyReferences": {
+                    "characters": "Label#1790:1"
+                  },
+                  "boundVariables": {
+                    "fills": [
+                      {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:f0ef0173d73ffab6c587aa6a4aad0d462d712e5c/7470:2760"
+                      }
+                    ],
+                    "lineHeight": [
+                      {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:812f4e8ba1807c58a63df31e2b8d39b6283b2b3e/7525:1188"
+                      }
+                    ],
+                    "letterSpacing": [
+                      {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:7403bfdb74e77b4aa10756489f7bd17eb0a1c72b/532:416"
+                      }
+                    ],
+                    "fontWeight": [
+                      {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:d5c33e0620fc7d1ee5b57b3cfcecd2b43c468c78/1930:349"
+                      }
+                    ],
+                    "fontSize": [
+                      {
+                        "type": "VARIABLE_ALIAS",
+                        "id": "VariableID:e772f87b3c9228009c491e31f53b72523ad6ecff/1930:36"
+                      }
+                    ]
+                  },
+                  "blendMode": "PASS_THROUGH",
+                  "fills": [
+                    {
+                      "blendMode": "NORMAL",
+                      "type": "SOLID",
+                      "color": {
+                        "r": 0.05882352963089943,
+                        "g": 0.05882352963089943,
+                        "b": 0.062745101749897,
+                        "a": 1.0
+                      },
+                      "boundVariables": {
+                        "color": {
+                          "type": "VARIABLE_ALIAS",
+                          "id": "VariableID:f0ef0173d73ffab6c587aa6a4aad0d462d712e5c/7470:2760"
+                        }
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "strokeWeight": 1.0,
+                  "strokeAlign": "OUTSIDE",
+                  "absoluteBoundingBox": {
+                    "x": 3193.0,
+                    "y": 2514.0,
+                    "width": 82.0,
+                    "height": 24.0
+                  },
+                  "absoluteRenderBounds": {
+                    "x": 3193.296875,
+                    "y": 2520.234375,
+                    "width": 80.296875,
+                    "height": 11.953125
+                  },
+                  "constraints": {
+                    "vertical": "TOP",
+                    "horizontal": "LEFT"
+                  },
+                  "layoutAlign": "INHERIT",
+                  "layoutGrow": 0.0,
+                  "layoutSizingHorizontal": "HUG",
+                  "layoutSizingVertical": "HUG",
+                  "characters": "View Detail",
+                  "characterStyleOverrides": [],
+                  "styleOverrideTable": {},
+                  "lineTypes": [
+                    "NONE"
+                  ],
+                  "lineIndentations": [
+                    0
+                  ],
+                  "style": {
+                    "fontFamily": "Pretendard",
+                    "fontPostScriptName": "Pretendard-Medium",
+                    "fontStyle": "Medium",
+                    "fontWeight": 500,
+                    "textAutoResize": "WIDTH_AND_HEIGHT",
+                    "fontSize": 16.0,
+                    "textAlignHorizontal": "LEFT",
+                    "textAlignVertical": "TOP",
+                    "letterSpacing": 0.0,
+                    "lineHeightPx": 24.0,
+                    "lineHeightPercent": 125.69558715820312,
+                    "lineHeightPercentFontSize": 150.0,
+                    "lineHeightUnit": "PIXELS"
+                  },
+                  "layoutVersion": 5,
+                  "styles": {
+                    "text": "1:36"
+                  },
+                  "effects": [],
+                  "interactions": [],
+                  "complexStrokeProperties": {
+                    "strokeType": "BASIC"
+                  }
+                }
+              ],
+              "blendMode": "PASS_THROUGH",
+              "clipsContent": false,
+              "background": [],
+              "fills": [],
+              "strokes": [],
+              "strokeWeight": 1.0,
+              "strokeAlign": "INSIDE",
+              "backgroundColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+              },
+              "layoutMode": "HORIZONTAL",
+              "counterAxisAlignItems": "CENTER",
+              "primaryAxisAlignItems": "CENTER",
+              "paddingLeft": 2.0,
+              "paddingRight": 2.0,
+              "layoutWrap": "NO_WRAP",
+              "absoluteBoundingBox": {
+                "x": 3191.0,
+                "y": 2514.0,
+                "width": 86.0,
+                "height": 24.0
+              },
+              "absoluteRenderBounds": {
+                "x": 3191.0,
+                "y": 2514.0,
+                "width": 86.0,
+                "height": 24.0
+              },
+              "constraints": {
+                "vertical": "TOP",
+                "horizontal": "LEFT"
+              },
+              "layoutAlign": "INHERIT",
+              "layoutGrow": 0.0,
+              "layoutSizingHorizontal": "HUG",
+              "layoutSizingVertical": "HUG",
+              "effects": [],
+              "interactions": [],
+              "complexStrokeProperties": {
+                "strokeType": "BASIC"
+              }
+            },
+            {
+              "id": "I2:84;7443:31039",
+              "name": "Trailing Icon",
+              "visible": false,
+              "type": "FRAME",
+              "scrollBehavior": "SCROLLS",
+              "componentPropertyReferences": {
+                "visible": "Trailing Icon#1790:229"
+              },
+              "boundVariables": {
+                "paddingTop": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:cd8b45885adfb10ceef71c80bc97f87a083ca0a5/10055:39"
+                },
+                "paddingBottom": {
+                  "type": "VARIABLE_ALIAS",
+                  "id": "VariableID:cd8b45885adfb10ceef71c80bc97f87a083ca0a5/10055:39"
+                }
+              },
+              "children": [
+                {
+                  "id": "I2:84;7443:31040",
+                  "name": "Trailing Content",
+                  "type": "FRAME",
+                  "scrollBehavior": "SCROLLS",
+                  "children": [
+                    {
+                      "id": "I2:84;7443:31041",
+                      "name": "Icon_blank",
+                      "type": "INSTANCE",
+                      "scrollBehavior": "SCROLLS",
+                      "componentPropertyReferences": {
+                        "mainComponent": " \u2517 Trailing Icon(24)#7514:863"
+                      },
+                      "componentId": "1:74",
+                      "componentProperties": {
+                        "Size": {
+                          "value": "24",
+                          "type": "VARIANT",
+                          "boundVariables": {}
+                        }
+                      },
+                      "overrides": [],
+                      "children": [
+                        {
+                          "id": "I2:84;7443:31041;2070:2250",
+                          "name": "Ratio",
+                          "type": "FRAME",
+                          "scrollBehavior": "SCROLLS",
+                          "children": [
+                            {
+                              "id": "I2:84;7443:31041;2070:2251",
+                              "name": "Ratio",
+                              "type": "FRAME",
+                              "locked": true,
+                              "scrollBehavior": "SCROLLS",
+                              "rotation": -0.3398369175758464,
+                              "children": [
+                                {
+                                  "id": "I2:84;7443:31041;2070:2252",
+                                  "name": "Ratio",
+                                  "type": "VECTOR",
+                                  "scrollBehavior": "SCROLLS",
+                                  "rotation": -0.7853981212506008,
+                                  "blendMode": "PASS_THROUGH",
+                                  "fills": [],
+                                  "strokes": [],
+                                  "strokeWeight": 1.0,
+                                  "strokeAlign": "CENTER",
+                                  "absoluteBoundingBox": {
+                                    "x": 3242.171630859375,
+                                    "y": 2520.828369140625,
+                                    "width": 21.65685510635376,
+                                    "height": 10.343146562576294
+                                  },
+                                  "absoluteRenderBounds": null,
+                                  "constraints": {
+                                    "vertical": "TOP",
+                                    "horizontal": "LEFT"
+                                  },
+                                  "layoutAlign": "INHERIT",
+                                  "layoutGrow": 1.0,
+                                  "layoutSizingHorizontal": "FIXED",
+                                  "layoutSizingVertical": "FILL",
+                                  "effects": [],
+                                  "interactions": [],
+                                  "complexStrokeProperties": {
+                                    "strokeType": "BASIC"
+                                  }
+                                }
+                              ],
+                              "blendMode": "PASS_THROUGH",
+                              "clipsContent": false,
+                              "background": [],
+                              "fills": [],
+                              "strokes": [],
+                              "strokeWeight": 1.0,
+                              "strokeAlign": "CENTER",
+                              "backgroundColor": {
+                                "r": 0.0,
+                                "g": 0.0,
+                                "b": 0.0,
+                                "a": 0.0
+                              },
+                              "layoutMode": "VERTICAL",
+                              "primaryAxisSizingMode": "FIXED",
+                              "counterAxisAlignItems": "CENTER",
+                              "primaryAxisAlignItems": "CENTER",
+                              "layoutWrap": "NO_WRAP",
+                              "absoluteBoundingBox": {
+                                "x": 3241.0,
+                                "y": 2511.857794275179,
+                                "width": 23.99999957837008,
+                                "height": 28.28427124987593
+                              },
+                              "absoluteRenderBounds": null,
+                              "constraints": {
+                                "vertical": "TOP",
+                                "horizontal": "LEFT"
+                              },
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 1.0,
+                              "layoutSizingHorizontal": "HUG",
+                              "layoutSizingVertical": "FILL",
+                              "effects": [],
+                              "interactions": [],
+                              "complexStrokeProperties": {
+                                "strokeType": "BASIC"
+                              }
+                            }
+                          ],
+                          "blendMode": "PASS_THROUGH",
+                          "clipsContent": true,
+                          "background": [],
+                          "fills": [],
+                          "strokes": [],
+                          "strokeWeight": 1.0,
+                          "strokeAlign": "INSIDE",
+                          "backgroundColor": {
+                            "r": 0.0,
+                            "g": 0.0,
+                            "b": 0.0,
+                            "a": 0.0
+                          },
+                          "layoutGrids": [
+                            {
+                              "pattern": "COLUMNS",
+                              "sectionSize": 24.0,
+                              "visible": true,
+                              "color": {
+                                "r": 1.0,
+                                "g": 0.25999999046325684,
+                                "b": 0.25999999046325684,
+                                "a": 0.07999999821186066
+                              },
+                              "alignment": "STRETCH",
+                              "gutterSize": 20.0,
+                              "offset": 0.0,
+                              "count": 1
+                            }
+                          ],
+                          "styles": {
+                            "grid": "1:53"
+                          },
+                          "layoutMode": "VERTICAL",
+                          "primaryAxisSizingMode": "FIXED",
+                          "layoutWrap": "NO_WRAP",
+                          "absoluteBoundingBox": {
+                            "x": 3241.0,
+                            "y": 2514.0,
+                            "width": 24.0,
+                            "height": 24.0
+                          },
+                          "absoluteRenderBounds": null,
+                          "constraints": {
+                            "vertical": "TOP",
+                            "horizontal": "LEFT"
+                          },
+                          "layoutAlign": "INHERIT",
+                          "layoutGrow": 0.0,
+                          "layoutSizingHorizontal": "HUG",
+                          "layoutSizingVertical": "FIXED",
+                          "effects": [],
+                          "interactions": [],
+                          "complexStrokeProperties": {
+                            "strokeType": "BASIC"
+                          }
+                        },
+                        {
+                          "id": "I2:84;7443:31041;2070:2253",
+                          "name": "Shape",
+                          "type": "FRAME",
+                          "scrollBehavior": "SCROLLS",
+                          "children": [
+                            {
+                              "id": "I2:84;7443:31041;2070:2254",
+                              "name": "Union",
+                              "visible": false,
+                              "type": "BOOLEAN_OPERATION",
+                              "scrollBehavior": "SCROLLS",
+                              "children": [
+                                {
+                                  "id": "I2:84;7443:31041;2070:2255",
+                                  "name": "Vector",
+                                  "type": "VECTOR",
+                                  "scrollBehavior": "SCROLLS",
+                                  "boundVariables": {
+                                    "fills": [
+                                      {
+                                        "type": "VARIABLE_ALIAS",
+                                        "id": "VariableID:f0ef0173d73ffab6c587aa6a4aad0d462d712e5c/7470:2760"
+                                      }
+                                    ]
+                                  },
+                                  "blendMode": "PASS_THROUGH",
+                                  "fills": [
+                                    {
+                                      "blendMode": "NORMAL",
+                                      "type": "SOLID",
+                                      "color": {
+                                        "r": 0.05882352963089943,
+                                        "g": 0.05882352963089943,
+                                        "b": 0.062745101749897,
+                                        "a": 1.0
+                                      },
+                                      "boundVariables": {
+                                        "color": {
+                                          "type": "VARIABLE_ALIAS",
+                                          "id": "VariableID:f0ef0173d73ffab6c587aa6a4aad0d462d712e5c/7470:2760"
+                                        }
+                                      }
+                                    }
+                                  ],
+                                  "strokes": [
+                                    {
+                                      "blendMode": "NORMAL",
+                                      "type": "SOLID",
+                                      "color": {
+                                        "r": 0.0,
+                                        "g": 0.0,
+                                        "b": 0.0,
+                                        "a": 1.0
+                                      }
+                                    }
+                                  ],
+                                  "strokeWeight": 1.7999999523162842,
+                                  "strokeAlign": "CENTER",
+                                  "strokeJoin": "ROUND",
+                                  "strokeCap": "ROUND",
+                                  "absoluteBoundingBox": {
+                                    "x": 3244.25,
+                                    "y": 2517.25,
+                                    "width": 17.49993324279785,
+                                    "height": 17.5
+                                  },
+                                  "absoluteRenderBounds": null,
+                                  "constraints": {
+                                    "vertical": "SCALE",
+                                    "horizontal": "SCALE"
+                                  },
+                                  "effects": [],
+                                  "interactions": [],
+                                  "complexStrokeProperties": {
+                                    "strokeType": "BASIC"
+                                  }
+                                }
+                              ],
+                              "blendMode": "PASS_THROUGH",
+                              "fills": [
+                                {
+                                  "blendMode": "NORMAL",
+                                  "type": "SOLID",
+                                  "color": {
+                                    "r": 0.0,
+                                    "g": 0.0,
+                                    "b": 0.0,
+                                    "a": 1.0
+                                  }
+                                }
+                              ],
+                              "strokes": [],
+                              "strokeWeight": 1.0,
+                              "strokeAlign": "INSIDE",
+                              "booleanOperation": "UNION",
+                              "absoluteBoundingBox": {
+                                "x": 3243.35009765625,
+                                "y": 2516.35009765625,
+                                "width": 19.300216674804688,
+                                "height": 19.300212860107422
+                              },
+                              "absoluteRenderBounds": null,
+                              "constraints": {
+                                "vertical": "TOP",
+                                "horizontal": "LEFT"
+                              },
+                              "effects": [],
+                              "interactions": []
+                            },
+                            {
+                              "id": "I2:84;7443:31041;2070:2256",
+                              "name": "Normal",
+                              "type": "VECTOR",
+                              "scrollBehavior": "SCROLLS",
+                              "boundVariables": {
+                                "fills": [
+                                  {
+                                    "type": "VARIABLE_ALIAS",
+                                    "id": "VariableID:f0ef0173d73ffab6c587aa6a4aad0d462d712e5c/7470:2760"
+                                  }
+                                ]
+                              },
+                              "blendMode": "PASS_THROUGH",
+                              "fills": [
+                                {
+                                  "blendMode": "NORMAL",
+                                  "type": "SOLID",
+                                  "color": {
+                                    "r": 0.05882352963089943,
+                                    "g": 0.05882352963089943,
+                                    "b": 0.062745101749897,
+                                    "a": 1.0
+                                  },
+                                  "boundVariables": {
+                                    "color": {
+                                      "type": "VARIABLE_ALIAS",
+                                      "id": "VariableID:f0ef0173d73ffab6c587aa6a4aad0d462d712e5c/7470:2760"
+                                    }
+                                  }
+                                }
+                              ],
+                              "fillOverrideTable": {
+                                "2": null
+                              },
+                              "strokes": [],
+                              "strokeWeight": 1.0,
+                              "strokeAlign": "INSIDE",
+                              "absoluteBoundingBox": {
+                                "x": 3243.35009765625,
+                                "y": 2516.35009765625,
+                                "width": 19.29994010925293,
+                                "height": 19.300006866455078
+                              },
+                              "absoluteRenderBounds": null,
+                              "constraints": {
+                                "vertical": "SCALE",
+                                "horizontal": "SCALE"
+                              },
+                              "effects": [],
+                              "interactions": [],
+                              "complexStrokeProperties": {
+                                "strokeType": "BASIC"
+                              }
+                            }
+                          ],
+                          "blendMode": "PASS_THROUGH",
+                          "clipsContent": false,
+                          "background": [],
+                          "fills": [],
+                          "strokes": [],
+                          "strokeWeight": 1.0,
+                          "strokeAlign": "INSIDE",
+                          "backgroundColor": {
+                            "r": 0.0,
+                            "g": 0.0,
+                            "b": 0.0,
+                            "a": 0.0
+                          },
+                          "layoutGrids": [
+                            {
+                              "pattern": "COLUMNS",
+                              "sectionSize": 24.0,
+                              "visible": false,
+                              "color": {
+                                "r": 1.0,
+                                "g": 0.25999999046325684,
+                                "b": 0.25999999046325684,
+                                "a": 0.07999999821186066
+                              },
+                              "alignment": "STRETCH",
+                              "gutterSize": 20.0,
+                              "offset": 0.0,
+                              "count": 1
+                            }
+                          ],
+                          "absoluteBoundingBox": {
+                            "x": 3241.0,
+                            "y": 2514.0,
+                            "width": 24.0,
+                            "height": 24.0
+                          },
+                          "absoluteRenderBounds": null,
+                          "constraints": {
+                            "vertical": "SCALE",
+                            "horizontal": "SCALE"
+                          },
+                          "layoutAlign": "INHERIT",
+                          "layoutGrow": 0.0,
+                          "layoutPositioning": "ABSOLUTE",
+                          "layoutSizingHorizontal": "FIXED",
+                          "layoutSizingVertical": "FIXED",
+                          "effects": [],
+                          "interactions": [],
+                          "complexStrokeProperties": {
+                            "strokeType": "BASIC"
+                          }
+                        }
+                      ],
+                      "blendMode": "PASS_THROUGH",
+                      "clipsContent": false,
+                      "background": [],
+                      "fills": [],
+                      "strokes": [],
+                      "strokeWeight": 1.0,
+                      "strokeAlign": "INSIDE",
+                      "backgroundColor": {
+                        "r": 0.0,
+                        "g": 0.0,
+                        "b": 0.0,
+                        "a": 0.0
+                      },
+                      "layoutMode": "VERTICAL",
+                      "counterAxisAlignItems": "CENTER",
+                      "primaryAxisAlignItems": "CENTER",
+                      "layoutWrap": "NO_WRAP",
+                      "absoluteBoundingBox": {
+                        "x": 3241.0,
+                        "y": 2514.0,
+                        "width": 24.0,
+                        "height": 24.0
+                      },
+                      "absoluteRenderBounds": null,
+                      "constraints": {
+                        "vertical": "TOP",
+                        "horizontal": "LEFT"
+                      },
+                      "layoutAlign": "INHERIT",
+                      "layoutGrow": 0.0,
+                      "layoutSizingHorizontal": "HUG",
+                      "layoutSizingVertical": "HUG",
+                      "effects": [],
+                      "interactions": [],
+                      "complexStrokeProperties": {
+                        "strokeType": "BASIC"
+                      }
+                    }
+                  ],
+                  "blendMode": "PASS_THROUGH",
+                  "clipsContent": false,
+                  "background": [],
+                  "fills": [],
+                  "strokes": [],
+                  "strokeWeight": 1.0,
+                  "strokeAlign": "INSIDE",
+                  "backgroundColor": {
+                    "r": 0.0,
+                    "g": 0.0,
+                    "b": 0.0,
+                    "a": 0.0
+                  },
+                  "layoutMode": "HORIZONTAL",
+                  "counterAxisAlignItems": "CENTER",
+                  "itemSpacing": 10.0,
+                  "layoutWrap": "NO_WRAP",
+                  "absoluteBoundingBox": {
+                    "x": 3241.0,
+                    "y": 2514.0,
+                    "width": 24.0,
+                    "height": 24.0
+                  },
+                  "absoluteRenderBounds": null,
+                  "constraints": {
+                    "vertical": "TOP",
+                    "horizontal": "LEFT"
+                  },
+                  "layoutAlign": "INHERIT",
+                  "layoutGrow": 0.0,
+                  "layoutSizingHorizontal": "HUG",
+                  "layoutSizingVertical": "HUG",
+                  "effects": [],
+                  "interactions": [],
+                  "complexStrokeProperties": {
+                    "strokeType": "BASIC"
+                  }
+                }
+              ],
+              "blendMode": "PASS_THROUGH",
+              "clipsContent": false,
+              "background": [],
+              "fills": [],
+              "strokes": [],
+              "strokeWeight": 1.0,
+              "strokeAlign": "INSIDE",
+              "backgroundColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+              },
+              "layoutMode": "HORIZONTAL",
+              "counterAxisSizingMode": "FIXED",
+              "counterAxisAlignItems": "CENTER",
+              "primaryAxisAlignItems": "CENTER",
+              "paddingTop": 4.0,
+              "paddingBottom": 4.0,
+              "layoutWrap": "NO_WRAP",
+              "absoluteBoundingBox": {
+                "x": 3241.0,
+                "y": 2514.0,
+                "width": 24.0,
+                "height": 24.0
+              },
+              "absoluteRenderBounds": null,
+              "constraints": {
+                "vertical": "TOP",
+                "horizontal": "LEFT"
+              },
+              "layoutAlign": "STRETCH",
+              "layoutGrow": 0.0,
+              "layoutSizingHorizontal": "HUG",
+              "layoutSizingVertical": "FIXED",
+              "effects": [],
+              "interactions": [],
+              "complexStrokeProperties": {
+                "strokeType": "BASIC"
+              }
+            }
+          ],
+          "blendMode": "PASS_THROUGH",
+          "clipsContent": false,
+          "background": [],
+          "fills": [],
+          "strokes": [],
+          "strokeWeight": 1.0,
+          "strokeAlign": "INSIDE",
+          "backgroundColor": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "layoutMode": "HORIZONTAL",
+          "counterAxisSizingMode": "FIXED",
+          "counterAxisAlignItems": "CENTER",
+          "itemSpacing": 4.0,
+          "layoutWrap": "NO_WRAP",
+          "absoluteBoundingBox": {
+            "x": 3191.0,
+            "y": 2514.0,
+            "width": 86.0,
+            "height": 24.0
+          },
+          "absoluteRenderBounds": {
+            "x": 3191.0,
+            "y": 2514.0,
+            "width": 86.0,
+            "height": 24.0
+          },
+          "constraints": {
+            "vertical": "TOP",
+            "horizontal": "LEFT"
+          },
+          "layoutAlign": "STRETCH",
+          "layoutGrow": 0.0,
+          "layoutSizingHorizontal": "HUG",
+          "layoutSizingVertical": "FILL",
+          "effects": [],
+          "interactions": [],
+          "complexStrokeProperties": {
+            "strokeType": "BASIC"
+          }
+        }
+      ],
+      "blendMode": "PASS_THROUGH",
+      "clipsContent": false,
+      "background": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.9686274528503418,
+            "g": 0.9686274528503418,
+            "b": 0.9725490212440491,
+            "a": 1.0
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:4bc1a162ed1e333b41ca9ad7a185d7ef80287aa0/7470:2732"
+            }
+          }
+        }
+      ],
+      "fills": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.9686274528503418,
+            "g": 0.9686274528503418,
+            "b": 0.9725490212440491,
+            "a": 1.0
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:4bc1a162ed1e333b41ca9ad7a185d7ef80287aa0/7470:2732"
+            }
+          }
+        }
+      ],
+      "strokes": [
+        {
+          "blendMode": "NORMAL",
+          "type": "SOLID",
+          "color": {
+            "r": 0.9019607901573181,
+            "g": 0.9058823585510254,
+            "b": 0.9137254953384399,
+            "a": 1.0
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:14d64190499728257b0c314168bc472ba0962da5/7470:2813"
+            }
+          }
+        }
+      ],
+      "cornerRadius": 8.0,
+      "cornerSmoothing": 0.0,
+      "strokeWeight": 1.0,
+      "strokeAlign": "INSIDE",
+      "backgroundColor": {
+        "r": 0.9686274528503418,
+        "g": 0.9686274528503418,
+        "b": 0.9725490212440491,
+        "a": 1.0
+      },
+      "layoutMode": "HORIZONTAL",
+      "primaryAxisSizingMode": "FIXED",
+      "counterAxisAlignItems": "CENTER",
+      "primaryAxisAlignItems": "CENTER",
+      "paddingLeft": 16.0,
+      "paddingRight": 16.0,
+      "paddingTop": 12.0,
+      "paddingBottom": 12.0,
+      "itemSpacing": 2.0,
+      "layoutWrap": "NO_WRAP",
+      "absoluteBoundingBox": {
+        "x": 2840.0,
+        "y": 2502.0,
+        "width": 788.0,
+        "height": 48.0
+      },
+      "absoluteRenderBounds": {
+        "x": 2840.0,
+        "y": 2502.0,
+        "width": 788.0,
+        "height": 48.0
+      },
+      "constraints": {
+        "vertical": "TOP",
+        "horizontal": "LEFT"
+      },
+      "layoutAlign": "STRETCH",
+      "layoutGrow": 0.0,
+      "layoutSizingHorizontal": "FILL",
+      "layoutSizingVertical": "HUG",
+      "effects": [],
+      "interactions": [],
+      "complexStrokeProperties": {
+        "strokeType": "BASIC"
+      }
+    }
+  ],
+  "blendMode": "PASS_THROUGH",
+  "clipsContent": true,
+  "background": [
+    {
+      "blendMode": "NORMAL",
+      "type": "SOLID",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "boundVariables": {
+        "color": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:71b8a1024dfacdcd906d5f0cadcc8c0f97d52490/7470:2504"
+        }
+      }
+    }
+  ],
+  "fills": [
+    {
+      "blendMode": "NORMAL",
+      "type": "SOLID",
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "boundVariables": {
+        "color": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:71b8a1024dfacdcd906d5f0cadcc8c0f97d52490/7470:2504"
+        }
+      }
+    }
+  ],
+  "strokes": [
+    {
+      "blendMode": "NORMAL",
+      "type": "SOLID",
+      "color": {
+        "r": 0.9019607901573181,
+        "g": 0.9058823585510254,
+        "b": 0.9137254953384399,
+        "a": 1.0
+      },
+      "boundVariables": {
+        "color": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:14d64190499728257b0c314168bc472ba0962da5/7470:2813"
+        }
+      }
+    }
+  ],
+  "cornerRadius": 20.0,
+  "cornerSmoothing": 0.0,
+  "strokeWeight": 1.0,
+  "strokeAlign": "INSIDE",
+  "backgroundColor": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0,
+    "a": 1.0
+  },
+  "layoutMode": "VERTICAL",
+  "counterAxisSizingMode": "FIXED",
+  "paddingLeft": 32.0,
+  "paddingRight": 32.0,
+  "paddingTop": 32.0,
+  "paddingBottom": 26.0,
+  "itemSpacing": 20.0,
+  "layoutWrap": "NO_WRAP",
+  "absoluteBoundingBox": {
+    "x": 2808.0,
+    "y": 2314.0,
+    "width": 852.0,
+    "height": 262.0
+  },
+  "absoluteRenderBounds": {
+    "x": 2808.0,
+    "y": 2314.0,
+    "width": 852.0,
+    "height": 262.0
+  },
+  "constraints": {
+    "vertical": "TOP",
+    "horizontal": "LEFT"
+  },
+  "layoutSizingHorizontal": "FIXED",
+  "layoutSizingVertical": "HUG",
+  "effects": [],
+  "interactions": [],
+  "complexStrokeProperties": {
+    "strokeType": "BASIC"
+  }
+}

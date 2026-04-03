@@ -33,15 +33,11 @@ const SAMPLE_DATA: Record<string, { label: string; data: unknown }> = {
       ],
     },
   },
-  MetricCard: {
-    label: "Metric Card",
+  SectionTitle: {
+    label: "Section Title",
     data: {
-      items: [
-        { label: "전체 분석 고객", value: "24,831", unit: "명" },
-        { label: "고위험군 (Tier 1)", value: "2,284", unit: "명" },
-        { label: "고위험군 평균 LTV", value: "94,200", unit: "원" },
-        { label: "모델 정확도", value: 87.3, unit: "%" },
-      ],
+      title: "타이틀",
+      subtitle: "이탈률이 고정적으로 높아 조기 개입 없이는 개선 어려움 지속적인 이탈이 늘어날것 으로 예상된다.",
     },
   },
   BulletCard: {
@@ -56,112 +52,136 @@ const SAMPLE_DATA: Record<string, { label: string; data: unknown }> = {
       ],
     },
   },
-  ScoreCard: {
-    label: "Score Card",
-    data: {
-      score: 72,
-      maxScore: 100,
-      badge: "개선 필요",
-      badgeColor: "orange",
-      bullets: [
-        "핵심 메시지가 3문단 이후에 등장 — 1문단으로 이동 필요",
-        "기술 용어 비중이 높아 일반 매체 게재 시 가독성 저하 우려",
-        "데이터 인용은 양호하나 헤드라인에 뉴스 앵글이 부족",
-      ],
-    },
-  },
   InterpretationBlock: {
     label: "Interpretation Block",
     data: {
-      text: "숏폼 영상이 압도적인 참여율 1위를 차지했습니다. 특히 15~30초 길이의 교육형 콘텐츠가 평균 대비 1.8배 높은 성과를 보이고 있습니다. 반면 텍스트 포스트는 참여율이 지속 하락 중이며 비중 축소를 권장합니다.",
+      text: "A total of 3,400 users (72%) expressed interest in subscribing. This suggests low resistance to the membership itself and indicates strong potential for actual conversion depending on the benefits offered.",
     },
   },
-  DoDontCard: {
-    label: "DO / DON'T Card",
+  "InsightCard:badge+interpretation": {
+    label: "Insight Card — Badge + Interpretation",
     data: {
-      dos: [
-        "숏폼 영상 비중을 전체의 40%로 확대",
-        "화·목 오전 9-11시 '골든타임' 발행 집중",
-        "사용자 참여 유도형 CTA 삽입 (투표, 질문 등)",
-      ],
-      donts: [
-        "텍스트 전용 포스트에 리소스 투입",
-        "주말 오후 발행 — 도달률 평균 대비 -43%",
-        "동일 포맷 반복 발행 — 알고리즘 페널티 위험",
-      ],
+      badge: "Signal 1",
+      value: "days_inactive 증가",
+      description: "days_inactive 평균 약 190.47일\n7일 기준 CHURN에 앞서 30일·60일 구간에서 단계별 개입 전략이 필요합니다.",
+      interpretation: "원인: 장기간 재접속 유인이 부족, 가치 체험 실패 누적",
     },
   },
-  SignalCard: {
-    label: "Signal Card",
+  "InsightCard:badge": {
+    label: "Insight Card — Badge Only",
+    data: {
+      badge: "Signal 2",
+      value: "page_views_last_30d 감소",
+      description: "최근 30일 페이지뷰가 평균 대비 62% 하락했습니다. 콘텐츠 소비 습관이 형성되지 않은 것으로 판단됩니다.",
+    },
+  },
+  "InsightCard:interpretation": {
+    label: "Insight Card — Interpretation Only",
+    data: {
+      value: "login_frequency 저하",
+      description: "주간 로그인 빈도가 0.3회 이하로 떨어진 사용자가 전체의 34%를 차지합니다.",
+      interpretation: "원인: 초기 온보딩 미완료로 핵심 기능 미경험",
+    },
+  },
+  ClusterCard: {
+    label: "Cluster Card",
     data: {
       items: [
         {
-          signalName: "접속 빈도 급감",
-          bullets: ["전월 대비 접속 50% 이상 감소", "주간 활성 세션 1회 미만", "알림 비활성화 동반 시 위험도 +40%"],
-          badge: "HIGH RISK",
-          badgeColor: "red",
+          badge: "High-Risk Cluster",
+          badgeColor: "#2b7fff",
+          title: "이탈 위험 집중 군집 (30대)",
+          description: "이탈 위험 집중 군집(30대)은 서비스 탐색 의지가 가장 높으나 습관 형성에 어려움을 겪는 집단으로, 자산 연결 이전 단계에서 다수가 이탈하고 있습니다.",
+        },
+      ],
+    },
+  },
+  UserCard: {
+    label: "User Card",
+    data: {
+      items: [
+        {
+          name: "Jung Minju",
+          subtitle: "Female, Age 32, Developer",
+          description: "Selected $10–$14.99. Uses the service daily and values ad-free viewing the most. Open to annual billing if discount is 20%+.",
         },
         {
-          signalName: "구매 공백 45일+",
-          bullets: ["마지막 구매로부터 45일 초과", "위시리스트 업데이트 없음", "장바구니 방치 14일 이상"],
-          badge: "HIGH RISK",
-          badgeColor: "red",
+          name: "Park Jihoon",
+          subtitle: "Male, Age 28, Designer",
+          description: "Selected $5–$9.99. Primarily uses mobile app. Most interested in exclusive content and early access features.",
         },
-        {
-          signalName: "CS 불만 신호",
-          bullets: ["최근 90일 내 CS 문의 2건 이상", "배송/환불 관련 이슈", "낮은 만족도 점수 (3점 이하)"],
-          badge: "MEDIUM",
-          badgeColor: "orange",
-        },
+      ],
+      hasViewDetail: true,
+    },
+  },
+  PieBarChart: {
+    label: "Pie Chart + Bar Chart",
+    data: {
+      pieTitle: "Subscription Intent",
+      pieItems: [
+        { label: "High", value: 42 },
+        { label: "Medium", value: 30 },
+        { label: "Low", value: 28 },
+      ],
+      barTitle: "Desired Benefits",
+      barItems: [
+        { label: "Ad-free", value: 72 },
+        { label: "Exclusive", value: 58 },
+        { label: "Early access", value: 45 },
       ],
     },
   },
   RevenueScenarioBar: {
-    label: "Revenue Scenario Bar",
+    label: "Revenue Scenario Bar (bar graph Revenue)",
     data: {
-      unit: "억원 (연간)",
       scenarios: [
-        { label: "Upside", value: 78, description: "이탈 방어율 60% 달성, 로열티 프로그램 조기 성과" },
-        { label: "Base", value: 54, description: "이탈 방어율 40%, 계획 실행 기준" },
-        { label: "Downside", value: 28, description: "이탈 방어율 20%, 실행 지연 또는 경쟁 심화" },
-      ],
-    },
-  },
-  SampleCard: {
-    label: "Sample Card",
-    data: {
-      items: [
-        { id: "CUS-001", bullets: ["35세 여성, IT 직군", "월 평균 구매 3.2회", "최근 30일 접속 12회"] },
-        { id: "CUS-002", bullets: ["42세 남성, 금융 직군", "월 평균 구매 1.1회", "최근 30일 접속 2회"] },
-      ],
-    },
-  },
-  SyntheticPersonaCard: {
-    label: "Synthetic Persona Card",
-    data: {
-      items: [
         {
-          id: "P-Alpha",
-          name: "김서연",
-          gender: "여성",
-          age: 32,
-          job: "UX 디자이너",
-          summary: "트렌드에 민감하며 신규 기능을 적극 활용하는 얼리어답터 성향의 충성 고객.",
-          tabs: [
-            { label: "행동 패턴", content: "주 4회 이상 접속, 신기능 출시 당일 체험률 92%. 커뮤니티 활동 활발." },
-            { label: "구매 성향", content: "프리미엄 요금제 유지 18개월째. 부가 서비스 평균 2.3개 이용." },
+          label: "Upside",
+          badge: "30% Retention Case",
+          details: ["ARPU: $50", "Retained Users: 90"],
+          highlight: "Expected Revenue: $450",
+          value: 450,
+        },
+        {
+          label: "Base",
+          badge: "15% Retention Case",
+          details: ["ARPU: $50", "Retained Users: 90"],
+          highlight: "Expected Revenue: $250",
+          value: 250,
+        },
+        {
+          label: "Downside",
+          badge: "5% Retention Case",
+          details: ["ARPU: $50", "Retained Users: 90"],
+          highlight: "Expected Revenue: $100",
+          value: 100,
+        },
+      ],
+    },
+  },
+  PersonaModal: {
+    label: "Persona Modal (Synthetic Respondent Samples)",
+    data: {
+      title: "Synthetic Respondent Samples",
+      personas: [
+        {
+          name: "Kim Seoyeon",
+          subtitle: "Female, Age 28, Marketing Manager",
+          description: "Early adopter highly sensitive to trends.",
+          details: [
+            { label: "Personality Traits", content: "Early adopter highly sensitive to trends, actively exploring new features and services." },
+            { label: "Lifestyle", content: "Frequent overtime on weekdays leads to concentrated content consumption on weekends." },
+            { label: "Consumption Patterns", content: "Average monthly entertainment spending: $85. High willingness to pay for premium content." },
           ],
         },
         {
-          id: "P-Beta",
-          name: "박준형",
-          gender: "남성",
-          age: 45,
-          job: "재무 담당자",
-          summary: "비용 효율을 중시하며, 기본 기능만 사용하는 실용주의형 고객.",
-          tabs: [
-            { label: "행동 패턴", content: "주 1-2회 접속, 주로 리포트 조회 목적. 모바일 사용 비율 80%." },
-            { label: "구매 성향", content: "기본 요금제 12개월째. 할인 쿠폰 사용률 높음." },
+          name: "Park Jihoon",
+          subtitle: "Male, Age 35, Engineer",
+          description: "Practical user focused on core features.",
+          details: [
+            { label: "Personality Traits", content: "Values efficiency and reliability over novelty. Methodical approach to tool adoption." },
+            { label: "Lifestyle", content: "Work-life balance focused. Uses service primarily during commute and lunch breaks." },
+            { label: "Consumption Patterns", content: "Average monthly entertainment spending: $45. Price-sensitive but loyal once committed." },
           ],
         },
       ],

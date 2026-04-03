@@ -83,7 +83,7 @@ export default function TabGridLayout({ report, agent }: Props) {
               className={`${
                 sectionDef.componentType === "StrategyTable" ||
                 sectionDef.componentType === "RevenueScenarioBar" ||
-                sectionDef.componentType === "DoDontCard"
+                sectionDef.componentType === "PieBarChart"
                   ? "col-span-2"
                   : ""
               }`}

@@ -102,7 +102,7 @@ function extractTokens(node: FigmaNode, parentPath = ""): ExtractedTokens {
 
   // Spacing
   const spacingKeys = ["paddingLeft", "paddingRight", "paddingTop", "paddingBottom", "itemSpacing"] as const;
-  const spacingData: Record<string, number | string> = { path: currentPath };
+  const spacingData: { path: string; [key: string]: number | string } = { path: currentPath };
   let hasSpacing = false;
   for (const k of spacingKeys) {
     if (node[k] !== undefined) {

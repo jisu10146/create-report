@@ -1,5 +1,4 @@
 import type { ExecutiveSummary as ExecutiveSummaryData } from "@/types";
-import BulletText from "./BulletText";
 
 interface Props {
   data: ExecutiveSummaryData & {
@@ -46,7 +45,14 @@ function KeyFindingsCard({ findings }: { findings: string[] }) {
         </svg>
         <span className="font-bold text-base text-report-text-primary">Key Findings</span>
       </div>
-      <BulletText items={findings} />
+      <ul className="flex flex-col gap-[8px]">
+        {findings.map((item, i) => (
+          <li key={i} className="flex items-start gap-[8px] text-[16px] leading-[24px] text-report-text-primary">
+            <span className="mt-[10px] w-[4px] h-[4px] rounded-full bg-report-text-muted shrink-0" />
+            {item}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

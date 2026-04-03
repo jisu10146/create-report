@@ -114,20 +114,3 @@ export const CHART_SPECS: Record<string, ChartSpec> = {
   },
 };
 
-/* ─── ScoreCard Gauge Colors ─── */
-
-export interface ScoreCardColorSpec {
-  arc: string;
-  badge: string;
-}
-
-export const SCORECARD_COLORS: Record<string, ScoreCardColorSpec> = {
-  green:  { arc: CHART_PALETTE.lime500,       badge: "positive" },
-  red:    { arc: CHART_PALETTE.red400,        badge: "negative" },
-  orange: { arc: "#f97316",                   badge: "cautionary" },
-  blue:   { arc: CHART_PALETTE.blue500,       badge: "info" },
-  yellow: { arc: CHART_PALETTE.yellow400,     badge: "cautionary" },
-};
-
-/** 게이지 잔여 영역 색상 = report-border 토큰 */
-export const SCORECARD_REMAINING_COLOR = CHART_PALETTE.gray200;

@@ -2,6 +2,8 @@
 
 import DonutChart from "@/components/ReportRenderer/components/DonutChart";
 import HorizontalBarChart from "@/components/ReportRenderer/components/HorizontalBarChart";
+import PieBarChart from "@/components/ReportRenderer/components/PieBarChart";
+import RevenueScenarioBar from "@/components/ReportRenderer/components/RevenueScenarioBar";
 import DataTable from "@/components/ReportRenderer/components/DataTable";
 import StrategyTable from "@/components/ReportRenderer/components/StrategyTable";
 
@@ -149,6 +151,63 @@ export default function ChartsSection() {
           ))}
         </div>
       </div>
+      {/* Pie + Bar Chart */}
+      <div className="space-y-3">
+        <h3 className="text-sm font-semibold text-report-text-secondary uppercase tracking-wider">
+          Pie Chart + Bar Chart
+        </h3>
+        <PieBarChart
+          data={{
+            pieTitle: "Subscription Intent",
+            pieItems: [
+              { label: "High", value: 42 },
+              { label: "Medium", value: 30 },
+              { label: "Low", value: 28 },
+            ],
+            barTitle: "Desired Benefits",
+            barItems: [
+              { label: "Ad-free", value: 72 },
+              { label: "Exclusive", value: 58 },
+              { label: "Early access", value: 45 },
+            ],
+          }}
+        />
+      </div>
+
+      {/* Revenue Scenario Bar */}
+      <div className="space-y-3">
+        <h3 className="text-sm font-semibold text-report-text-secondary uppercase tracking-wider">
+          Revenue Scenario Bar
+        </h3>
+        <RevenueScenarioBar
+          data={{
+            scenarios: [
+              {
+                label: "Upside",
+                badge: "30% Retention Case",
+                details: ["ARPU: $50", "Retained Users: 90"],
+                highlight: "Expected Revenue: $450",
+                value: 450,
+              },
+              {
+                label: "Base",
+                badge: "15% Retention Case",
+                details: ["ARPU: $50", "Retained Users: 90"],
+                highlight: "Expected Revenue: $250",
+                value: 250,
+              },
+              {
+                label: "Downside",
+                badge: "5% Retention Case",
+                details: ["ARPU: $50", "Retained Users: 90"],
+                highlight: "Expected Revenue: $100",
+                value: 100,
+              },
+            ],
+          }}
+        />
+      </div>
+
       {/* Data Table */}
       <div className="space-y-3">
         <h3 className="text-sm font-semibold text-report-text-secondary uppercase tracking-wider">

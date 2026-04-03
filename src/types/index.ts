@@ -6,20 +6,20 @@ export type LayoutType = "tab-grid" | "single-repeat" | "single-section";
 export type ModalType = "none" | "tab-detail" | "persona-detail";
 
 export type ComponentType =
-  | "MetricCard"
+  | "ExecutiveSummary"
   | "BulletCard"
-  | "ScoreCard"
-  | "DoDontCard"
-  | "SampleCard"
   | "HorizontalBarChart"
   | "InterpretationBlock"
-  | "SyntheticPersonaCard"
-  | "SignalCard"
   | "StrategyTable"
   | "RevenueScenarioBar"
-  | "ExecutiveSummary"
   | "DonutChart"
   | "DataTable"
+  | "InsightCard"
+  | "UserCard"
+  | "ClusterCard"
+  | "SectionTitle"
+  | "PieBarChart"
+  | "PersonaModal"
   | string; // extensible
 
 export interface TabSection {
@@ -93,31 +93,10 @@ export interface ReportSchema {
 
 // ─── Component Data Types ──────────────────────────────────────────────────
 
-export interface MetricCardData {
-  items: Array<{ label: string; value: string | number; unit?: string }>;
-}
-
 export interface BulletCardData {
   title: string;
   value?: string | number;
   bullets: string[];
-}
-
-export interface ScoreCardData {
-  score: number;
-  maxScore: number;
-  badge: string;
-  badgeColor?: string; // tailwind color class
-  bullets: string[];
-}
-
-export interface DoDontCardData {
-  dos: string[];
-  donts: string[];
-}
-
-export interface SampleCardData {
-  items: Array<{ id: string; bullets: string[] }>;
 }
 
 export interface BarChartItem {
@@ -132,35 +111,37 @@ export interface HorizontalBarChartData {
 }
 
 export interface InterpretationBlockData {
+  title?: string;
   text: string;
 }
 
-export interface PersonaTab {
-  label: "Personality" | "Lifestyle" | "Consumption" | string;
-  content: string;
-}
-
-export interface SyntheticPersonaCardData {
-  items: Array<{
-    id: string;
-    name?: string;
-    gender?: string;
-    age?: number;
-    job?: string;
-    summary?: string;
-    tabs: PersonaTab[];
-  }>;
-}
-
-export interface SignalCardItem {
-  signalName: string;
-  bullets: string[];
+export interface InsightCardData {
   badge?: string;
-  badgeColor?: string;
+  value: string;
+  description: string;
+  interpretation?: string;
 }
 
-export interface SignalCardData {
-  items: SignalCardItem[];
+export interface UserCardItem {
+  name: string;
+  subtitle: string;
+  description: string;
+}
+
+export interface UserCardData {
+  items: UserCardItem[];
+  hasViewDetail?: boolean;
+}
+
+export interface ClusterCardItem {
+  badge: string;
+  badgeColor?: string;
+  title: string;
+  description: string;
+}
+
+export interface ClusterCardData {
+  items: ClusterCardItem[];
 }
 
 export interface StrategyTableRow {
@@ -178,6 +159,9 @@ export interface StrategyTableData {
 
 export interface RevenueScenario {
   label: "Upside" | "Base" | "Downside" | string;
+  badge?: string;
+  details?: string[];
+  highlight?: string;
   value: number;
   description?: string;
 }
@@ -185,6 +169,37 @@ export interface RevenueScenario {
 export interface RevenueScenarioBarData {
   unit?: string;
   scenarios: RevenueScenario[];
+}
+
+export interface SectionTitleData {
+  title: string;
+  subtitle?: string;
+}
+
+export interface PieBarChartItem {
+  label: string;
+  value: number;
+  color?: string;
+}
+
+export interface PieBarChartData {
+  pieTitle?: string;
+  pieItems: PieBarChartItem[];
+  barTitle?: string;
+  barItems: PieBarChartItem[];
+  legends?: Array<{ label: string; color: string }>;
+}
+
+export interface PersonaModalPersona {
+  name: string;
+  subtitle: string;
+  description: string;
+  details?: Array<{ label: string; content: string }>;
+}
+
+export interface PersonaModalData {
+  title: string;
+  personas: PersonaModalPersona[];
 }
 
 // ─── Modal Detail Types ────────────────────────────────────────────────────
@@ -203,13 +218,6 @@ export interface TabDetailData {
   }>;
 }
 
-export interface PersonaDetailData {
-  name: string;
-  gender: string;
-  age: number;
-  job: string;
-  tabs: PersonaTab[];
-}
 
 // ─── Survey Form ───────────────────────────────────────────────────────────
 

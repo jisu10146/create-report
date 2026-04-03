@@ -155,21 +155,21 @@ export const LAYOUT_PATTERNS: LayoutPattern[] = [
     label: "한 페이지 요약",
     desc: "핵심 지표 + 결론 중심",
     sectionCount: "3~4개",
-    sections: ["ExecutiveSummary", "MetricCard", "StrategyTable"],
+    sections: ["ExecutiveSummary", "BulletCard", "StrategyTable"],
   },
   {
     volume: "standard",
     label: "표준",
     desc: "분석 + 인사이트 + 실행안",
     sectionCount: "6~8개",
-    sections: ["ExecutiveSummary", "MetricCard", "HorizontalBarChart", "InterpretationBlock", "DoDontCard", "StrategyTable", "RevenueScenarioBar"],
+    sections: ["ExecutiveSummary", "BulletCard", "HorizontalBarChart", "InterpretationBlock", "InsightCard", "StrategyTable", "RevenueScenarioBar"],
   },
   {
     volume: "detailed",
     label: "상세 분석",
     desc: "데이터 심층 분석 + 페르소나 + 전략",
     sectionCount: "8~12개",
-    sections: ["ExecutiveSummary", "MetricCard", "HorizontalBarChart", "InterpretationBlock", "SyntheticPersonaCard", "SignalCard", "DoDontCard", "StrategyTable", "RevenueScenarioBar", "ScoreCard"],
+    sections: ["ExecutiveSummary", "BulletCard", "HorizontalBarChart", "InterpretationBlock", "PieBarChart", "ClusterCard", "InsightCard", "UserCard", "StrategyTable", "RevenueScenarioBar", "PersonaModal"],
   },
 ];
 
