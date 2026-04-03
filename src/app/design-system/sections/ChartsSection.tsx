@@ -1,181 +1,171 @@
 "use client";
 
-import { ResponsiveBar } from "@nivo/bar";
-import { ResponsivePie } from "@nivo/pie";
-import { Badge } from "@cubig/design-system";
-import { CHART_SPECS, type ChartSpec } from "@/lib/report-chart-spec";
+import DonutChart from "@/components/ReportRenderer/components/DonutChart";
+import HorizontalBarChart from "@/components/ReportRenderer/components/HorizontalBarChart";
+import DataTable from "@/components/ReportRenderer/components/DataTable";
+import StrategyTable from "@/components/ReportRenderer/components/StrategyTable";
 
-function generateDonutData(spec: ChartSpec) {
-  const values = spec.series.map(() => Math.floor(Math.random() * 40) + 10);
-  const total = values.reduce((a, b) => a + b, 0);
-  return spec.series.map((s, i) => ({
-    id: s.name,
-    label: s.name,
-    value: Math.round((values[i] / total) * 100),
-    color: s.color,
-  }));
-}
+/* ─── Donut Chart 더미 데이터 ─── */
 
-function generateBarData(spec: ChartSpec) {
-  const categories = ["Category A", "Category B", "Category C", "Category D"];
-  if (spec.series.length <= 3 && spec.chartType !== "stacked-bar") {
-    return spec.series.map((s) => ({
-      label: s.name,
-      value: Math.floor(Math.random() * 80) + 20,
-    }));
-  }
-  return categories.map((cat) => {
-    const row: Record<string, string | number> = { label: cat };
-    spec.series.forEach((s) => {
-      row[s.name] = Math.floor(Math.random() * 80) + 20;
-    });
-    return row;
-  });
-}
+const DONUT_SAMPLES = [
+  {
+    name: "Donut Chart — 6개 항목 (최대)",
+    data: {
+      title: "Response Rate by Age Group",
+      items: [
+        { label: "Age 15-19", value: 25, count: 1200 },
+        { label: "Age 20-24", value: 10, count: 360 },
+        { label: "Age 25-29", value: 15, count: 450 },
+        { label: "Age 30-39", value: 5, count: 240 },
+        { label: "Age 40-49", value: 45, count: 750 },
+        { label: "Age 50-59", value: 5, count: 240 },
+      ],
+    },
+  },
+  {
+    name: "Donut Chart — 4개 + 기타 (회색)",
+    data: {
+      title: "Cluster Distribution",
+      items: [
+        { label: "Active Majority", value: 45, count: 3200 },
+        { label: "At-risk Cluster", value: 25, count: 1800 },
+        { label: "Low Activity", value: 18, count: 1300 },
+        { label: "기타", value: 12, count: 860, isOther: true },
+      ],
+    },
+  },
+];
 
-function DonutChart({ spec }: { spec: ChartSpec }) {
-  const data = generateDonutData(spec);
-  return (
-    <div style={{ height: 240 }}>
-      <ResponsivePie
-        data={data}
-        innerRadius={0.6}
-        padAngle={2}
-        cornerRadius={3}
-        colors={spec.series.map((s) => s.color)}
-        enableArcLabels={true}
-        arcLabelsTextColor="#ffffff"
-        enableArcLinkLabels={false}
-        isInteractive={true}
-        margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
-      />
-    </div>
-  );
-}
+/* ─── Horizontal Bar Chart 더미 데이터 ─── */
 
-function BarChart({ spec }: { spec: ChartSpec }) {
-  const isHorizontal = spec.direction === "horizontal";
-  const isSingleSeries = spec.chartType !== "stacked-bar" && spec.series.length <= 3;
+const BAR_SAMPLES = [
+  {
+    name: "Horizontal Bar Chart — 3색 순위 + count",
+    data: {
+      question: "만족도 분포 (%)",
+      items: [
+        { label: "Very High", value: 38, count: 1900 },
+        { label: "High", value: 32, count: 1600 },
+        { label: "Medium", value: 14, count: 700 },
+        { label: "Low", value: 10, count: 500 },
+        { label: "Very Low", value: 6, count: 300 },
+      ],
+    },
+  },
+  {
+    name: "Horizontal Bar Chart — count 없이",
+    data: {
+      question: "가격대별 수용도 분포 (%)",
+      items: [
+        { label: "₩8,000~10,000", value: 25 },
+        { label: "₩11,000~13,000", value: 58 },
+        { label: "₩14,000~16,000", value: 87 },
+        { label: "₩17,000~19,000", value: 62 },
+        { label: "₩20,000~22,000", value: 34 },
+        { label: "₩23,000 이상", value: 12 },
+      ],
+    },
+  },
+];
 
-  const data = isSingleSeries
-    ? spec.series.map((s) => ({
-        label: s.name,
-        value: Math.floor(Math.random() * 80) + 20,
-      }))
-    : ["A", "B", "C"].map((cat) => {
-        const row: Record<string, string | number> = { label: `Group ${cat}` };
-        spec.series.forEach((s) => {
-          row[s.name] = Math.floor(Math.random() * 80) + 20;
-        });
-        return row;
-      });
+/* ─── Data Table 더미 데이터 ─── */
 
-  const keys = isSingleSeries ? ["value"] : spec.series.map((s) => s.name);
+const TABLE_SAMPLE = {
+  name: "Data Table — 클러스터별 비교",
+  data: {
+    columns: [
+      { label: "이탈 위험 집중 군집 (30대)" },
+      { label: "이탈 고위험 소수 군집 (40대 남성)" },
+      { label: "활동성 유지 대다수 군집 (40대 중심)" },
+    ],
+    rows: [
+      { metric: "Cluster distribution", values: ["56.3% (45)", "56.3% (45)", "56.3% (45)"] },
+      { metric: "Churn rate", values: ["90%", "90%", "90%"] },
+      { metric: "Monthly average churn rate", values: ["86.8%", "86.8%", "85.15%"] },
+      { metric: "Monthly average retention rate", values: ["86.8%", "86.8%", "85.15%"] },
+      { metric: "Average session duration", values: ["86.8%", "86.8%", "85.15%"] },
+      { metric: "Average transaction count", values: ["86.8%", "86.8%", "85.15%"] },
+    ],
+  },
+};
 
-  const colorMap: Record<string, string> = {};
-  spec.series.forEach((s, i) => {
-    if (isSingleSeries) {
-      colorMap[data[i]?.label as string] = s.color;
-    } else {
-      colorMap[s.name] = s.color;
-    }
-  });
+/* ─── Strategy Table 더미 데이터 ─── */
 
-  return (
-    <div style={{ height: Math.max(data.length * 52, 200) }}>
-      <ResponsiveBar
-        data={isHorizontal ? [...data].reverse() : data}
-        keys={keys}
-        indexBy="label"
-        layout={isHorizontal ? "horizontal" : "vertical"}
-        margin={
-          isHorizontal
-            ? { top: 0, right: 50, bottom: 0, left: 160 }
-            : { top: 10, right: 10, bottom: 40, left: 40 }
-        }
-        padding={0.35}
-        colors={(bar) => {
-          if (isSingleSeries) {
-            return colorMap[bar.indexValue as string] ?? "#ccc";
-          }
-          return colorMap[bar.id as string] ?? "#ccc";
-        }}
-        borderRadius={4}
-        enableGridX={false}
-        enableGridY={false}
-        axisTop={null}
-        axisRight={null}
-        axisBottom={isHorizontal ? null : { tickSize: 0, tickPadding: 8 }}
-        axisLeft={isHorizontal ? { tickSize: 0, tickPadding: 12 } : { tickSize: 0, tickPadding: 8 }}
-        label={(d) => `${d.value}`}
-        labelSkipWidth={24}
-        labelSkipHeight={16}
-        labelTextColor="#ffffff"
-        animate={true}
-        motionConfig="gentle"
-        theme={{
-          axis: { ticks: { text: { fontSize: 12, fill: "#7b7e85" } } },
-        }}
-      />
-    </div>
-  );
-}
+const STRATEGY_TABLE_SAMPLE = {
+  immediate: [
+    { strategy: "긴급 Win-Back", objective: "고위험군 즉시 접촉", actionPlan: "CRM팀 Tier 1 대상 Win-Back 이메일 발송", expectedImpact: "이메일 오픈율 15%+" },
+    { strategy: "CS 불만 대응", objective: "불만 고객 만족도 회복", actionPlan: "CS팀 1:1 전담 상담 연결", expectedImpact: "만족도 4점 이상 회복" },
+  ],
+  short: [
+    { strategy: "푸시 알림 자동화", objective: "접속 빈도 하락 고객 재유입", actionPlan: "마케팅엔지니어링팀 자동 트리거 구축", expectedImpact: "재접속 전환율 12%+" },
+    { strategy: "개인화 쿠폰", objective: "구매 공백 고객 재구매 유도", actionPlan: "CRM팀 구매 공백 30일 기준 자동 발급", expectedImpact: "재구매율 35%+" },
+  ],
+  mid: [
+    { strategy: "로열티 리뉴얼", objective: "포인트→혜택 중심 전환", actionPlan: "프로덕트팀 로열티 프로그램 재설계", expectedImpact: "재구매율 +8%p" },
+    { strategy: "모델 자동 재학습", objective: "예측 모델 정확도 유지", actionPlan: "ML팀 월간 재학습 파이프라인 자동화", expectedImpact: "모델 정확도 90%+ 유지" },
+  ],
+};
+
+/* ─── Main ─── */
 
 export default function ChartsSection() {
-  const entries = Object.entries(CHART_SPECS);
-
   return (
     <div className="space-y-10">
       <div>
         <h2 className="text-xl font-semibold text-report-text-primary mb-1">Charts</h2>
         <p className="text-sm text-report-text-secondary">
-          report-chart-spec.ts 기반 차트 렌더링. 더미 데이터로 시각화합니다.
+          피그마 기준 차트 컴포넌트. 더미 데이터로 렌더링합니다.
         </p>
       </div>
 
-      <div className="space-y-6">
-        {entries.map(([name, spec]) => (
-          <div
-            key={name}
-            className="bg-report-card border border-report-border rounded-card p-5 shadow-card"
-          >
-            {/* Header */}
-            <div className="flex items-center gap-2 mb-1">
-              <h3 className="font-semibold text-report-text-primary">{name}</h3>
-              {spec.confident === false && (
-                <Badge variant="cautionary" type="solid" size="small" text="검수 필요" />
-              )}
+      {/* Donut Charts */}
+      <div className="space-y-3">
+        <h3 className="text-sm font-semibold text-report-text-secondary uppercase tracking-wider">
+          Donut Chart
+        </h3>
+        <div className="space-y-4">
+          {DONUT_SAMPLES.map((sample) => (
+            <div key={sample.name}>
+              <p className="text-sm text-report-text-secondary mb-2">{sample.name}</p>
+              <DonutChart data={sample.data} />
             </div>
-            <div className="flex gap-3 text-xs text-report-text-secondary mb-4">
-              <span className="font-mono bg-report-bg px-2 py-0.5 rounded-chip">{spec.chartType}</span>
-              <span className="font-mono bg-report-bg px-2 py-0.5 rounded-chip">{spec.direction}</span>
+          ))}
+        </div>
+      </div>
+
+      {/* Horizontal Bar Charts */}
+      <div className="space-y-3">
+        <h3 className="text-sm font-semibold text-report-text-secondary uppercase tracking-wider">
+          Horizontal Bar Chart
+        </h3>
+        <div className="space-y-6">
+          {BAR_SAMPLES.map((sample) => (
+            <div key={sample.name}>
+              <p className="text-sm text-report-text-secondary mb-2">{sample.name}</p>
+              <div className="bg-report-card border border-report-border rounded-card p-[24px]">
+                <HorizontalBarChart data={sample.data} />
+              </div>
             </div>
-
-            {/* Chart */}
-            {spec.chartType === "donut" ? (
-              <DonutChart spec={spec} />
-            ) : (
-              <BarChart spec={spec} />
-            )}
-
-            {/* Legend */}
-            <div className="flex flex-wrap gap-3 mt-4 pt-3 border-t border-report-border">
-              {spec.series.map((s, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <div
-                    className="w-3 h-3 rounded-sm shrink-0"
-                    style={{ backgroundColor: s.color }}
-                  />
-                  <span className="text-xs text-report-text-primary">{s.name}</span>
-                  <span className="text-xs font-mono text-report-text-muted">{s.color}</span>
-                  {s.confident === false && (
-                    <Badge variant="cautionary" type="solid" size="small" text="추정" />
-                  )}
-                </div>
-              ))}
+          ))}
+        </div>
+      </div>
+      {/* Data Table */}
+      <div className="space-y-3">
+        <h3 className="text-sm font-semibold text-report-text-secondary uppercase tracking-wider">
+          Data Table
+        </h3>
+        <div className="space-y-6">
+          <div>
+            <p className="text-sm text-report-text-secondary mb-2">Data Table — Type 1 (클러스터별 비교)</p>
+            <div className="bg-report-card border border-report-border rounded-card p-[24px]">
+              <DataTable data={TABLE_SAMPLE.data} />
             </div>
           </div>
-        ))}
+          <div>
+            <p className="text-sm text-report-text-secondary mb-2">Data Table — Type 2 (Strategy Table)</p>
+            <StrategyTable data={STRATEGY_TABLE_SAMPLE} />
+          </div>
+        </div>
       </div>
     </div>
   );

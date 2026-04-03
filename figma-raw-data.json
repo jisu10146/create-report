@@ -1,0 +1,169 @@
+{
+  "meta": {
+    "fileKey": "AMkKa4RReQD0GQRtghitnK",
+    "fileName": "작업 중",
+    "lastFetched": "2026-04-03"
+  },
+  "nodes": {
+    "179:3761": {
+      "description": "Donut/Pie chart - max 6 items, colors from CHART_COLOR_SEQUENCE, others=#E6E7E9",
+      "visual": {
+        "type": "donut",
+        "layout": "chart left + legend right",
+        "legend_format": "color dot + label + percentage + (count)",
+        "max_items": 6,
+        "others_color": "#E6E7E9",
+        "color_sequence": [
+          "#2b7fff",
+          "#7ccf00",
+          "#9f8deb",
+          "#8ec5ff",
+          "#00bba7",
+          "#fdc700"
+        ],
+        "title": "top center",
+        "font": {
+          "label": "14px/500",
+          "value": "14px/600"
+        }
+      }
+    },
+    "179:3939": {
+      "description": "Donut chart tooltip on hover",
+      "visual": {
+        "bg": "#ffffff",
+        "radius": 8,
+        "shadow": "elevated",
+        "line1": {
+          "text": "label",
+          "color": "#7b7e85",
+          "size": 14,
+          "weight": 400
+        },
+        "line2_value": {
+          "color": "#171719",
+          "size": 16,
+          "weight": 700
+        },
+        "line2_count": {
+          "color": "#7b7e85",
+          "size": 16,
+          "weight": 400
+        },
+        "non_hover_opacity": 0.4
+      }
+    }
+  },
+  "images": {},
+  "extracted_tokens": {
+    "colors": {
+      "bg_page": "#f7f7f8",
+      "bg_card": "#ffffff",
+      "border": "#e6e7e9",
+      "text_primary": "#171719",
+      "text_secondary": "#7b7e85",
+      "text_muted": "#cacccf",
+      "chart_blue": "#2b7fff",
+      "chart_blue_light": "#bedbff",
+      "chart_blue_mid": "#8ec5ff",
+      "chart_green": "#7ccf00",
+      "chart_teal": "#00bba7",
+      "chart_purple": "#9f8deb",
+      "chart_yellow": "#fdc700"
+    },
+    "typography": [
+      {
+        "name": "Heading L",
+        "size": 20,
+        "weight": 600,
+        "lineHeight": 28
+      },
+      {
+        "name": "Heading M",
+        "size": 18,
+        "weight": 500,
+        "lineHeight": 26
+      },
+      {
+        "name": "Body L",
+        "size": 16,
+        "weight": 600,
+        "lineHeight": 24
+      },
+      {
+        "name": "Body M",
+        "size": 16,
+        "weight": 500,
+        "lineHeight": 24
+      },
+      {
+        "name": "Body S",
+        "size": 14,
+        "weight": 500,
+        "lineHeight": 20
+      },
+      {
+        "name": "Body S Regular",
+        "size": 14,
+        "weight": 400,
+        "lineHeight": 20
+      }
+    ],
+    "radius": [
+      6,
+      8,
+      16,
+      20
+    ],
+    "shadows": [
+      {
+        "name": "card",
+        "value": "0 1px 2px rgba(0,0,0,0.06)"
+      },
+      {
+        "name": "card-hover",
+        "value": "0 4px 16px rgba(0,0,0,0.08)",
+        "confident": false
+      },
+      {
+        "name": "elevated",
+        "value": "0 6px 20px rgba(0,0,0,0.1)",
+        "confident": false
+      }
+    ],
+    "tree_structure": {
+      "160:356 (report canvas)": {
+        "160:16105 Persona Survey": [
+          "160:16235 main",
+          "160:21144 report",
+          "160:22030 pie chart",
+          "160:22265 bar graph"
+        ],
+        "160:25121 Audience Strategy": [
+          "160:7182 main",
+          "160:15148 graph",
+          "160:15187 Integrated ROI"
+        ],
+        "160:25359 churn prediction": [
+          "160:25827 main",
+          "160:26302 pie chart",
+          "160:26314 bar graph"
+        ]
+      }
+    },
+    "downloaded_images": {
+      "174:3633": "/tmp/figma-exec-summary-a-4x.png",
+      "178:3749": "/tmp/figma-bullet-card.png",
+      "160:26302": "/tmp/chart-churn-pie.png",
+      "160:26314": "/tmp/chart-churn-bar.png",
+      "160:22030": "/tmp/chart-persona-pie.png",
+      "160:22265": "/tmp/chart-persona-bar.png",
+      "160:15148": "/tmp/chart-audience-graph.png",
+      "160:15187": "/tmp/chart-audience-roi.png"
+    }
+  },
+  "downloaded_images": {
+    "179:3761": "/tmp/figma-pie-chart.png",
+    "179:3939": "/tmp/figma-pie-tooltip.png"
+  }
+}

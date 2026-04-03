@@ -1,50 +1,120 @@
-import { Badge } from "@cubig/design-system";
 import type { StrategyTableData } from "@/types";
-import type { BadgeVariant } from "@cubig/design-system";
 
-const PHASES: Array<{ key: keyof StrategyTableData; label: string; variant: BadgeVariant }> = [
-  { key: "immediate", label: "즉시 (0-2주)", variant: "negative" },
-  { key: "short", label: "단기 (1-3개월)", variant: "cautionary" },
-  { key: "mid", label: "중기 (3-6개월)", variant: "info" },
+/**
+ * StrategyTable — 피그마 raw 데이터 기준
+ *
+ * 테이블: cornerRadius 16, bg #ffffff
+ * header: bg #fbfbfb, border #e6e7e9, 텍스트 16px/400 #7b7e85
+ * Phase 뱃지: radius 8, padding 8/4, 14px/500
+ * Phase sub: 18px/600 #0f0f0f
+ * Cell: padding 16, 텍스트 16px/400 #171719
+ * Phase 컬럼: 232px, body 컬럼: 균등 분할
+ */
+
+const PHASE_BADGE = { bg: "#eff6ff", text: "#2b7fff" };
+const STRATEGY_BADGE = { bg: "#f3f4f6", text: "#171719" };
+
+const PHASES: Array<{
+  key: keyof StrategyTableData;
+  label: string;
+  sub: string;
+}> = [
+  { key: "immediate", label: "Immediate", sub: "within 1 week" },
+  { key: "short", label: "Short-term", sub: "within 1 month" },
+  { key: "mid", label: "Mid-term", sub: "within 3 months" },
 ];
+
+const COLUMNS = ["Strategy", "Objective", "Action Plan", "Expected Impact"];
+
+function PhaseBadge({ label, bg, color }: { label: string; bg: string; color: string }) {
+  return (
+    <span
+      className="inline-flex items-center text-[14px] font-medium leading-[20px] rounded-[8px] px-[8px] py-[4px]"
+      style={{ backgroundColor: bg, color }}
+    >
+      {label}
+    </span>
+  );
+}
 
 export default function StrategyTable({ data }: { data: StrategyTableData }) {
   return (
-    <div className="bg-report-card border border-report-border rounded-card overflow-hidden shadow-card">
-      <table className="w-full text-sm">
+    <div className="bg-[#ffffff] border border-report-border rounded-[16px] overflow-hidden">
+      <table className="w-full table-fixed">
+        <colgroup>
+          <col style={{ width: 232 }} />
+          {COLUMNS.map((_, i) => (
+            <col key={i} />
+          ))}
+        </colgroup>
         <thead>
-          <tr className="border-b border-report-border bg-report-bg">
-            <th className="text-left px-4 py-3 font-semibold text-report-text-secondary w-28">단계</th>
-            <th className="text-left px-4 py-3 font-semibold text-report-text-secondary">실행 항목</th>
-            <th className="text-left px-4 py-3 font-semibold text-report-text-secondary w-28">담당</th>
-            <th className="text-left px-4 py-3 font-semibold text-report-text-secondary w-32">측정 지표</th>
-            <th className="text-left px-4 py-3 font-semibold text-report-text-secondary w-16">우선순위</th>
+          <tr style={{ backgroundColor: "#fbfbfb" }} className="border-b border-report-border">
+            <th className="px-[16px] py-[16px]" />
+            {COLUMNS.map((col) => (
+              <th
+                key={col}
+                className="text-left px-[16px] py-[16px] text-[16px] font-normal leading-[24px]"
+                style={{ color: "#7b7e85" }}
+              >
+                {col}
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          {PHASES.map((phase) =>
-            (data[phase.key] ?? []).map((row, i) => (
+          {PHASES.map((phase) => {
+            const rows = data[phase.key] ?? [];
+            if (rows.length === 0) return null;
+            return rows.map((row, i) => (
               <tr
                 key={`${phase.key}-${i}`}
-                className="border-b border-report-border last:border-b-0 hover:bg-report-bg"
+                className={`border-b border-report-border last:border-b-0 ${i > 0 ? "" : ""}`}
               >
-                {i === 0 ? (
+                {i === 0 && (
                   <td
-                    rowSpan={data[phase.key].length}
-                    className="px-4 py-3 align-top"
+                    rowSpan={rows.length}
+                    className="px-[16px] py-[16px] align-top border-r border-report-border"
                   >
-                    <Badge variant={phase.variant} type="solid" size="small" text={phase.label} />
+                    <div className="flex flex-col items-start gap-[6px]">
+                      <PhaseBadge label={phase.label} bg={PHASE_BADGE.bg} color={PHASE_BADGE.text} />
+                      <span
+                        className="text-[18px] font-semibold leading-[26px]"
+                        style={{ color: "#0f0f0f" }}
+                      >
+                        {phase.sub}
+                      </span>
+                    </div>
                   </td>
-                ) : null}
-                <td className="px-4 py-3 text-report-text-primary">{row.action}</td>
-                <td className="px-4 py-3 text-report-text-secondary">{row.owner}</td>
-                <td className="px-4 py-3 text-report-text-secondary text-xs">{row.metric}</td>
-                <td className="px-4 py-3">
-                  <span className="text-xs font-bold text-report-text-primary">{row.priority}</span>
+                )}
+                <td className="px-[16px] py-[16px] align-top">
+                  <span
+                    className="inline-flex items-center text-[14px] font-medium leading-[20px] rounded-[8px] px-[8px] py-[4px]"
+                    style={{ backgroundColor: STRATEGY_BADGE.bg, color: STRATEGY_BADGE.text }}
+                  >
+                    {row.strategy}
+                  </span>
+                </td>
+                <td
+                  className="px-[16px] py-[18px] text-[16px] font-normal leading-[24px] align-top"
+                  style={{ color: "#171719" }}
+                >
+                  {row.objective}
+                </td>
+                <td
+                  className="px-[16px] py-[18px] text-[16px] font-normal leading-[24px] align-top"
+                  style={{ color: "#171719" }}
+                >
+                  {row.actionPlan}
+                </td>
+                <td
+                  className="px-[16px] py-[18px] text-[16px] font-normal leading-[24px] align-top"
+                  style={{ color: "#171719" }}
+                >
+                  {row.expectedImpact}
                 </td>
               </tr>
-            ))
-          )}
+            ));
+          })}
         </tbody>
       </table>
     </div>

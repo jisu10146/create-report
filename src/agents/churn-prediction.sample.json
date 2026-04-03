@@ -34,12 +34,36 @@
       "componentType": "MetricCard",
       "data": {
         "items": [
-          { "label": "전체 분석 고객", "value": "24,831", "unit": "명" },
-          { "label": "고위험군 (Tier 1)", "value": "2,284", "unit": "명" },
-          { "label": "중위험군 (Tier 2)", "value": "2,287", "unit": "명" },
-          { "label": "고위험군 평균 LTV", "value": "94,200", "unit": "원" },
-          { "label": "예상 방어 가능 매출", "value": "21.5", "unit": "억원" },
-          { "label": "모델 정확도", "value": 87.3, "unit": "%" }
+          {
+            "label": "전체 분석 고객",
+            "value": "24,831",
+            "unit": "명"
+          },
+          {
+            "label": "고위험군 (Tier 1)",
+            "value": "2,284",
+            "unit": "명"
+          },
+          {
+            "label": "중위험군 (Tier 2)",
+            "value": "2,287",
+            "unit": "명"
+          },
+          {
+            "label": "고위험군 평균 LTV",
+            "value": "94,200",
+            "unit": "원"
+          },
+          {
+            "label": "예상 방어 가능 매출",
+            "value": "21.5",
+            "unit": "억원"
+          },
+          {
+            "label": "모델 정확도",
+            "value": 87.3,
+            "unit": "%"
+          }
         ]
       }
     },
@@ -134,58 +158,18 @@
       "componentType": "StrategyTable",
       "data": {
         "immediate": [
-          {
-            "action": "Tier 1 고위험군 긴급 Win-Back 이메일 발송",
-            "owner": "CRM팀",
-            "metric": "이메일 오픈율 15%+",
-            "priority": "P0"
-          },
-          {
-            "action": "CS 불만 고객 1:1 전담 상담 연결",
-            "owner": "CS팀",
-            "metric": "만족도 점수 4점 이상 회복",
-            "priority": "P0"
-          },
-          {
-            "action": "구독 해제 시도 고객 인터셉트 팝업",
-            "owner": "프로덕트팀",
-            "metric": "해지 취소율 20%+",
-            "priority": "P0"
-          }
+          { "strategy": "긴급 Win-Back", "objective": "고위험군 즉시 접촉", "actionPlan": "CRM팀 Tier 1 대상 Win-Back 이메일 발송", "expectedImpact": "이메일 오픈율 15%+" },
+          { "strategy": "CS 불만 대응", "objective": "불만 고객 만족도 회복", "actionPlan": "CS팀 1:1 전담 상담 연결", "expectedImpact": "만족도 4점 이상 회복" },
+          { "strategy": "해지 인터셉트", "objective": "구독 해제 시도 고객 방어", "actionPlan": "프로덕트팀 해지 인터셉트 팝업 도입", "expectedImpact": "해지 취소율 20%+" }
         ],
         "short": [
-          {
-            "action": "접속 빈도 기반 자동 푸시 알림 트리거 구축",
-            "owner": "마케팅엔지니어링팀",
-            "metric": "재접속 전환율 12%+",
-            "priority": "P1"
-          },
-          {
-            "action": "개인화 혜택 쿠폰 자동 발급 (구매 공백 30일 기준)",
-            "owner": "CRM팀",
-            "metric": "쿠폰 사용 후 재구매율 35%+",
-            "priority": "P1"
-          },
-          {
-            "action": "이탈 예측 대시보드 CS팀 공유",
-            "owner": "데이터팀",
-            "metric": "CS 선제 대응 건수 월 500건",
-            "priority": "P1"
-          }
+          { "strategy": "푸시 알림 자동화", "objective": "접속 빈도 하락 고객 재유입", "actionPlan": "마케팅엔지니어링팀 자동 트리거 구축", "expectedImpact": "재접속 전환율 12%+" },
+          { "strategy": "개인화 쿠폰", "objective": "구매 공백 고객 재구매 유도", "actionPlan": "CRM팀 구매 공백 30일 기준 자동 발급", "expectedImpact": "재구매율 35%+" },
+          { "strategy": "이탈 대시보드 공유", "objective": "CS팀 선제 대응 체계 구축", "actionPlan": "데이터팀 이탈 예측 대시보드 CS팀 공유", "expectedImpact": "선제 대응 월 500건" }
         ],
         "mid": [
-          {
-            "action": "로열티 프로그램 리뉴얼 (포인트 → 혜택 중심)",
-            "owner": "프로덕트팀",
-            "metric": "재구매율 +8%p",
-            "priority": "P2"
-          },
-          {
-            "action": "이탈 예측 모델 월간 재학습 자동화",
-            "owner": "ML팀",
-            "metric": "모델 정확도 90%+ 유지",
-            "priority": "P2"
-          }
+          { "strategy": "로열티 리뉴얼", "objective": "포인트→혜택 중심 전환", "actionPlan": "프로덕트팀 로열티 프로그램 재설계", "expectedImpact": "재구매율 +8%p" },
+          { "strategy": "모델 자동 재학습", "objective": "예측 모델 정확도 유지", "actionPlan": "ML팀 월간 재학습 파이프라인 자동화", "expectedImpact": "모델 정확도 90%+ 유지" }
         ]
       }
     },

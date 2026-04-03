@@ -1,0 +1,29 @@
+{
+  "nodeId": "183:4071",
+  "description": "Data Table - 클러스터별 비교 테이블. 컬럼 헤더에 색상 dot + 라벨, 행은 지표명 + 값",
+  "structure": {
+    "layout": "테이블 형태 — 좌측 지표명 + 우측 N개 컬럼 (클러스터별)",
+    "header": {
+      "row": "상단 헤더 행",
+      "cell": "색상 dot (10px, 차트 팔레트 순서) + 클러스터명",
+      "font": "14px/500 text-report-text-primary",
+      "bg": "없음 (투명)",
+      "borderBottom": "1px #e6e7e9"
+    },
+    "body": {
+      "rowLabel": {
+        "font": "14px/400 text-report-text-secondary",
+        "position": "좌측 첫 번째 컬럼"
+      },
+      "cellValue": {
+        "font": "16px/600 text-report-text-primary",
+        "align": "center",
+        "format": "퍼센트% 또는 퍼센트% (건수)"
+      },
+      "rowBorder": "1px #e6e7e9 하단",
+      "rowPadding": "약 16~20px 상하"
+    },
+    "card": "border 없음, shadow 없음, bg 없음",
+    "columnWidth": "균등 분할 (지표명 컬럼은 고정 폭)"
+  }
+}

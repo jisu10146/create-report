@@ -1,0 +1,10 @@
+{
+  "nodeId": "174:3633",
+  "screenshot": "/tmp/figma-exec-summary-a-4x.png",
+  "description": "Executive Summary Type A - description + key findings (이중 카드 구조)",
+  "structure": {
+    "outer": "bg-report-bg rounded-container p-[24px]",
+    "sectionHeader": "font-bold text-xl + text-base description",
+    "keyFindings": "bg-report-card rounded-card p-[24px] 안에 체크아이콘 + bullet list"
+  }
+}

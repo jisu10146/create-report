@@ -1,0 +1,20 @@
+{
+  "nodeId": "179:3761",
+  "screenshot": "/tmp/figma-pie-chart.png",
+  "description": "DonutChart - 최대 6색, 기타는 #E6E7E9, 좌 도넛 + 우 범례",
+  "structure": {
+    "layout": "flex items-center gap-[40px]",
+    "donut": "w-[200px] h-[200px] innerRadius 0.6",
+    "legend": "color dot 10px + label 14px/500 + value 14px/600 + (count)",
+    "colors": [
+      "#2b7fff",
+      "#7ccf00",
+      "#9f8deb",
+      "#8ec5ff",
+      "#00bba7",
+      "#fdc700"
+    ],
+    "othersColor": "#E6E7E9",
+    "maxItems": 6
+  }
+}

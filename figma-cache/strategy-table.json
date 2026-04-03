@@ -1,0 +1,32 @@
+{
+  "nodeId": "1:10444",
+  "fileKey": "6dSocJnKykujp639jA8G6t",
+  "screenshot": "/tmp/figma-table-type2.png",
+  "description": "Strategy Table - 실행 계획 테이블. 좌측에 phase 뱃지 (Immediate/Short-term/Mid-term), 우측에 Strategy/Objective/Action Plan/Expected Impact 컬럼",
+  "structure": {
+    "layout": "테이블 형태",
+    "header": {
+      "columns": ["", "Strategy", "Objective", "Action Plan", "Expected Impact"],
+      "font": "14px/500 text-report-text-secondary",
+      "borderBottom": "1px #e6e7e9"
+    },
+    "phaseColumn": {
+      "position": "좌측 첫 번째 컬럼, rowSpan으로 해당 phase 행 병합",
+      "phases": [
+        { "label": "Immediate", "sub": "within 1 week", "color": "blue (info/link 계열)" },
+        { "label": "Short-term", "sub": "within 1 month", "color": "green (positive 계열)" },
+        { "label": "Mid-term", "sub": "within 3 months", "color": "orange (cautionary 계열)" }
+      ],
+      "labelFont": "14px/600 색상 텍스트 (밑줄 있음)",
+      "subFont": "12px/400 text-report-text-secondary"
+    },
+    "body": {
+      "cellFont": "14px/400 text-report-text-primary",
+      "rowBorder": "1px #e6e7e9 하단",
+      "rowPadding": "약 12~16px 상하",
+      "lastColumnFont": "14px/500 text-report-text-primary (강조)"
+    },
+    "card": "bg-report-card rounded-card, border 있음",
+    "phaseSeparator": "phase 그룹 간 상단에 더 두꺼운 구분 또는 여백"
+  }
+}

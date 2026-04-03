@@ -11,12 +11,14 @@ import ReportRenderer from "@/components/ReportRenderer";
 import audienceStrategy from "@/agents/audience-strategy.json";
 import personaSurvey from "@/agents/persona-survey.json";
 import churnPrediction from "@/agents/churn-prediction.json";
+import newProductPricing from "@/agents/new-product-pricing.json";
 import pressReleaseSimulation from "@/agents/press-release-simulation.json";
 
 const ALL_AGENTS = [
   audienceStrategy,
   personaSurvey,
   churnPrediction,
+  newProductPricing,
   pressReleaseSimulation,
 ] as AgentDefinition[];
 
@@ -93,7 +95,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <main className="max-w-5xl mx-auto px-6 py-8">
+      <main className="max-w-[1720px] mx-auto px-6 py-8">
         {step === "select" && (
           <AgentDesigner
             agents={ALL_AGENTS}

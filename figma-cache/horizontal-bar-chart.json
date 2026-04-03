@@ -1,0 +1,40 @@
+{
+  "nodeId": "179:3897",
+  "description": "Horizontal Bar Chart - 수평 막대 그래프, 값 라벨이 바 오른쪽에 표시",
+  "structure": {
+    "layout": "horizontal bar",
+    "card": "카드 없음 — 배경 없이 차트만 렌더링",
+    "axisY": {
+      "labels": ["Very High", "High", "Medium", "Low", "Very Low"],
+      "font": "14px/400 text-report-text-primary",
+      "position": "left",
+      "tickSize": 0
+    },
+    "bars": {
+      "borderRadius": 4,
+      "height": "약 36px",
+      "gap": "항목 간 약 24px"
+    },
+    "colors": {
+      "series": [
+        { "rank": 1, "color": "#2b7fff", "label": "blue 500 (1위)" },
+        { "rank": 2, "color": "#7ccf00", "label": "lime 500 (2위)" },
+        { "rank": 3, "color": "#e6e7e9", "label": "gray 200 (나머지)" }
+      ],
+      "rule": "값이 같으면 같은 순위 — 1위 2개면 둘 다 lime, 다음은 3위로 gray"
+    },
+    "valueLabel": {
+      "position": "바 오른쪽 외부",
+      "format": "퍼센트% (건수)",
+      "percentFont": "14px/600 text-report-text-primary",
+      "countFont": "14px/400 text-report-text-secondary",
+      "zeroValue": "0% (0) — 바 없이 텍스트만"
+    },
+    "gridLine": {
+      "vertical": "왼쪽 Y축에 얇은 세로선 1개 (#e6e7e9)",
+      "horizontal": "없음"
+    },
+    "hover": "미확인 — 별도 프레임 필요",
+    "barInsideLabel": "없음 — 값은 항상 바 바깥 오른쪽"
+  }
+}

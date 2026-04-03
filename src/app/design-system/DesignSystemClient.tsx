@@ -74,7 +74,7 @@ export default function DesignSystemClient() {
       </aside>
 
       {/* Main */}
-      <main className="flex-1 p-10 max-w-5xl">
+      <main className="flex-1 p-10 max-w-[1720px]">
         {/* Review banner */}
         {totalUnconfirmed > 0 && (
           <div className="mb-6">

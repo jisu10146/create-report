@@ -51,53 +51,6 @@ export const CHART_COLOR_SEQUENCE = [
 export const CHART_SPECS: Record<string, ChartSpec> = {
   /* ── Churn Prediction ── */
 
-  "Cluster Distribution": {
-    chartType: "donut",
-    direction: "none",
-    series: [
-      { name: "Active majority", color: CHART_PALETTE.blue500 },
-      { name: "At-risk cluster", color: CHART_PALETTE.lime500 },
-      { name: "Low activity", color: CHART_PALETTE.blueLight },
-      { name: "Inactive", color: CHART_PALETTE.gray200 },
-    ],
-  },
-
-  "Churn Rate by Cluster": {
-    chartType: "stacked-bar",
-    direction: "vertical",
-    series: [
-      { name: "Churn rate", color: CHART_PALETTE.lime500 },
-      { name: "Retention rate", color: CHART_PALETTE.blue500 },
-      { name: "Inactive (background)", color: CHART_PALETTE.blueLight },
-    ],
-    axisX: "클러스터명",
-    hoverEffect: "tooltip: 클러스터명 + 이탈률 %",
-  },
-
-  /* ── Persona Survey ── */
-
-  "Response Rate by Age Group": {
-    chartType: "donut",
-    direction: "none",
-    series: [
-      { name: "Age 15-19", color: CHART_PALETTE.blue500 },
-      { name: "Age 20-24", color: CHART_PALETTE.lime500 },
-      { name: "Age 25-29", color: CHART_PALETTE.deepPurple400 },
-      { name: "Age 30-39", color: CHART_PALETTE.blue300 },
-      { name: "Age 40-49", color: CHART_PALETTE.teal500 },
-      { name: "Age 50-59", color: CHART_PALETTE.yellow400 },
-    ],
-  },
-
-  "Response Distribution by Gender": {
-    chartType: "donut",
-    direction: "none",
-    series: [
-      { name: "Male", color: CHART_PALETTE.blue500 },
-      { name: "Female", color: CHART_PALETTE.lime500 },
-    ],
-  },
-
   "Satisfaction Bar Chart": {
     chartType: "bar",
     direction: "horizontal",
@@ -140,8 +93,9 @@ export const CHART_SPECS: Record<string, ChartSpec> = {
     chartType: "bar",
     direction: "horizontal",
     series: [
-      { name: "최고값 (top)", color: CHART_PALETTE.blue500 },
-      { name: "기타", color: CHART_PALETTE.blueLight },
+      { name: "1위", color: CHART_PALETTE.blue500 },
+      { name: "2위", color: CHART_PALETTE.lime500 },
+      { name: "나머지", color: CHART_PALETTE.gray200 },
     ],
     axisY: "항목 라벨",
   },

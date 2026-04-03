@@ -18,6 +18,8 @@ export type ComponentType =
   | "StrategyTable"
   | "RevenueScenarioBar"
   | "ExecutiveSummary"
+  | "DonutChart"
+  | "DataTable"
   | string; // extensible
 
 export interface TabSection {
@@ -38,6 +40,7 @@ export interface ReportSection {
   label: string;
   componentType: ComponentType;
   repeatsPerItem?: boolean;
+  reason?: string;
 }
 
 export interface AgentDefinition {
@@ -96,6 +99,7 @@ export interface MetricCardData {
 
 export interface BulletCardData {
   title: string;
+  value?: string | number;
   bullets: string[];
 }
 
@@ -119,6 +123,7 @@ export interface SampleCardData {
 export interface BarChartItem {
   label: string;
   value: number; // percentage 0-100
+  count?: number;
 }
 
 export interface HorizontalBarChartData {
@@ -159,10 +164,10 @@ export interface SignalCardData {
 }
 
 export interface StrategyTableRow {
-  action: string;
-  owner: string;
-  metric: string;
-  priority: string;
+  strategy: string;
+  objective: string;
+  actionPlan: string;
+  expectedImpact: string;
 }
 
 export interface StrategyTableData {

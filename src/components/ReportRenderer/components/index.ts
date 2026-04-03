@@ -11,6 +11,8 @@ import SignalCard from "./SignalCard";
 import StrategyTable from "./StrategyTable";
 import RevenueScenarioBar from "./RevenueScenarioBar";
 import ExecutiveSummary from "./ExecutiveSummary";
+import DonutChart from "./DonutChart";
+import DataTable from "./DataTable";
 
 // Registry: componentType string → React component
 // Adding a new component: import it above and add the entry here.
@@ -28,6 +30,8 @@ export const COMPONENT_REGISTRY: Record<string, React.ComponentType<{ data: unkn
   StrategyTable: StrategyTable as React.ComponentType<{ data: unknown }>,
   RevenueScenarioBar: RevenueScenarioBar as React.ComponentType<{ data: unknown }>,
   ExecutiveSummary: ExecutiveSummary as React.ComponentType<{ data: unknown }>,
+  DonutChart: DonutChart as React.ComponentType<{ data: unknown }>,
+  DataTable: DataTable as React.ComponentType<{ data: unknown }>,
 };
 
 export function renderComponent(componentType: string, data: unknown): React.ReactElement | null {

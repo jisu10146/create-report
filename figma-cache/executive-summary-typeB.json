@@ -1,0 +1,23 @@
+{
+  "nodeId": "1:10226",
+  "fileKey": "6dSocJnKykujp639jA8G6t",
+  "screenshot": "/tmp/figma-ds-exec-summary-typeB.png",
+  "description": "Executive Summary Type B - topMetrics 행 + Key Findings. 하나의 카드 안에 border로 구분.",
+  "structure": {
+    "title": "Executive Summary — 카드 바깥, font-bold text-xl",
+    "card": "bg-report-card border border-report-border rounded-card",
+    "topMetrics": {
+      "layout": "grid 2컬럼, 세로 구분선(border-r)",
+      "cell": "p-[24px]",
+      "label": "14px/400 text-report-text-secondary",
+      "value": "16px/700 text-report-text-primary"
+    },
+    "keyFindings": {
+      "position": "metrics 아래, border-t로 구분",
+      "padding": "p-[24px]",
+      "header": "체크 아이콘(20px 검정 원+흰 체크) + 'Key Findings' 16px/600",
+      "bullets": "· dot 불릿, 14px/400 text-report-text-primary"
+    },
+    "noOuterBg": "Type A와 달리 #f7f7f8 배경 없음 — 흰 카드에 border만"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "nodeId": "1:10524",
+  "fileKey": "6dSocJnKykujp639jA8G6t",
+  "screenshot": "/tmp/figma-ds-cluster-card.png",
+  "description": "Cluster Card - 클러스터 정보 카드. 상단 뱃지 + 아이콘 + 제목 + 설명",
+  "structure": {
+    "card": "bg-report-card border border-report-border rounded-card p-[24px]",
+    "topBadge": "색상 dot(blue) + 텍스트 'High-Risk Cluster', 14px/500",
+    "icon": "좌측 아이콘 (원형, 연한 배경)",
+    "title": "16px/600 text-report-text-primary, 클러스터명",
+    "description": "14px/400 text-report-text-secondary, 클러스터 설명",
+    "layout": "상단 뱃지 → 아이콘+텍스트(flex row)"
+  }
+}

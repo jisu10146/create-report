@@ -47,7 +47,8 @@ const SAMPLE_DATA: Record<string, { label: string; data: unknown }> = {
   BulletCard: {
     label: "Bullet Card",
     data: {
-      title: "고유 고객 수 24명",
+      title: "고유 고객 수",
+      value: "24명",
       bullets: [
         "전체 고객 대비 약 30%를 차지하는 대규모 이탈 위험 고객군으로, 서비스 안정성에 중대한 영향을 미침",
         "24명으로 전체 80명 중 상당 비중 차지",
@@ -66,19 +67,6 @@ const SAMPLE_DATA: Record<string, { label: string; data: unknown }> = {
         "핵심 메시지가 3문단 이후에 등장 — 1문단으로 이동 필요",
         "기술 용어 비중이 높아 일반 매체 게재 시 가독성 저하 우려",
         "데이터 인용은 양호하나 헤드라인에 뉴스 앵글이 부족",
-      ],
-    },
-  },
-  HorizontalBarChart: {
-    label: "Horizontal Bar Chart",
-    data: {
-      question: "콘텐츠 유형별 평균 참여율 (%)",
-      items: [
-        { label: "숏폼 영상", value: 87 },
-        { label: "라이브 스트리밍", value: 62 },
-        { label: "카드뉴스", value: 48 },
-        { label: "블로그 포스트", value: 35 },
-        { label: "단일 이미지", value: 28 },
       ],
     },
   },
@@ -125,21 +113,6 @@ const SAMPLE_DATA: Record<string, { label: string; data: unknown }> = {
           badge: "MEDIUM",
           badgeColor: "orange",
         },
-      ],
-    },
-  },
-  StrategyTable: {
-    label: "Strategy Table",
-    data: {
-      immediate: [
-        { action: "Tier 1 고위험군 긴급 Win-Back 이메일 발송", owner: "CRM팀", metric: "이메일 오픈율 15%+", priority: "P0" },
-        { action: "CS 불만 고객 1:1 전담 상담 연결", owner: "CS팀", metric: "만족도 4점 이상 회복", priority: "P0" },
-      ],
-      short: [
-        { action: "접속 빈도 기반 자동 푸시 알림 트리거 구축", owner: "마케팅엔지니어링팀", metric: "재접속 전환율 12%+", priority: "P1" },
-      ],
-      mid: [
-        { action: "로열티 프로그램 리뉴얼", owner: "프로덕트팀", metric: "재구매율 +8%p", priority: "P2" },
       ],
     },
   },

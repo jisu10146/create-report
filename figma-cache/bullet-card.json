@@ -1,0 +1,12 @@
+{
+  "nodeId": "178:3749",
+  "screenshot": "/tmp/figma-bullet-card.png",
+  "description": "BulletCard - 좌측 라벨+값, 우측 bullet list, 세로 구분선",
+  "structure": {
+    "layout": "flex 좌우 2컬럼 gap-[40px]",
+    "left": "라벨 text-sm + 값 text-2xl bold",
+    "divider": "w-px bg-report-border",
+    "right": "BulletText 컴포넌트",
+    "card": "bg-report-card border border-report-border rounded-card p-[24px]"
+  }
+}

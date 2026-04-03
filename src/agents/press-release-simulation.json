@@ -2,41 +2,18 @@
   "id": "press-release-simulation",
   "name": "Press Release Simulation",
   "description": "Simulate press releases and assess messaging clarity, tone, and potential impact.",
-  "category": "analysis",
+  "category": "strategy",
   "inputType": "none",
   "layout": "single-section",
   "modalType": "none",
   "reportSections": [
-    {
-      "id": "executive-summary",
-      "label": "Executive Summary",
-      "componentType": "ExecutiveSummary"
-    },
-    {
-      "id": "kpi-overview",
-      "label": "핵심 지표",
-      "componentType": "MetricCard"
-    },
-    {
-      "id": "main-chart",
-      "label": "데이터 분석",
-      "componentType": "HorizontalBarChart"
-    },
-    {
-      "id": "ai-interpretation",
-      "label": "",
-      "componentType": "InterpretationBlock"
-    },
-    {
-      "id": "do-dont",
-      "label": "DO / DON'T",
-      "componentType": "DoDontCard"
-    },
-    {
-      "id": "strategy-table",
-      "label": "실행 계획",
-      "componentType": "StrategyTable"
-    }
+    { "id": "executive-summary", "label": "Executive Summary", "componentType": "ExecutiveSummary" },
+    { "id": "message-quality", "label": "메시지 품질 평가", "componentType": "ScoreCard" },
+    { "id": "tone-analysis", "label": "톤 구성 분석", "componentType": "HorizontalBarChart" },
+    { "id": "tone-interpretation", "label": "", "componentType": "InterpretationBlock" },
+    { "id": "media-signals", "label": "미디어 영향력 시그널", "componentType": "SignalCard" },
+    { "id": "messaging-do-dont", "label": "메시징 전략 DO / DON'T", "componentType": "DoDontCard" },
+    { "id": "execution-plan", "label": "배포 실행 계획", "componentType": "StrategyTable" }
   ],
   "promptTemplate": ""
 }

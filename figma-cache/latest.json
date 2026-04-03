@@ -1,0 +1,4740 @@
+{
+  "colors": [
+    {
+      "path": "Design System",
+      "type": "fill",
+      "hex": "#ffffff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System",
+      "type": "stroke",
+      "hex": "#ffffff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary",
+      "type": "fill",
+      "hex": "#f7f7f8",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 1",
+      "type": "fill",
+      "hex": "#ffffff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 1",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 1 > Card 1 > Title",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 1 > Card 1 > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 2",
+      "type": "fill",
+      "hex": "#ffffff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 2",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 2 > Card 2 > Title",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 2 > Card 2 > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings",
+      "type": "fill",
+      "hex": "#ffffff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings",
+      "type": "stroke",
+      "hex": "#222222",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings > Key Findings",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings > Key Findings > icon_circlecheck",
+      "type": "fill",
+      "hex": "#ffffff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings > Key Findings > icon_circlecheck > Vector",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings > Key Findings > Key Findings",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings > Subscription intent : High or higher (68%)",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings > Most desired benefit : Ad-free viewing (72%)",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings > Main concern : Price burden (45%)",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings > Reasonable price : $10-15 (52%)",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Executive Summary > Executive Summary",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Executive Summary > 본 보고서는 2023년 6월부터 2024년 6월까지 약 1년간의 고객 행동 데이터를 기반으로, 총 80명의 고객을 대상으로 한 이탈 예측 및 군집 분석 결과를 종합하여 제시합니다.",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings",
+      "type": "fill",
+      "hex": "#f7f7f8",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings",
+      "type": "fill",
+      "hex": "#ffffff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings > icon_circlecheck",
+      "type": "fill",
+      "hex": "#ffffff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings > icon_circlecheck > Vector",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings > Key Findings",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings > 자산 연결 기능은 고객이 서비스에 남을지 결정하는 가장 중요한 단계이며, 이 단계를 넘지 못한 고객의 86%가 결국 서비스를 떠나고 있습니다.",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings > “자산 연결 체험 및 접속 습관 회복”을 중심으로 한 맞춤형 윈백 및 온보딩 전략이 이탈률을 15~20% 이상 감소시키는 데 효과적일 것으로 기대된다.",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings > 단순 방문이 ‘자산 연결’로 이어지지 않은 채 5일이 경과하는 시점은 고객이 서비스를 잊어가는 위험 신호이며, 이 기간이 이탈을 막을 수 있는 마지막 '골든타임'입니다.",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings > 가입 첫날 자산 연결을 유도하는 온보딩 최적화를 진행하고, 접속이 4일 이상 지난 고객에게는 맞춤형 알림을 보내 재방문을 유도해야 합니다.",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bullet card",
+      "type": "fill",
+      "hex": "#ffffff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bullet card > metric card > metric > metric",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bullet card > metric card > metric > value",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bullet card > metric card > Divider > \bVector",
+      "type": "fill",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bullet card > metric card > description > 전체 고객 대비 약 30%를 차지하는 대규모 이탈 위험 고객군으로, 서비스 안정성에 중대한 영향을 미침",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bullet card > metric card > description > 24명으로 전체 80명 중 상당 비중 차지",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bullet card > metric card > description > 대규모 군집인 만큼 개별 맞춤형보다는 군집 특성 기반의 전략 수립이 효과적",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > title",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > pie chart > Ellipse 4",
+      "type": "fill",
+      "hex": "#00bba7",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > pie chart > Ellipse 4",
+      "type": "stroke",
+      "hex": "#ffffff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > pie chart > Ellipse 6",
+      "type": "fill",
+      "hex": "#9f8deb",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > pie chart > Ellipse 6",
+      "type": "stroke",
+      "hex": "#ffffff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > pie chart > Ellipse 8",
+      "type": "fill",
+      "hex": "#7ccf00",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > pie chart > Ellipse 8",
+      "type": "stroke",
+      "hex": "#ffffff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > pie chart > Ellipse 7",
+      "type": "fill",
+      "hex": "#8ec5ff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > pie chart > Ellipse 7",
+      "type": "stroke",
+      "hex": "#ffffff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > pie chart > Ellipse 2",
+      "type": "fill",
+      "hex": "#2b7fff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > pie chart > Ellipse 2",
+      "type": "stroke",
+      "hex": "#ffffff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > pie chart > Ellipse 3",
+      "type": "fill",
+      "hex": "#fdc700",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > pie chart > Ellipse 3",
+      "type": "stroke",
+      "hex": "#ffffff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 1 > legend 1 > Dot > Vector",
+      "type": "fill",
+      "hex": "#2b7fff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 1 > legend 1 > legend 1",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 1 > legend 1 > %",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 1 > legend 1 > value",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 2 > legend 2 > Dot > Vector",
+      "type": "fill",
+      "hex": "#7ccf00",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 2 > legend 2 > legend 2",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 2 > legend 2 > %",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 2 > legend 2 > value",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 3 > legend 3 > Dot > Vector",
+      "type": "fill",
+      "hex": "#8ec5ff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 3 > legend 3 > legend 3",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 3 > legend 3 > %",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 3 > legend 3 > value",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 4 > legend 4 > Dot > Vector",
+      "type": "fill",
+      "hex": "#9f8deb",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 4 > legend 4 > legend 4",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 4 > legend 4 > %",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 4 > legend 4 > value",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 5 > legend 5 > Dot > Vector",
+      "type": "fill",
+      "hex": "#00bba7",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 5 > legend 5 > legend 5",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 5 > legend 5 > %",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 5 > legend 5 > value",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 6 > legend 6 > Dot > Vector",
+      "type": "fill",
+      "hex": "#fdc700",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 6 > legend 6 > legend 6",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 6 > legend 6 > %",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 6 > legend 6 > value",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 1 > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 1 > bar",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 1 > bar > bar",
+      "type": "fill",
+      "hex": "#7ccf00",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 1 > bar > Counter > Percent",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 1 > bar > Counter > Count",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 2 > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 2 > bar",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 2 > bar > bar",
+      "type": "fill",
+      "hex": "#2b7fff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 2 > bar > Counter > Percent",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 2 > bar > Counter > Count",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 3 > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 3 > bar ",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 3 > bar  > bar ",
+      "type": "fill",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 3 > bar  > Counter > Percent",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 3 > bar  > Counter > Count",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 4 > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 4 > bar",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 4 > bar > bar",
+      "type": "fill",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 4 > bar > Counter > Percent",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 4 > bar > Counter > Count",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 5 > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 5 > bar",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 5 > bar > bar",
+      "type": "fill",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 5 > bar > Counter > Percent",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > bar chart > bar 5 > bar > Counter > Count",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Tooltip",
+      "type": "fill",
+      "hex": "#ffffff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Tooltip",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Tooltip > Label > title",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Tooltip > Label > Label > %",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > Tooltip > Label > Label > value",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table",
+      "type": "fill",
+      "hex": "#ffffff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > header",
+      "type": "fill",
+      "hex": "#fbfbfb",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > header",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > header > header 2 > header 2 > dot",
+      "type": "fill",
+      "hex": "#2b7fff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > header > header 2 > header 2 > 이탈 위험 집중 군집 (30대)",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > header > header 3 > header 3 > dot",
+      "type": "fill",
+      "hex": "#7ccf00",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > header > header 3 > header 3 > 이탈 고위험 소수 군집 (40대 남성)",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > header > header 4 > header 4 > Vector",
+      "type": "fill",
+      "hex": "#bedbff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > header > header 4 > header 4 > 활동성 유지 대다수 군집 (40대 중심)",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > row header > Text",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > row header > 자산 연결 기능 도달 전 이탈률",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > row header > 자산 연결 기능 도달 전 이탈률",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > row header > 자산 연결 기능 도달 전 이탈률",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > row header > 자산 연결 기능 도달 전 이탈률",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > row header > 자산 연결 기능 도달 전 이탈률",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2",
+      "type": "fill",
+      "hex": "#ffffff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > header",
+      "type": "fill",
+      "hex": "#fbfbfb",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > header",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > header > header 2 > Strategy",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > header > header 3 > Objective",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > header > header 4 > Action Plan",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > header > header 5 > Expected Impact",
+      "type": "fill",
+      "hex": "#7b7e85",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row header",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge",
+      "type": "fill",
+      "hex": "#eff6ff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Wrapper > Text Area",
+      "type": "fill",
+      "hex": "#2b7fff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row header > Text",
+      "type": "fill",
+      "hex": "#0f0f10",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "type": "fill",
+      "hex": "#f0f0f2",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "type": "fill",
+      "hex": "#f0f0f2",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row header",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge",
+      "type": "fill",
+      "hex": "#eff6ff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Wrapper > Text Area",
+      "type": "fill",
+      "hex": "#2b7fff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row header > Text",
+      "type": "fill",
+      "hex": "#0f0f10",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "type": "fill",
+      "hex": "#f0f0f2",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "type": "fill",
+      "hex": "#f0f0f2",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row header",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge",
+      "type": "fill",
+      "hex": "#eff6ff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Wrapper > Text Area",
+      "type": "fill",
+      "hex": "#2b7fff",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row header > Text",
+      "type": "fill",
+      "hex": "#0f0f10",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "type": "fill",
+      "hex": "#f0f0f2",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "type": "fill",
+      "hex": "#f0f0f2",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "type": "stroke",
+      "hex": "#e6e7e9",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "type": "fill",
+      "hex": "#171719",
+      "alpha": 1
+    }
+  ],
+  "spacing": [
+    {
+      "path": "Design System",
+      "width": 4447,
+      "height": 2892
+    },
+    {
+      "path": "Design System > Executive Summary — Type B",
+      "itemSpacing": 24,
+      "width": 1720,
+      "height": 378
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary",
+      "width": 184,
+      "height": 28
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary",
+      "paddingLeft": 8,
+      "paddingRight": 8,
+      "paddingTop": 8,
+      "paddingBottom": 8,
+      "itemSpacing": 8,
+      "width": 1720,
+      "height": 326
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card",
+      "itemSpacing": 20,
+      "width": 1704,
+      "height": 112
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card",
+      "itemSpacing": 8,
+      "width": 1704,
+      "height": 112
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 1",
+      "paddingLeft": 24,
+      "paddingRight": 24,
+      "paddingTop": 24,
+      "paddingBottom": 24,
+      "itemSpacing": 40,
+      "width": 848,
+      "height": 112
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 1 > Card 1",
+      "itemSpacing": 12,
+      "width": 800,
+      "height": 64
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 1 > Card 1 > Title",
+      "width": 800,
+      "height": 24
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 1 > Card 1 > Text",
+      "width": 808,
+      "height": 28
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 2",
+      "paddingLeft": 24,
+      "paddingRight": 24,
+      "paddingTop": 24,
+      "paddingBottom": 24,
+      "itemSpacing": 40,
+      "width": 848,
+      "height": 112
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 2 > Card 2",
+      "itemSpacing": 12,
+      "width": 800,
+      "height": 64
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 2 > Card 2 > Title",
+      "width": 800,
+      "height": 24
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 2 > Card 2 > Text",
+      "width": 56,
+      "height": 28
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings",
+      "paddingLeft": 24,
+      "paddingRight": 24,
+      "paddingTop": 24,
+      "paddingBottom": 24,
+      "itemSpacing": 8,
+      "width": 1704,
+      "height": 190
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings",
+      "itemSpacing": 10,
+      "width": 1656,
+      "height": 26
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings > Key Findings",
+      "itemSpacing": 6,
+      "width": 1656,
+      "height": 26
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings > Key Findings > icon_circlecheck",
+      "width": 20,
+      "height": 20
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings > Key Findings > icon_circlecheck > Vector",
+      "width": 16,
+      "height": 16
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings > Key Findings > Key Findings",
+      "width": 105,
+      "height": 26
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings",
+      "itemSpacing": 4,
+      "width": 1656,
+      "height": 108
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings > Subscription intent : High or higher (68%)",
+      "width": 1656,
+      "height": 24
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings > Most desired benefit : Ad-free viewing (72%)",
+      "width": 1656,
+      "height": 24
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings > Main concern : Price burden (45%)",
+      "width": 1656,
+      "height": 24
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings > Reasonable price : $10-15 (52%)",
+      "width": 1656,
+      "height": 24
+    },
+    {
+      "path": "Design System > Executive Summary — Type A",
+      "itemSpacing": 24,
+      "width": 1240,
+      "height": 290
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Executive Summary",
+      "itemSpacing": 8,
+      "width": 1240,
+      "height": 60
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Executive Summary > Executive Summary",
+      "width": 184,
+      "height": 28
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Executive Summary > 본 보고서는 2023년 6월부터 2024년 6월까지 약 1년간의 고객 행동 데이터를 기반으로, 총 80명의 고객을 대상으로 한 이탈 예측 및 군집 분석 결과를 종합하여 제시합니다.",
+      "width": 1071,
+      "height": 24
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings",
+      "paddingLeft": 8,
+      "paddingRight": 8,
+      "paddingTop": 8,
+      "paddingBottom": 8,
+      "itemSpacing": 8,
+      "width": 1240,
+      "height": 206
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings",
+      "paddingLeft": 24,
+      "paddingRight": 24,
+      "paddingTop": 24,
+      "paddingBottom": 24,
+      "itemSpacing": 24,
+      "width": 1224,
+      "height": 190
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings",
+      "itemSpacing": 8,
+      "width": 1176,
+      "height": 142
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings",
+      "itemSpacing": 6,
+      "width": 1176,
+      "height": 26
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings > icon_circlecheck",
+      "width": 20,
+      "height": 20
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings > icon_circlecheck > Vector",
+      "width": 16,
+      "height": 16
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings > Key Findings",
+      "width": 105,
+      "height": 26
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings",
+      "itemSpacing": 4,
+      "width": 1176,
+      "height": 108
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings > 자산 연결 기능은 고객이 서비스에 남을지 결정하는 가장 중요한 단계이며, 이 단계를 넘지 못한 고객의 86%가 결국 서비스를 떠나고 있습니다.",
+      "width": 1176,
+      "height": 24
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings > “자산 연결 체험 및 접속 습관 회복”을 중심으로 한 맞춤형 윈백 및 온보딩 전략이 이탈률을 15~20% 이상 감소시키는 데 효과적일 것으로 기대된다.",
+      "width": 1176,
+      "height": 24
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings > 단순 방문이 ‘자산 연결’로 이어지지 않은 채 5일이 경과하는 시점은 고객이 서비스를 잊어가는 위험 신호이며, 이 기간이 이탈을 막을 수 있는 마지막 '골든타임'입니다.",
+      "width": 1176,
+      "height": 24
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings > 가입 첫날 자산 연결을 유도하는 온보딩 최적화를 진행하고, 접속이 4일 이상 지난 고객에게는 맞춤형 알림을 보내 재방문을 유도해야 합니다.",
+      "width": 889,
+      "height": 24
+    },
+    {
+      "path": "Design System > bullet card",
+      "paddingLeft": 24,
+      "paddingRight": 24,
+      "paddingTop": 24,
+      "paddingBottom": 24,
+      "itemSpacing": 24,
+      "width": 1224,
+      "height": 136
+    },
+    {
+      "path": "Design System > bullet card > metric card",
+      "itemSpacing": 32,
+      "width": 1176,
+      "height": 88
+    },
+    {
+      "path": "Design System > bullet card > metric card > metric",
+      "itemSpacing": 12,
+      "width": 240,
+      "height": 88
+    },
+    {
+      "path": "Design System > bullet card > metric card > metric > metric",
+      "width": 87,
+      "height": 26
+    },
+    {
+      "path": "Design System > bullet card > metric card > metric > value",
+      "width": 47,
+      "height": 30
+    },
+    {
+      "path": "Design System > bullet card > metric card > Divider",
+      "itemSpacing": 10,
+      "width": 1,
+      "height": 88
+    },
+    {
+      "path": "Design System > bullet card > metric card > Divider > \bVector",
+      "width": 1,
+      "height": 88
+    },
+    {
+      "path": "Design System > bullet card > metric card > description",
+      "itemSpacing": 8,
+      "width": 871,
+      "height": 88
+    },
+    {
+      "path": "Design System > bullet card > metric card > description > 전체 고객 대비 약 30%를 차지하는 대규모 이탈 위험 고객군으로, 서비스 안정성에 중대한 영향을 미침",
+      "width": 871,
+      "height": 24
+    },
+    {
+      "path": "Design System > bullet card > metric card > description > 24명으로 전체 80명 중 상당 비중 차지",
+      "width": 267,
+      "height": 24
+    },
+    {
+      "path": "Design System > bullet card > metric card > description > 대규모 군집인 만큼 개별 맞춤형보다는 군집 특성 기반의 전략 수립이 효과적",
+      "width": 871,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart",
+      "itemSpacing": 40,
+      "width": 450,
+      "height": 284
+    },
+    {
+      "path": "Design System > pie chart > title",
+      "width": 32,
+      "height": 26
+    },
+    {
+      "path": "Design System > pie chart > pie chart",
+      "itemSpacing": 40,
+      "width": 450,
+      "height": 218
+    },
+    {
+      "path": "Design System > pie chart > pie chart > pie chart",
+      "width": 180,
+      "height": 180
+    },
+    {
+      "path": "Design System > pie chart > pie chart > pie chart > Ellipse 4",
+      "width": 180,
+      "height": 180
+    },
+    {
+      "path": "Design System > pie chart > pie chart > pie chart > Ellipse 6",
+      "width": 180,
+      "height": 180
+    },
+    {
+      "path": "Design System > pie chart > pie chart > pie chart > Ellipse 8",
+      "width": 180,
+      "height": 180
+    },
+    {
+      "path": "Design System > pie chart > pie chart > pie chart > Ellipse 7",
+      "width": 180,
+      "height": 180
+    },
+    {
+      "path": "Design System > pie chart > pie chart > pie chart > Ellipse 2",
+      "width": 180,
+      "height": 180
+    },
+    {
+      "path": "Design System > pie chart > pie chart > pie chart > Ellipse 3",
+      "width": 180,
+      "height": 180
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend",
+      "itemSpacing": 10,
+      "width": 230,
+      "height": 218
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 1",
+      "paddingLeft": 4,
+      "paddingRight": 8,
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "itemSpacing": 24,
+      "width": 230,
+      "height": 28
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 1 > legend 1",
+      "itemSpacing": 8,
+      "width": 106,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 1 > legend 1 > Dot",
+      "paddingLeft": 3,
+      "paddingRight": 3,
+      "paddingTop": 3,
+      "paddingBottom": 3,
+      "itemSpacing": 10,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 1 > legend 1 > Dot > Vector",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 1 > legend 1 > legend 1",
+      "width": 82,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 1 > legend 1",
+      "itemSpacing": 2,
+      "width": 88,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 1 > legend 1 > %",
+      "width": 36,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 1 > legend 1 > value",
+      "width": 50,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 2",
+      "paddingLeft": 4,
+      "paddingRight": 8,
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "itemSpacing": 24,
+      "width": 221,
+      "height": 28
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 2 > legend 2",
+      "itemSpacing": 8,
+      "width": 106,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 2 > legend 2 > Dot",
+      "paddingLeft": 3,
+      "paddingRight": 3,
+      "paddingTop": 3,
+      "paddingBottom": 3,
+      "itemSpacing": 10,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 2 > legend 2 > Dot > Vector",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 2 > legend 2 > legend 2",
+      "width": 82,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 2 > legend 2",
+      "itemSpacing": 2,
+      "width": 79,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 2 > legend 2 > %",
+      "width": 36,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 2 > legend 2 > value",
+      "width": 41,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 3",
+      "paddingLeft": 4,
+      "paddingRight": 8,
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "itemSpacing": 24,
+      "width": 220,
+      "height": 28
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 3 > legend 3",
+      "itemSpacing": 8,
+      "width": 106,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 3 > legend 3 > Dot",
+      "paddingLeft": 3,
+      "paddingRight": 3,
+      "paddingTop": 3,
+      "paddingBottom": 3,
+      "itemSpacing": 10,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 3 > legend 3 > Dot > Vector",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 3 > legend 3 > legend 3",
+      "width": 82,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 3 > legend 3",
+      "itemSpacing": 2,
+      "width": 78,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 3 > legend 3 > %",
+      "width": 36,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 3 > legend 3 > value",
+      "width": 40,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 4",
+      "paddingLeft": 4,
+      "paddingRight": 8,
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "itemSpacing": 24,
+      "width": 220,
+      "height": 28
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 4 > legend 4",
+      "itemSpacing": 8,
+      "width": 106,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 4 > legend 4 > Dot",
+      "paddingLeft": 3,
+      "paddingRight": 3,
+      "paddingTop": 3,
+      "paddingBottom": 3,
+      "itemSpacing": 10,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 4 > legend 4 > Dot > Vector",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 4 > legend 4 > legend 4",
+      "width": 82,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 4 > legend 4",
+      "itemSpacing": 2,
+      "width": 78,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 4 > legend 4 > %",
+      "width": 36,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 4 > legend 4 > value",
+      "width": 40,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 5",
+      "paddingLeft": 4,
+      "paddingRight": 8,
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "itemSpacing": 24,
+      "width": 219,
+      "height": 28
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 5 > legend 5",
+      "itemSpacing": 8,
+      "width": 106,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 5 > legend 5 > Dot",
+      "paddingLeft": 3,
+      "paddingRight": 3,
+      "paddingTop": 3,
+      "paddingBottom": 3,
+      "itemSpacing": 10,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 5 > legend 5 > Dot > Vector",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 5 > legend 5 > legend 5",
+      "width": 82,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 5 > legend 5",
+      "itemSpacing": 2,
+      "width": 77,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 5 > legend 5 > %",
+      "width": 36,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 5 > legend 5 > value",
+      "width": 39,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 6",
+      "paddingLeft": 4,
+      "paddingRight": 8,
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "itemSpacing": 24,
+      "width": 220,
+      "height": 28
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 6 > legend 6",
+      "itemSpacing": 8,
+      "width": 106,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 6 > legend 6 > Dot",
+      "paddingLeft": 3,
+      "paddingRight": 3,
+      "paddingTop": 3,
+      "paddingBottom": 3,
+      "itemSpacing": 10,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 6 > legend 6 > Dot > Vector",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 6 > legend 6 > legend 6",
+      "width": 82,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 6 > legend 6",
+      "itemSpacing": 2,
+      "width": 78,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 6 > legend 6 > %",
+      "width": 36,
+      "height": 24
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 6 > legend 6 > value",
+      "width": 40,
+      "height": 24
+    },
+    {
+      "path": "Design System > bar chart",
+      "width": 1584,
+      "height": 360
+    },
+    {
+      "path": "Design System > bar chart > bar 1",
+      "itemSpacing": 60,
+      "width": 1584,
+      "height": 72
+    },
+    {
+      "path": "Design System > bar chart > bar 1 > Text",
+      "width": 220,
+      "height": 72
+    },
+    {
+      "path": "Design System > bar chart > bar 1 > bar",
+      "paddingRight": 12,
+      "paddingTop": 12,
+      "paddingBottom": 12,
+      "itemSpacing": 16,
+      "width": 1304,
+      "height": 72
+    },
+    {
+      "path": "Design System > bar chart > bar 1 > bar > bar",
+      "width": 774,
+      "height": 48
+    },
+    {
+      "path": "Design System > bar chart > bar 1 > bar > Counter",
+      "itemSpacing": 4,
+      "width": 117,
+      "height": 28
+    },
+    {
+      "path": "Design System > bar chart > bar 1 > bar > Counter > Percent",
+      "width": 41,
+      "height": 28
+    },
+    {
+      "path": "Design System > bar chart > bar 1 > bar > Counter > Count",
+      "width": 61,
+      "height": 26
+    },
+    {
+      "path": "Design System > bar chart > bar 2",
+      "itemSpacing": 60,
+      "width": 1584,
+      "height": 72
+    },
+    {
+      "path": "Design System > bar chart > bar 2 > Text",
+      "width": 220,
+      "height": 72
+    },
+    {
+      "path": "Design System > bar chart > bar 2 > bar",
+      "paddingRight": 12,
+      "paddingTop": 12,
+      "paddingBottom": 12,
+      "itemSpacing": 16,
+      "width": 1304,
+      "height": 72
+    },
+    {
+      "path": "Design System > bar chart > bar 2 > bar > bar",
+      "width": 955,
+      "height": 48
+    },
+    {
+      "path": "Design System > bar chart > bar 2 > bar > Counter",
+      "itemSpacing": 4,
+      "width": 117,
+      "height": 28
+    },
+    {
+      "path": "Design System > bar chart > bar 2 > bar > Counter > Percent",
+      "width": 41,
+      "height": 28
+    },
+    {
+      "path": "Design System > bar chart > bar 2 > bar > Counter > Count",
+      "width": 61,
+      "height": 26
+    },
+    {
+      "path": "Design System > bar chart > bar 3",
+      "itemSpacing": 60,
+      "width": 1584,
+      "height": 72
+    },
+    {
+      "path": "Design System > bar chart > bar 3 > Text",
+      "width": 220,
+      "height": 72
+    },
+    {
+      "path": "Design System > bar chart > bar 3 > bar ",
+      "paddingRight": 12,
+      "paddingTop": 12,
+      "paddingBottom": 12,
+      "itemSpacing": 16,
+      "width": 1304,
+      "height": 72
+    },
+    {
+      "path": "Design System > bar chart > bar 3 > bar  > bar ",
+      "width": 352,
+      "height": 48
+    },
+    {
+      "path": "Design System > bar chart > bar 3 > bar  > Counter",
+      "itemSpacing": 4,
+      "width": 117,
+      "height": 28
+    },
+    {
+      "path": "Design System > bar chart > bar 3 > bar  > Counter > Percent",
+      "width": 38,
+      "height": 28
+    },
+    {
+      "path": "Design System > bar chart > bar 3 > bar  > Counter > Count",
+      "width": 42,
+      "height": 26
+    },
+    {
+      "path": "Design System > bar chart > bar 4",
+      "itemSpacing": 60,
+      "width": 1584,
+      "height": 72
+    },
+    {
+      "path": "Design System > bar chart > bar 4 > Text",
+      "width": 220,
+      "height": 72
+    },
+    {
+      "path": "Design System > bar chart > bar 4 > bar",
+      "paddingRight": 12,
+      "paddingTop": 12,
+      "paddingBottom": 12,
+      "itemSpacing": 16,
+      "width": 1304,
+      "height": 72
+    },
+    {
+      "path": "Design System > bar chart > bar 4 > bar > bar",
+      "width": 233,
+      "height": 48
+    },
+    {
+      "path": "Design System > bar chart > bar 4 > bar > Counter",
+      "itemSpacing": 4,
+      "width": 117,
+      "height": 28
+    },
+    {
+      "path": "Design System > bar chart > bar 4 > bar > Counter > Percent",
+      "width": 38,
+      "height": 28
+    },
+    {
+      "path": "Design System > bar chart > bar 4 > bar > Counter > Count",
+      "width": 35,
+      "height": 26
+    },
+    {
+      "path": "Design System > bar chart > bar 5",
+      "itemSpacing": 60,
+      "width": 1584,
+      "height": 72
+    },
+    {
+      "path": "Design System > bar chart > bar 5 > Text",
+      "width": 220,
+      "height": 72
+    },
+    {
+      "path": "Design System > bar chart > bar 5 > bar",
+      "paddingRight": 12,
+      "paddingTop": 12,
+      "paddingBottom": 12,
+      "itemSpacing": 16,
+      "width": 1304,
+      "height": 72
+    },
+    {
+      "path": "Design System > bar chart > bar 5 > bar > bar",
+      "width": 4,
+      "height": 48
+    },
+    {
+      "path": "Design System > bar chart > bar 5 > bar > Counter",
+      "itemSpacing": 4,
+      "width": 117,
+      "height": 28
+    },
+    {
+      "path": "Design System > bar chart > bar 5 > bar > Counter > Percent",
+      "width": 29,
+      "height": 28
+    },
+    {
+      "path": "Design System > bar chart > bar 5 > bar > Counter > Count",
+      "width": 23,
+      "height": 26
+    },
+    {
+      "path": "Design System > Tooltip",
+      "paddingLeft": 8,
+      "paddingRight": 8,
+      "paddingTop": 4,
+      "paddingBottom": 4,
+      "itemSpacing": 8,
+      "width": 84,
+      "height": 48
+    },
+    {
+      "path": "Design System > Tooltip > Label",
+      "width": 68,
+      "height": 40
+    },
+    {
+      "path": "Design System > Tooltip > Label > title",
+      "width": 68,
+      "height": 20
+    },
+    {
+      "path": "Design System > Tooltip > Label > Label",
+      "width": 57,
+      "height": 20
+    },
+    {
+      "path": "Design System > Tooltip > Label > Label > %",
+      "width": 22,
+      "height": 20
+    },
+    {
+      "path": "Design System > Tooltip > Label > Label > value",
+      "width": 35,
+      "height": 20
+    },
+    {
+      "path": "Design System > table",
+      "width": 1224,
+      "height": 428
+    },
+    {
+      "path": "Design System > table > header",
+      "width": 1224,
+      "height": 56
+    },
+    {
+      "path": "Design System > table > header > header 1",
+      "paddingLeft": 12,
+      "paddingRight": 12,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "width": 306,
+      "height": 56
+    },
+    {
+      "path": "Design System > table > header > header 2",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 8,
+      "width": 306,
+      "height": 56
+    },
+    {
+      "path": "Design System > table > header > header 2 > header 2",
+      "itemSpacing": 8,
+      "width": 190,
+      "height": 24
+    },
+    {
+      "path": "Design System > table > header > header 2 > header 2 > dot",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "path": "Design System > table > header > header 2 > header 2 > 이탈 위험 집중 군집 (30대)",
+      "width": 172,
+      "height": 24
+    },
+    {
+      "path": "Design System > table > header > header 3",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 8,
+      "width": 306,
+      "height": 56
+    },
+    {
+      "path": "Design System > table > header > header 3 > header 3",
+      "itemSpacing": 8,
+      "width": 235,
+      "height": 24
+    },
+    {
+      "path": "Design System > table > header > header 3 > header 3 > dot",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "path": "Design System > table > header > header 3 > header 3 > 이탈 고위험 소수 군집 (40대 남성)",
+      "width": 217,
+      "height": 24
+    },
+    {
+      "path": "Design System > table > header > header 4",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 8,
+      "width": 306,
+      "height": 56
+    },
+    {
+      "path": "Design System > table > header > header 4 > header 4",
+      "itemSpacing": 8,
+      "width": 249,
+      "height": 24
+    },
+    {
+      "path": "Design System > table > header > header 4 > header 4 > Vector",
+      "width": 10,
+      "height": 10
+    },
+    {
+      "path": "Design System > table > header > header 4 > header 4 > 활동성 유지 대다수 군집 (40대 중심)",
+      "width": 231,
+      "height": 24
+    },
+    {
+      "path": "Design System > table > row",
+      "width": 1224,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > row header",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 6,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > row header > Text",
+      "width": 274,
+      "height": 24
+    },
+    {
+      "path": "Design System > table > row > cell",
+      "itemSpacing": 10,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "width": 93,
+      "height": 26
+    },
+    {
+      "path": "Design System > table > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "itemSpacing": 12,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "width": 93,
+      "height": 26
+    },
+    {
+      "path": "Design System > table > row > cell",
+      "itemSpacing": 10,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "width": 93,
+      "height": 26
+    },
+    {
+      "path": "Design System > table > row",
+      "width": 1224,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > row header",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 6,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > row header > 자산 연결 기능 도달 전 이탈률",
+      "width": 274,
+      "height": 24
+    },
+    {
+      "path": "Design System > table > row > cell",
+      "itemSpacing": 10,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "width": 39,
+      "height": 26
+    },
+    {
+      "path": "Design System > table > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "itemSpacing": 12,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "width": 39,
+      "height": 26
+    },
+    {
+      "path": "Design System > table > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "itemSpacing": 12,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "width": 39,
+      "height": 26
+    },
+    {
+      "path": "Design System > table > row",
+      "width": 1224,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > row header",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 6,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > row header > 자산 연결 기능 도달 전 이탈률",
+      "width": 274,
+      "height": 24
+    },
+    {
+      "path": "Design System > table > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "width": 54,
+      "height": 26
+    },
+    {
+      "path": "Design System > table > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "width": 54,
+      "height": 26
+    },
+    {
+      "path": "Design System > table > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "width": 274,
+      "height": 26
+    },
+    {
+      "path": "Design System > table > row",
+      "width": 1224,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > row header",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 6,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > row header > 자산 연결 기능 도달 전 이탈률",
+      "width": 274,
+      "height": 24
+    },
+    {
+      "path": "Design System > table > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "width": 54,
+      "height": 26
+    },
+    {
+      "path": "Design System > table > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "width": 54,
+      "height": 26
+    },
+    {
+      "path": "Design System > table > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "width": 274,
+      "height": 26
+    },
+    {
+      "path": "Design System > table > row",
+      "width": 1224,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > row header",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 6,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > row header > 자산 연결 기능 도달 전 이탈률",
+      "width": 274,
+      "height": 24
+    },
+    {
+      "path": "Design System > table > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "width": 54,
+      "height": 26
+    },
+    {
+      "path": "Design System > table > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "width": 54,
+      "height": 26
+    },
+    {
+      "path": "Design System > table > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "width": 274,
+      "height": 26
+    },
+    {
+      "path": "Design System > table > row",
+      "width": 1224,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > row header",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 6,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > row header > 자산 연결 기능 도달 전 이탈률",
+      "width": 274,
+      "height": 24
+    },
+    {
+      "path": "Design System > table > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "width": 54,
+      "height": 26
+    },
+    {
+      "path": "Design System > table > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "width": 54,
+      "height": 26
+    },
+    {
+      "path": "Design System > table > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "width": 306,
+      "height": 62
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "width": 274,
+      "height": 26
+    },
+    {
+      "path": "Design System > table 2",
+      "width": 1224,
+      "height": 560
+    },
+    {
+      "path": "Design System > table 2 > header",
+      "width": 1224,
+      "height": 56
+    },
+    {
+      "path": "Design System > table 2 > header > header 1",
+      "paddingLeft": 12,
+      "paddingRight": 12,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "width": 232,
+      "height": 56
+    },
+    {
+      "path": "Design System > table 2 > header > header 2",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 8,
+      "width": 248,
+      "height": 56
+    },
+    {
+      "path": "Design System > table 2 > header > header 2 > Strategy",
+      "width": 62,
+      "height": 24
+    },
+    {
+      "path": "Design System > table 2 > header > header 3",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 8,
+      "width": 248,
+      "height": 56
+    },
+    {
+      "path": "Design System > table 2 > header > header 3 > Objective",
+      "width": 68,
+      "height": 24
+    },
+    {
+      "path": "Design System > table 2 > header > header 4",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 8,
+      "width": 248,
+      "height": 56
+    },
+    {
+      "path": "Design System > table 2 > header > header 4 > Action Plan",
+      "width": 81,
+      "height": 24
+    },
+    {
+      "path": "Design System > table 2 > header > header 5",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 8,
+      "width": 248,
+      "height": 56
+    },
+    {
+      "path": "Design System > table 2 > header > header 5 > Expected Impact",
+      "width": 121,
+      "height": 24
+    },
+    {
+      "path": "Design System > table 2 > row",
+      "width": 1224,
+      "height": 168
+    },
+    {
+      "path": "Design System > table 2 > row > row header",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 6,
+      "width": 232,
+      "height": 168
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge",
+      "paddingLeft": 8,
+      "paddingRight": 8,
+      "paddingTop": 4,
+      "paddingBottom": 4,
+      "itemSpacing": 2,
+      "width": 83,
+      "height": 28
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container",
+      "itemSpacing": 2,
+      "width": 67,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Leading Icon",
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "width": 16,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Leading Icon > Leading Content",
+      "itemSpacing": 10,
+      "width": 16,
+      "height": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Leading Icon > Leading Content > Icon_blank",
+      "width": 16,
+      "height": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Wrapper",
+      "width": 67,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Wrapper > Text Area",
+      "width": 67,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Trailing Icon",
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "width": 16,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Trailing Icon > Trailing Content",
+      "itemSpacing": 10,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Trailing Icon > Trailing Content > Icon_blank",
+      "width": 16,
+      "height": 16
+    },
+    {
+      "path": "Design System > table 2 > row > row header > Text",
+      "width": 200,
+      "height": 26
+    },
+    {
+      "path": "Design System > table 2 > row > row",
+      "width": 992,
+      "height": 168
+    },
+    {
+      "path": "Design System > table 2 > row > row > row",
+      "width": 992,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 6,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "paddingLeft": 8,
+      "paddingRight": 8,
+      "paddingTop": 4,
+      "paddingBottom": 4,
+      "itemSpacing": 2,
+      "width": 108,
+      "height": 28
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container",
+      "itemSpacing": 2,
+      "width": 92,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container > Leading Icon",
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "width": 16,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container > Wrapper",
+      "width": 92,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container > Trailing Icon",
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "width": 16,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "itemSpacing": 10,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "width": 216,
+      "height": 48
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "itemSpacing": 12,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "width": 216,
+      "height": 48
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "itemSpacing": 10,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "width": 142,
+      "height": 24
+    },
+    {
+      "path": "Design System > table 2 > row > row > row",
+      "width": 992,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 6,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "paddingLeft": 8,
+      "paddingRight": 8,
+      "paddingTop": 4,
+      "paddingBottom": 4,
+      "itemSpacing": 2,
+      "width": 108,
+      "height": 28
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container",
+      "itemSpacing": 2,
+      "width": 92,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container > Leading Icon",
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "width": 16,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container > Wrapper",
+      "width": 92,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container > Trailing Icon",
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "width": 16,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "itemSpacing": 10,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "width": 216,
+      "height": 48
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "itemSpacing": 12,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "width": 216,
+      "height": 48
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "itemSpacing": 10,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "width": 142,
+      "height": 24
+    },
+    {
+      "path": "Design System > table 2 > row",
+      "width": 1224,
+      "height": 168
+    },
+    {
+      "path": "Design System > table 2 > row > row header",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 6,
+      "width": 232,
+      "height": 168
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge",
+      "paddingLeft": 8,
+      "paddingRight": 8,
+      "paddingTop": 4,
+      "paddingBottom": 4,
+      "itemSpacing": 2,
+      "width": 87,
+      "height": 28
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container",
+      "itemSpacing": 2,
+      "width": 71,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Leading Icon",
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "width": 16,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Leading Icon > Leading Content",
+      "itemSpacing": 10,
+      "width": 16,
+      "height": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Leading Icon > Leading Content > Icon_blank",
+      "width": 16,
+      "height": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Wrapper",
+      "width": 71,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Wrapper > Text Area",
+      "width": 71,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Trailing Icon",
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "width": 16,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Trailing Icon > Trailing Content",
+      "itemSpacing": 10,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Trailing Icon > Trailing Content > Icon_blank",
+      "width": 16,
+      "height": 16
+    },
+    {
+      "path": "Design System > table 2 > row > row header > Text",
+      "width": 200,
+      "height": 26
+    },
+    {
+      "path": "Design System > table 2 > row > row",
+      "width": 992,
+      "height": 168
+    },
+    {
+      "path": "Design System > table 2 > row > row > row",
+      "width": 992,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 6,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "paddingLeft": 8,
+      "paddingRight": 8,
+      "paddingTop": 4,
+      "paddingBottom": 4,
+      "itemSpacing": 2,
+      "width": 108,
+      "height": 28
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container",
+      "itemSpacing": 2,
+      "width": 92,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container > Leading Icon",
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "width": 16,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container > Wrapper",
+      "width": 92,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container > Trailing Icon",
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "width": 16,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "itemSpacing": 10,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "width": 216,
+      "height": 48
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "itemSpacing": 12,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "width": 216,
+      "height": 48
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "itemSpacing": 10,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "width": 142,
+      "height": 24
+    },
+    {
+      "path": "Design System > table 2 > row > row > row",
+      "width": 992,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 6,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "paddingLeft": 8,
+      "paddingRight": 8,
+      "paddingTop": 4,
+      "paddingBottom": 4,
+      "itemSpacing": 2,
+      "width": 108,
+      "height": 28
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container",
+      "itemSpacing": 2,
+      "width": 92,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container > Leading Icon",
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "width": 16,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container > Wrapper",
+      "width": 92,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container > Trailing Icon",
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "width": 16,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "itemSpacing": 10,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "width": 216,
+      "height": 48
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "itemSpacing": 12,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "width": 216,
+      "height": 48
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "itemSpacing": 10,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "width": 142,
+      "height": 24
+    },
+    {
+      "path": "Design System > table 2 > row",
+      "width": 1224,
+      "height": 168
+    },
+    {
+      "path": "Design System > table 2 > row > row header",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 6,
+      "width": 232,
+      "height": 168
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge",
+      "paddingLeft": 8,
+      "paddingRight": 8,
+      "paddingTop": 4,
+      "paddingBottom": 4,
+      "itemSpacing": 2,
+      "width": 76,
+      "height": 28
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container",
+      "itemSpacing": 2,
+      "width": 60,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Leading Icon",
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "width": 16,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Leading Icon > Leading Content",
+      "itemSpacing": 10,
+      "width": 16,
+      "height": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Leading Icon > Leading Content > Icon_blank",
+      "width": 16,
+      "height": 1
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Wrapper",
+      "width": 60,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Wrapper > Text Area",
+      "width": 60,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Trailing Icon",
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "width": 16,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Trailing Icon > Trailing Content",
+      "itemSpacing": 10,
+      "width": 16,
+      "height": 16
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Trailing Icon > Trailing Content > Icon_blank",
+      "width": 16,
+      "height": 16
+    },
+    {
+      "path": "Design System > table 2 > row > row header > Text",
+      "width": 200,
+      "height": 26
+    },
+    {
+      "path": "Design System > table 2 > row > row",
+      "width": 992,
+      "height": 168
+    },
+    {
+      "path": "Design System > table 2 > row > row > row",
+      "width": 992,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 6,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "paddingLeft": 8,
+      "paddingRight": 8,
+      "paddingTop": 4,
+      "paddingBottom": 4,
+      "itemSpacing": 2,
+      "width": 108,
+      "height": 28
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container",
+      "itemSpacing": 2,
+      "width": 92,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container > Leading Icon",
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "width": 16,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container > Wrapper",
+      "width": 92,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container > Trailing Icon",
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "width": 16,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "itemSpacing": 10,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "width": 216,
+      "height": 48
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "itemSpacing": 12,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "width": 216,
+      "height": 48
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "itemSpacing": 10,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "width": 142,
+      "height": 24
+    },
+    {
+      "path": "Design System > table 2 > row > row > row",
+      "width": 992,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 6,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "paddingLeft": 8,
+      "paddingRight": 8,
+      "paddingTop": 4,
+      "paddingBottom": 4,
+      "itemSpacing": 2,
+      "width": 108,
+      "height": 28
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container",
+      "itemSpacing": 2,
+      "width": 92,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container > Leading Icon",
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "width": 16,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container > Wrapper",
+      "width": 92,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge > Container > Trailing Icon",
+      "paddingTop": 2,
+      "paddingBottom": 2,
+      "width": 16,
+      "height": 20
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "itemSpacing": 10,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "width": 216,
+      "height": 48
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "itemSpacing": 12,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "width": 216,
+      "height": 48
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingTop": 18,
+      "paddingBottom": 18,
+      "itemSpacing": 10,
+      "width": 248,
+      "height": 84
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "width": 142,
+      "height": 24
+    }
+  ],
+  "typography": [
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary",
+      "text": "Executive Summary",
+      "fontFamily": "Pretendard",
+      "fontSize": 20,
+      "fontWeight": 600,
+      "lineHeightPx": 28,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 1 > Card 1 > Title",
+      "text": "Survey Topic",
+      "fontFamily": "DM Sans",
+      "fontSize": 16,
+      "fontWeight": 500,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 1 > Card 1 > Text",
+      "text": "New premium membership launch response survey",
+      "fontFamily": "Pretendard",
+      "fontSize": 20,
+      "fontWeight": 600,
+      "lineHeightPx": 28,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 2 > Card 2 > Title",
+      "text": "Number of respondents",
+      "fontFamily": "DM Sans",
+      "fontSize": 16,
+      "fontWeight": 500,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 2 > Card 2 > Text",
+      "text": "5,000",
+      "fontFamily": "Pretendard",
+      "fontSize": 20,
+      "fontWeight": 600,
+      "lineHeightPx": 28,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings > Key Findings > Key Findings",
+      "text": "Key Findings",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings > Subscription intent : High or higher (68%)",
+      "text": "Subscription intent : High or higher (68%)",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings > Most desired benefit : Ad-free viewing (72%)",
+      "text": "Most desired benefit : Ad-free viewing (72%)",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings > Main concern : Price burden (45%)",
+      "text": "Main concern : Price burden (45%)",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings > Key Findings > Reasonable price : $10-15 (52%)",
+      "text": "Reasonable price : $10-15 (52%)",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Executive Summary > Executive Summary",
+      "text": "Executive Summary",
+      "fontFamily": "Pretendard",
+      "fontSize": 20,
+      "fontWeight": 600,
+      "lineHeightPx": 28,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Executive Summary > 본 보고서는 2023년 6월부터 2024년 6월까지 약 1년간의 고객 행동 데이터를 기반으로, 총 80명의 고객을 대상으로 한 이탈 예측 및 군집 분석 결과를 종합하여 제시합니다.",
+      "text": "본 보고서는 2023년 6월부터 2024년 6월까지 약 1년간의 고객 행동 데이터를 기반으로, 총 80명의 ",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings > Key Findings",
+      "text": "Key Findings",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings > 자산 연결 기능은 고객이 서비스에 남을지 결정하는 가장 중요한 단계이며, 이 단계를 넘지 못한 고객의 86%가 결국 서비스를 떠나고 있습니다.",
+      "text": "자산 연결 기능은 고객이 서비스에 남을지 결정하는 가장 중요한 단계이며, 이 단계를 넘지 못한 고객의 86%",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings > “자산 연결 체험 및 접속 습관 회복”을 중심으로 한 맞춤형 윈백 및 온보딩 전략이 이탈률을 15~20% 이상 감소시키는 데 효과적일 것으로 기대된다.",
+      "text": "30대 고객은 서비스 탐색 의지가 가장 높으나 습관 형성에 어려움을 겪는 층으로, 리텐션 개선을 위해 가장 ",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings > 단순 방문이 ‘자산 연결’로 이어지지 않은 채 5일이 경과하는 시점은 고객이 서비스를 잊어가는 위험 신호이며, 이 기간이 이탈을 막을 수 있는 마지막 '골든타임'입니다.",
+      "text": "단순 방문이 ‘자산 연결’로 이어지지 않은 채 5일이 경과하는 시점은 고객이 서비스를 잊어가는 위험 신호이며",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings > Key Findings > Key Findings > 가입 첫날 자산 연결을 유도하는 온보딩 최적화를 진행하고, 접속이 4일 이상 지난 고객에게는 맞춤형 알림을 보내 재방문을 유도해야 합니다.",
+      "text": "가입 첫날 자산 연결을 유도하는 온보딩 최적화를 진행하고, 접속이 4일 이상 지난 고객에게는 맞춤형 알림을 ",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > bullet card > metric card > metric > metric",
+      "text": "고유 고객 수",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > bullet card > metric card > metric > value",
+      "text": "24명",
+      "fontFamily": "Pretendard",
+      "fontSize": 22,
+      "fontWeight": 600,
+      "lineHeightPx": 30,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > bullet card > metric card > description > 전체 고객 대비 약 30%를 차지하는 대규모 이탈 위험 고객군으로, 서비스 안정성에 중대한 영향을 미침",
+      "text": "전체 고객 대비 약 30%를 차지하는 대규모 이탈 위험 고객군으로, 서비스 안정성에 중대한 영향을 미침",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > bullet card > metric card > description > 24명으로 전체 80명 중 상당 비중 차지",
+      "text": "24명으로 전체 80명 중 상당 비중 차지",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > bullet card > metric card > description > 대규모 군집인 만큼 개별 맞춤형보다는 군집 특성 기반의 전략 수립이 효과적",
+      "text": "대규모 군집인 만큼 개별 맞춤형보다는 군집 특성 기반의 전략 수립이 효과적",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > pie chart > title",
+      "text": "title",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 1 > legend 1 > legend 1",
+      "text": "Age 15-19",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 500,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 1 > legend 1 > %",
+      "text": "25%",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 600,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 1 > legend 1 > value",
+      "text": "(1,200)",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 2 > legend 2 > legend 2",
+      "text": "Age 20-24",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 500,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 2 > legend 2 > %",
+      "text": "10%",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 600,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 2 > legend 2 > value",
+      "text": "(360)",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 3 > legend 3 > legend 3",
+      "text": "Age 25-29",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 500,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 3 > legend 3 > %",
+      "text": "15%",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 600,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 3 > legend 3 > value",
+      "text": "(450)",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 4 > legend 4 > legend 4",
+      "text": "Age 30-39",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 500,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 4 > legend 4 > %",
+      "text": "5%",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 600,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 4 > legend 4 > value",
+      "text": "(240)",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 5 > legend 5 > legend 5",
+      "text": "Age 40-49",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 500,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 5 > legend 5 > %",
+      "text": "45%",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 600,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 5 > legend 5 > value",
+      "text": "(750)",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 6 > legend 6 > legend 6",
+      "text": "Age 50-59",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 500,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 6 > legend 6 > %",
+      "text": "5%",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 600,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 6 > legend 6 > value",
+      "text": "(240)",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > bar chart > bar 1 > Text",
+      "text": "Very High",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 500,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > bar chart > bar 1 > bar > Counter > Percent",
+      "text": "32% ",
+      "fontFamily": "Pretendard",
+      "fontSize": 20,
+      "fontWeight": 500,
+      "lineHeightPx": 28,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > bar chart > bar 1 > bar > Counter > Count",
+      "text": "(9,999)",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 400,
+      "lineHeightPx": 26,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > bar chart > bar 2 > Text",
+      "text": "High",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 500,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > bar chart > bar 2 > bar > Counter > Percent",
+      "text": "32% ",
+      "fontFamily": "Pretendard",
+      "fontSize": 20,
+      "fontWeight": 500,
+      "lineHeightPx": 28,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > bar chart > bar 2 > bar > Counter > Count",
+      "text": "(9,999)",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 400,
+      "lineHeightPx": 26,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > bar chart > bar 3 > Text",
+      "text": "Medium",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 500,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > bar chart > bar 3 > bar  > Counter > Percent",
+      "text": "14% ",
+      "fontFamily": "Pretendard",
+      "fontSize": 20,
+      "fontWeight": 500,
+      "lineHeightPx": 28,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > bar chart > bar 3 > bar  > Counter > Count",
+      "text": "(123)",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 400,
+      "lineHeightPx": 26,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > bar chart > bar 4 > Text",
+      "text": "Low",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 500,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > bar chart > bar 4 > bar > Counter > Percent",
+      "text": "10% ",
+      "fontFamily": "Pretendard",
+      "fontSize": 20,
+      "fontWeight": 500,
+      "lineHeightPx": 28,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > bar chart > bar 4 > bar > Counter > Count",
+      "text": "(99)",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 400,
+      "lineHeightPx": 26,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > bar chart > bar 5 > Text",
+      "text": "Very Low",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 500,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > bar chart > bar 5 > bar > Counter > Percent",
+      "text": "0% ",
+      "fontFamily": "Pretendard",
+      "fontSize": 20,
+      "fontWeight": 500,
+      "lineHeightPx": 28,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > bar chart > bar 5 > bar > Counter > Count",
+      "text": "(0)",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 400,
+      "lineHeightPx": 26,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > Tooltip > Label > title",
+      "text": "Age 25-29",
+      "fontFamily": "Pretendard",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "lineHeightPx": 20,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > Tooltip > Label > Label > %",
+      "text": "5%",
+      "fontFamily": "Pretendard",
+      "fontSize": 14,
+      "fontWeight": 600,
+      "lineHeightPx": 20,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > Tooltip > Label > Label > value",
+      "text": "(240)",
+      "fontFamily": "Pretendard",
+      "fontSize": 14,
+      "fontWeight": 400,
+      "lineHeightPx": 20,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table > header > header 2 > header 2 > 이탈 위험 집중 군집 (30대)",
+      "text": "이탈 위험 집중 군집 (30대)",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 500,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > table > header > header 3 > header 3 > 이탈 고위험 소수 군집 (40대 남성)",
+      "text": "이탈 고위험 소수 군집 (40대 남성)",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 500,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > table > header > header 4 > header 4 > 활동성 유지 대다수 군집 (40대 중심)",
+      "text": "활동성 유지 대다수 군집 (40대 중심)",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 500,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > table > row > row header > Text",
+      "text": "Cluster distribution",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "text": "56.3% (45)",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "text": "56.3% (45)",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "text": "56.3% (45)",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table > row > row header > 자산 연결 기능 도달 전 이탈률",
+      "text": "Churn rate",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "text": "90%",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "text": "90%",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "text": "90%",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table > row > row header > 자산 연결 기능 도달 전 이탈률",
+      "text": "Monthly average churn rate",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "text": "86.8%",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "text": "86.8%",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "text": "85.15%",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table > row > row header > 자산 연결 기능 도달 전 이탈률",
+      "text": "Monthly average churn rate",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "text": "86.8%",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "text": "86.8%",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "text": "85.15%",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table > row > row header > 자산 연결 기능 도달 전 이탈률",
+      "text": "Monthly average churn rate",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "text": "86.8%",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "text": "86.8%",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "text": "85.15%",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table > row > row header > 자산 연결 기능 도달 전 이탈률",
+      "text": "Monthly average churn rate",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "text": "86.8%",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "text": "86.8%",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table > row > cell > Text",
+      "text": "85.15%",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 500,
+      "lineHeightPx": 26,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table 2 > header > header 2 > Strategy",
+      "text": "Strategy",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > table 2 > header > header 3 > Objective",
+      "text": "Objective",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > table 2 > header > header 4 > Action Plan",
+      "text": "Action Plan",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > table 2 > header > header 5 > Expected Impact",
+      "text": "Expected Impact",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#7b7e85"
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Wrapper > Text Area",
+      "text": "Immediate",
+      "fontFamily": "Pretendard",
+      "fontSize": 14,
+      "fontWeight": 500,
+      "lineHeightPx": 20,
+      "color": "#2b7fff"
+    },
+    {
+      "path": "Design System > table 2 > row > row header > Text",
+      "text": "within 1 week",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 600,
+      "lineHeightPx": 26,
+      "color": "#0f0f10"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "text": "이탈 경과일 180일 미만 고객 대상 자산 연결 기능 체험 인센티브 제공",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "text": "개인화 푸시 알림 및 리마인더 발송, 체험 가이드 제공",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "text": "복귀율 20% 이상 증가",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "text": "이탈 경과일 180일 미만 고객 대상 자산 연결 기능 체험 인센티브 제공",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "text": "개인화 푸시 알림 및 리마인더 발송, 체험 가이드 제공",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "text": "복귀율 20% 이상 증가",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Wrapper > Text Area",
+      "text": "Short-term",
+      "fontFamily": "Pretendard",
+      "fontSize": 14,
+      "fontWeight": 500,
+      "lineHeightPx": 20,
+      "color": "#2b7fff"
+    },
+    {
+      "path": "Design System > table 2 > row > row header > Text",
+      "text": "within 1 month",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 600,
+      "lineHeightPx": 26,
+      "color": "#0f0f10"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "text": "이탈 경과일 180일 미만 고객 대상 자산 연결 기능 체험 인센티브 제공",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "text": "개인화 푸시 알림 및 리마인더 발송, 체험 가이드 제공",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "text": "복귀율 20% 이상 증가",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "text": "이탈 경과일 180일 미만 고객 대상 자산 연결 기능 체험 인센티브 제공",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "text": "개인화 푸시 알림 및 리마인더 발송, 체험 가이드 제공",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "text": "복귀율 20% 이상 증가",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge > Container > Wrapper > Text Area",
+      "text": "Mid-term",
+      "fontFamily": "Pretendard",
+      "fontSize": 14,
+      "fontWeight": 500,
+      "lineHeightPx": 20,
+      "color": "#2b7fff"
+    },
+    {
+      "path": "Design System > table 2 > row > row header > Text",
+      "text": "within 3 months",
+      "fontFamily": "Pretendard",
+      "fontSize": 18,
+      "fontWeight": 600,
+      "lineHeightPx": 26,
+      "color": "#0f0f10"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "text": "이탈 경과일 180일 미만 고객 대상 자산 연결 기능 체험 인센티브 제공",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "text": "개인화 푸시 알림 및 리마인더 발송, 체험 가이드 제공",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "text": "복귀율 20% 이상 증가",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "text": "이탈 경과일 180일 미만 고객 대상 자산 연결 기능 체험 인센티브 제공",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "text": "개인화 푸시 알림 및 리마인더 발송, 체험 가이드 제공",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > Text",
+      "text": "복귀율 20% 이상 증가",
+      "fontFamily": "Pretendard",
+      "fontSize": 16,
+      "fontWeight": 400,
+      "lineHeightPx": 24,
+      "color": "#171719"
+    }
+  ],
+  "radii": [
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary",
+      "value": 20
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 1",
+      "value": 16
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Card > Card > Card 2",
+      "value": 16
+    },
+    {
+      "path": "Design System > Executive Summary — Type B > Executive Summary > Key Findings",
+      "value": 16
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings",
+      "value": 20
+    },
+    {
+      "path": "Design System > Executive Summary — Type A > Key Findings > Key Findings",
+      "value": 16
+    },
+    {
+      "path": "Design System > bullet card",
+      "value": 16
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 1",
+      "value": 8
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 2",
+      "value": 8
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 3",
+      "value": 8
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 4",
+      "value": 8
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 5",
+      "value": 8
+    },
+    {
+      "path": "Design System > pie chart > pie chart > legend > legend 6",
+      "value": 8
+    },
+    {
+      "path": "Design System > Tooltip",
+      "value": 6
+    },
+    {
+      "path": "Design System > table",
+      "value": 16
+    },
+    {
+      "path": "Design System > table 2",
+      "value": 16
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge",
+      "value": 8
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "value": 8
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "value": 8
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge",
+      "value": 8
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "value": 8
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "value": 8
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge",
+      "value": 8
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "value": 8
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "value": 8
+    }
+  ],
+  "badges": [
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge",
+      "radius": 8,
+      "padding": "4/8/4/8",
+      "bg": "#eff6ff"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "radius": 8,
+      "padding": "4/8/4/8",
+      "bg": "#f0f0f2"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "radius": 8,
+      "padding": "4/8/4/8",
+      "bg": "#f0f0f2"
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge",
+      "radius": 8,
+      "padding": "4/8/4/8",
+      "bg": "#eff6ff"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "radius": 8,
+      "padding": "4/8/4/8",
+      "bg": "#f0f0f2"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "radius": 8,
+      "padding": "4/8/4/8",
+      "bg": "#f0f0f2"
+    },
+    {
+      "path": "Design System > table 2 > row > row header > \bBadge",
+      "radius": 8,
+      "padding": "4/8/4/8",
+      "bg": "#eff6ff"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "radius": 8,
+      "padding": "4/8/4/8",
+      "bg": "#f0f0f2"
+    },
+    {
+      "path": "Design System > table 2 > row > row > row > cell > \bBadge",
+      "radius": 8,
+      "padding": "4/8/4/8",
+      "bg": "#f0f0f2"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import type { ExecutiveSummary as ExecutiveSummaryData } from "@/types";
+import BulletText from "./BulletText";
 
 interface Props {
   data: ExecutiveSummaryData & {
@@ -10,51 +11,42 @@ interface Props {
 
 /* ─── Sub-blocks ─── */
 
-function DescriptionBlock({ text }: { text: string }) {
+/** 섹션 제목 + 설명 (재사용 가능) */
+function SectionHeader({ title, description }: { title: string; description?: string }) {
   return (
-    <p className="text-sm text-report-text-secondary leading-relaxed">
-      {text}
-    </p>
-  );
-}
-
-function TopMetricsBlock({ metrics }: { metrics: Array<{ label: string; value: string | number }> }) {
-  return (
-    <div
-      className="grid border-b border-report-border"
-      style={{ gridTemplateColumns: `repeat(${metrics.length}, 1fr)` }}
-    >
-      {metrics.map((m, i) => (
-        <div
-          key={i}
-          className={`p-5 ${i > 0 ? "border-l border-report-border" : ""}`}
-        >
-          <div className="text-sm text-report-text-secondary mb-1">{m.label}</div>
-          <div className="font-bold text-xl text-report-text-primary">{m.value}</div>
-        </div>
-      ))}
+    <div className="mb-5">
+      <h3 className="font-bold text-xl text-report-text-primary">{title}</h3>
+      {description && (
+        <p className="text-base text-report-text-secondary leading-relaxed mt-1">
+          {description}
+        </p>
+      )}
     </div>
   );
 }
 
-function KeyFindingsBlock({ findings }: { findings: string[] }) {
+/** 메트릭 카드 한 장 (#ffffff 카드) */
+function MetricBox({ label, value }: { label: string; value: string | number }) {
   return (
-    <div className="p-5">
-      <div className="flex items-center gap-2 mb-3">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="shrink-0">
-          <circle cx="9" cy="9" r="9" fill="#171719" />
-          <path d="M5.5 9.5L7.5 11.5L12.5 6.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <div className="bg-report-card rounded-card p-[24px]">
+      <div className="text-sm text-report-text-secondary mb-1">{label}</div>
+      <div className="font-bold text-xl text-report-text-primary">{value}</div>
+    </div>
+  );
+}
+
+/** Key Findings 카드 (#ffffff 카드) */
+function KeyFindingsCard({ findings }: { findings: string[] }) {
+  return (
+    <div className="bg-report-card rounded-card p-[24px]">
+      <div className="flex items-center gap-2 mb-4">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="shrink-0">
+          <circle cx="10" cy="10" r="10" fill="#171719" />
+          <path d="M6 10.5L8.5 13L14 7" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
-        <span className="font-semibold text-sm text-report-text-primary">Key Findings</span>
+        <span className="font-bold text-base text-report-text-primary">Key Findings</span>
       </div>
-      <ul className="space-y-2">
-        {findings.map((finding, i) => (
-          <li key={i} className="flex items-start gap-2 text-sm text-report-text-primary leading-relaxed">
-            <span className="mt-2 w-1 h-1 rounded-full bg-report-text-secondary shrink-0" />
-            {finding}
-          </li>
-        ))}
-      </ul>
+      <BulletText items={findings} />
     </div>
   );
 }
@@ -62,7 +54,6 @@ function KeyFindingsBlock({ findings }: { findings: string[] }) {
 /* ─── Main ─── */
 
 export default function ExecutiveSummary({ data }: Props) {
-  /* 기존 호환: totalResponses/churnRate/atRiskCount → topMetrics 변환 */
   const topMetrics: Array<{ label: string; value: string | number }> =
     data.topMetrics ? [...data.topMetrics] : [];
 
@@ -75,33 +66,33 @@ export default function ExecutiveSummary({ data }: Props) {
       topMetrics.push({ label: "위험 고객 수", value: data.atRiskCount.toLocaleString() });
   }
 
-  const hasDescription = !!data.description;
   const hasMetrics = topMetrics.length > 0;
   const hasFindings = data.keyFindings.length > 0;
 
   return (
-    <div className="space-y-4">
-      {/* Description — 카드 바깥 (메트릭 없을 때) 또는 카드 안 (메트릭 있을 때) */}
-      {hasDescription && !hasMetrics && (
-        <DescriptionBlock text={data.description!} />
-      )}
-
-      {/* Card */}
-      <div className="bg-report-card border border-report-border rounded-card shadow-card overflow-hidden">
-        {/* 메트릭이 있으면: description(카드 안) + metrics + findings */}
-        {hasDescription && hasMetrics && (
-          <div className="px-5 pt-5 pb-3">
-            <DescriptionBlock text={data.description!} />
+    <div>
+      {/* #f7f7f8 배경 컨테이너 — 제목+설명도 안에 포함 */}
+      <div className="bg-report-bg rounded-container p-[24px] space-y-3">
+        <SectionHeader title="Executive Summary" description={data.description} />
+        {/* Type B: 메트릭 카드들 (각각 별도 #fff 카드) */}
+        {hasMetrics && (
+          <div
+            className="grid gap-3"
+            style={{ gridTemplateColumns: `repeat(${topMetrics.length}, 1fr)` }}
+          >
+            {topMetrics.map((m, i) => (
+              <MetricBox key={i} label={m.label} value={m.value} />
+            ))}
           </div>
         )}
 
-        {hasMetrics && <TopMetricsBlock metrics={topMetrics} />}
-
-        {hasFindings && <KeyFindingsBlock findings={data.keyFindings} />}
+        {/* Key Findings (#fff 카드) */}
+        {hasFindings && (
+          <KeyFindingsCard findings={data.keyFindings} />
+        )}
       </div>
     </div>
   );
 }
 
-/* Export sub-blocks for direct composition */
-export { DescriptionBlock, TopMetricsBlock, KeyFindingsBlock };
+export { SectionHeader, MetricBox, KeyFindingsCard };

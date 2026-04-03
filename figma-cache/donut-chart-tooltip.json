@@ -1,0 +1,13 @@
+{
+  "nodeId": "179:3939",
+  "screenshot": "/tmp/figma-pie-tooltip.png",
+  "description": "DonutChart hover tooltip",
+  "structure": {
+    "bg": "#ffffff",
+    "radius": 8,
+    "shadow": "elevated",
+    "line1": "label 14px/400 text-secondary",
+    "line2": "value 16px/700 bold + (count) 16px/400 secondary",
+    "nonHoverOpacity": 0.4
+  }
+}
