@@ -11,15 +11,13 @@ import ReportRenderer from "@/components/ReportRenderer";
 import audienceStrategy from "@/agents/audience-strategy.json";
 import personaSurvey from "@/agents/persona-survey.json";
 import churnPrediction from "@/agents/churn-prediction.json";
-import newProductPricing from "@/agents/new-product-pricing.json";
-import pressReleaseSimulation from "@/agents/press-release-simulation.json";
+import newPricingProduct from "@/agents/new-pricing-product.json";
 
 const ALL_AGENTS = [
   audienceStrategy,
   personaSurvey,
   churnPrediction,
-  newProductPricing,
-  pressReleaseSimulation,
+  newPricingProduct,
 ] as AgentDefinition[];
 
 type Step = "select" | "input" | "report";

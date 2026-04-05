@@ -81,15 +81,13 @@ export default function TabGridLayout({ report, agent }: Props) {
             <div
               key={sectionDef.id}
               className={`${
-                sectionDef.componentType === "StrategyTable" ||
-                sectionDef.componentType === "RevenueScenarioBar" ||
-                sectionDef.componentType === "PieBarChart"
+                sectionDef.componentType === "StrategyTable"
                   ? "col-span-2"
                   : ""
               }`}
             >
               <div className="flex items-center justify-between mb-2">
-                <h4 className="text-sm font-semibold text-report-text-secondary">
+                <h4 className="report-section-title">
                   {sectionDef.label}
                 </h4>
                 {sectionDef.hasViewDetail && (

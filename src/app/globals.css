@@ -68,6 +68,20 @@
   --leading-heading-l: 28px;
 }
 
+/* ─── Report Layout Rules ─── */
+/* 규칙 1: 모든 섹션의 좌측 시작점은 동일 (padding 없이 정렬)       */
+/* 규칙 2: 모든 섹션 타이틀은 동일 스타일 (20px/700 = text-xl font-bold) */
+
+.report-section-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  color: var(--color-report-text-primary);
+}
+
+/* 규칙 3: 모든 섹션 컨테이너는 부모 폭 100% (Executive Summary 기준) */
+/* 규칙 4: InsightCard, MetricHighlight는 items 배열로 가로 그리드 지원 */
+
 *,
 *::before,
 *::after {

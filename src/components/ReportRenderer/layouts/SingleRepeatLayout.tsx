@@ -28,11 +28,17 @@ export default function SingleRepeatLayout({ report, agent }: Props) {
         {sections.map((section) => (
           <div key={section.id}>
             {section.label && section.componentType !== "ExecutiveSummary" && (
-              <h3 className="text-sm font-semibold text-report-text-secondary mb-2">
+              <h3 className="report-section-title mb-2">
                 {section.label}
               </h3>
             )}
-            {renderComponent(section.componentType, section.data)}
+            {section.componentType === "ExecutiveSummary" ? (
+              renderComponent(section.componentType, section.data)
+            ) : (
+              <div className="bg-report-bg rounded-container p-[24px]">
+                {renderComponent(section.componentType, section.data)}
+              </div>
+            )}
           </div>
         ))}
       </div>

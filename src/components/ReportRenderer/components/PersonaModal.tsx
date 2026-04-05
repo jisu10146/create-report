@@ -26,6 +26,54 @@ import type { PersonaModalData } from "@/types";
  *   - Close: pad 8/16, radius 8, bg #303135, stroke #7b7e85, 16px/500 #ffffff
  */
 
+/** 모달 내부 콘텐츠만 인라인으로 렌더링 (디자인 시스템 페이지용) */
+export function PersonaModalInline({ data }: { data: PersonaModalData }) {
+  const persona = data.personas[0];
+  if (!persona) return null;
+
+  return (
+    <div className="w-[960px] rounded-[16px] border border-report-border overflow-hidden flex flex-col">
+      {/* Heading */}
+      <div className="flex items-center justify-between px-[24px] pt-[24px] pb-[12px] bg-report-card">
+        <h2 className="text-[18px] font-semibold leading-[26px]" style={{ color: "#0f0f10" }}>
+          {data.title}
+        </h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M18 6L6 18M6 6l12 12" stroke="#171719" strokeWidth="2" strokeLinecap="round" />
+        </svg>
+      </div>
+
+      {/* Content */}
+      <div className="p-[24px] bg-report-card">
+        <div className="flex flex-col gap-[16px]">
+          <div className="flex items-center gap-[16px] p-[24px] rounded-[16px] border border-report-border">
+            <div className="w-[48px] h-[48px] rounded-[12px] bg-[#f7f7f8] border border-report-border flex items-center justify-center shrink-0">
+              <IconIdentityPlatformOutline24 style={{ color: "#7b7e85" }} />
+            </div>
+            <div className="flex flex-col gap-[2px]">
+              <span className="text-[14px] font-semibold leading-[20px]" style={{ color: "#0f0f10" }}>{persona.name}</span>
+              <span className="text-[13px] font-normal leading-[18px] text-report-text-secondary">{persona.subtitle}</span>
+            </div>
+          </div>
+          <div className="rounded-[16px] bg-[#f7f7f8] border border-[#f0f0f2] p-[8px] flex flex-col gap-[8px]">
+            {persona.details?.map((detail, i) => (
+              <div key={i} className="bg-report-card rounded-[12px] p-[20px] flex flex-col gap-[10px]">
+                <span className="text-[14px] font-medium leading-[20px] text-report-text-secondary">{detail.label}</span>
+                <p className="text-[16px] font-medium leading-[24px] text-report-text-primary">{detail.content}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Action area */}
+      <div className="flex justify-end px-[24px] pt-[12px] pb-[24px] bg-report-card">
+        <span className="px-[16px] py-[8px] rounded-[8px] text-[16px] font-medium leading-[24px] text-white" style={{ backgroundColor: "#303135", borderColor: "#7b7e85", borderWidth: 1, borderStyle: "solid" }}>Close</span>
+      </div>
+    </div>
+  );
+}
+
 export default function PersonaModal({ data }: { data: PersonaModalData }) {
   const [open, setOpen] = useState(false);
 
@@ -55,7 +103,7 @@ export default function PersonaModal({ data }: { data: PersonaModalData }) {
           >
             {/* Heading */}
             <div className="flex items-center justify-between px-[24px] pt-[24px] pb-[12px] bg-report-card">
-              <h2 className="text-[18px] font-semibold leading-[26px] text-report-text-primary">
+              <h2 className="text-[18px] font-semibold leading-[26px]" style={{ color: "#0f0f10" }}>
                 {data.title}
               </h2>
               <button onClick={() => setOpen(false)} className="text-report-text-primary">
@@ -103,14 +151,7 @@ export default function PersonaModal({ data }: { data: PersonaModalData }) {
             </div>
 
             {/* Action area */}
-            <div className="flex justify-end gap-[8px] px-[24px] pt-[12px] pb-[24px] bg-report-card">
-              <button
-                onClick={() => setOpen(false)}
-                className="px-[16px] py-[8px] rounded-[8px] bg-report-card border border-report-border text-[16px] font-medium leading-[24px]"
-                style={{ color: "#0f0f10" }}
-              >
-                취소
-              </button>
+            <div className="flex justify-end px-[24px] pt-[12px] pb-[24px] bg-report-card">
               <button
                 onClick={() => setOpen(false)}
                 className="px-[16px] py-[8px] rounded-[8px] text-[16px] font-medium leading-[24px] text-white"

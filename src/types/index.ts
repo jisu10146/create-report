@@ -5,22 +5,10 @@ export type InputType = "none" | "survey-form" | "text" | "file";
 export type LayoutType = "tab-grid" | "single-repeat" | "single-section";
 export type ModalType = "none" | "tab-detail" | "persona-detail";
 
-export type ComponentType =
-  | "ExecutiveSummary"
-  | "BulletCard"
-  | "HorizontalBarChart"
-  | "InterpretationBlock"
-  | "StrategyTable"
-  | "RevenueScenarioBar"
-  | "DonutChart"
-  | "DataTable"
-  | "InsightCard"
-  | "UserCard"
-  | "ClusterCard"
-  | "SectionTitle"
-  | "PieBarChart"
-  | "PersonaModal"
-  | string; // extensible
+import { VALID_COMPONENT_NAMES } from "@/lib/constants";
+
+/** VALID_COMPONENT_NAMES (constants.ts) 에서 자동 파생 */
+export type ComponentType = (typeof VALID_COMPONENT_NAMES)[number] | string;
 
 export interface TabSection {
   id: string;
@@ -115,12 +103,15 @@ export interface InterpretationBlockData {
   text: string;
 }
 
-export interface InsightCardData {
+export interface InsightCardItem {
   badge?: string;
   value: string;
   description: string;
   interpretation?: string;
 }
+
+/** 단일 또는 배열 — 배열이면 가로 그리드(최대 3열) */
+export type InsightCardData = InsightCardItem | { items: InsightCardItem[] };
 
 export interface UserCardItem {
   name: string;
@@ -200,6 +191,21 @@ export interface PersonaModalPersona {
 export interface PersonaModalData {
   title: string;
   personas: PersonaModalPersona[];
+}
+
+export interface MetricHighlightItem {
+  label: string;
+  value: string | number;
+  sub?: string;
+  description: string;
+}
+
+/** 단일 또는 배열 — 배열이면 가로 그리드(최대 3열) */
+export type MetricHighlightData = MetricHighlightItem | { items: MetricHighlightItem[] };
+
+export interface ChecklistCardData {
+  title: string;
+  description: string;
 }
 
 // ─── Modal Detail Types ────────────────────────────────────────────────────

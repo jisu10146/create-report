@@ -3,7 +3,8 @@ import * as fs from "fs";
 import * as path from "path";
 import { normalizeReport } from "@/lib/reportNormalizer";
 import { callClaude } from "@/lib/claude";
-import { VOLUME_GUIDE, VOLUME_LIMITS, AUDIENCE_GUIDE, VALID_COMPONENTS, DESIGN_SYSTEM_PROMPT } from "@/lib/constants";
+import { AUDIENCE_GUIDE, VALID_COMPONENTS, DESIGN_SYSTEM_PROMPT, COMPONENT_DATA_SCHEMA, SAMPLE_REPORT_SYSTEM } from "@/lib/constants";
+import { buildPatternPrompt, validatePattern } from "@/lib/layout-patterns";
 import type { AgentDefinition } from "@/types";
 
 const AGENTS_DIR = path.join(process.cwd(), "src", "agents");
@@ -23,11 +24,13 @@ async function buildAgentWithClaude(body: {
   keyQuestions?: string[];
   dataTypes?: string[];
   volume?: string;
-}): Promise<AgentDefinition> {
+}): Promise<{ agent: AgentDefinition; storyLine?: string; keyDecision?: string }> {
   const volume = body.volume ?? "standard";
   const audience = body.audience ?? "";
   const questionsStr = (body.keyQuestions ?? []).filter(q => q.trim()).map((q, i) => `Q${i + 1}. ${q}`).join("\n  ");
   const dataStr = (body.dataTypes ?? []).join(", ");
+
+  const patternPrompt = buildPatternPrompt(volume);
 
   const prompt = `에이전트명: ${body.name}
 설명: ${body.desc}
@@ -38,7 +41,8 @@ ${audience ? `톤 가이드: ${AUDIENCE_GUIDE[audience] ?? ""}` : ""}
 ${questionsStr ? `핵심 질문:\n  ${questionsStr}\n이 질문들에 자연스럽게 답하는 흐름으로 섹션을 구성해.` : ""}
 ${dataStr ? `입력 데이터 유형: ${dataStr}` : ""}
 
-분량: ${VOLUME_GUIDE[volume] ?? VOLUME_GUIDE.standard}
+── 레이아웃 패턴 조건 ──
+${patternPrompt}
 
 위 정보를 바탕으로 리포트 구성안을 설계해줘.
 각 섹션을 왜 넣었는지 reason 필드에 꼭 써줘.`;
@@ -48,7 +52,7 @@ ${dataStr ? `입력 데이터 유형: ${dataStr}` : ""}
 
   const id = body.name.trim().toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "") || "agent";
 
-  return {
+  const agent: AgentDefinition = {
     id,
     name: body.name.trim(),
     description: body.desc.trim(),
@@ -63,6 +67,12 @@ ${dataStr ? `입력 데이터 유형: ${dataStr}` : ""}
       reason: s.reason,
     })),
     promptTemplate: "",
+  };
+
+  return {
+    agent,
+    storyLine: parsed.storyLine as string | undefined,
+    keyDecision: parsed.keyDecision as string | undefined,
   };
 }
 
@@ -82,10 +92,8 @@ function validateAgentStructure(
   const changes: string[] = [];
   let sections = [...(agent.reportSections ?? [])];
   const volume = context.volume ?? "standard";
-  const limit = VOLUME_LIMITS[volume] ?? 8;
 
   /* 1. 유효하지 않은 컴포넌트 제거 */
-  const beforeCount = sections.length;
   sections = sections.filter((s) => {
     if (!VALID_COMPONENTS.has(s.componentType)) {
       changes.push(`- ${s.componentType} 제거 — 유효하지 않은 컴포넌트`);
@@ -94,7 +102,22 @@ function validateAgentStructure(
     return true;
   });
 
-  /* 2. ExecutiveSummary 맨 앞 보장 */
+  /* 2. 패턴 기반 forbidden 제거 */
+  const patternViolations = validatePattern(sections, volume);
+  for (const v of patternViolations) {
+    if (v.startsWith("사용 불가 컴포넌트 포함:")) {
+      const forbidden = v.replace("사용 불가 컴포넌트 포함: ", "");
+      sections = sections.filter((s) => {
+        if (s.componentType === forbidden) {
+          changes.push(`- ${s.label || forbidden} 제거 — ${volume} 패턴에서 사용 불가`);
+          return false;
+        }
+        return true;
+      });
+    }
+  }
+
+  /* 3. ExecutiveSummary 맨 앞 보장 (required 규칙) */
   const esIdx = sections.findIndex((s) => s.componentType === "ExecutiveSummary");
   if (esIdx === -1) {
     sections.unshift({ id: "executive-summary", label: "Executive Summary", componentType: "ExecutiveSummary" });
@@ -105,20 +128,19 @@ function validateAgentStructure(
     changes.push("→ ExecutiveSummary를 맨 앞으로 이동");
   }
 
-  /* 3. InterpretationBlock이 차트 바로 뒤인지 확인 */
+  /* 4. InterpretationBlock이 차트 바로 뒤인지 확인 */
   for (let i = sections.length - 1; i >= 0; i--) {
     if (sections[i].componentType === "InterpretationBlock") {
       const prev = sections[i - 1];
       if (!prev || prev.componentType !== "HorizontalBarChart") {
-        changes.push(`⚠ InterpretationBlock (${sections[i].label}) — 차트 바로 뒤에 위치하지 않음. 확인 필요`);
+        changes.push(`⚠ InterpretationBlock (${sections[i].label || "AI 해석"}) — 차트 바로 뒤에 위치하지 않음`);
       }
     }
   }
 
-  /* 4. 중복 컴포넌트 체크 */
+  /* 5. 중복 컴포넌트 체크 */
   const seen = new Set<string>();
   sections = sections.filter((s) => {
-    if (s.componentType === "MetricCard") return true;
     if (seen.has(s.componentType)) {
       changes.push(`- 중복 제거: ${s.label || s.componentType}`);
       return false;
@@ -127,16 +149,19 @@ function validateAgentStructure(
     return true;
   });
 
-  /* 5. 분량 제한 체크 (경고만, 강제 제거 안 함) */
-  if (sections.length > limit) {
-    changes.push(`⚠ 분량 초과: ${sections.length}개 섹션 (${volume} 제한: ${limit}개). 검토 필요`);
+  /* 6. 패턴 조건 최종 검증 (제거 후 다시 체크) */
+  const finalViolations = validatePattern(sections, volume);
+  for (const v of finalViolations) {
+    if (!v.startsWith("사용 불가")) {
+      changes.push(`⚠ ${v}`);
+    }
   }
 
   if (changes.length === 0) {
     changes.push("검토 완료 — 보완 사항 없음");
   }
 
-  /* 3단계 — Claude가 판단한 이유 로깅 */
+  /* Claude 설계 이유 로깅 */
   const reasons = (agent.reportSections ?? [])
     .filter((s: { reason?: string }) => s.reason)
     .map((s: { componentType: string; label: string; reason?: string }) => `· ${s.label} (${s.componentType}): ${s.reason}`);
@@ -149,6 +174,67 @@ function validateAgentStructure(
     agent: { ...agent, reportSections: sections },
     changes,
   };
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   3단계 — Claude가 구성안 기반으로 샘플 리포트 데이터 생성
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+async function generateSampleWithClaude(
+  agent: AgentDefinition,
+  context: { audience?: string; dataTypes?: string[] }
+): Promise<object> {
+  const sections = agent.reportSections ?? [];
+
+  // 각 섹션별 데이터 스키마를 조합
+  const sectionSchemas = sections.map((s) => {
+    const schema = COMPONENT_DATA_SCHEMA[s.componentType] ?? "{}";
+    return `  {
+    "id": "${s.id}",
+    "label": "${s.label}",
+    "componentType": "${s.componentType}",
+    "data": ${schema}
+  }`;
+  }).join(",\n");
+
+  const prompt = `에이전트: ${agent.name}
+설명: ${agent.description}
+읽는 사람: ${context.audience ?? "미지정"}
+입력 데이터: ${(context.dataTypes ?? []).join(", ") || "미지정"}
+
+아래 구성안의 각 섹션에 맞는 현실적인 샘플 데이터를 생성해줘.
+데이터는 에이전트의 주제에 맞는 구체적인 수치·이름·설명이어야 해.
+
+구성안:
+[
+${sectionSchemas}
+]
+
+출력 형식 (JSON만, 설명 없이):
+{
+  "meta": {
+    "agentId": "${agent.id}",
+    "agentName": "${agent.name}",
+    "createdAt": "${new Date().toISOString()}"
+  },
+  "executiveSummary": {
+    "keyFindings": ["핵심 발견 3-5개"]
+  },
+  "sections": [
+    위 구성안의 각 섹션에 대해:
+    {
+      "id": "섹션 id",
+      "label": "섹션 label",
+      "componentType": "컴포넌트 타입",
+      "data": { 해당 컴포넌트의 스키마에 맞는 현실적 데이터 }
+    }
+  ]
+}`;
+
+  const raw = await callClaude(prompt, SAMPLE_REPORT_SYSTEM);
+  const parsed = JSON.parse(raw);
+
+  return normalizeReport(parsed, agent);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -174,16 +260,20 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: "name과 desc가 필요합니다." }, { status: 400 });
       }
 
-      const agent = await buildAgentWithClaude(body as Parameters<typeof buildAgentWithClaude>[0]);
+      const result = await buildAgentWithClaude(body as Parameters<typeof buildAgentWithClaude>[0]);
 
       ensureAgentsDir();
       fs.writeFileSync(
-        path.join(AGENTS_DIR, `${agent.id}.json`),
-        JSON.stringify(agent, null, 2),
+        path.join(AGENTS_DIR, `${result.agent.id}.json`),
+        JSON.stringify(result.agent, null, 2),
         "utf-8"
       );
 
-      return NextResponse.json({ agent });
+      return NextResponse.json({
+        agent: result.agent,
+        storyLine: result.storyLine,
+        keyDecision: result.keyDecision,
+      });
     }
 
     if (body.phase === "review") {
@@ -212,12 +302,10 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: "agent가 필요합니다." }, { status: 400 });
       }
 
-      const samplePath = path.join(AGENTS_DIR, "audience-strategy.sample.json");
-      const raw = JSON.parse(fs.readFileSync(samplePath, "utf-8"));
-      const report = normalizeReport(
-        { ...raw, meta: { ...raw.meta, agentId: agent.id, agentName: agent.name, createdAt: new Date().toISOString() } },
-        agent
-      );
+      const report = await generateSampleWithClaude(agent, {
+        audience: body.audience,
+        dataTypes: body.dataTypes,
+      });
 
       ensureAgentsDir();
       fs.writeFileSync(

@@ -14,7 +14,7 @@ interface Props {
 function SectionHeader({ title, description }: { title: string; description?: string }) {
   return (
     <div className="mb-5">
-      <h3 className="font-bold text-xl text-report-text-primary">{title}</h3>
+      <h3 className="report-section-title">{title}</h3>
       {description && (
         <p className="text-base text-report-text-secondary leading-relaxed mt-1">
           {description}
@@ -77,10 +77,12 @@ export default function ExecutiveSummary({ data }: Props) {
 
   return (
     <div>
-      {/* #f7f7f8 배경 컨테이너 — 제목+설명도 안에 포함 */}
+      {/* 타이틀 + 설명 — 컨테이너 바깥, 다른 섹션과 좌측 정렬 통일 */}
+      <SectionHeader title="Executive Summary" description={data.description} />
+
+      {/* #f7f7f8 배경 컨테이너 — 카드들만 포함 */}
       <div className="bg-report-bg rounded-container p-[24px] space-y-3">
-        <SectionHeader title="Executive Summary" description={data.description} />
-        {/* Type B: 메트릭 카드들 (각각 별도 #fff 카드) */}
+        {/* 메트릭 카드들 */}
         {hasMetrics && (
           <div
             className="grid gap-3"
@@ -92,7 +94,7 @@ export default function ExecutiveSummary({ data }: Props) {
           </div>
         )}
 
-        {/* Key Findings (#fff 카드) */}
+        {/* Key Findings */}
         {hasFindings && (
           <KeyFindingsCard findings={data.keyFindings} />
         )}

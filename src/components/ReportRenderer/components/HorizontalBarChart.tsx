@@ -38,6 +38,10 @@ export default function HorizontalBarChart({ data }: { data: HorizontalBarChartD
       return row;
     });
 
+  // 라벨 텍스트 길이에 따라 왼쪽 마진 동적 계산 (글자당 ~8px, 최소 80, 최대 240)
+  const maxLabelLength = Math.max(...data.items.map((i) => i.label.length));
+  const leftMargin = Math.min(240, Math.max(80, maxLabelLength * 8 + 16));
+
   return (
     <div>
       {data.question && (
@@ -49,7 +53,7 @@ export default function HorizontalBarChart({ data }: { data: HorizontalBarChartD
           keys={["value"]}
           indexBy="label"
           layout="horizontal"
-          margin={{ top: 0, right: 140, bottom: 0, left: 80 }}
+          margin={{ top: 0, right: 140, bottom: 0, left: leftMargin }}
           padding={0.4}
           valueScale={{ type: "linear", min: 0, max: 100 }}
           colors={(bar) => {

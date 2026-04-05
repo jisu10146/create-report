@@ -322,7 +322,7 @@ export default function StudioClient() {
       const sampleRes = await fetch("/api/create-agent", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phase: "sample", agent: reviewedAgent }),
+        body: JSON.stringify({ phase: "sample", agent: reviewedAgent, ...context }),
       });
       if (!sampleRes.ok) { const err = await sampleRes.json(); throw new Error(err.detail ?? err.error ?? "샘플 리포트 생성 실패"); }
 

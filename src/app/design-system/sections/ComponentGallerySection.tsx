@@ -1,6 +1,8 @@
 "use client";
 
 import { COMPONENT_REGISTRY } from "@/components/ReportRenderer/components";
+import { PersonaModalInline } from "@/components/ReportRenderer/components/PersonaModal";
+import type { PersonaModalData } from "@/types";
 import React from "react";
 
 /* ─── 각 컴포넌트별 더미 데이터 (피그마 검수용) ─── */
@@ -159,6 +161,22 @@ const SAMPLE_DATA: Record<string, { label: string; data: unknown }> = {
       ],
     },
   },
+  MetricHighlight: {
+    label: "Metric Highlight",
+    data: {
+      label: "허용 가격대 폭 (PMC ~ PME 간격)",
+      value: "$226.18",
+      sub: "OPP 대비 18.8%",
+      description: "이 범위는 비교적 넓은 편으로, 소비자들이 다양한 가격대에서 제품을 수용할 수 있음을 시사합니다. 이는 제품의 가격에 대한 유연성이 존재하며, 소비자들이 가격에 대해 상대적으로 관대할 수 있음을 의미합니다.",
+    },
+  },
+  ChecklistCard: {
+    label: "Checklist Card",
+    data: {
+      title: "현재 가격 위치",
+      description: "신제품의 목표 가격이 허용 범위인 $1,181.82 ~ $1,408.00 내에 위치하는지 확인해야 합니다. 만약 목표 가격이 이 범위를 벗어난다면, 소비자들의 가격 저항이 증가할 수 있으며, 이는 판매에 부정적인 영향을 미칠 수 있습니다.",
+    },
+  },
   PersonaModal: {
     label: "Persona Modal (Synthetic Respondent Samples)",
     data: {
@@ -201,6 +219,22 @@ export default function ComponentGallerySection() {
 
       {Object.entries(SAMPLE_DATA).map(([type, { label, data }]) => {
         const componentKey = type.split(":")[0];
+
+        // PersonaModal: 모달을 열린 상태로 인라인 렌더링
+        if (componentKey === "PersonaModal") {
+          return (
+            <div key={type} className="space-y-3">
+              <div className="flex items-center gap-3">
+                <h3 className="text-sm font-semibold text-report-text-primary">{label}</h3>
+                <span className="text-xs font-mono bg-report-bg text-report-text-secondary px-2 py-0.5 rounded-chip border border-report-border">
+                  {componentKey}
+                </span>
+              </div>
+              <PersonaModalInline data={data as PersonaModalData} />
+            </div>
+          );
+        }
+
         const Component = COMPONENT_REGISTRY[componentKey];
         if (!Component) return null;
 
