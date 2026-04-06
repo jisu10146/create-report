@@ -4,7 +4,7 @@ import type { MetricHighlightData, MetricHighlightItem } from "@/types";
  * MetricHighlight — 피그마 content (10:145)
  *
  * 카드: bg #ffffff, radius 16, pad 24, gap 16
- * 상단: label 14px/500 + value 24px/600 + sub 14px/400
+ * 상단: label 14px/500 → value 24px/600 → sub 14px/400 (vertical, gap 2)
  * Divider: #e6e7e9
  * 하단: description 16px/400
  *
@@ -19,12 +19,12 @@ function SingleCard({ item }: { item: MetricHighlightItem }) {
         <span className="text-[14px] font-medium leading-[20px] text-report-text-primary">
           {item.label}
         </span>
-        <div className="flex items-baseline gap-[2px]">
+        <div className="flex flex-col gap-[2px]">
           <span className="text-[24px] font-semibold leading-[32px] text-report-text-primary">
             {item.value}
           </span>
           {item.sub && (
-            <span className="text-[14px] font-normal leading-[20px] text-report-text-secondary ml-[4px]">
+            <span className="text-[14px] font-normal leading-[20px] text-report-text-secondary">
               {item.sub}
             </span>
           )}

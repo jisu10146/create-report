@@ -20,7 +20,7 @@ export default async function PreviewPage({ params }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-report-basement">
       {/* Preview banner */}
       <div className="bg-yellow-50 border-b border-yellow-200 px-6 py-2 text-center">
         <span className="text-xs font-semibold text-yellow-700">

@@ -40,6 +40,7 @@ export const CHART_PALETTE = {
 export const CHART_COLOR_SEQUENCE = [
   CHART_PALETTE.blue500,
   CHART_PALETTE.lime500,
+  CHART_PALETTE.blueLight,
   CHART_PALETTE.deepPurple400,
   CHART_PALETTE.blue300,
   CHART_PALETTE.teal500,

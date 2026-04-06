@@ -39,7 +39,7 @@ function PhaseBadge({ label, bg, color }: { label: string; bg: string; color: st
 
 export default function StrategyTable({ data }: { data: StrategyTableData }) {
   return (
-    <div className="bg-[#ffffff] border border-report-border rounded-[16px] overflow-hidden">
+    <div className="bg-report-card border border-report-border rounded-card overflow-hidden">
       <table className="w-full table-fixed">
         <colgroup>
           <col style={{ width: 232 }} />

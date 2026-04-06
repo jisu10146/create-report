@@ -43,7 +43,7 @@ export default function HorizontalBarChart({ data }: { data: HorizontalBarChartD
   const leftMargin = Math.min(240, Math.max(80, maxLabelLength * 8 + 16));
 
   return (
-    <div>
+    <div className="bg-report-card rounded-card p-[24px]">
       {data.question && (
         <p className="text-sm font-semibold text-report-text-primary mb-4">{data.question}</p>
       )}

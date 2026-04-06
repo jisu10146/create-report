@@ -81,7 +81,7 @@ export default function ExecutiveSummary({ data }: Props) {
       <SectionHeader title="Executive Summary" description={data.description} />
 
       {/* #f7f7f8 배경 컨테이너 — 카드들만 포함 */}
-      <div className="bg-report-bg rounded-container p-[24px] space-y-3">
+      <div className="bg-report-bg rounded-section p-[8px] space-y-3">
         {/* 메트릭 카드들 */}
         {hasMetrics && (
           <div

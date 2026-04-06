@@ -45,7 +45,7 @@ export default function DonutChart({ data }: { data: DonutChartData }) {
   });
 
   return (
-    <div className="bg-report-card border border-report-border rounded-card p-[24px]">
+    <div className="bg-report-card border border-report-border rounded-card p-[24px] h-full flex flex-col items-center justify-center">
       {data.title && (
         <p className="text-base font-semibold text-report-text-primary text-center mb-4">
           {data.title}

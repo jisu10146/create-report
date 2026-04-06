@@ -1,0 +1,19 @@
+{
+  "id": "pipeline-forecasting",
+  "name": "Pipeline Forecasting",
+  "description": "과거 거래 데이터를 사용하여 향후 판매 파이프라인 성과를 예측합니다.",
+  "category": "prediction",
+  "inputType": "none",
+  "layout": "single-section",
+  "modalType": "none",
+  "reportSections": [
+    { "id": "executive-summary", "label": "Executive Summary", "componentType": "ExecutiveSummary", "reason": "핵심 예측 결과와 달성 가능성을 먼저 제시하여 독자가 전체 맥락을 잡을 수 있게 함" },
+    { "id": "forecast-kpi", "label": "파이프라인 예측 핵심 지표", "componentType": "MetricHighlight", "reason": "ES에서 달성 가능성을 확인한 독자가 예상 매출/달성률/딜 사이클을 보고 목표 대비 갭을 판단할 수 있게 함" },
+    { "id": "stage-distribution", "label": "파이프라인 단계별 분포", "componentType": "DonutChart", "reason": "MH에서 전체 수치를 확인한 독자가 단계별 딜 구성비를 보고 파이프라인 건강도를 판단할 수 있게 함" },
+    { "id": "stage-detail", "label": "단계별 전환율 및 금액", "componentType": "DataTable", "reason": "DonutChart에서 분포를 확인한 독자가 각 단계 전환율·금액·체류 기간을 비교하여 병목 위치를 특정할 수 있게 함" },
+    { "id": "bottleneck-diagnosis", "label": "병목 구간 진단", "componentType": "InsightCard", "reason": "DataTable에서 전환율 저조 단계를 발견한 독자가 근본 원인을 파악하여 개선 방향을 결정할 수 있게 함" },
+    { "id": "revenue-forecast", "label": "매출 예측 시나리오", "componentType": "RevenueScenarioBar", "reason": "InsightCard에서 병목 원인을 진단한 독자가 해소 여부에 따른 3가지 시나리오를 비교하여 투자 의사결정을 내릴 수 있게 함" },
+    { "id": "improvement-checklist", "label": "예측 정확도 개선 체크리스트", "componentType": "ChecklistCard", "reason": "시나리오 확인 후 Upside 실현을 위해 즉시 점검할 기준을 제시하여 리포트를 액션으로 연결함" }
+  ],
+  "promptTemplate": ""
+}

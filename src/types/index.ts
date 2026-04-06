@@ -122,6 +122,8 @@ export interface UserCardItem {
 export interface UserCardData {
   items: UserCardItem[];
   hasViewDetail?: boolean;
+  /** PersonaModal과 연동 — View Detail 클릭 시 모달에 표시할 데이터 */
+  personaModal?: PersonaModalData;
 }
 
 export interface ClusterCardItem {

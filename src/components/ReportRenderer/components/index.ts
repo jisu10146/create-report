@@ -14,6 +14,8 @@ import SectionTitle from "./SectionTitle";
 import PersonaModal from "./PersonaModal";
 import MetricHighlight from "./MetricHighlight";
 import ChecklistCard from "./ChecklistCard";
+import RevenueScenarioBar from "./RevenueScenarioBar";
+import PieBarChart from "./PieBarChart";
 
 /**
  * COMPONENT_REGISTRY — componentType → React component
@@ -36,6 +38,8 @@ export const COMPONENT_REGISTRY: Record<string, React.ComponentType<{ data: unkn
   PersonaModal: PersonaModal as React.ComponentType<{ data: unknown }>,
   MetricHighlight: MetricHighlight as React.ComponentType<{ data: unknown }>,
   ChecklistCard: ChecklistCard as React.ComponentType<{ data: unknown }>,
+  RevenueScenarioBar: RevenueScenarioBar as React.ComponentType<{ data: unknown }>,
+  PieBarChart: PieBarChart as React.ComponentType<{ data: unknown }>,
 };
 
 /* ── 런타임 검증: VALID_COMPONENT_NAMES ↔ REGISTRY 일치 체크 ── */
