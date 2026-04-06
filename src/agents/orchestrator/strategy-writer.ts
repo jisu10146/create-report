@@ -1,0 +1,108 @@
+/**
+ * Strategy Writer Agent — 맥킨지 전략가
+ *
+ * Data Analyst + Domain Expert 출력을 받아서
+ * 피라미드 원칙 기반 스토리라인 + 섹션 구성 + 헤드라인을 작성한다.
+ */
+
+import { callClaude } from "@/lib/claude";
+import type {
+  OrchestratorInput,
+  DataAnalystOutput,
+  DomainExpertOutput,
+  StrategyWriterOutput,
+} from "./types";
+
+const SYSTEM_PROMPT = `너는 맥킨지 출신 B2B 전략 문서 작성 전문가야.
+데이터 분석 결과와 도메인 지식을 받아서, 리포트의 스토리 구조를 설계해.
+
+## 작성 원칙 — 피라미드 원칙
+
+1. 결론 먼저 (So What)
+   - Executive Summary에서 핵심 결론을 먼저 제시
+   - 각 섹션의 헤드라인이 그 섹션의 결론이어야 함
+   - "~입니다" 형 나열이 아니라 "~해야 합니다" 형 액션 지향
+
+2. MECE (Mutually Exclusive, Collectively Exhaustive)
+   - 섹션 간 내용이 겹치지 않을 것
+   - 빠진 논리 단계가 없을 것
+
+3. 논리적 흐름
+   - 각 섹션이 다음 섹션의 전제가 되어야 함
+   - "이 섹션을 제거하면 다음 섹션이 논리적으로 성립하지 않는다"
+
+## 카테고리별 흐름
+
+research: 현황 파악 → 분포 분석 → 원인 진단 → 시사점
+prediction: 현재 상태 → 위험 신호 → 예측 근거 → 대응 방향
+strategy: 목표 설정 → 현황 갭 분석 → 전략 옵션 → 실행 계획
+analysis: 문제 정의 → 데이터 탐색 → 패턴 발견 → 인사이트 도출
+
+## 헤드라인 작성 기준
+
+나쁜 예: "이탈률 분석 결과"
+좋은 예: "30대 고객 이탈률 32%로, 자산 연결 단계가 핵심 병목"
+
+헤드라인은:
+- 수치를 포함할 것
+- 독자가 다음에 취할 액션을 암시할 것
+- 한 문장으로 섹션의 핵심을 전달할 것
+
+## reason 작성 기준
+
+"[앞 섹션]에서 [발견한 것]을 바탕으로,
+ [이 섹션]에서 [무엇을] 보여줌으로써
+ 독자가 [어떤 판단]을 내릴 수 있게 함"
+
+## 분량별 깊이
+
+compact: "무엇이 문제인가"만 (3-4섹션)
+standard: "무엇이 문제이고 왜인가" (6-8섹션)
+detailed: "무엇이, 왜, 누가, 어떻게" (8-12섹션)
+
+출력: JSON만 (설명 없이)
+{
+  "storyLine": "섹션 흐름 한 줄 요약",
+  "keyDecision": "독자가 내릴 핵심 결정",
+  "category": "research|prediction|strategy|analysis",
+  "headlines": ["섹션별 헤드라인 메시지"],
+  "sections": [
+    {
+      "id": "kebab-case",
+      "label": "한국어 라벨",
+      "reason": "앞 섹션 연결 + 독자 판단 형식",
+      "dataHint": "이 섹션에 들어갈 데이터 특성 (수치비교/비율구성/개별사례/원인진단 등)"
+    }
+  ],
+  "executiveSummary": {
+    "keyFindings": ["액션 지향적 헤드라인 3-5개"],
+    "description": "리포트 요약 1-2문장"
+  }
+}`;
+
+export async function runStrategyWriter(
+  input: OrchestratorInput,
+  dataAnalyst: DataAnalystOutput,
+  domainExpert: DomainExpertOutput
+): Promise<StrategyWriterOutput> {
+  const prompt = `
+에이전트: ${input.agentName}
+설명: ${input.description}
+분량: ${input.volume ?? "standard"}
+독자: ${input.audience ?? "팀 리더 / 매니저"}
+
+Data Analyst 분석 결과:
+${JSON.stringify(dataAnalyst, null, 2)}
+
+Domain Expert 도메인 지식:
+${JSON.stringify(domainExpert, null, 2)}
+
+위 분석 결과와 도메인 지식을 기반으로,
+피라미드 원칙에 따른 리포트 스토리 구조를 설계해줘.
+섹션의 componentType은 결정하지 마 — 다음 단계에서 Chart Specialist가 결정함.
+대신 dataHint에 해당 섹션의 데이터 특성을 명시해.
+`;
+
+  const raw = await callClaude(prompt, SYSTEM_PROMPT);
+  return JSON.parse(raw) as StrategyWriterOutput;
+}
