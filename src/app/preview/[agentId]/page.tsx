@@ -46,13 +46,13 @@ export default async function PreviewPage({ params }: Props) {
 // Generate static pages for all agents at build time
 export async function generateStaticParams() {
   try {
-    const { readdirSync } = await import("fs");
+    const { readdirSync, statSync } = await import("fs");
     const { join } = await import("path");
-    const dir = join(process.cwd(), "src", "agents");
-    const files = readdirSync(dir).filter(
-      (f: string) => f.endsWith(".json") && !f.endsWith(".sample.json")
-    );
-    return files.map((f: string) => ({ agentId: f.replace(".json", "") }));
+    const dir = join(process.cwd(), "src", "agents", "definitions");
+    const entries = readdirSync(dir).filter((f: string) => {
+      return statSync(join(dir, f)).isDirectory();
+    });
+    return entries.map((f: string) => ({ agentId: f }));
   } catch {
     return [];
   }

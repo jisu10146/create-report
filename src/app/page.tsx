@@ -8,10 +8,10 @@ import ReportRenderer from "@/components/ReportRenderer";
 
 // Static agent list — loaded at build time or via client fetch
 // In production this would come from the server via a layout or API route
-import audienceStrategy from "@/agents/audience-strategy.json";
-import personaSurvey from "@/agents/persona-survey.json";
-import churnPrediction from "@/agents/churn-prediction.json";
-import newPricingProduct from "@/agents/new-pricing-product.json";
+import audienceStrategy from "@/agents/definitions/audience-strategy/agent.json";
+import personaSurvey from "@/agents/definitions/persona-survey/agent.json";
+import churnPrediction from "@/agents/definitions/churn-prediction/agent.json";
+import newPricingProduct from "@/agents/definitions/new-pricing-product/agent.json";
 
 const ALL_AGENTS = [
   audienceStrategy,

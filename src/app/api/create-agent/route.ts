@@ -7,10 +7,12 @@ import { AUDIENCE_GUIDE, VALID_COMPONENTS, DESIGN_SYSTEM_PROMPT, COMPONENT_DATA_
 import { buildPatternPrompt, validatePattern } from "@/lib/layout-patterns";
 import type { AgentDefinition } from "@/types";
 
-const AGENTS_DIR = path.join(process.cwd(), "src", "agents");
+const DEFINITIONS_DIR = path.join(process.cwd(), "src", "agents", "definitions");
 
-function ensureAgentsDir() {
-  if (!fs.existsSync(AGENTS_DIR)) fs.mkdirSync(AGENTS_DIR, { recursive: true });
+function ensureAgentDir(agentId: string) {
+  const dir = path.join(DEFINITIONS_DIR, agentId);
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+  return dir;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -262,9 +264,9 @@ export async function POST(req: NextRequest) {
 
       const result = await buildAgentWithClaude(body as Parameters<typeof buildAgentWithClaude>[0]);
 
-      ensureAgentsDir();
+      const agentDir = ensureAgentDir(result.agent.id);
       fs.writeFileSync(
-        path.join(AGENTS_DIR, `${result.agent.id}.json`),
+        path.join(agentDir, "agent.json"),
         JSON.stringify(result.agent, null, 2),
         "utf-8"
       );
@@ -286,9 +288,9 @@ export async function POST(req: NextRequest) {
         volume: body.volume,
       });
 
-      ensureAgentsDir();
+      const agentDir = ensureAgentDir(result.agent.id);
       fs.writeFileSync(
-        path.join(AGENTS_DIR, `${result.agent.id}.json`),
+        path.join(agentDir, "agent.json"),
         JSON.stringify(result.agent, null, 2),
         "utf-8"
       );
@@ -307,9 +309,9 @@ export async function POST(req: NextRequest) {
         dataTypes: body.dataTypes,
       });
 
-      ensureAgentsDir();
+      const agentDir = ensureAgentDir(agent.id);
       fs.writeFileSync(
-        path.join(AGENTS_DIR, `${agent.id}.sample.json`),
+        path.join(agentDir, "sample.json"),
         JSON.stringify(report, null, 2),
         "utf-8"
       );
