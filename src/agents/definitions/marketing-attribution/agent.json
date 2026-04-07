@@ -1,0 +1,18 @@
+{
+  "id": "marketing-attribution",
+  "name": "마케팅 성과 귀인 분석",
+  "description": "어떤 채널/캠페인이 실제 매출에 기여했는지 + 예산 재배분 권고",
+  "category": "analysis",
+  "inputType": "file",
+  "layout": "single-section",
+  "modalType": "none",
+  "reportSections": [
+    { "id": "executive-summary", "label": "Executive Summary", "componentType": "ExecutiveSummary", "reason": "총 광고비 ₩78.3만 대비 매출 ₩2,227만(ROAS 28.4x)의 전체 그림과 귀인 모델별 핵심 차이를 먼저 제시하여 독자가 분석 맥락을 잡을 수 있게 함" },
+    { "id": "attribution-kpi", "label": "총 ROAS 28.4x이나, YouTube 광고비 ₩2.6만은 Last-touch 매출 ₩0 — 귀인 모델에 따라 채널 평가가 뒤집힘", "componentType": "MetricHighlight", "reason": "ES에서 전체 ROAS를 확인했지만 채널별로 쪼개면 평가가 달라진다는 긴장을 만들어, 독자가 귀인 모델 비교의 필요성을 인식하게 함" },
+    { "id": "channel-contribution", "label": "Linear 귀인 기준 Google Ads 18.5%, Naver 15.2%가 양대 축 — Last-touch에서 보이지 않던 Email 11.8% 부상", "componentType": "DonutChart", "reason": "KPI에서 귀인 모델별 차이를 인식한 독자가, Linear 기준 채널별 매출 기여 구성비를 보고 실제 기여도 서열을 파악할 수 있게 함" },
+    { "id": "channel-comparison", "label": "YouTube CPA ₩944로 최저 효율이나 어시스트 전환율 49.1% — Carousel 캠페인은 비용 ₩3.6만 대비 전환 0건", "componentType": "DataTable", "reason": "DonutChart에서 채널별 기여 구성비를 확인한 독자가, 비용/매출/ROAS/CPA를 귀인 모델별로 교차 비교하여 과대·과소평가 채널을 정확히 특정할 수 있게 함" },
+    { "id": "hidden-contributors", "label": "YouTube·Email·Webinar는 Last-touch에선 매출 ₩0~₩178만이지만 Linear 기여 합산 23.5% — 어시스트 채널 투자 부족이 전환 단절의 원인", "componentType": "InsightCard", "reason": "DataTable에서 귀인 모델별 수치 차이를 확인한 독자가, 과소평가된 어시스트 채널의 근본 원인을 진단하여 예산 재배분 방향을 결정할 수 있게 함" },
+    { "id": "budget-reallocation", "label": "YouTube +₩5만, Carousel→Retargeting 전환, Email 자동화 확대 — 예상 ROAS 28.4x→35x", "componentType": "StrategyTable", "reason": "어시스트 채널 과소 투자를 확인한 독자가, 채널별 구체적 예산 재배분 액션과 예상 효과를 보고 즉시 실행 계획을 수립할 수 있게 함" }
+  ],
+  "promptTemplate": ""
+}

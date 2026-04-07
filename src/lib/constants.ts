@@ -5,11 +5,10 @@
  * ⚠ 컴포넌트 추가/삭제 시 COMPONENT_DEFINITIONS 만 수정하면
  *   VALID_COMPONENTS, ComponentType, REGISTRY, PROMPT 전부 자동 반영됨.
  *
- * 프롬프트 원본은 .md 파일에서 관리:
- *   - src/agents/report-designer.md  → DESIGN_SYSTEM_PROMPT 원본
- *   - src/agents/components.md       → 컴포넌트 정의/스키마 문서
- * .md를 수정하면 이 파일의 대응 상수도 동기화할 것.
- * 서버 전용 코드(orchestrator 등)에서는 .md를 직접 읽어 사용 가능.
+ * 프롬프트는 .md 파일에서 관리:
+ *   - src/agents/strategy-writer.md  → 설계 원칙 + 스토리 구조
+ *   - src/agents/pm.md               → 품질 체크리스트
+ *   - src/agents/chart-specialist.md → 컴포넌트 선택 기준
  */
 
 /* ─── Volume ─── */
@@ -92,46 +91,12 @@ export const COMPONENT_DATA_SCHEMA: Record<string, string> = {
   PieBarChart: `{ "pieTitle": "string (optional)", "pieItems": [{ "label": "string", "value": number }], "barTitle": "string (optional)", "barItems": [{ "label": "string", "value": number }], "legends": [{ "label": "string", "color": "#hex" }] (optional) }`,
 };
 
-/* ─── System Prompts ─── */
+/* ─── 유틸 ─── */
 
-function buildComponentPromptList(): string {
+/** 컴포넌트 목록을 프롬프트용 텍스트로 변환 — orchestrator에서 사용 */
+export function buildComponentPromptList(): string {
   return COMPONENT_DEFINITIONS.map((c) => {
     const rule = c.rule ? ` (${c.rule})` : "";
     return `- ${c.name}: ${c.description}${rule}`;
   }).join("\n");
 }
-
-/**
- * 에이전트 구성안 설계용 시스템 프롬프트
- * 원본: src/agents/report-designer.md
- * 서버 전용 코드에서는 .md를 직접 읽어 사용 가능
- */
-export function buildDesignSystemPrompt(): string {
-  // 서버 환경에서는 .md 파일에서 읽기 시도
-  try {
-    const { readFileSync } = require("fs");
-    const { join } = require("path");
-    const md = readFileSync(join(process.cwd(), "src/agents/report-designer.md"), "utf-8");
-    return md.replace("{{COMPONENT_LIST}}", buildComponentPromptList());
-  } catch {
-    // 클라이언트 환경이면 인라인 fallback
-    return DESIGN_SYSTEM_PROMPT_INLINE;
-  }
-}
-
-/** 클라이언트 호환 인라인 버전 (report-designer.md와 동기화 유지) */
-const DESIGN_SYSTEM_PROMPT_INLINE = `너는 B2B SaaS 리포트 구성 전문가야.
-
-## 사용 가능한 컴포넌트 (이것들만 사용)
-${buildComponentPromptList()}
-
-출력 형식 (JSON만):
-{ "sections": [{ "id": "kebab-case-id", "label": "한국어", "componentType": "컴포넌트명", "reason": "..." }], "storyLine": "...", "keyDecision": "...", "category": "...", "inputType": "...", "layout": "single-section", "modalType": "none" }`;
-
-/** 하위 호환 — 기존 코드에서 DESIGN_SYSTEM_PROMPT를 import하는 곳용 */
-export const DESIGN_SYSTEM_PROMPT = DESIGN_SYSTEM_PROMPT_INLINE;
-
-/** 샘플 리포트 생성용 시스템 프롬프트 */
-export const SAMPLE_REPORT_SYSTEM = `You are a B2B SaaS data analyst generating realistic mock report data.
-Always respond with valid JSON only. No markdown fences. No explanation.
-The JSON must match the ReportSchema structure exactly.`;

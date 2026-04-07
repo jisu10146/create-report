@@ -1,0 +1,151 @@
+{
+  "meta": {
+    "agentId": "marketing-attribution",
+    "agentName": "마케팅 성과 귀인 분석",
+    "createdAt": "2026-04-07T20:00:00.000Z"
+  },
+  "executiveSummary": {
+    "keyFindings": [
+      "ROAS 28.4x로 전체 효율은 양호하나, Last-touch 기준 채널 평가가 실제 기여도와 크게 괴리되어 있습니다.",
+      "Linear 귀인 적용 시 YouTube·Email·Webinar가 전체 기여의 23.5%로 부상, Last-touch 기준 대비 채널 서열이 뒤집힙니다.",
+      "YouTube 접촉 유저의 49.1%가 전환하여 최고 효율 어시스트 채널이나, 예산은 전체의 3.4%(₩2.6만)에 불과합니다.",
+      "Carousel 캠페인 ₩3.6만 전환 0건을 즉시 중단하고 YouTube +₩5만 증액 시 ROAS 28.4x→35x 달성이 가능합니다."
+    ]
+  },
+  "sections": [
+    {
+      "id": "executive-summary",
+      "label": "Executive Summary",
+      "componentType": "ExecutiveSummary",
+      "data": {
+        "description": "300명 유저의 987개 터치포인트를 Last-touch, Linear, First-touch 3가지 귀인 모델로 분석한 결과입니다. 평균 전환 경로 3.8 터치포인트로, 단일 귀인 모델만으로는 채널 기여도를 정확히 평가할 수 없습니다.",
+        "topMetrics": [
+          { "label": "총 광고비", "value": "₩782,890" },
+          { "label": "총 매출", "value": "₩22,270,000" },
+          { "label": "전체 ROAS", "value": "28.4x" },
+          { "label": "전환 유저", "value": "124명 (41.3%)" }
+        ],
+        "keyFindings": [
+          "전체 ROAS 28.4x이나 Last-touch 기준과 실제 기여도가 크게 괴리",
+          "Linear 귀인 시 YouTube·Email·Webinar 합산 23.5%로 부상",
+          "YouTube 접촉 유저 49.1% 전환, 최고 효율이나 예산 3.4%에 불과",
+          "Carousel ₩3.6만 전환 0건 중단 → YouTube 증액 시 ROAS 35x 가능"
+        ]
+      }
+    },
+    {
+      "id": "attribution-kpi",
+      "label": "총 ROAS 28.4x이나, YouTube 광고비 ₩2.6만은 Last-touch 매출 ₩0 — 귀인 모델에 따라 채널 평가가 뒤집힘",
+      "componentType": "MetricHighlight",
+      "data": {
+        "items": [
+          {
+            "label": "전체 ROAS",
+            "value": "28.4x",
+            "sub": "Paid Search 17.2x / Paid Social 17.1x",
+            "description": "전체 ROAS는 높지만 Paid Video(YouTube)는 Last-touch 기준 0x입니다. 그러나 Linear 귀인 적용 시 YouTube의 기여 매출은 ₩135.9만(6.1%)으로, 귀인 모델에 따라 채널 평가가 완전히 달라집니다."
+          },
+          {
+            "label": "평균 전환 경로",
+            "value": "3.8 터치포인트",
+            "sub": "구매 유저 평균 4.2회",
+            "description": "단일 터치로 전환하는 유저는 전체의 12%뿐입니다. 88%가 2개 이상 채널을 거치므로 Last-touch 단독 귀인은 어시스트 채널을 체계적으로 과소평가합니다."
+          },
+          {
+            "label": "전환율",
+            "value": "41.3%",
+            "sub": "124명 / 300명",
+            "description": "purchase 23건(₩2,227만), trial_start 38건, demo_request 31건, signup 32건입니다. Desktop 전환 66건(53.2%)으로 모바일(37.9%) 대비 우세합니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "channel-contribution",
+      "label": "Linear 귀인 기준 Google Ads 18.5%, Naver 15.2%가 양대 축 — Last-touch에서 보이지 않던 Email 11.8% 부상",
+      "componentType": "DonutChart",
+      "data": {
+        "title": "Linear Attribution 채널별 매출 기여",
+        "items": [
+          { "label": "Google Ads", "value": 18, "count": 4109810 },
+          { "label": "Naver Search", "value": 15, "count": 3379143 },
+          { "label": "Email Campaign", "value": 12, "count": 2627000 },
+          { "label": "Facebook Ads", "value": 10, "count": 2172310 },
+          { "label": "Kakao Moment", "value": 8, "count": 1666333 },
+          { "label": "기타 (YouTube·Organic 등)", "value": 37, "count": 8315404, "isOther": true }
+        ]
+      }
+    },
+    {
+      "id": "channel-comparison",
+      "label": "YouTube CPA ₩944로 최저 효율이나 어시스트 전환율 49.1% — Carousel 캠페인은 비용 ₩3.6만 대비 전환 0건",
+      "componentType": "DataTable",
+      "data": {
+        "columns": [
+          { "label": "Google Ads" },
+          { "label": "Naver Search" },
+          { "label": "Facebook Ads" },
+          { "label": "Instagram" },
+          { "label": "YouTube" },
+          { "label": "Kakao" }
+        ],
+        "rows": [
+          { "metric": "총 비용 (₩)", "values": ["297,999", "186,770", "110,577", "104,709", "26,433", "56,402"] },
+          { "metric": "Last-touch 매출", "values": ["₩832만", "₩0", "₩178만", "₩49만", "₩0", "₩238만"] },
+          { "metric": "Linear 매출", "values": ["₩411만", "₩338만", "₩217만", "₩114만", "₩136만", "₩167만"] },
+          { "metric": "Last-touch ROAS", "values": ["27.9x", "0x", "16.1x", "4.7x", "0x", "42.2x"] },
+          { "metric": "Linear ROAS", "values": ["13.8x", "18.1x", "19.6x", "10.9x", "51.4x", "29.5x"] },
+          { "metric": "전환 건수", "values": ["18건", "25건", "10건", "13건", "12건", "11건"] },
+          { "metric": "CPA", "values": ["₩16,556", "₩7,471", "₩11,058", "₩8,055", "₩2,203", "₩5,128"] }
+        ],
+        "showDots": true
+      }
+    },
+    {
+      "id": "hidden-contributors",
+      "label": "YouTube·Email·Webinar는 Last-touch에선 매출 ₩0~₩178만이지만 Linear 기여 합산 23.5% — 어시스트 채널 투자 부족이 전환 단절의 원인",
+      "componentType": "InsightCard",
+      "data": {
+        "items": [
+          {
+            "badge": "과소평가 1",
+            "value": "YouTube Ads: Last-touch ₩0 vs Linear ₩136만 (51.4x ROAS)",
+            "description": "YouTube 접촉 유저 57명 중 28명(49.1%)이 결국 전환했습니다. 직접 전환은 없지만 인지→탐색 퍼널에서 가장 효율적인 어시스트 역할을 합니다. 현재 전체 광고비의 3.4%만 배정되어 있습니다.",
+            "interpretation": "원인: Last-touch 기반 성과 평가로 YouTube 예산이 축소 → 인지 단계 유입 감소 → 중간 퍼널 전환 단절"
+          },
+          {
+            "badge": "과소평가 2",
+            "value": "Email Campaign: Last-touch ₩178만 vs Linear ₩263만 (11.8% 기여)",
+            "description": "무료 채널이지만 구매 경로의 47.8%에 Email 터치포인트가 포함됩니다. 특히 Onboarding_Drip 캠페인이 trial_start→purchase 전환에 핵심적 역할을 합니다.",
+            "interpretation": "원인: Email은 비용 ₩0이라 ROAS 계산에서 제외 → 투자 우선순위에서 누락 → 콘텐츠/자동화 개선 없이 방치"
+          },
+          {
+            "badge": "비효율",
+            "value": "Carousel_Feature_Feb: 비용 ₩3.6만, 전환 0건, CPA 산출 불가",
+            "description": "36,012원 집행에 전환이 단 1건도 발생하지 않았습니다. 동일 채널의 Retargeting_Feb(CPA ₩6,953, 4건 전환)와 대조적입니다.",
+            "interpretation": "원인: 인지 단계 크리에이티브로 전환 의도가 없는 오디언스에게 노출 → 퍼널 하단 리타겟팅으로 예산 이동 필요"
+          }
+        ]
+      }
+    },
+    {
+      "id": "budget-reallocation",
+      "label": "YouTube +₩5만, Carousel→Retargeting 전환, Email 자동화 확대 — 예상 ROAS 28.4x→35x",
+      "componentType": "StrategyTable",
+      "data": {
+        "immediate": [
+          { "strategy": "Carousel 캠페인 중단", "objective": "비효율 예산 ₩3.6만 회수", "actionPlan": "Carousel_Feature_Feb 즉시 중단, 동일 예산을 Retargeting_Feb로 이전", "expectedImpact": "전환 +2건, CPA ₩6,953 수준 유지" },
+          { "strategy": "경쟁사키워드 축소", "objective": "CPA ₩39,111 비효율 개선", "actionPlan": "경쟁사키워드_Q1 예산 50% 축소(₩2만 회수), Generic_SaaS_Q1로 이전", "expectedImpact": "CPA ₩12,369 수준으로 효율화" }
+        ],
+        "short": [
+          { "strategy": "YouTube 예산 2배 증액", "objective": "어시스트 채널 강화", "actionPlan": "YouTube Ads ₩2.6만→₩7.6만 증액, Discovery_HowTo 캠페인 확대", "expectedImpact": "Linear 기여 6.1%→9%, 간접 전환 +15건/월" },
+          { "strategy": "Email 자동화 고도화", "objective": "퍼널 중간 전환율 개선", "actionPlan": "Onboarding_Drip 시퀀스 5단계→8단계 확장, trial_start→purchase 전환 최적화", "expectedImpact": "trial→purchase 전환율 +8%p" }
+        ],
+        "mid": [
+          { "strategy": "멀티터치 귀인 대시보드", "objective": "Last-touch 편향 제거", "actionPlan": "BI팀 Linear+Position-based 귀인 자동 리포트 구축, 월간 채널 리뷰 도입", "expectedImpact": "예산 배분 의사결정 주기 월→주 단축" },
+          { "strategy": "크로스채널 시퀀스 최적화", "objective": "최적 전환 경로 표준화", "actionPlan": "YouTube(인지)→Search(탐색)→Email(양육)→Retargeting(전환) 시퀀스 자동화", "expectedImpact": "전환 경로 3.8→3.2 터치포인트로 단축, ROAS 35x 달성" }
+        ]
+      }
+    }
+  ]
+}

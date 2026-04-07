@@ -17,6 +17,7 @@ import type {
   StrategyWriterOutput,
 } from "./types";
 
+/** 프롬프트 원본: src/agents/strategy-writer.md (report-designer.md 내용 통합됨) */
 const SYSTEM_PROMPT = readFileSync(
   join(process.cwd(), "src/agents/strategy-writer.md"),
   "utf-8"

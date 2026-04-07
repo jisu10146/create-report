@@ -49,12 +49,30 @@ export interface DataAnalystOutput {
     name: string;
     source: string;
     rationale: string;
+    /** 비교 가능한 벤치마크 유형 */
+    benchmarkHint?: string;
   }>;
   /** 그룹/클러스터 구조 판단 */
   segments?: Array<{
     name: string;
     criteria: string;
+    /** 이 세그먼트의 예상 차별점 */
+    expectedDiff?: string;
   }>;
+  /** 교차 분석 축 제안 */
+  crossAxes?: Array<{
+    axis1: string;
+    axis2: string;
+    rationale: string;
+  }>;
+  /** 전환 경로 패턴 (시퀀스 데이터 감지 시) */
+  pathPatterns?: Array<{
+    pattern: string;
+    conversionRate: string;
+    insight: string;
+  }>;
+  /** 시계열 분석 포인트 (datetime 컬럼 + 4주 이상 데이터 시) */
+  timeSeriesHints?: string[];
   /** 분석 시 주의할 점 */
   dataFlags: string[];
 }
@@ -67,6 +85,8 @@ export interface DomainExpertOutput {
     metric: string;
     value: string;
     source: string;
+    /** 적용 맥락 (시장/규모/지역) */
+    context?: string;
   }>;
   /** 도메인 용어 매핑 */
   terminology: Record<string, string>;
@@ -74,7 +94,11 @@ export interface DomainExpertOutput {
   decisionFrame: {
     keyDecision: string;
     requiredInfo: string[];
+    /** 판단 기준 (예: X% 이상이면 양호) */
+    decisionCriteria?: string[];
   };
+  /** 이 산업에서 유의미한 세그먼트 축 */
+  segmentAxes?: string[];
   /** 사용한 skill 이름 */
   skillUsed?: string;
 }

@@ -37,7 +37,9 @@ const SKILL_FILES = [
   "saas-metrics",
   "financial-analysis",
   "marketing-funnel",
+  "marketing-attribution",
   "ecommerce-analytics",
+  "customer-support",
 ];
 
 /** .md 테이블에서 행 데이터 추출 */
