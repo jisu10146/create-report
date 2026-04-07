@@ -9,6 +9,8 @@
  *   5단계: Sample Generator
  */
 
+import { readFileSync } from "fs";
+import { join } from "path";
 import { callClaude } from "@/lib/claude";
 import { validatePattern } from "@/lib/layout-patterns";
 import type {
@@ -26,29 +28,11 @@ import { runStrategyWriter } from "./strategy-writer";
 import { runChartSpecialist } from "./chart-specialist";
 import { runSampleGenerator } from "./sample-generator";
 
-const PM_SYSTEM_PROMPT = `너는 B2B SaaS 리포트 설계 PM이야.
-하위 에이전트들의 출력을 조합해서 최종 에이전트 구성안(JSON)을 만든다.
-
-역할:
-1. Strategy Writer의 섹션 구성 + Chart Specialist의 컴포넌트 매칭을 병합
-2. 섹션 간 reason이 논리적으로 이어지는지 검증
-3. 스토리라인이 한 줄로 요약 가능한지 확인
-4. 중복/불필요 섹션 제거
-5. layout-patterns 규칙 위반 체크
-
-출력: JSON만 (설명 없이)
-{
-  "id": "kebab-case",
-  "name": "에이전트명",
-  "description": "설명",
-  "category": "research|prediction|strategy|analysis",
-  "inputType": "none",
-  "layout": "single-section",
-  "modalType": "none",
-  "reportSections": [{ "id": "...", "label": "...", "componentType": "...", "reason": "..." }],
-  "storyLine": "...",
-  "keyDecision": "..."
-}`;
+/** 프롬프트 원본: src/agents/pm.md */
+const PM_SYSTEM_PROMPT = readFileSync(
+  join(process.cwd(), "src/agents/pm.md"),
+  "utf-8"
+);
 
 function toKebabCase(str: string): string {
   return str
