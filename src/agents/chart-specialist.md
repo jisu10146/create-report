@@ -51,10 +51,26 @@ Strategy Writer가 설계한 섹션 구성의 각 섹션에 대해,
 - 같은 컴포넌트 중복 사용 지양 (MetricHighlight, InsightCard만 예외)
 - DonutChart는 가능하면 다음 섹션과 2열 그리드로 묶일 수 있는 위치에 배치
 
+## 대칭 비교 패턴 (A vs B 구조)
+
+Strategy Writer의 dataHint에 "A vs B 비교" (예: "주방가전 vs 생활가전", "사용자 vs 미사용자")가
+포함된 연속 2개 섹션이 있을 때:
+- 같은 componentType을 2개 연속 배치해도 됨 (이 경우에 한해 중복 허용)
+- 두 섹션의 componentType을 반드시 동일하게 맞출 것
+- rationale에 "대칭 비교 패턴 — [A] vs [B]를 동일 컴포넌트로 병렬 배치"라고 명시
+- DataTable이면 하나의 테이블로 합쳐서 열로 구분하는 것을 우선 검토 (섹션 수 절약)
+- HorizontalBarChart면 각각 별도 섹션으로 유지 (좌우 대칭 레이아웃 활용)
+
+예시:
+- dataHint "주방가전 구매의향 TOP 8" + "생활가전 구매의향 TOP 8"
+  → 둘 다 HorizontalBarChart, rationale: "대칭 비교 패턴 — 주방 vs 생활가전 병렬 배치"
+- dataHint "AI 사용자 체감 차이 8개 항목" + "미사용자 체감 차이 8개 항목"
+  → DataTable 1개로 합침 (열: 항목 / 사용자 / 미사용자)
+
 ## 시각적 다양성 규칙
-- 연속으로 같은 유형의 컴포넌트 배치 금지 (차트→차트, 카드→카드)
+- 연속으로 같은 유형의 컴포넌트 배치 금지 (차트→차트, 카드→카드) — 단, 대칭 비교 패턴은 예외
 - 시각적 리듬: 수치 → 차트 → 해석 → 카드 → 표 처럼 형태가 교대
-- 에이전트 전체에서 차트 컴포넌트(HorizontalBarChart/DonutChart/PieBarChart)는 최대 2개
+- 에이전트 전체에서 차트 컴포넌트(HorizontalBarChart/DonutChart/PieBarChart)는 최대 2개 — 단, 대칭 비교 패턴의 차트 쌍은 1개로 카운트
 - 텍스트 중심 컴포넌트(InsightCard/InterpretationBlock/BulletCard)도 연속 배치 금지
 
 출력: JSON만 (설명 없이)
