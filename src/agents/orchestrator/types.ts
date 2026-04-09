@@ -143,6 +143,12 @@ export interface PMFeedback {
 export interface ChartSectionMapping {
   id: string;
   componentType: string;
+  /** 컴포넌트 출처: ds(디자인시스템) | built-in(자체) | new(신규 제안) */
+  source: "ds" | "built-in" | "new";
+  /** source가 new일 때 디자인 필요 여부 */
+  designNeeded?: boolean;
+  /** source가 new일 때 신규 컴포넌트 설명 */
+  newComponentSpec?: string;
   rationale: string;
   /** 시각화 파라미터 힌트 (색상, 축, 정렬 등) */
   visualParams?: Record<string, unknown>;

@@ -1,0 +1,84 @@
+# 에이전트 추가/수정 가이드
+
+## 새 에이전트 추가 시
+
+### 필수 (3개 파일)
+1. `src/agents/definitions/{id}/agent.json` — 구성안
+2. `src/agents/definitions/{id}/sample.json` — 샘플 데이터
+3. `src/agents/definitions/{id}/data-spec.md` — 데이터 스펙 (필수/선택 컬럼, 섹션 매핑, 최소 건수)
+
+→ 이것만 하면 `http://localhost:3001/preview/{id}`에서 바로 확인 가능.
+
+### 선택 (도메인 지식이 필요할 때)
+3. `src/agents/skills/{name}.md` — 스킬 파일 생성
+   - skills/ 폴더에 .md 파일만 넣으면 **자동 감지** (index.ts 수동 등록 불필요)
+   - 첫 줄에 `keywords:` 추가 → 에이전트 description과 키워드 매칭으로 자동 선택
+
+### 불필요 (자동 처리됨)
+- ~~skills/index.ts에 파일명 등록~~ → 자동 스캔
+- ~~generateStaticParams 수정~~ → definitions/ 폴더에서 자동 감지
+
+---
+
+## 새 컴포넌트 추가 시
+
+### 3곳 수정 필요 (런타임 검증이 누락을 자동 감지)
+1. `src/lib/constants.ts` — COMPONENT_DEFINITIONS + COMPONENT_DATA_SCHEMA
+2. `src/components/ReportRenderer/components/{Name}.tsx` — 컴포넌트 구현
+3. `src/components/ReportRenderer/components/index.ts` — FALLBACK_REGISTRY에 import + 등록
+
+### DS 매핑 (선택)
+4. `src/lib/design-system/ds-adapter.tsx` — DS_COMPONENT_MAP에 상태 추가
+   - DS에 대응 컴포넌트 있으면: `status: "mapped"` + DS 래퍼 함수 구현
+   - 없으면: `status: "missing"` + note 추가
+
+### 누락 감지
+- 개발 모드에서 콘솔에 `[Sync]` 경고가 자동 출력됨
+- constants ↔ registry ↔ DS map 3곳의 불일치를 자동 감지
+
+---
+
+## 프롬프트 수정 시
+
+### 에이전트 프롬프트 (파이프라인 동작)
+- `.md` 파일만 수정하면 됨 (`.ts`는 건드리지 않음)
+- 7개: strategy-writer.md, chart-specialist.md, data-analyst.md, domain-expert.md, pm.md, sample-generator.md, persona-critic.md
+
+### 스킬 프롬프트 (도메인 지식)
+- `src/agents/skills/{name}.md` 수정
+- 새 에이전트 작업에서 배운 것은 해당 스킬 파일에 축적 (자동)
+
+---
+
+## 디자인 시스템 업데이트 시
+```bash
+cd src/design-system && git pull origin main
+```
+- DS 컴포넌트가 추가되면 ds-adapter.tsx에 래퍼 추가
+- DS 컴포넌트가 변경되면 자동 반영 (submodule)
+
+---
+
+## 폴더 구조 요약
+```
+src/agents/
+├── *.md (7개)              ← 에이전트 프롬프트 (수정 빈번)
+├── orchestrator/*.ts (8개)  ← 실행 로직 (수정 드묾)
+├── skills/*.md (19개)       ← 도메인 지식 (자동 스캔)
+└── definitions/*/           ← 생성된 에이전트 (agent.json + sample.json)
+
+src/lib/
+├── design-system/           ← DS 관련 파일 통합
+│   ├── ds-adapter.tsx       ← DS↔자체 컴포넌트 어댑터
+│   ├── DSClientSwap.tsx     ← 서버→클라이언트 DS 교체
+│   ├── nivo-theme.ts        ← Nivo 차트 테마
+│   └── chart-spec.ts        ← 차트 색상·스펙
+├── constants.ts             ← 컴포넌트 정의 (Single Source)
+└── ...
+
+src/components/ReportRenderer/
+├── components/*.tsx (19개)   ← 자체 컴포넌트 (built-in)
+├── components/index.ts      ← 레지스트리 + 3단계 매칭
+├── layouts/*.tsx             ← 레이아웃
+└── index.tsx                ← 렌더러 진입점
+```

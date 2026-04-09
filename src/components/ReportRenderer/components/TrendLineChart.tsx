@@ -1,8 +1,8 @@
 "use client";
 
 import { ResponsiveLine } from "@nivo/line";
-import { reportNivoTheme, NIVO_TOKEN } from "@/lib/report-nivo-theme";
-import { CHART_PALETTE } from "@/lib/report-chart-spec";
+import { reportNivoTheme, NIVO_TOKEN } from "@/lib/design-system/nivo-theme";
+import { CHART_PALETTE } from "@/lib/design-system/chart-spec";
 
 export interface TrendLineChartData {
   title?: string;

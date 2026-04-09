@@ -1,6 +1,6 @@
 "use client";
 
-import { CHART_COLOR_SEQUENCE, CHART_PALETTE } from "@/lib/report-chart-spec";
+import { CHART_COLOR_SEQUENCE, CHART_PALETTE } from "@/lib/design-system/chart-spec";
 
 export interface DataTableColumn {
   label: string;

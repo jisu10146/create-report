@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { ResponsivePie } from "@nivo/pie";
-import { CHART_COLOR_SEQUENCE, CHART_PALETTE } from "@/lib/report-chart-spec";
-import { reportNivoTheme } from "@/lib/report-nivo-theme";
+import { CHART_COLOR_SEQUENCE, CHART_PALETTE } from "@/lib/design-system/chart-spec";
+import { reportNivoTheme } from "@/lib/design-system/nivo-theme";
 import type { PieBarChartData } from "@/types";
 
 /**

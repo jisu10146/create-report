@@ -2,48 +2,32 @@
  * Domain Expert Agent
  *
  * 에이전트 카테고리/산업에 맞는 도메인 지식을 제공한다.
- * skills 폴더의 외부 스킬을 호출하여 벤치마크/용어/프레임을 가져온다.
+ * 복수 스킬을 매칭하여 벤치마크/용어/프레임을 병합 제공.
  */
 
+import { readFileSync } from "fs";
+import { join } from "path";
 import { callClaude } from "@/lib/claude";
 import type { OrchestratorInput, DomainExpertOutput } from "./types";
-import { selectSkill, type SkillOutput } from "./skills";
+import { selectSkills, mergeSkills, type SkillOutput } from "./skills";
 
-const SYSTEM_PROMPT = `너는 산업별 도메인 전문가야.
-에이전트 설명과 도메인 스킬 정보를 기반으로, 리포트에 필요한 도메인 지식을 제공해.
-
-역할:
-1. 업계 벤치마크 수치 제공 — 구체적 수치 + 출처 + 맥락
-2. 도메인 전문 용어 → 독자가 이해할 용어로 매핑
-3. 독자가 내릴 결정과 그에 필요한 정보 정의
-4. 규제/컴플라이언스 고려사항 (해당 시)
-5. 해당 산업의 일반적 세그먼트 축 제안 (연령/규모/지역/행동 등)
-
-벤치마크 품질 기준:
-- 구체적 수치 필수 (예: "SaaS 평균 이탈률: 5-7%/월" O, "낮은 편" X)
-- 비교 가능한 기준점 제시 (상위 기업 vs 평균 vs 하위)
-- 출처가 "일반 상식"이면 안 됨 — 업계 보고서/리서치 기관명 명시
-- 수치의 시점/맥락 명시 (2024년 기준, 한국 시장 등)
-
-출력: JSON만 (설명 없이)
-{
-  "benchmarks": [{ "metric": "지표명", "value": "기준값 (상위/평균/하위)", "source": "출처 (기관명 + 연도)", "context": "적용 맥락 (시장/규모/지역)" }],
-  "terminology": { "전문용어": "쉬운 설명 (1-2문장)" },
-  "decisionFrame": {
-    "keyDecision": "독자가 내릴 핵심 결정",
-    "requiredInfo": ["결정에 필요한 정보"],
-    "decisionCriteria": ["판단 기준 (예: X% 이상이면 양호)"]
-  },
-  "segmentAxes": ["이 산업에서 유의미한 세그먼트 축 (예: 기업 규모, 사용 빈도)"],
-  "skillUsed": "사용한 스킬 이름 (없으면 null)"
-}`;
+/** 프롬프트 원본: src/agents/domain-expert.md */
+const SYSTEM_PROMPT = readFileSync(
+  join(process.cwd(), "src/agents/domain-expert.md"),
+  "utf-8"
+);
 
 export async function runDomainExpert(input: OrchestratorInput): Promise<DomainExpertOutput> {
-  // 적합한 스킬 선택 + 실행
-  const skill: SkillOutput | null = selectSkill(input.description);
-  const skillContext = skill
-    ? `\n도메인 스킬 (${skill.name}):\n${JSON.stringify(skill.data, null, 2)}`
-    : "\n도메인 스킬: 해당 없음 (일반 지식으로 대응)";
+  const matchedSkills: SkillOutput[] = selectSkills(input.description);
+  const skillNames = matchedSkills.map((s) => s.name);
+
+  let skillContext: string;
+  if (matchedSkills.length > 0) {
+    const merged = mergeSkills(matchedSkills);
+    skillContext = `\n매칭된 도메인 스킬 (${skillNames.join(", ")}):\n${JSON.stringify(merged, null, 2)}`;
+  } else {
+    skillContext = "\n도메인 스킬: 해당 없음 (일반 지식으로 대응)";
+  }
 
   const prompt = `
 에이전트: ${input.agentName}
@@ -56,6 +40,6 @@ ${skillContext}
 
   const raw = await callClaude(prompt, SYSTEM_PROMPT);
   const result = JSON.parse(raw) as DomainExpertOutput;
-  result.skillUsed = skill?.name ?? undefined;
+  result.skillUsed = skillNames.length > 0 ? skillNames.join(", ") : undefined;
   return result;
 }

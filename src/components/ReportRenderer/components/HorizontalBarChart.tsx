@@ -2,8 +2,8 @@
 
 import { ResponsiveBar } from "@nivo/bar";
 import type { HorizontalBarChartData } from "@/types";
-import { CHART_SPECS } from "@/lib/report-chart-spec";
-import { reportNivoTheme, NIVO_TOKEN } from "@/lib/report-nivo-theme";
+import { CHART_SPECS } from "@/lib/design-system/chart-spec";
+import { reportNivoTheme, NIVO_TOKEN } from "@/lib/design-system/nivo-theme";
 
 /**
  * 피그마 기준 색상 규칙:

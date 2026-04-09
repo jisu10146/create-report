@@ -28,7 +28,16 @@
    - 분석 내용: 주별/월별 추이, 변화 시점 감지, 시점별 세그먼트 변동
    - keyMetrics에 시계열 변화 지표를 최소 1개 포함 (예: "월별 채널 기여도 변화")
 
-5. NPS 데이터 감지
+5. VoC 텍스트 데이터 감지
+   - raw_text/feedback/comment 등 텍스트 컬럼이 존재하면 → VoC 분석 포함
+   - sentiment 컬럼이 있으면 → 감성 분포(긍정/중립/부정) 분석
+   - topic/product_area/category 컬럼이 있으면 → 토픽별 감성 교차 분석
+   - urgency/priority 컬럼이 있으면 → 긴급도별 이슈 분류
+   - 분석 프로세스: ①주제 추출 → ②VoC↔주제 매칭(1건당 최대 3주제) → ③주제별 빈도 정량화
+   - vocAnalysis 필드에 감성 분포, 토픽×감성 교차, 대표 Verbatim, 긴급 이슈 기술
+   - 정보 손실 보완: 정량화 시 대표 VoC(Verbatim) 반드시 추출하여 맥락 유지
+
+6. NPS 데이터 감지
    - nps/score 컬럼이 0~10 정수 범위이면 → NPS 분석 포함
    - 자동 분류: 추천자(9-10), 중립(7-8), 비추천자(0-6)
    - NPS 점수 = 추천자% - 비추천자% (범위: -100 ~ +100)
@@ -133,6 +142,19 @@
     "topAgents": ["상위 성과자 패턴"],
     "bottomAgents": ["하위 성과자 패턴"],
     "gap": "상위-하위 편차 요약",
+    "dataAvailable": true
+  },
+  "vocAnalysis": {
+    "sentimentDistribution": { "positive": "%", "neutral": "%", "negative": "%" },
+    "topicSentimentCross": [
+      { "topic": "토픽명", "positive": "%", "neutral": "%", "negative": "%", "count": "건수" }
+    ],
+    "urgentIssues": [
+      { "topic": "토픽명", "issue": "이슈 요약", "verbatim": "고객 원문(요약)", "urgency": "high|medium|low" }
+    ],
+    "representativeVerbatims": [
+      { "topic": "토픽명", "sentiment": "positive|negative", "text": "대표 VoC 원문" }
+    ],
     "dataAvailable": true
   },
   "npsBreakdown": {

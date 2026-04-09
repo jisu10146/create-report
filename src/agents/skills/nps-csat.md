@@ -1,0 +1,61 @@
+# 고객 만족도·추천 지표 (NPS / CSAT / CES)
+
+keywords: NPS, CSAT, CES, 만족도, 추천, 고객 경험, CX, 순추천지수, 고객 노력, 충성도, 비추천자, 추천자, 이탈, retention, loyalty
+
+## Benchmarks
+
+| metric | value | source |
+|--------|-------|--------|
+| NPS (B2B SaaS 양호) | +30~50 | CustomerGauge B2B NPS Benchmark 2024 |
+| NPS (B2B SaaS 평균) | +10~30 | CustomerGauge B2B NPS Benchmark 2024 |
+| NPS (위험) | 0 이하 | Retently NPS Benchmark 2024 |
+| CSAT (SaaS 상위) | 4.3-4.7 / 5.0 | ACSI 2024 |
+| CSAT (SaaS 평균) | 4.0-4.2 / 5.0 | ACSI 2024 |
+| CES (양호) | 5.0 이하 / 7.0 | Gartner CES Benchmark 2024 |
+| 피드백 응답률 (양호) | 20-30% | SurveyMonkey Industry Benchmark 2024 |
+
+## Terminology
+
+| term | definition |
+|------|-----------|
+| NPS (Net Promoter Score) | 순추천지수. 0-10점 중 추천자(9-10) 비율 - 비추천자(0-6) 비율. 범위 -100~+100 |
+| CSAT (Customer Satisfaction Score) | 고객 만족도. 특정 상호작용 직후 측정. 보통 1-5점 척도 |
+| CES (Customer Effort Score) | 고객 노력 점수. 문제 해결까지 고객이 들인 노력. 1(쉬움)-7(어려움), 낮을수록 좋음 |
+| Promoter | 추천자 (NPS 9-10점). 재구매·추천 의향 높음 |
+| Passive | 중립자 (NPS 7-8점). 만족하나 적극적 추천 안 함. 경쟁사 전환 위험 |
+| Detractor | 비추천자 (NPS 0-6점). 불만족, 부정 구전·이탈 위험 |
+| Driver Analysis | 만족/불만족의 주요 동인을 통계적으로 식별하는 분석 |
+| Closed-loop Feedback | 피드백 수집→분석→조치→고객에게 결과 전달까지의 순환 구조 |
+
+## NPS Analysis Guide
+
+| 구간 | 해석 | 액션 방향 |
+|------|------|----------|
+| +50 이상 | 우수 | 추천자 확대·레퍼런스 프로그램 |
+| +30~50 | 양호 | 중립자→추천자 전환 집중 |
+| 0~+30 | 개선 필요 | 비추천자 원인 분석, 세그먼트별 분해 |
+| -50~0 | 심각 | 비추천자 원인 즉시 대응, 카테고리별 분해 필수 |
+| -50 이하 | 위기 | 해당 카테고리/채널 긴급 개선 |
+
+## 분석 방법
+
+- 전체 NPS만으로는 부족 — 반드시 세그먼트별(카테고리/채널/플랜/코호트)로 분해
+- NPS 점수와 CSAT를 교차 비교 — NPS는 추천 의향(미래 행동), CSAT는 직전 경험(과거 행동)
+- 비추천자 비율 70%+ 인 세그먼트가 있으면, 해당 세그먼트가 전체 NPS를 끌어내리는 단일 최대 요인
+- 에스컬레이션/처리 지연 발생 건의 NPS는 미발생 건보다 통상 20~40점 낮음
+- 시계열 NPS 추이가 있으면 TrendLineChart로 벤치마크 기준선과 함께 시각화
+
+## 시각화 가이드
+
+- NPS 점수 → MetricHighlight (벤치마크 대비 위치 + 해석)
+- NPS 3구간 분포 → StackedBarChart (추천자=#7ccf00, 중립=#e6e7e9, 비추천자=#f87171)
+- 세그먼트별 NPS 비교 → StackedBarChart 또는 DataTable
+- CSAT 추세 → MetricHighlight (월별 변화 + 벤치마크)
+
+## Common Decisions
+
+| decision | required_info |
+|----------|--------------|
+| 이탈 방지 우선순위 | 비추천자가 가장 많은 세그먼트, 비추천자의 주요 불만 토픽, NPS 추세 |
+| 중립자→추천자 전환 | 중립자 비율이 높은 세그먼트, 추천자와 중립자의 경험 차이점 |
+| 만족도 개선 투자 | CSAT와 NPS 괴리가 큰 세그먼트 (CSAT 높으나 NPS 낮으면 "만족하지만 추천 안 함" — 차별화 부족), CES 높은 영역 |

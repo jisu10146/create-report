@@ -1,0 +1,61 @@
+{
+  "id": "voc-analysis",
+  "name": "VOC 분석 리포트",
+  "description": "앱 리뷰 데이터를 분석하여 고객의 진짜 경험을 텍스트 기반으로 진단하고 제품 개선 우선순위를 제시합니다.",
+  "category": "operational",
+  "inputType": "file",
+  "layout": "single-section",
+  "modalType": "none",
+  "storyLine": "별점 양극화(1점+5점 74.4%) → 1점은 63자·기능 52%로 깊게 쓰는 사용자, 5점은 16자·11%로 가볍게 쓰는 사용자 → 버그(영향도 13.8)·계정(9.0)·릴스(7.8)가 개선 1-3순위 → 버그 수정+계정 복구 개선+릴스 설정으로 부정률 42%→25%",
+  "keyDecision": "버그 수정 vs 계정 보안 강화 vs 릴스 UX 개선 중 어디에 우선 투자할 것인가",
+  "personaCritic": {
+    "persona": "소셜 미디어 앱 프로덕트 매니저. 주 관심사: 앱 스토어 평점, 사용자 이탈 원인, 제품 로드맵 우선순위",
+    "removed": [],
+    "kept": ["모든 섹션 high"]
+  },
+  "reportSections": [
+    {
+      "id": "executive-summary",
+      "label": "Executive Summary",
+      "componentType": "ExecutiveSummary",
+      "reason": "전체 고객 감정 상태를 한눈에"
+    },
+    {
+      "id": "sentiment-overview",
+      "label": "평균 별점 3.10, 부정 42% — 1점과 5점에 74.4%가 몰린 양극화 구조",
+      "componentType": "MetricHighlight",
+      "reason": "[건강] 전반적으로 어떤 상태인가"
+    },
+    {
+      "id": "polarization-personas",
+      "label": "1점은 평균 63자·기능 언급 52%, 5점은 16자·11% — 깊게 쓸수록 불만이 발생하는 구조",
+      "componentType": "ClusterCard",
+      "reason": "[양극화 해석] 왜 중간이 없는가를 데이터 근거로 해석"
+    },
+    {
+      "id": "topic-impact",
+      "label": "버그(영향도 13.8)·계정(9.0)·릴스(7.8) — 비중×부정률 기준 개선 우선순위",
+      "componentType": "StackedBarChart",
+      "reason": "[토픽×감성] 어떤 주제에서 부정적인가, 비중과 함께 우선순위 설득"
+    },
+    {
+      "id": "negative-deep-dive",
+      "label": "버그 반복·계정 정지·릴스 강제 이동 — 세 가지 불만의 공통 뿌리는 사용자 통제권 부재",
+      "componentType": "InsightCard",
+      "reason": "[부정 심층] 부정 토픽의 근본 원인을 고객 원문으로 진단"
+    },
+    {
+      "id": "positive-protect",
+      "label": "긍정의 실체는 대체재 부재 기반의 습관적 만족 — 5점의 64%가 10자 이하",
+      "componentType": "InsightCard",
+      "reason": "[긍정 분석] 고치면서 잃으면 안 되는 것 파악"
+    },
+    {
+      "id": "action-plan",
+      "label": "버그 핫픽스 + 계정 복구 개선 + 릴스 설정으로 부정률 42%→25%",
+      "componentType": "StrategyTable",
+      "reason": "[결론] 고칠 것과 지킬 것을 분리한 로드맵"
+    }
+  ],
+  "promptTemplate": ""
+}

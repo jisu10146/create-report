@@ -1,7 +1,7 @@
 "use client";
 
-import { CHART_PALETTE } from "@/lib/report-chart-spec";
-import { NIVO_TOKEN } from "@/lib/report-nivo-theme";
+import { CHART_PALETTE } from "@/lib/design-system/chart-spec";
+import { NIVO_TOKEN } from "@/lib/design-system/nivo-theme";
 
 export interface FunnelChartData {
   title?: string;
