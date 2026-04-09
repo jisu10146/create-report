@@ -1,49 +1,66 @@
 {
   "id": "customer-support-analysis",
   "name": "고객 문의/티켓 분석",
-  "description": "CS 티켓 데이터를 분석하여 에스컬레이션 경로·카테고리별 병목·심각도 분류 정확도를 진단하고 운영 개선 액션을 제시합니다.",
-  "category": "analysis",
+  "description": "CS 티켓 데이터를 분석하여 SLA 준수·처리 병목·에이전트 성과·고객 만족도를 진단하고 운영 개선 액션을 제시합니다.",
+  "category": "operational",
   "inputType": "file",
   "layout": "single-section",
   "modalType": "none",
-  "storyLine": "3개 지표 동반 악화 → 2개 카테고리에 집중 → 기능 오류가 10배 느림 → 담당팀 배정 대기+불필요 에스컬레이션이 원인 → 자동 배정+교육으로 CSAT 4.2",
-  "keyDecision": "느린 에스컬레이션의 속도를 자동화로 높일 것인가, 불필요 에스컬레이션을 교육으로 줄일 것인가, 둘 다 병행할 것인가",
+  "storyLine": "CSAT·NPS 벤치마크 지속 미달 → SLA 위반이 기능 오류·결제/환불에 집중 → 기능 오류 50.2h 중 배정 대기가 핵심 → 에이전트 편차 5.7%p → 기능 오류 NPS -64가 전체를 끌어내림 → 자동 배정+교육으로 NPS +10",
+  "keyDecision": "기능 오류 해결시간 50.2시간을 줄이기 위해 자동 배정 vs 전담팀 신설 vs 에이전트 교육 중 어디에 우선 투자할 것인가",
+  "personaCritic": {
+    "persona": "SaaS CS팀 관리자. 주 관심사: SLA 준수, 에이전트 코칭, CSAT/NPS 개선",
+    "removed": ["channel-performance: 채널 간 NPS 편차 4.8p로 미미, 카테고리 간 격차(89.7p)에 집중해야 함"],
+    "kept": ["nps-distribution: medium — SLA 테이블에 카테고리별 NPS가 있으나 비추천자 비율 분해는 추가 인사이트 제공"]
+  },
   "reportSections": [
     {
       "id": "executive-summary",
       "label": "Executive Summary",
       "componentType": "ExecutiveSummary",
-      "reason": "3개월간 3,742건 CS 티켓의 핵심 수치를 벤치마크와 비교하여 독자가 전체 현황을 파악할 수 있게 함"
+      "reason": "전체 건강 상태 — 핵심 수치를 벤치마크와 비교하여 '지금 괜찮은가'를 한눈에 파악"
     },
     {
-      "id": "cs-kpi-trend",
-      "label": "만족도·해결시간·에스컬레이션 3개 지표가 1월→3월 매월 동반 악화",
+      "id": "kpi-overview",
+      "label": "CSAT 3.70·NPS -22.4·에스컬레이션 30.9% — 3개월간 벤치마크를 지속적으로 하회",
       "componentType": "MetricHighlight",
-      "reason": "ES에서 현재 수치를 확인한 독자가, 월별 추이를 보고 '개선 없이 두면 어디까지 나빠지는가'를 인식할 수 있게 함"
+      "reason": "[건강] 벤치마크 대비 위치와 의미를 파악하여 '어디가 가장 심각한가'를 인식"
     },
     {
-      "id": "category-volume",
-      "label": "결제/환불과 기능 오류, 2개 카테고리에 전체 티켓의 54%가 집중",
-      "componentType": "DonutChart",
-      "reason": "KPI 악화를 확인한 독자가, 5개 카테고리 중 어디에 문제가 몰려 있는지 파악하여 분석 범위를 좁힐 수 있게 함"
-    },
-    {
-      "id": "category-performance",
-      "label": "기능 오류만 해결시간 50.2시간으로 다른 카테고리의 10배 — 전체 품질을 끌어내리는 원인",
+      "id": "sla-compliance",
+      "label": "기능 오류 에스컬레이션율 61.8%·해결시간 50.2h — 결제/환불도 38.1%·35.3h로 두 카테고리가 SLA 위반의 핵심",
       "componentType": "DataTable",
-      "reason": "DonutChart에서 상위 2개 카테고리를 확인한 독자가, 6개 지표를 비교하여 '기능 오류가 정확히 어디서 뒤처지는지' 수치로 특정할 수 있게 함"
+      "reason": "[SLA] '약속을 지키고 있는가' — 카테고리별 에스컬레이션·해결시간·CSAT·NPS를 교차 비교"
     },
     {
-      "id": "escalation-diagnosis",
-      "label": "50.2시간 중 21시간이 담당팀 배정 대기, 에스컬레이션의 40%는 1차에서 해결 가능했던 건",
+      "id": "resolution-breakdown",
+      "label": "기능 오류 50.2시간 중 배정 대기가 대부분 — 계정/인증 7.5시간과 7배 격차",
+      "componentType": "StackedBarChart",
+      "reason": "[분해] '왜 기능 오류만 이렇게 느린가'를 대기 vs 처리로 분해하여 병목 특정"
+    },
+    {
+      "id": "agent-performance",
+      "label": "에이전트 에스컬레이션율 상위 33.8% vs 하위 28.1% — 편차 5.7%p로 교육 여지 존재",
+      "componentType": "DataTable",
+      "reason": "[담당자] '누가 도움이 필요한가'를 에이전트별 편차로 특정하여 코칭 대상 식별"
+    },
+    {
+      "id": "nps-distribution",
+      "label": "전체 NPS -22.4 — 기능 오류 비추천자 72.1%가 전체를 끌어내림",
+      "componentType": "StackedBarChart",
+      "reason": "[만족도] 카테고리별 추천/비추천 비율 분해로, SLA 테이블의 NPS 점수만으로는 안 보이는 '비추천자 집중도'를 시각화"
+    },
+    {
+      "id": "root-cause",
+      "label": "수동 배정 + 셀프서비스 부재 + 에이전트 교육 격차가 복합 원인",
       "componentType": "InsightCard",
-      "reason": "DataTable에서 기능 오류의 극단적 지연을 확인한 독자가, '왜 이렇게 느린가'의 근본 원인 두 가지를 진단하여 개선 대상을 특정할 수 있게 함"
+      "reason": "[진단] '왜 이런 상황인가'의 근본 원인을 프로세스·시스템·역량 3개 차원으로 진단"
     },
     {
       "id": "action-plan",
-      "label": "자동 배정 + 1차 해결 교육으로 해결시간 24.6h→14h, CSAT 3.70→4.2 달성 가능",
+      "label": "자동 배정 + 셀프서비스 + 에이전트 교육으로 NPS -22→+10 달성 가능",
       "componentType": "StrategyTable",
-      "reason": "근본 원인을 진단한 독자가, 원인별 대응 전략과 단계별 예상 효과를 보고 개선 로드맵을 수립할 수 있게 함"
+      "reason": "[결론] 원인별 대응 전략과 단계별 예상 효과를 보고 개선 로드맵 수립"
     }
   ],
   "promptTemplate": ""

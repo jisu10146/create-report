@@ -28,7 +28,40 @@
    - 분석 내용: 주별/월별 추이, 변화 시점 감지, 시점별 세그먼트 변동
    - keyMetrics에 시계열 변화 지표를 최소 1개 포함 (예: "월별 채널 기여도 변화")
 
-3. 분석 깊이
+5. NPS 데이터 감지
+   - nps/score 컬럼이 0~10 정수 범위이면 → NPS 분석 포함
+   - 자동 분류: 추천자(9-10), 중립(7-8), 비추천자(0-6)
+   - NPS 점수 = 추천자% - 비추천자% (범위: -100 ~ +100)
+   - segment/channel/category별 NPS 비교가 가능하면 → 교차 분석 제안
+   - 시계열(월별 NPS 추이)이 가능하면 → timeSeriesHints에 포함
+   - npsBreakdown 필드에 전체 + 주요 세그먼트별 분포 기술
+
+6. SLA 데이터 감지
+   - sla_violated/sla_met 또는 response_time + sla_target 컬럼이 존재하면 → SLA 준수율 분석 포함
+   - 카테고리별·우선순위별 SLA 위반율 교차 분석 제안
+   - slaBreakdown 필드에 전체 + 세그먼트별 위반 현황 기술
+   - SLA 데이터 없으면 → slaBreakdown.dataAvailable: false로 표시, 구조만 제안
+
+7. 담당자(에이전트) 성과 감지
+   - agent_id/agent_name 컬럼이 존재하면 → 담당자별 성과 비교 분석 포함
+   - 분석 축: 처리량, 해결율(FCR), 에스컬레이션율, CSAT, 평균 해결시간
+   - 상위·하위 그룹 편차를 핵심 인사이트로 제안
+   - agentPerformance 필드에 비교 축과 주목할 패턴 기술
+   - 담당자 데이터 없으면 → agentPerformance.dataAvailable: false로 표시
+
+8. 운영 파이프라인 감지 (operational 카테고리)
+   - status/stage 컬럼이 존재하고 값이 순차적 단계(접수→처리→완료 등)이면 → 퍼널 분석 포함
+   - channel 컬럼이 존재하면 → 채널별 리드타임 분해 포함, SLA 벤치마크 대비 분석
+   - resolution_time 등 소요시간 컬럼이 존재하면 → 시간 분해 분석 포함 (대기 vs 실제 처리)
+   - escalated/transferred 컬럼이 존재하면 → 에스컬레이션 경로 분석 포함
+   - 해당 필드가 없는 경우 → 구조(funnelStages/channelBreakdown 등)는 제안하되 "데이터 연동 필요"로 표시
+
+   출력 필드:
+   - funnelStages: 처리 단계 목록 + 각 단계별 예상 건수/이탈
+   - channelBreakdown: 채널 목록 + 분석 축 (첫 응답, 해결시간, SLA 초과율, 만족도)
+   - timeBreakdown: 시간 분해 축 (대기 vs 처리) + 대상 카테고리/항목
+
+6. 분석 깊이
    - compact: 핵심 지표 3개 + 상위 세그먼트 2-3개
    - standard: 핵심 지표 5개 + 세그먼트 3-4개 + 교차 축 1개
    - detailed: 핵심 지표 7개 + 세그먼트 4-5개 + 교차 축 2개 + 이상치/패턴
@@ -71,5 +104,43 @@
     }
   ],
   "timeSeriesHints": ["시계열 분석 시 주목할 포인트 (예: 특정 시점 급변, 계절성 등)"],
+  "funnelStages": [
+    {
+      "stage": "단계명 (예: 접수, 1차 처리, 에스컬레이션, 해결)",
+      "expectedCount": "예상 건수 또는 null (데이터 없으면)",
+      "dropReason": "이 단계에서 이탈/감소하는 이유"
+    }
+  ],
+  "channelBreakdown": {
+    "channels": ["채널 목록 (예: 이메일, 채팅, 전화, 소셜)"],
+    "metrics": ["분석 축 (예: 첫 응답시간, 해결시간, SLA 초과율, 만족도)"],
+    "dataAvailable": true
+  },
+  "timeBreakdown": {
+    "components": ["시간 구성요소 (예: 배정 대기, 실제 처리)"],
+    "targetItems": ["분해 대상 항목 (예: 기능 오류, 결제/환불)"],
+    "dataAvailable": true
+  },
+  "slaBreakdown": {
+    "overall": { "complianceRate": "SLA 준수율%", "violationCount": "위반 건수" },
+    "bySegment": [
+      { "segment": "카테고리/우선순위명", "complianceRate": "%", "violationCount": "건수", "avgBreachTime": "평균 초과 시간" }
+    ],
+    "dataAvailable": true
+  },
+  "agentPerformance": {
+    "metrics": ["처리량", "FCR", "에스컬레이션율", "CSAT", "평균 해결시간"],
+    "topAgents": ["상위 성과자 패턴"],
+    "bottomAgents": ["하위 성과자 패턴"],
+    "gap": "상위-하위 편차 요약",
+    "dataAvailable": true
+  },
+  "npsBreakdown": {
+    "overall": { "promoters": "추천자 비율%", "passives": "중립 비율%", "detractors": "비추천자 비율%", "score": "NPS 점수" },
+    "bySegment": [
+      { "segment": "세그먼트명", "promoters": "%", "passives": "%", "detractors": "%", "score": "점수" }
+    ],
+    "dataAvailable": true
+  },
   "dataFlags": ["분석 시 주의할 점"]
 }

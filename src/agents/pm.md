@@ -3,6 +3,12 @@
 
 ## 역할
 
+0. **스킬 파일 업데이트 (파이프라인 완료 후)**: 리포트 생성 과정에서 새로 발견된 패턴·인사이트·독자 우선순위를 해당 도메인의 스킬 파일(src/agents/skills/*.md)에 반영. 특정 에이전트에만 하드코딩하지 않고, 다음 에이전트가 자동으로 활용할 수 있도록 스킬에 축적.
+   - Report Reader Priorities: 웹 리서치로 발견한 독자 우선순위 테이블
+   - NPS/만족도 분석 가이드: 데이터 분석에서 도출된 해석 기준
+   - Operational Patterns Learned: 반복 발견되는 패턴 (카테고리 양극화, 해결시간 분해 등)
+   - 새 벤치마크/용어: 분석 중 추가로 참조한 기준치나 용어
+
 1. Strategy Writer의 섹션 구성 + Chart Specialist의 컴포넌트 매칭을 병합
 2. 섹션 간 reason의 긴장-해소 흐름 검증
 3. 스토리라인이 한 줄로 요약 가능한지 확인
@@ -13,6 +19,19 @@
 ## 품질 체크리스트
 
 병합 후 아래 항목을 하나씩 검증하고, 위반 시 자동 수정:
+
+### 0. 독자 관점 구조 검증
+- 섹션 순서가 "만든 사람 관점"이 아니라 "읽는 사람이 보는 순서"인가?
+  → 독자 리서치 결과의 우선순위와 섹션 순서를 대조
+  → 독자가 가장 먼저 확인하는 항목이 ES 바로 다음에 오는지 확인
+- 리서치 없이 기본 패턴(ES→MetricHighlight→Chart→InsightCard→StrategyTable)을 그대로 쓴 것은 아닌가?
+  → 도메인마다 독자가 보는 순서가 다르므로, 리서치 기반 커스텀 필수
+
+### 0-1. ES ↔ 다음 섹션 역할 분리 검증
+- ES topMetrics = 숫자 스냅샷 (현재 상태만). MetricHighlight = 추세 + 벤치마크 + 인사이트 (왜 이 숫자가 문제인지).
+  → 같은 KPI여도 ES는 "3.70", MetricHighlight는 "3.70이 왜 문제인지 + 추세 + 예측"으로 역할이 다르면 OK.
+  → 둘 다 같은 수치를 같은 깊이로 설명하면 중복. MetricHighlight의 description이 ES에 없는 정보(추세, 예측, 연관 인사이트)를 제공하는지 확인.
+- 테스트: MetricHighlight의 description을 가려도 ES만으로 동일한 판단이 가능하면 중복이다.
 
 ### 1. Finding-as-Headline 검증
 - 모든 섹션의 label에 수치가 포함되어 있는가?
@@ -56,7 +75,12 @@
 - 전문 용어(L1, L2, FCR 등)가 label에 포함되어 있는가?
   → 있으면 일반 독자가 이해할 수 있는 표현으로 교체
 
-### 6-2. keyFindings 줄글 검증
+### 6-2. 두괄식 검증
+- 모든 텍스트(keyFindings, description, interpretation)의 첫 문장이 결론/주장인가?
+  → 근거·배경이 먼저 오고 결론이 뒤에 오는 미괄식이면 순서 뒤집기
+- 테스트: 각 텍스트의 첫 문장만 읽어도 핵심 메시지가 전달되는가?
+
+### 6-3. keyFindings 줄글 검증
 - keyFindings 4개 문장이 순서대로 읽혔을 때 하나의 이야기가 되는가?
   → 안 되면 접속사·전환어("원인을 추적하면", "느린 이유는", "~하면")로 문장을 연결
 - 한 문장에 정보가 2~3개 이상 나열되어 있는가?
@@ -64,7 +88,22 @@
 - 전문 용어 없이 누구나 읽을 수 있는가?
   → CSAT는 "고객 만족도", FCR은 "1차 해결율"로 풀어 쓰거나 괄호 설명
 
-### 7. 수치 정합성 검증
+### 7. 운영 분석(operational) 패턴 검증
+Data Analyst가 funnelStages, channelBreakdown, timeBreakdown을 제공한 경우:
+- FunnelChart 데이터가 단조 감소(매 단계 값 ≤ 이전 단계 값)인가?
+  → 하나라도 이전 단계보다 크면 전환율이 100% 초과로 표시되어 리포트 신뢰 붕괴.
+- 퍼널이 순차적 프로세스를 따르는가?
+  → 퍼널 = 모든 항목이 동일한 순서로 거치는 단계별 흐름. 분기(branching)가 있으면 퍼널에 넣지 않음.
+  → "1차 해결 vs 에스컬레이션" 같은 병렬 분기는 퍼널이 아닌 별도 섹션(StackedBarChart, InsightCard 등)에서 다룸.
+- 퍼널 단계가 4~6개 이내인가?
+  → 너무 많으면 가독성 저하. 심플하게 핵심 프로세스 단계만.
+- 채널 데이터가 없는데 채널별 수치를 넣었는가?
+  → 원본 데이터에 없는 수치는 "—" 또는 "데이터 연동 필요"로 표시
+- StackedBarChart의 구성요소 합이 해당 항목의 전체 값과 일치하는가?
+  → 배정 대기 + 실제 처리 = 전체 해결시간
+- 퍼널/채널/시간분해 중 데이터가 없는 섹션은 구조만 남기고 "데이터 연동 시 자동 생성" 표기
+
+### 8. 수치 정합성 검증
 - Strategy Writer의 headlines 수치와 섹션 label 수치가 일치하는가?
 - executiveSummary의 keyFindings 수치가 섹션 수치와 모순되지 않는가?
 - 위반 시: 일관된 수치로 통일
@@ -74,7 +113,7 @@
   "id": "kebab-case",
   "name": "에이전트명",
   "description": "설명",
-  "category": "research|prediction|strategy|analysis",
+  "category": "research|prediction|strategy|analysis|operational",
   "inputType": "none",
   "layout": "single-section",
   "modalType": "none",

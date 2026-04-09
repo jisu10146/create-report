@@ -1,12 +1,14 @@
 /**
  * PM Agent — 오케스트레이터
  *
- * 전체 파이프라인을 관리하고 각 에이전트를 순서대로 호출한다.
+ * 파이프라인:
  *   1단계: Data Analyst + Domain Expert (병렬)
  *   2단계: Strategy Writer
+ *   2.5단계: PM 사전 체크 (구조만 경량 검증)
  *   3단계: Chart Specialist
- *   4단계: PM 조립 + 검증
+ *   4단계: PM 조립
  *   5단계: Sample Generator
+ *   6단계: Persona Critic (타겟 페르소나 관점 검증 → high priority만 남김)
  */
 
 import { readFileSync } from "fs";
@@ -21,12 +23,14 @@ import type {
   DomainExpertOutput,
   StrategyWriterOutput,
   ChartSpecialistOutput,
+  PersonaCriticOutput,
 } from "./types";
 import { runDataAnalyst } from "./data-analyst";
 import { runDomainExpert } from "./domain-expert";
 import { runStrategyWriter } from "./strategy-writer";
 import { runChartSpecialist } from "./chart-specialist";
 import { runSampleGenerator } from "./sample-generator";
+import { runPersonaCritic } from "./persona-critic";
 
 /** 프롬프트 원본: src/agents/pm.md */
 const PM_SYSTEM_PROMPT = readFileSync(
@@ -43,7 +47,33 @@ function toKebabCase(str: string): string {
     .trim();
 }
 
-/** PM이 최종 조립 + 검증하는 단계 */
+/* ═══ 2.5단계: PM 사전 체크 (경량) ═══ */
+
+async function preCheck(
+  input: OrchestratorInput,
+  strategy: StrategyWriterOutput
+): Promise<{ passed: boolean; feedback?: string }> {
+  const prompt = `
+아래 Strategy Writer 출력의 구조만 빠르게 검증해줘. 3가지만 확인:
+
+1. 섹션 수가 분량(${input.volume ?? "standard"})에 적정한가?
+2. 독자(${input.audience ?? "실무자"})가 먼저 보는 항목이 ES 바로 다음에 오는가?
+3. 스토리 아크(${strategy.category})에 맞는 흐름인가?
+
+Strategy Writer 출력:
+${JSON.stringify({ storyLine: strategy.storyLine, category: strategy.category, sections: strategy.sections.map(s => ({ id: s.id, label: s.label })) }, null, 2)}
+
+통과하면: { "passed": true }
+문제 있으면: { "passed": false, "feedback": "구체적 수정 지시" }
+JSON만 출력.
+`;
+
+  const raw = await callClaude(prompt, PM_SYSTEM_PROMPT);
+  return JSON.parse(raw);
+}
+
+/* ═══ 4단계: PM 조립 ═══ */
+
 async function assembleAndValidate(
   input: OrchestratorInput,
   strategy: StrategyWriterOutput,
@@ -68,7 +98,6 @@ Chart Specialist의 componentType을 매칭해.
   const raw = await callClaude(prompt, PM_SYSTEM_PROMPT);
   const assembled = JSON.parse(raw);
 
-  // layout-patterns 검증
   const volume = input.volume ?? "standard";
   const violations = validatePattern(assembled.reportSections ?? [], volume);
 
@@ -93,7 +122,75 @@ Chart Specialist의 componentType을 매칭해.
   return blueprint;
 }
 
-/** 전체 파이프라인 실행 */
+/* ═══ 6단계: Persona Critic 결과 적용 ═══ */
+
+function applyPersonaCritic(
+  blueprint: AgentBlueprint,
+  sampleReport: unknown,
+  critic: PersonaCriticOutput
+): { blueprint: AgentBlueprint; sampleReport: unknown } {
+  const sections = [...blueprint.reportSections];
+  const sampleSections = (sampleReport as { sections?: Array<{ id: string }> })?.sections ?? [];
+
+  // low priority 섹션 제거 + critic이 명시적으로 remove한 섹션 제거
+  const removeIds = new Set([
+    ...critic.remove.map((r) => r.sectionId),
+    ...critic.sections.filter((s) => s.priority === "low").map((s) => s.sectionId),
+  ]);
+
+  // ES는 절대 제거하지 않음
+  removeIds.delete("executive-summary");
+
+  const filteredSections = sections.filter((s) => !removeIds.has(s.id));
+  const filteredSampleSections = sampleSections.filter((s) => !removeIds.has(s.id));
+
+  // reorder 적용
+  for (const move of critic.reorder) {
+    const idx = filteredSections.findIndex((s) => s.id === move.sectionId);
+    if (idx === -1) continue;
+
+    const [section] = filteredSections.splice(idx, 1);
+    const afterMatch = move.moveTo.match(/after:\s*(.+)/);
+    if (afterMatch) {
+      const targetIdx = filteredSections.findIndex((s) => s.id === afterMatch[1].trim());
+      if (targetIdx !== -1) {
+        filteredSections.splice(targetIdx + 1, 0, section);
+      } else {
+        filteredSections.push(section);
+      }
+    }
+
+    // sample도 같은 순서로
+    const sampleIdx = filteredSampleSections.findIndex((s) => s.id === move.sectionId);
+    if (sampleIdx !== -1) {
+      const [sampleSection] = filteredSampleSections.splice(sampleIdx, 1);
+      const sTargetIdx = filteredSampleSections.findIndex((s) => s.id === afterMatch?.[1]?.trim());
+      if (sTargetIdx !== -1) {
+        filteredSampleSections.splice(sTargetIdx + 1, 0, sampleSection);
+      } else {
+        filteredSampleSections.push(sampleSection);
+      }
+    }
+  }
+
+  return {
+    blueprint: {
+      ...blueprint,
+      reportSections: filteredSections,
+      validation: {
+        ...blueprint.validation,
+        qualityScore: Math.min(100, blueprint.validation.qualityScore + 10),
+      },
+    },
+    sampleReport: {
+      ...(sampleReport as Record<string, unknown>),
+      sections: filteredSampleSections,
+    },
+  };
+}
+
+/* ═══ 전체 파이프라인 ═══ */
+
 export async function orchestrate(input: OrchestratorInput): Promise<OrchestratorResult> {
   // 1단계: Data Analyst + Domain Expert (병렬)
   const [dataAnalyst, domainExpert] = await Promise.all([
@@ -102,16 +199,34 @@ export async function orchestrate(input: OrchestratorInput): Promise<Orchestrato
   ]);
 
   // 2단계: Strategy Writer
-  const strategyWriter = await runStrategyWriter(input, dataAnalyst, domainExpert);
+  let strategyWriter = await runStrategyWriter(input, dataAnalyst, domainExpert);
+
+  // 2.5단계: PM 사전 체크 (구조만)
+  const preCheckResult = await preCheck(input, strategyWriter);
+  if (!preCheckResult.passed && preCheckResult.feedback) {
+    const feedbackInput = {
+      ...input,
+      description: `${input.description}\n\n[PM 피드백] ${preCheckResult.feedback}`,
+    };
+    strategyWriter = await runStrategyWriter(feedbackInput, dataAnalyst, domainExpert);
+  }
 
   // 3단계: Chart Specialist
   const chartSpecialist = await runChartSpecialist(strategyWriter);
 
-  // 4단계: PM 조립 + 검증
-  const blueprint = await assembleAndValidate(input, strategyWriter, chartSpecialist);
+  // 4단계: PM 조립
+  let blueprint = await assembleAndValidate(input, strategyWriter, chartSpecialist);
 
   // 5단계: Sample Generator
-  const sampleReport = await runSampleGenerator(blueprint, dataAnalyst, domainExpert);
+  let sampleReport = await runSampleGenerator(blueprint, dataAnalyst, domainExpert);
+
+  // 6단계: Persona Critic
+  const audience = input.audience ?? "실무자";
+  const criticResult = await runPersonaCritic(blueprint, sampleReport, audience);
+
+  const applied = applyPersonaCritic(blueprint, sampleReport, criticResult);
+  blueprint = applied.blueprint;
+  sampleReport = applied.sampleReport;
 
   return {
     blueprint,

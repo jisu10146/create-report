@@ -16,6 +16,9 @@ import MetricHighlight from "./MetricHighlight";
 import ChecklistCard from "./ChecklistCard";
 import RevenueScenarioBar from "./RevenueScenarioBar";
 import PieBarChart from "./PieBarChart";
+import FunnelChart from "./FunnelChart";
+import StackedBarChart from "./StackedBarChart";
+import TrendLineChart from "./TrendLineChart";
 
 /**
  * COMPONENT_REGISTRY — componentType → React component
@@ -40,6 +43,9 @@ export const COMPONENT_REGISTRY: Record<string, React.ComponentType<{ data: unkn
   ChecklistCard: ChecklistCard as React.ComponentType<{ data: unknown }>,
   RevenueScenarioBar: RevenueScenarioBar as React.ComponentType<{ data: unknown }>,
   PieBarChart: PieBarChart as React.ComponentType<{ data: unknown }>,
+  FunnelChart: FunnelChart as React.ComponentType<{ data: unknown }>,
+  StackedBarChart: StackedBarChart as React.ComponentType<{ data: unknown }>,
+  TrendLineChart: TrendLineChart as React.ComponentType<{ data: unknown }>,
 };
 
 /* ── 런타임 검증: VALID_COMPONENT_NAMES ↔ REGISTRY 일치 체크 ── */

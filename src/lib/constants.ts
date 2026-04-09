@@ -62,6 +62,9 @@ export const COMPONENT_DEFINITIONS: ComponentDefinition[] = [
   { name: "ChecklistCard", description: "체크리스트 카드 (체크 아이콘 + 제목 + 설명)" },
   { name: "RevenueScenarioBar", description: "수익/성과 시나리오 비교 세로 막대 차트 (Upside/Base/Downside)" },
   { name: "PieBarChart", description: "파이 차트 + 바 차트 조합 카드" },
+  { name: "FunnelChart", description: "퍼널 차트 — 단계별 건수 감소와 이탈 시각화", rule: "전환/처리 흐름에서 단계별 드롭오프를 보여줄 때 사용" },
+  { name: "StackedBarChart", description: "스택형 수평 막대 — 항목별 내부 구성 비교", rule: "하나의 항목 안에서 구성요소를 분해·비교할 때 사용" },
+  { name: "TrendLineChart", description: "시계열 꺾은선 차트 — 추세 + 벤치마크 기준선", rule: "시간 축 변화와 벤치마크 대비를 동시에 보여줄 때 사용" },
 ];
 
 export const VALID_COMPONENTS = new Set(COMPONENT_DEFINITIONS.map((c) => c.name));
@@ -89,6 +92,9 @@ export const COMPONENT_DATA_SCHEMA: Record<string, string> = {
   ChecklistCard: `{ "title": "string", "description": "string" }`,
   RevenueScenarioBar: `{ "scenarios": [{ "label": "Upside|Base|Downside", "badge": "string (optional)", "details": ["string (optional)"], "highlight": "string (optional)", "value": number }] }`,
   PieBarChart: `{ "pieTitle": "string (optional)", "pieItems": [{ "label": "string", "value": number }], "barTitle": "string (optional)", "barItems": [{ "label": "string", "value": number }], "legends": [{ "label": "string", "color": "#hex" }] (optional) }`,
+  FunnelChart: `{ "title": "string (optional)", "stages": [{ "label": "단계명", "value": number, "dropLabel": "이탈 설명 (optional)", "dropValue": number (optional) }] }`,
+  StackedBarChart: `{ "title": "string (optional)", "categories": ["구성요소1", "구성요소2"], "colors": ["#hex"] (optional), "items": [{ "label": "항목명", "values": [숫자1, 숫자2] }], "unit": "h|%|건 (optional)" }`,
+  TrendLineChart: `{ "title": "string (optional)", "xLabels": ["1월", "2월", "3월"], "series": [{ "id": "시리즈명", "values": [숫자], "unit": "점|h|% (optional)" }], "benchmarks": [{ "id": "기준선명", "value": number, "unit": "string (optional)" }] (optional) }`,
 };
 
 /* ─── 유틸 ─── */

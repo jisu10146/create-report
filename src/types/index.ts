@@ -1,6 +1,6 @@
 // ─── Agent Definition ──────────────────────────────────────────────────────
 
-export type AgentCategory = "research" | "prediction" | "strategy" | "analysis";
+export type AgentCategory = "research" | "prediction" | "strategy" | "analysis" | "operational";
 export type InputType = "none" | "survey-form" | "text" | "file";
 export type LayoutType = "tab-grid" | "single-repeat" | "single-section";
 export type ModalType = "none" | "tab-detail" | "persona-detail";

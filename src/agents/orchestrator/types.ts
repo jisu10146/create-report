@@ -116,13 +116,26 @@ export interface StrategySectionDraft {
 export interface StrategyWriterOutput {
   storyLine: string;
   keyDecision: string;
-  category: "research" | "prediction" | "strategy" | "analysis";
+  category: "research" | "prediction" | "strategy" | "analysis" | "operational";
   headlines: string[];
   sections: StrategySectionDraft[];
   executiveSummary: {
     keyFindings: string[];
     description?: string;
   };
+}
+
+// ─── PM 검증 결과 ────────────────────────────────────────────
+
+export interface PMFeedback {
+  passed: boolean;
+  issues: Array<{
+    checkItem: string;        // 체크리스트 항목명
+    sectionId?: string;       // 문제가 있는 섹션 (없으면 전체)
+    problem: string;          // 무엇이 문제인지
+    fix: string;              // 어떻게 고쳐야 하는지
+    targetAgent: "strategy-writer" | "chart-specialist" | "sample-generator";
+  }>;
 }
 
 // ─── 3단계: Chart Specialist 출력 ─────────────────────────────
@@ -139,6 +152,31 @@ export interface ChartSpecialistOutput {
   sections: ChartSectionMapping[];
 }
 
+// ─── Persona Critic 출력 ─────────────────────────────────────
+
+export interface PersonaCriticOutput {
+  persona: string;
+  sections: Array<{
+    sectionId: string;
+    priority: "high" | "medium" | "low";
+    reason: string;
+  }>;
+  missing: Array<{
+    what: string;
+    why: string;
+    suggestedPosition: string;
+  }>;
+  reorder: Array<{
+    sectionId: string;
+    moveTo: string;
+    reason: string;
+  }>;
+  remove: Array<{
+    sectionId: string;
+    reason: string;
+  }>;
+}
+
 // ─── 4단계: PM 최종 조립 결과 ─────────────────────────────────
 
 export interface AgentSection {
@@ -152,7 +190,7 @@ export interface AgentBlueprint {
   id: string;
   name: string;
   description: string;
-  category: "research" | "prediction" | "strategy" | "analysis";
+  category: "research" | "prediction" | "strategy" | "analysis" | "operational";
   inputType: "none" | "survey-form" | "text" | "file";
   layout: "single-section" | "single-repeat" | "tab-grid";
   modalType: "none" | "persona-detail";
