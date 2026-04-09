@@ -21,7 +21,10 @@ const NIVO_THEME = path.join(ROOT, "src/lib/report-nivo-theme.ts");
 
 /* ─── Figma API ─── */
 
-const FIGMA_TOKEN = process.env.FIGMA_TOKEN ?? "FIGMA_TOKEN_REDACTED";
+const FIGMA_TOKEN = process.env.FIGMA_TOKEN;
+if (!FIGMA_TOKEN) {
+  throw new Error("FIGMA_TOKEN 환경변수가 설정되지 않았습니다. .env.local에 FIGMA_TOKEN=figd_... 을 추가하세요.");
+}
 const FILE_KEY = "6dSocJnKykujp639jA8G6t";
 const DS_NODE_ID = "1:10225";
 
