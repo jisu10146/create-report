@@ -33,10 +33,72 @@ export interface OrchestratorInput {
   description: string;
   /** 서비스에서 프로파일링 완료된 데이터 (없으면 mock 기반으로 진행) */
   dataProfile?: DataProfile;
+  /** VOC 원문 데이터 (있으면 코드 전처리 → LLM에 요약만 전달) */
+  vocRawData?: Array<Record<string, unknown>>;
   /** 분량 힌트 */
   volume?: "compact" | "standard" | "detailed";
   /** 독자 힌트 */
   audience?: string;
+}
+
+// ─── VOC 전처리 출력 (코드가 생성, LLM 토큰 절약) ────────────
+
+export interface VocPreprocessOutput {
+  /** 데이터 소스 추정 */
+  source: "app-review" | "nps" | "cs-text" | "b2b-feedback" | "social" | "general";
+  /** 기본 통계 */
+  stats: {
+    total: number;
+    avgScore: number | null;
+    scoreDistribution: Record<string, number>; // { "1": 102, "2": 13, ... }
+    sentimentCounts: { positive: number; neutral: number; negative: number };
+    sentimentRates: { positive: number; neutral: number; negative: number }; // %
+    dateRange: { from: string; to: string } | null;
+  };
+  /** 양극화 분석 (별점 있을 때만) */
+  polarization: {
+    detected: boolean;
+    extremeRate: number; // 1점+5점 합산 %
+    proxy: {
+      avgLength: Record<string, number>; // 점수별 평균 글자수
+      shortReviewRate: Record<string, number>; // 점수별 5자 이하 비율 %
+    };
+  } | null;
+  /** 토픽 분류 결과 */
+  topics: Array<{
+    name: string;
+    count: number;
+    weight: number; // %
+    sentimentBreakdown: { positive: number; neutral: number; negative: number }; // %
+    negativeRate: number; // %
+    impact: number; // weight × negativeRate / 100
+    /** 대표 verbatim (thumbsUp 높은 순, 최대 3개) */
+    topVerbatims: Array<{
+      content: string;
+      score: number;
+      thumbsUp: number;
+    }>;
+  }>;
+  /** 긍정 테마 */
+  positiveThemes: Array<{
+    name: string;
+    count: number;
+    topVerbatims: Array<{ content: string; score: number }>;
+  }>;
+  /** 경쟁사 언급 */
+  competitorMentions: {
+    total: number;
+    competitors: Array<{
+      name: string;
+      count: number;
+      contexts: Array<{ content: string; score: number; context: "churn" | "comparison" | "positive" }>;
+    }>;
+  };
+  /** 공감수 분석 (thumbsUp 데이터 있을 때만) */
+  thumbsUpAnalysis: {
+    highThumbsReviews: Array<{ content: string; score: number; thumbsUp: number }>;
+    negativeRateInHighThumbs: number; // %
+  } | null;
 }
 
 // ─── 1단계: Data Analyst 출력 ─────────────────────────────────
@@ -238,6 +300,8 @@ export interface OrchestratorResult {
     domainExpert: DomainExpertOutput;
     strategyWriter: StrategyWriterOutput;
     chartSpecialist: ChartSpecialistOutput;
+    /** VOC 전처리 결과 (vocRawData가 있었을 때만) */
+    vocPreprocess?: VocPreprocessOutput;
   };
   /** 생성된 샘플 리포트 (ReportSchema) */
   sampleReport: unknown;
