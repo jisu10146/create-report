@@ -305,6 +305,11 @@ export interface OrchestratorResult {
   };
   /** 생성된 샘플 리포트 (ReportSchema) */
   sampleReport: unknown;
+  /** 토큰 사용량 */
+  tokenUsage?: {
+    log: Array<{ stage: string; inputTokens: number; outputTokens: number; totalTokens: number }>;
+    totals: { input: number; output: number; total: number };
+  };
   /** Preview URL */
   previewUrl?: string;
 }
