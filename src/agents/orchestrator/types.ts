@@ -214,6 +214,20 @@ export interface AgentBlueprint {
 // ─── 5단계: Sample Generator 출력 ─────────────────────────────
 // → 기존 ReportSchema 타입 그대로 사용 (@/types)
 
+// ─── Data Analyst 요약 (토큰 절약용) ─────────────────────────
+
+/** Sample Generator 등 후속 단계에 전달할 DA 출력 요약 */
+export interface DataAnalystSummary {
+  methodology: string;
+  keyMetricNames: string[];
+  segmentNames: string[];
+  dataFlags: string[];
+  /** VoC 분석 시 토픽 목록만 전달 */
+  topicNames?: string[];
+  /** NPS 분석 시 점수만 전달 */
+  npsScore?: number;
+}
+
 // ─── 전체 파이프라인 결과 ─────────────────────────────────────
 
 export interface OrchestratorResult {

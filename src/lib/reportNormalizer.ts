@@ -41,10 +41,11 @@ export function normalizeReport(
  */
 const DEFINITIONS_DIR = "src/agents/definitions";
 
-export async function loadSampleReport(agentId: string): Promise<ReportSchema> {
+export async function loadSampleReport(agentId: string, sampleName?: string): Promise<ReportSchema> {
   const { readFileSync } = await import("fs");
   const { join } = await import("path");
-  const filePath = join(process.cwd(), DEFINITIONS_DIR, agentId, "sample.json");
+  const fileName = sampleName ? `sample-${sampleName}.json` : "sample.json";
+  const filePath = join(process.cwd(), DEFINITIONS_DIR, agentId, fileName);
   const raw = JSON.parse(readFileSync(filePath, "utf-8"));
   return raw as ReportSchema;
 }

@@ -20,6 +20,7 @@ import type {
   OrchestratorResult,
   AgentBlueprint,
   DataAnalystOutput,
+  DataAnalystSummary,
   DomainExpertOutput,
   StrategyWriterOutput,
   ChartSpecialistOutput,
@@ -38,6 +39,60 @@ const PM_SYSTEM_PROMPT = readFileSync(
   "utf-8"
 );
 
+/* ═══ 유틸: DA 출력 → 요약 (토큰 절약) ═══ */
+
+function summarizeDA(da: DataAnalystOutput): DataAnalystSummary {
+  // DA 출력에 선택적 필드가 있을 수 있으므로 unknown으로 접근
+  const daAny = da as unknown as Record<string, unknown>;
+
+  const summary: DataAnalystSummary = {
+    methodology: da.methodology,
+    keyMetricNames: da.keyMetrics.map((m) => m.name),
+    segmentNames: (da.segments ?? []).map((s) => s.name),
+    dataFlags: da.dataFlags,
+  };
+  // VoC 토픽이 있으면 이름만
+  if (daAny.vocAnalysis) {
+    const voc = daAny.vocAnalysis as Record<string, unknown>;
+    if (Array.isArray(voc.topics)) {
+      summary.topicNames = (voc.topics as Array<{ name: string }>).map((t) => t.name);
+    }
+  }
+  // NPS 점수만
+  if (daAny.npsBreakdown) {
+    const nps = daAny.npsBreakdown as Record<string, unknown>;
+    if (typeof nps.score === "number") {
+      summary.npsScore = nps.score;
+    }
+  }
+  return summary;
+}
+
+/* ═══ 유틸: Domain Expert → 벤치마크 요약 (토큰 절약) ═══ */
+
+function summarizeDE(de: DomainExpertOutput): { benchmarks: string[]; keyDecision: string } {
+  return {
+    benchmarks: de.benchmarks.map((b) => `${b.metric}: ${b.value}`),
+    keyDecision: de.decisionFrame.keyDecision,
+  };
+}
+
+/* ═══ 유틸: Strategy Writer → 조립용 요약 ═══ */
+
+function summarizeSW(sw: StrategyWriterOutput): {
+  storyLine: string;
+  category: string;
+  keyDecision: string;
+  sections: Array<{ id: string; label: string; reason: string }>;
+} {
+  return {
+    storyLine: sw.storyLine,
+    category: sw.category,
+    keyDecision: sw.keyDecision,
+    sections: sw.sections.map((s) => ({ id: s.id, label: s.label, reason: s.reason })),
+  };
+}
+
 function toKebabCase(str: string): string {
   return str
     .toLowerCase()
@@ -47,28 +102,29 @@ function toKebabCase(str: string): string {
     .trim();
 }
 
-/* ═══ 2.5단계: PM 사전 체크 (경량) ═══ */
+/* ═══ 2.5단계: PM 사전 체크 (경량 — 시스템 프롬프트 없이 인라인 검증) ═══ */
 
 async function preCheck(
   input: OrchestratorInput,
   strategy: StrategyWriterOutput
 ): Promise<{ passed: boolean; feedback?: string }> {
-  const prompt = `
-아래 Strategy Writer 출력의 구조만 빠르게 검증해줘. 3가지만 확인:
+  const sectionSummary = strategy.sections.map((s) => s.id + ": " + s.label).join("\n");
+  const prompt = `너는 리포트 구조 검증자야. 아래 3가지만 확인하고 JSON으로 답해.
 
-1. 섹션 수가 분량(${input.volume ?? "standard"})에 적정한가?
+1. 섹션 수가 분량(${input.volume ?? "standard"}: compact=3-4, standard=6-8, detailed=8-12)에 맞는가?
 2. 독자(${input.audience ?? "실무자"})가 먼저 보는 항목이 ES 바로 다음에 오는가?
-3. 스토리 아크(${strategy.category})에 맞는 흐름인가?
+3. 스토리가 논리적으로 이어지는가? (앞 섹션의 결론이 다음 섹션의 전제)
 
-Strategy Writer 출력:
-${JSON.stringify({ storyLine: strategy.storyLine, category: strategy.category, sections: strategy.sections.map(s => ({ id: s.id, label: s.label })) }, null, 2)}
+storyLine: ${strategy.storyLine}
+category: ${strategy.category}
+섹션:
+${sectionSummary}
 
-통과하면: { "passed": true }
-문제 있으면: { "passed": false, "feedback": "구체적 수정 지시" }
-JSON만 출력.
-`;
+통과: { "passed": true }
+실패: { "passed": false, "feedback": "구체적 수정 지시" }
+JSON만 출력.`;
 
-  const raw = await callClaude(prompt, PM_SYSTEM_PROMPT);
+  const raw = await callClaude(prompt);
   return JSON.parse(raw);
 }
 
@@ -79,16 +135,28 @@ async function assembleAndValidate(
   strategy: StrategyWriterOutput,
   chart: ChartSpecialistOutput
 ): Promise<AgentBlueprint> {
+  // 병합에 필요한 최소 정보만 전달
+  const swSummary = summarizeSW(strategy);
+  const chartSections = chart.sections.map((s) => ({
+    id: s.id,
+    componentType: s.componentType,
+    source: s.source,
+    designNeeded: s.designNeeded,
+  }));
+
   const prompt = `
 에이전트: ${input.agentName}
 설명: ${input.description}
 분량: ${input.volume ?? "standard"}
 
-Strategy Writer 출력:
-${JSON.stringify(strategy, null, 2)}
+Strategy Writer (섹션 구조):
+${JSON.stringify(swSummary, null, 2)}
 
-Chart Specialist 출력:
-${JSON.stringify(chart, null, 2)}
+Chart Specialist (컴포넌트 매칭):
+${JSON.stringify(chartSections, null, 2)}
+
+Executive Summary:
+${JSON.stringify(strategy.executiveSummary, null, 2)}
 
 위 결과를 병합해서 최종 에이전트 구성안 JSON을 만들어줘.
 Strategy Writer의 섹션 순서 + reason을 기반으로,
@@ -217,8 +285,10 @@ export async function orchestrate(input: OrchestratorInput): Promise<Orchestrato
   // 4단계: PM 조립
   let blueprint = await assembleAndValidate(input, strategyWriter, chartSpecialist);
 
-  // 5단계: Sample Generator
-  let sampleReport = await runSampleGenerator(blueprint, dataAnalyst, domainExpert);
+  // 5단계: Sample Generator (DA 전체 대신 요약만 전달)
+  const daSummary = summarizeDA(dataAnalyst);
+  const deSummary = summarizeDE(domainExpert);
+  let sampleReport = await runSampleGenerator(blueprint, daSummary, deSummary);
 
   // 6단계: Persona Critic
   const audience = input.audience ?? "실무자";
