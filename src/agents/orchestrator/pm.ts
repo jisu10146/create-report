@@ -13,7 +13,7 @@
 
 import { readFileSync } from "fs";
 import { join } from "path";
-import { callClaude } from "@/lib/claude";
+import { callClaude, setStage, resetTokenLog, getTokenLog, getTotalTokens } from "@/lib/claude";
 import { validatePattern } from "@/lib/layout-patterns";
 import type {
   OrchestratorInput,
@@ -261,6 +261,8 @@ function applyPersonaCritic(
 /* ═══ 전체 파이프라인 ═══ */
 
 export async function orchestrate(input: OrchestratorInput): Promise<OrchestratorResult> {
+  resetTokenLog();
+
   // 0단계: VOC 원문 데이터가 있으면 코드 전처리 (LLM 호출 없음)
   let vocPreprocess = undefined;
   if (input.vocRawData && input.vocRawData.length > 0) {
@@ -275,17 +277,21 @@ export async function orchestrate(input: OrchestratorInput): Promise<Orchestrato
   }
 
   // 1단계: Data Analyst + Domain Expert (병렬)
+  setStage("1-DataAnalyst+DomainExpert");
   const [dataAnalyst, domainExpert] = await Promise.all([
     runDataAnalyst(input),
     runDomainExpert(input),
   ]);
 
   // 2단계: Strategy Writer
+  setStage("2-StrategyWriter");
   let strategyWriter = await runStrategyWriter(input, dataAnalyst, domainExpert);
 
   // 2.5단계: PM 사전 체크 (구조만)
+  setStage("2.5-PM-preCheck");
   const preCheckResult = await preCheck(input, strategyWriter);
   if (!preCheckResult.passed && preCheckResult.feedback) {
+    setStage("2-StrategyWriter-retry");
     const feedbackInput = {
       ...input,
       description: `${input.description}\n\n[PM 피드백] ${preCheckResult.feedback}`,
@@ -294,23 +300,29 @@ export async function orchestrate(input: OrchestratorInput): Promise<Orchestrato
   }
 
   // 3단계: Chart Specialist
+  setStage("3-ChartSpecialist");
   const chartSpecialist = await runChartSpecialist(strategyWriter);
 
   // 4단계: PM 조립
+  setStage("4-PM-assemble");
   let blueprint = await assembleAndValidate(input, strategyWriter, chartSpecialist);
 
   // 5단계: Sample Generator (DA 전체 대신 요약만 전달)
+  setStage("5-SampleGenerator");
   const daSummary = summarizeDA(dataAnalyst);
   const deSummary = summarizeDE(domainExpert);
   let sampleReport = await runSampleGenerator(blueprint, daSummary, deSummary);
 
   // 6단계: Persona Critic
+  setStage("6-PersonaCritic");
   const audience = input.audience ?? "실무자";
   const criticResult = await runPersonaCritic(blueprint, sampleReport, audience);
 
   const applied = applyPersonaCritic(blueprint, sampleReport, criticResult);
   blueprint = applied.blueprint;
   sampleReport = applied.sampleReport;
+
+  const tokenUsage = { log: getTokenLog(), totals: getTotalTokens() };
 
   return {
     blueprint,
@@ -322,5 +334,6 @@ export async function orchestrate(input: OrchestratorInput): Promise<Orchestrato
       vocPreprocess,
     },
     sampleReport,
+    tokenUsage,
   };
 }
