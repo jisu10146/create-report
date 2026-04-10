@@ -28,6 +28,38 @@ export async function runStrategyWriter(
   dataAnalyst: DataAnalystOutput,
   domainExpert: DomainExpertOutput
 ): Promise<StrategyWriterOutput> {
+  // DA 출력에서 Strategy Writer에 필요한 핵심만 추출
+  const daAny = dataAnalyst as unknown as Record<string, unknown>;
+  const daCompact = {
+    methodology: dataAnalyst.methodology,
+    keyMetrics: dataAnalyst.keyMetrics.map((m) => ({
+      name: m.name,
+      rationale: m.rationale,
+      benchmarkHint: m.benchmarkHint,
+    })),
+    segments: (dataAnalyst.segments ?? []).map((s) => ({
+      name: s.name,
+      expectedDiff: s.expectedDiff,
+    })),
+    crossAxes: dataAnalyst.crossAxes,
+    timeSeriesHints: dataAnalyst.timeSeriesHints,
+    dataFlags: dataAnalyst.dataFlags,
+    // 선택적 필드는 있을 때만 포함
+    ...(daAny.vocAnalysis ? { vocAnalysis: daAny.vocAnalysis } : {}),
+    ...(daAny.npsBreakdown ? { npsBreakdown: daAny.npsBreakdown } : {}),
+    ...(daAny.funnelStages ? { funnelStages: daAny.funnelStages } : {}),
+    ...(daAny.slaBreakdown ? { slaBreakdown: daAny.slaBreakdown } : {}),
+    ...(daAny.agentPerformance ? { agentPerformance: daAny.agentPerformance } : {}),
+    ...(daAny.channelBreakdown ? { channelBreakdown: daAny.channelBreakdown } : {}),
+  };
+
+  // DE 출력에서 terminology 제거 (Strategy Writer에 불필요)
+  const deCompact = {
+    benchmarks: domainExpert.benchmarks,
+    decisionFrame: domainExpert.decisionFrame,
+    segmentAxes: domainExpert.segmentAxes,
+  };
+
   const prompt = `
 에이전트: ${input.agentName}
 설명: ${input.description}
@@ -35,10 +67,10 @@ export async function runStrategyWriter(
 독자: ${input.audience ?? "팀 리더 / 매니저"}
 
 Data Analyst 분석 결과:
-${JSON.stringify(dataAnalyst, null, 2)}
+${JSON.stringify(daCompact, null, 2)}
 
 Domain Expert 도메인 지식:
-${JSON.stringify(domainExpert, null, 2)}
+${JSON.stringify(deCompact, null, 2)}
 
 위 분석 결과와 도메인 지식을 기반으로,
 피라미드 원칙에 따른 리포트 스토리 구조를 설계해줘.

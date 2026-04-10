@@ -11,8 +11,7 @@ import { callClaude } from "@/lib/claude";
 import { COMPONENT_DATA_SCHEMA } from "@/lib/constants";
 import type {
   AgentBlueprint,
-  DataAnalystOutput,
-  DomainExpertOutput,
+  DataAnalystSummary,
 } from "./types";
 
 /** 프롬프트 원본: src/agents/sample-generator.md */
@@ -23,8 +22,8 @@ const SYSTEM_PROMPT = readFileSync(
 
 export async function runSampleGenerator(
   blueprint: AgentBlueprint,
-  dataAnalyst: DataAnalystOutput,
-  domainExpert: DomainExpertOutput
+  daSummary: DataAnalystSummary,
+  deSummary: { benchmarks: string[]; keyDecision: string }
 ): Promise<unknown> {
   // 섹션별 데이터 스키마를 프롬프트에 포함
   const schemaGuide = blueprint.reportSections.map((s) => {
@@ -32,15 +31,31 @@ export async function runSampleGenerator(
     return `- ${s.id} (${s.componentType}): ${schema}`;
   }).join("\n");
 
+  // 블루프린트에서 validation 제거 (Sample Generator에 불필요)
+  const compactBlueprint = {
+    id: blueprint.id,
+    name: blueprint.name,
+    description: blueprint.description,
+    category: blueprint.category,
+    storyLine: blueprint.storyLine,
+    keyDecision: blueprint.keyDecision,
+    reportSections: blueprint.reportSections,
+  };
+
   const prompt = `
 에이전트 구성안:
-${JSON.stringify(blueprint, null, 2)}
+${JSON.stringify(compactBlueprint, null, 2)}
 
-Data Analyst 분석 결과:
-${JSON.stringify(dataAnalyst, null, 2)}
+분석 요약:
+- 방법론: ${daSummary.methodology}
+- 핵심 지표: ${daSummary.keyMetricNames.join(", ")}
+- 세그먼트: ${daSummary.segmentNames.join(", ")}
+- 주의사항: ${daSummary.dataFlags.join(", ")}
+${daSummary.topicNames ? `- 토픽: ${daSummary.topicNames.join(", ")}` : ""}
+${daSummary.npsScore != null ? `- NPS: ${daSummary.npsScore}` : ""}
 
-Domain Expert 벤치마크:
-${JSON.stringify(domainExpert.benchmarks, null, 2)}
+벤치마크: ${deSummary.benchmarks.join(" | ")}
+핵심 결정: ${deSummary.keyDecision}
 
 섹션별 데이터 스키마:
 ${schemaGuide}

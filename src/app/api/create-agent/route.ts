@@ -133,8 +133,8 @@ export async function POST(req: NextRequest) {
           keyDecision: "",
           validation: { passed: true, violations: [], qualityScore: 100 },
         },
-        { methodology: "", keyMetrics: [], dataFlags: [] },
-        { benchmarks: [], terminology: {}, decisionFrame: { keyDecision: "", requiredInfo: [] } }
+        { methodology: "", keyMetricNames: [], segmentNames: [], dataFlags: [] },
+        { benchmarks: [], keyDecision: "" }
       );
 
       const report = normalizeReport(sampleReport, agent);

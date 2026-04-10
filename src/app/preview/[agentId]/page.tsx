@@ -4,15 +4,17 @@ import ReportRenderer from "@/components/ReportRenderer";
 
 interface Props {
   params: Promise<{ agentId: string }>;
+  searchParams: Promise<{ sample?: string }>;
 }
 
-export default async function PreviewPage({ params }: Props) {
+export default async function PreviewPage({ params, searchParams }: Props) {
   const { agentId } = await params;
+  const { sample } = await searchParams;
 
   let report, agent;
   try {
     [report, agent] = await Promise.all([
-      loadSampleReport(agentId),
+      loadSampleReport(agentId, sample),
       loadAgentDefinition(agentId),
     ]);
   } catch {
