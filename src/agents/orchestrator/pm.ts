@@ -32,6 +32,7 @@ import { runStrategyWriter } from "./strategy-writer";
 import { runChartSpecialist } from "./chart-specialist";
 import { runSampleGenerator } from "./sample-generator";
 import { runPersonaCritic } from "./persona-critic";
+import { preprocessVoc, type VocRow } from "./voc-preprocessor";
 
 /** 프롬프트 원본: src/agents/pm.md */
 const PM_SYSTEM_PROMPT = readFileSync(
@@ -260,6 +261,19 @@ function applyPersonaCritic(
 /* ═══ 전체 파이프라인 ═══ */
 
 export async function orchestrate(input: OrchestratorInput): Promise<OrchestratorResult> {
+  // 0단계: VOC 원문 데이터가 있으면 코드 전처리 (LLM 호출 없음)
+  let vocPreprocess = undefined;
+  if (input.vocRawData && input.vocRawData.length > 0) {
+    vocPreprocess = preprocessVoc(input.vocRawData as VocRow[]);
+    // 전처리 결과를 description에 요약 주입 → DA/SW가 활용
+    input = {
+      ...input,
+      description: `${input.description}\n\n[VOC 전처리 결과 (코드 분석, ${vocPreprocess.stats.total}건)]\n${JSON.stringify(vocPreprocess, null, 0)}`,
+      // vocRawData는 이후 단계에 전달하지 않음 (토큰 절약)
+      vocRawData: undefined,
+    };
+  }
+
   // 1단계: Data Analyst + Domain Expert (병렬)
   const [dataAnalyst, domainExpert] = await Promise.all([
     runDataAnalyst(input),
@@ -305,6 +319,7 @@ export async function orchestrate(input: OrchestratorInput): Promise<Orchestrato
       domainExpert,
       strategyWriter,
       chartSpecialist,
+      vocPreprocess,
     },
     sampleReport,
   };
