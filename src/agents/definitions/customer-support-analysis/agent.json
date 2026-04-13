@@ -1,15 +1,15 @@
 {
   "id": "customer-support-analysis",
   "name": "고객 문의/티켓 분석",
-  "description": "CS 티켓 데이터를 분석하여 SLA 준수·처리 병목·에이전트 성과·고객 만족도를 진단하고 운영 개선 액션을 제시합니다.",
+  "description": "CS 티켓 데이터를 분석하여 SLA 준수·처리 병목·상담원 성과·고객 만족도를 진단하고 운영 개선 액션을 제시합니다.",
   "category": "operational",
   "inputType": "file",
   "layout": "single-section",
   "modalType": "none",
-  "storyLine": "CSAT·NPS 벤치마크 지속 미달 → SLA 위반이 기능 오류·결제/환불에 집중 → 기능 오류 50.2h 중 배정 대기가 핵심 → 에이전트 편차 5.7%p → 기능 오류 NPS -64가 전체를 끌어내림 → 자동 배정+교육으로 NPS +10",
-  "keyDecision": "기능 오류 해결시간 50.2시간을 줄이기 위해 자동 배정 vs 전담팀 신설 vs 에이전트 교육 중 어디에 우선 투자할 것인가",
+  "storyLine": "CSAT·NPS 벤치마크 지속 미달 → SLA 위반이 기능 오류·결제/환불에 집중 → 기능 오류 50.2h 중 배정 대기가 핵심 → 상담원 편차 5.7%p → 기능 오류 NPS -64가 전체를 끌어내림 → 자동 배정+교육으로 NPS +10",
+  "keyDecision": "기능 오류 해결시간 50.2시간을 줄이기 위해 자동 배정 vs 전담팀 신설 vs 상담원 교육 중 어디에 우선 투자할 것인가",
   "personaCritic": {
-    "persona": "SaaS CS팀 관리자. 주 관심사: SLA 준수, 에이전트 코칭, CSAT/NPS 개선",
+    "persona": "SaaS CS팀 관리자. 주 관심사: SLA 준수, 상담원 코칭, CSAT/NPS 개선",
     "removed": ["channel-performance: 채널 간 NPS 편차 4.8p로 미미, 카테고리 간 격차(89.7p)에 집중해야 함"],
     "kept": ["nps-distribution: medium — SLA 테이블에 카테고리별 NPS가 있으나 비추천자 비율 분해는 추가 인사이트 제공"]
   },
@@ -40,9 +40,9 @@
     },
     {
       "id": "agent-performance",
-      "label": "에이전트 에스컬레이션율 상위 33.8% vs 하위 28.1% — 편차 5.7%p로 교육 여지 존재",
+      "label": "상담원 에스컬레이션율 상위 33.8% vs 하위 28.1% — 편차 5.7%p로 교육 여지 존재",
       "componentType": "DataTable",
-      "reason": "[담당자] '누가 도움이 필요한가'를 에이전트별 편차로 특정하여 코칭 대상 식별"
+      "reason": "[담당자] '누가 도움이 필요한가'를 상담원별 편차로 특정하여 코칭 대상 식별"
     },
     {
       "id": "nps-distribution",
@@ -52,13 +52,13 @@
     },
     {
       "id": "root-cause",
-      "label": "수동 배정 + 셀프서비스 부재 + 에이전트 교육 격차가 복합 원인",
+      "label": "수동 배정 + 셀프서비스 부재 + 상담원 교육 격차가 복합 원인",
       "componentType": "InsightCard",
       "reason": "[진단] '왜 이런 상황인가'의 근본 원인을 프로세스·시스템·역량 3개 차원으로 진단"
     },
     {
       "id": "action-plan",
-      "label": "자동 배정 + 셀프서비스 + 에이전트 교육으로 NPS -22→+10 달성 가능",
+      "label": "자동 배정 + 셀프서비스 + 상담원 교육으로 NPS -22→+10 달성 가능",
       "componentType": "StrategyTable",
       "reason": "[결론] 원인별 대응 전략과 단계별 예상 효과를 보고 개선 로드맵 수립"
     }

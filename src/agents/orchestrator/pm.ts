@@ -30,9 +30,10 @@ import { runDataAnalyst } from "./data-analyst";
 import { runDomainExpert } from "./domain-expert";
 import { runStrategyWriter } from "./strategy-writer";
 import { runChartSpecialist } from "./chart-specialist";
-import { runSampleGenerator } from "./sample-generator";
+import { runSampleGenerator, regenerateSections } from "./sample-generator";
 import { runPersonaCritic } from "./persona-critic";
 import { preprocessVoc, type VocRow } from "./voc-preprocessor";
+import { validateContent, formatValidationSummary } from "./content-validator";
 
 /** 프롬프트 원본: src/agents/pm.md */
 const PM_SYSTEM_PROMPT = readFileSync(
@@ -312,6 +313,35 @@ export async function orchestrate(input: OrchestratorInput): Promise<Orchestrato
   const daSummary = summarizeDA(dataAnalyst);
   const deSummary = summarizeDE(domainExpert);
   let sampleReport = await runSampleGenerator(blueprint, daSummary, deSummary);
+
+  // 5.5단계: 콘텐츠 검증 (코드 휴리스틱, 0 토큰)
+  setStage("5.5-ContentValidator");
+  const issues = validateContent(blueprint, sampleReport);
+  if (process.env.NODE_ENV !== "test") {
+    console.log("[ContentValidator]", formatValidationSummary(issues));
+  }
+
+  // 5.6단계: 위반 시 해당 섹션만 재생성 (1회만 시도)
+  if (issues.length > 0) {
+    setStage("5.6-SampleGenerator-regen");
+    try {
+      sampleReport = await regenerateSections(
+        blueprint,
+        sampleReport,
+        daSummary,
+        deSummary,
+        issues
+      );
+      // 재검증 (디버깅용 로그만, 재시도 X — 무한 루프 방지)
+      const remainingIssues = validateContent(blueprint, sampleReport);
+      if (process.env.NODE_ENV !== "test") {
+        console.log("[ContentValidator-after-regen]", formatValidationSummary(remainingIssues));
+      }
+    } catch (err) {
+      // 재생성 실패해도 원본 sample은 유지
+      console.error("[ContentValidator] 재생성 실패, 원본 유지:", err instanceof Error ? err.message : err);
+    }
+  }
 
   // 6단계: Persona Critic
   setStage("6-PersonaCritic");
