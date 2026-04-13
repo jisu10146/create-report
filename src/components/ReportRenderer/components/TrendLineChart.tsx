@@ -143,7 +143,7 @@ export default function TrendLineChart({ data }: { data: TrendLineChartData }) {
                 {String(slice.points[0]?.data.x ?? "")}
               </div>
               {slice.points.map((point) => {
-                const seriesIdx = allData.findIndex((s) => s.id === point.serieId);
+                const seriesIdx = allData.findIndex((s) => s.id === point.seriesId);
                 const isBenchmark = seriesIdx >= d.series.length;
                 const unitStr = isBenchmark
                   ? d.benchmarks?.[seriesIdx - d.series.length]?.unit ?? ""
@@ -152,10 +152,10 @@ export default function TrendLineChart({ data }: { data: TrendLineChartData }) {
                   <div key={point.id} className="flex items-center gap-2 mt-0.5">
                     <div
                       className="w-2.5 h-2.5 rounded-full"
-                      style={{ backgroundColor: point.serieColor }}
+                      style={{ backgroundColor: point.seriesColor }}
                     />
-                    <span className="text-xs" style={{ color: point.serieColor, fontWeight: 600 }}>
-                      {point.serieId}:
+                    <span className="text-xs" style={{ color: point.seriesColor, fontWeight: 600 }}>
+                      {point.seriesId}:
                     </span>
                     <span className="text-xs font-bold text-report-text-primary">
                       {String(point.data.yFormatted)}{unitStr}

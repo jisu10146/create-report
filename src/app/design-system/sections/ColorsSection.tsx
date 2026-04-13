@@ -2,7 +2,7 @@
 
 import { Badge } from "@cubig/design-system";
 import { COLOR_TOKENS } from "../tokens";
-import { CHART_COLOR_SEQUENCE } from "@/lib/report-chart-spec";
+import { CHART_COLOR_SEQUENCE } from "@/lib/design-system/chart-spec";
 
 interface Props {
   onCopy: (value: string) => void;

@@ -184,7 +184,7 @@ async function fetchFromFigma(): Promise<ExtractedTokens> {
   console.log("  ↓ 피그마 API 호출 중...");
   const url = `https://api.figma.com/v1/files/${FILE_KEY}/nodes?ids=${DS_NODE_ID}&depth=8`;
   const res = await fetch(url, {
-    headers: { "X-Figma-Token": FIGMA_TOKEN },
+    headers: { "X-Figma-Token": FIGMA_TOKEN ?? "" },
   });
 
   if (!res.ok) {

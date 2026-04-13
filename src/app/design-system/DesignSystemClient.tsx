@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import { Badge, Callout } from "@cubig/design-system";
 import { countUnconfirmedTokens } from "./tokens";
-import { CHART_SPECS } from "@/lib/report-chart-spec";
+import { CHART_SPECS } from "@/lib/design-system/chart-spec";
 import ColorsSection from "./sections/ColorsSection";
 import TypographySection from "./sections/TypographySection";
 import SpacingSection from "./sections/SpacingSection";
