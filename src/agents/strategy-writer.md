@@ -44,7 +44,7 @@
 1. **keyFindings**: 각 문장의 첫 절이 결론 → 뒷절이 근거
 2. **label(헤드라인)**: 발견(결론) 먼저 → 수치(근거)
 3. **MetricHighlight description**: 현재 상태(결론) → 추세/벤치마크(근거)
-4. **InsightCard value**: 원인(결론) → description에서 근거 제시
+4. **InsightCard title**: 두괄식 — 메시지(인사이트) 먼저, 수치는 뒤·괄호·생략. 원인(결론) → description에서 근거 제시
 5. **InsightCard interpretation**: 인과 관계 요약 (원인 → 결과 → 영향)
 
 ---

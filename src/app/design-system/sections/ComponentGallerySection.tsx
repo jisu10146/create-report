@@ -64,7 +64,7 @@ const SAMPLE_DATA: Record<string, { label: string; data: unknown }> = {
     label: "Insight Card — Badge + Interpretation",
     data: {
       badge: "Signal 1",
-      value: "days_inactive 증가",
+      title: "days_inactive 증가",
       description: "days_inactive 평균 약 190.47일\n7일 기준 CHURN에 앞서 30일·60일 구간에서 단계별 개입 전략이 필요합니다.",
       interpretation: "원인: 장기간 재접속 유인이 부족, 가치 체험 실패 누적",
     },
@@ -73,14 +73,14 @@ const SAMPLE_DATA: Record<string, { label: string; data: unknown }> = {
     label: "Insight Card — Badge Only",
     data: {
       badge: "Signal 2",
-      value: "page_views_last_30d 감소",
+      title: "page_views_last_30d 감소",
       description: "최근 30일 페이지뷰가 평균 대비 62% 하락했습니다. 콘텐츠 소비 습관이 형성되지 않은 것으로 판단됩니다.",
     },
   },
   "InsightCard:interpretation": {
     label: "Insight Card — Interpretation Only",
     data: {
-      value: "login_frequency 저하",
+      title: "login_frequency 저하",
       description: "주간 로그인 빈도가 0.3회 이하로 떨어진 사용자가 전체의 34%를 차지합니다.",
       interpretation: "원인: 초기 온보딩 미완료로 핵심 기능 미경험",
     },

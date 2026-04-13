@@ -105,7 +105,7 @@ export interface InterpretationBlockData {
 
 export interface InsightCardItem {
   badge?: string;
-  value: string;
+  title: string;
   description: string;
   interpretation?: string;
 }

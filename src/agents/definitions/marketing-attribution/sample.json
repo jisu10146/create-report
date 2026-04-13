@@ -109,19 +109,19 @@
         "items": [
           {
             "badge": "과소평가 1",
-            "value": "YouTube Ads: Last-touch ₩0 vs Linear ₩136만 (51.4x ROAS)",
+            "title": "YouTube Ads: Last-touch ₩0 vs Linear ₩136만 (51.4x ROAS)",
             "description": "YouTube 접촉 유저 57명 중 28명(49.1%)이 결국 전환했습니다. 직접 전환은 없지만 인지→탐색 퍼널에서 가장 효율적인 어시스트 역할을 합니다. 현재 전체 광고비의 3.4%만 배정되어 있습니다.",
             "interpretation": "원인: Last-touch 기반 성과 평가로 YouTube 예산이 축소 → 인지 단계 유입 감소 → 중간 퍼널 전환 단절"
           },
           {
             "badge": "과소평가 2",
-            "value": "Email Campaign: Last-touch ₩178만 vs Linear ₩263만 (11.8% 기여)",
+            "title": "Email Campaign: Last-touch ₩178만 vs Linear ₩263만 (11.8% 기여)",
             "description": "무료 채널이지만 구매 경로의 47.8%에 Email 터치포인트가 포함됩니다. 특히 Onboarding_Drip 캠페인이 trial_start→purchase 전환에 핵심적 역할을 합니다.",
             "interpretation": "원인: Email은 비용 ₩0이라 ROAS 계산에서 제외 → 투자 우선순위에서 누락 → 콘텐츠/자동화 개선 없이 방치"
           },
           {
             "badge": "비효율",
-            "value": "Carousel_Feature_Feb: 비용 ₩3.6만, 전환 0건, CPA 산출 불가",
+            "title": "Carousel_Feature_Feb: 비용 ₩3.6만, 전환 0건, CPA 산출 불가",
             "description": "36,012원 집행에 전환이 단 1건도 발생하지 않았습니다. 동일 채널의 Retargeting_Feb(CPA ₩6,953, 4건 전환)와 대조적입니다.",
             "interpretation": "원인: 인지 단계 크리에이티브로 전환 의도가 없는 오디언스에게 노출 → 퍼널 하단 리타겟팅으로 예산 이동 필요"
           }

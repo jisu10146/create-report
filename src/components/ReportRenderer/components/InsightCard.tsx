@@ -7,7 +7,7 @@ import type { InsightCardData, InsightCardItem } from "@/types";
  * 카드: bg #ffffff, radius 16, padding 24, gap 24 (vertical)
  * 내부 콘텐츠 영역: gap 16 (vertical)
  *   - Badge: radius 8, padding 4/8, 14px/500 #7b7e85, bg #f0f0f2
- *   - Value: 20px/600 #171719
+ *   - Title: 20px/600 #171719
  *   - Divider: bg #e6e7e9, 1px
  *   - Description: 16px/400 #171719
  * Callout (옵션): bg #fff7ed, radius 8, padding 14/12
@@ -26,7 +26,7 @@ function SingleCard({ item }: { item: InsightCardItem }) {
             </span>
           )}
           <span className="text-[20px] font-semibold leading-[28px] text-report-text-primary">
-            {item.value}
+            {item.title}
           </span>
         </div>
         <div className="h-px bg-report-border" />

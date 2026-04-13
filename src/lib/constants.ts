@@ -83,7 +83,7 @@ export const COMPONENT_DATA_SCHEMA: Record<string, string> = {
   DonutChart: `{ "title": "string (optional)", "items": [{ "label": "string", "value": number, "count": number (optional) }] }`,
   DataTable: `{ "columns": [{ "label": "string" }], "rows": [{ "metric": "행 라벨", "values": ["string|number"] }], "showDots": false } — showDots는 클러스터 비교일 때만 true`,
   InterpretationBlock: `{ "title": "string (optional)", "text": "AI 해석 텍스트" }`,
-  InsightCard: `{ "items": [{ "badge": "string (optional)", "value": "string", "description": "string", "interpretation": "근본 원인 (해결책X)" }] } — 1~3개, 배열이면 가로 그리드`,
+  InsightCard: `{ "items": [{ "badge": "string (optional)", "title": "string", "description": "string", "interpretation": "근본 원인 (해결책X)" }] } — 1~3개, 배열이면 가로 그리드. title은 한 줄 이내 핵심 발견(두괄식, 메시지 우선)`,
   ClusterCard: `{ "items": [{ "badge": "string", "badgeColor": "#hex (optional)", "title": "string", "description": "string" }] }`,
   UserCard: `{ "items": [{ "name": "string", "subtitle": "성별, 나이, 직업", "description": "string" }], "hasViewDetail": true }`,
   StrategyTable: `{ "immediate": [{ "strategy": "string", "objective": "string", "actionPlan": "string", "expectedImpact": "string" }], "short": [같은 형태], "mid": [같은 형태] }`,
