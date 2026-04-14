@@ -1,7 +1,7 @@
 {
   "meta": {
-    "agentId": "voc-analysis",
-    "agentName": "VOC 분석 리포트",
+    "agentId": "review-analysis",
+    "agentName": "리뷰 데이터 분석 리포트",
     "createdAt": "2026-04-09T23:00:00.000Z"
   },
   "executiveSummary": {

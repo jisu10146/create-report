@@ -4,7 +4,7 @@
  * LLM에 원문을 보내지 않고, 통계·토픽분류·verbatim 추출을 코드로 처리.
  * 에이전트에는 요약 JSON만 전달하여 토큰을 절약한다.
  *
- * 규칙 소스: src/agents/skills/voc-analysis.md "전처리 키워드 사전" 섹션
+ * 규칙 소스: src/agents/skills/review-analysis.md "전처리 키워드 사전" 섹션
  * 토픽·긍정테마·경쟁사·임계치를 md에서 로드한다. 키워드 수정 시 md만 편집하면 자동 반영.
  */
 
@@ -53,7 +53,7 @@ function extractJsonFromMd<T>(md: string, startMarker: string, endMarker: string
 /** voc-analysis.md를 한 번만 로드해서 캐싱 */
 const VOC_SKILL_MD = (() => {
   try {
-    return readFileSync(join(process.cwd(), "src/agents/skills/voc-analysis.md"), "utf-8");
+    return readFileSync(join(process.cwd(), "src/agents/skills/review-analysis.md"), "utf-8");
   } catch {
     return "";
   }
@@ -95,7 +95,7 @@ function detectSource(rows: VocRow[]): VocPreprocessOutput["source"] {
   if (first.account_id != null) return "b2b-feedback";
   if (first.nps_score != null) return "nps";
   if (first.channel && ["twitter", "reddit", "community"].includes(String(first.channel).toLowerCase())) return "social";
-  if (first.score != null) return "app-review";
+  if (first.score != null) return "review";
   return "general";
 }
 

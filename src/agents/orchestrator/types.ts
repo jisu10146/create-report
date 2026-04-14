@@ -45,7 +45,7 @@ export interface OrchestratorInput {
 
 export interface VocPreprocessOutput {
   /** 데이터 소스 추정 */
-  source: "app-review" | "nps" | "cs-text" | "b2b-feedback" | "social" | "general";
+  source: "review" | "nps" | "cs-text" | "b2b-feedback" | "social" | "general";
   /** 기본 통계 */
   stats: {
     total: number;

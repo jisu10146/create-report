@@ -7,7 +7,7 @@
 2. `src/agents/definitions/{id}/sample.json` — 샘플 데이터
 3. `src/agents/definitions/{id}/report-spec.md` — 리포트 명세 (입력 컬럼 + 7개 섹션 슬롯 + 콘텐츠 규칙 통합)
    - Sample Generator가 자동 로드하여 LLM에 주입
-   - 예시: [voc-analysis/report-spec.md](definitions/voc-analysis/report-spec.md), [customer-support-analysis/report-spec.md](definitions/customer-support-analysis/report-spec.md)
+   - 예시: [voc-analysis/report-spec.md](definitions/review-analysis/report-spec.md), [customer-support-analysis/report-spec.md](definitions/customer-support-analysis/report-spec.md)
 
 → 이것만 하면 `http://localhost:3001/preview/{id}`에서 바로 확인 가능.
 

@@ -1,11 +1,11 @@
-# VOC Analysis 리포트 명세
+# Review Analysis 리포트 명세
 
-> AI팀 개발 핸드오프용. **어떤 VOC 데이터가 들어와도 동일한 7개 슬롯**으로 구성되는 범용 리포트.
+> AI팀 개발 핸드오프용. **어떤 리뷰 데이터가 들어와도 동일한 7개 슬롯**으로 구성되는 범용 리포트.
 >
 > 본 문서는 입력 데이터 정의(§1)부터 출력 리포트 골격(§3~§9)까지 단일 진입점으로 통합되어 있습니다.
 >
 > 관련 파일:
-> - 비즈니스 로직 (소스별 분석 패턴) → [skills/voc-analysis.md](../../skills/voc-analysis.md)
+> - 비즈니스 로직 (소스별 분석 패턴) → [skills/review-analysis.md](../../skills/review-analysis.md)
 > - 컴포넌트 데이터 스키마 → [src/lib/constants.ts](../../../lib/constants.ts) `COMPONENT_DATA_SCHEMAS`
 > - 콘텐츠 규칙 (두괄식 등) → [sample-generator.md](../../sample-generator.md), [strategy-writer.md](../../strategy-writer.md)
 > - 전처리 출력 타입 → [orchestrator/types.ts](../../orchestrator/types.ts) `VocPreprocessOutput`
@@ -18,7 +18,7 @@
 CSV 또는 JSON. 1행 = 1건의 고객 피드백.
 
 ### 1.2 지원 데이터 소스
-- 앱 스토어 리뷰 (Google Play, App Store)
+- 제품/서비스 리뷰 (앱스토어, 쇼핑몰, 비교 사이트 등)
 - NPS/CSAT 서술형 응답
 - CS 티켓/채팅 텍스트
 - 설문조사 주관식
@@ -49,7 +49,7 @@ CSV 또는 JSON. 1행 = 1건의 고객 피드백.
 |------|------|------|-------------|
 | `at` / `date` | datetime | 작성 일시 | 시간 추세 분석 제외 |
 | `thumbsUpCount` | integer | 공감수/좋아요 수 | 공감 기반 우선순위 산출 불가, 건수 기반으로 대체 |
-| `channel` | string | 수집 채널 (앱 리뷰, NPS, 이메일 등) | 채널별 분석 제외 |
+| `channel` | string | 수집 채널 (앱스토어, 쇼핑몰, NPS, 이메일 등) | 채널별 분석 제외 |
 | `userName` | string | 작성자 이름/ID | 동일 사용자 반복 분석 제외 |
 | `replyContent` | text | 공식 답변 내용 | 답변률 분석 제외 |
 | `topic` / `product_area` | string | 사전 분류된 토픽 | 키워드 기반 자동 분류 |
@@ -62,7 +62,7 @@ CSV 또는 JSON. 1행 = 1건의 고객 피드백.
 
 | 컬럼 조합 | 추정 소스 | 적용 패턴 |
 |----------|----------|----------|
-| `score` (1-5) + `content` | 앱 리뷰 | 토픽→감성 순서, 양극화 해석 |
+| `score` (1-5) + `content` | 제품/서비스 리뷰 | 토픽→감성 순서, 양극화 해석 |
 | `nps_score` (0-10) + `content` | NPS 서술형 | 점수 구간(추천/중립/비추천)→토픽 순서 |
 | `ticket_id` + `content` | CS 텍스트 | 진술 vs 근본원인 분리, 부정 편향 보정 |
 | `account_id` + `content` | B2B 피드백 | 계정 매출 가중, RICE 우선순위 |
@@ -78,7 +78,7 @@ CSV 또는 JSON. 1행 = 1건의 고객 피드백.
 ## 2. 설계 원칙
 
 ### 단일 골격
-VOC 데이터는 앱 리뷰·CS 티켓·NPS 서술형·B2B 피드백·소셜 멘션 등 형태가 다양하지만, **리포트 골격은 동일**하다. 데이터 소스에 따라 슬롯에 들어가는 *지표 이름*과 *세부 콘텐츠*만 달라진다.
+리뷰 데이터는 제품 리뷰·CS 티켓·NPS 서술형·B2B 피드백·소셜 멘션 등 형태가 다양하지만, **리포트 골격은 동일**하다. 데이터 소스에 따라 슬롯에 들어가는 *지표 이름*과 *세부 콘텐츠*만 달라진다.
 
 | 변하는 것 | 변하지 않는 것 |
 |---|---|
@@ -97,8 +97,8 @@ VOC 데이터는 앱 리뷰·CS 티켓·NPS 서술형·B2B 피드백·소셜 멘
 |---|---|
 | 7개 섹션의 순서·역할·슬롯 | 토픽 분류 알고리즘 |
 | 각 슬롯이 받는 데이터의 *형태* | LLM 프롬프트 |
-| 콘텐츠 규칙 (두괄식, VOC 톤) | 컴포넌트 렌더링 코드 |
-| 좋은 예 / 나쁜 예 | 소스별 디테일 (→ skills/voc-analysis.md 참조) |
+| 콘텐츠 규칙 (두괄식, 리뷰 분석 톤) | 컴포넌트 렌더링 코드 |
+| 좋은 예 / 나쁜 예 | 소스별 디테일 (→ skills/review-analysis.md 참조) |
 
 ---
 
@@ -175,7 +175,7 @@ VOC 데이터는 앱 리뷰·CS 티켓·NPS 서술형·B2B 피드백·소셜 멘
 
 | 슬롯 | 역할 | 채우는 예시 (소스별) |
 |---|---|---|
-| 카드 1 | 부정/문제 그룹의 행동 특성 | 1점 그룹 (앱 리뷰) / Detractor (NPS) / 에스컬레이션 티켓 (CS) |
+| 카드 1 | 부정/문제 그룹의 행동 특성 | 1점 그룹 (리뷰) / Detractor (NPS) / 에스컬레이션 티켓 (CS) |
 | 카드 2 | 긍정/만족 그룹의 행동 특성 | 5점 그룹 / Promoter / 즉시 해결 티켓 |
 
 - **각 카드 규칙**:
@@ -201,7 +201,7 @@ VOC 데이터는 앱 리뷰·CS 티켓·NPS 서술형·B2B 피드백·소셜 멘
 
 ### 섹션 4. 토픽 × 감성
 - **컴포넌트**: `StackedBarChart`
-- **목적**: 어떤 주제에서 부정이 집중되는지 한눈에. **VOC의 핵심 섹션**.
+- **목적**: 어떤 주제에서 부정이 집중되는지 한눈에. **리뷰 분석의 핵심 섹션**.
 
 | 슬롯 | 역할 |
 |---|---|
@@ -327,7 +327,7 @@ VOC 데이터는 앱 리뷰·CS 티켓·NPS 서술형·B2B 피드백·소셜 멘
 
 ### 공감/우선순위 가중 슬롯 (모든 verbatim 정렬)
 ```
-1순위: thumbsUpCount (앱 리뷰)
+1순위: thumbsUpCount (리뷰)
 2순위: ticket_priority (CS)
 3순위: account_revenue (B2B)
 4순위: 글자수 (긴 리뷰가 더 구체적)
@@ -374,15 +374,15 @@ StrategyTable: {
 
 ---
 
-## 7. 콘텐츠 규칙 (VOC 특수)
+## 7. 콘텐츠 규칙 (리뷰 분석 특수)
 
 > **글로벌 콘텐츠 규칙** (두괄식, 명사구 헤드라인, ClusterCard.title=군집 이름, ES.description=메타 설명, InsightCard 세 필드 역할 분리, 섹션 label=두괄식 헤드라인) → [sample-generator.md](../../sample-generator.md) §0~§0-4 참조
 >
-> 본 섹션은 **VOC 도메인에만 적용되는 톤·인용 규칙**만 정의.
+> 본 섹션은 **리뷰 분석 도메인에만 적용되는 톤·인용 규칙**만 정의.
 
 ### 7.1 톤 — 감정 판단 표현 금지
 - "분노/좌절/무력감" 등 감정 판단 표현 금지 → "불만/부정/이탈 위험" 등 중립적 표현
-- 이유: VOC는 고객 텍스트 기반이라 LLM이 감정 명사를 과도하게 사용하는 경향이 있음
+- 이유: 리뷰 데이터는 고객 텍스트 기반이라 LLM이 감정 명사를 과도하게 사용하는 경향이 있음
 
 ### 7.2 고객 원문 인용 위치
 - 고객 verbatim은 **InsightCard `description`에서만** 인용
@@ -424,7 +424,7 @@ StrategyTable: {
 
 본 명세에 명시 못 한 항목 — AI팀과 협의 필요:
 
-- **NPS·CS·B2B 데이터의 preprocessor 확장**: 현재 `voc-preprocessor.ts`는 앱 리뷰(score 컬럼) 위주. NPS Detractor 비율, CS 에스컬레이션율, B2B 계정 가중 등을 preprocessor에 추가해야 §5의 슬롯 채우기가 가능.
+- **NPS·CS·B2B 데이터의 preprocessor 확장**: 현재 `voc-preprocessor.ts`는 리뷰(score 컬럼) 위주. NPS Detractor 비율, CS 에스컬레이션율, B2B 계정 가중 등을 preprocessor에 추가해야 §5의 슬롯 채우기가 가능.
 - **시계열 섹션 추가 여부**: `dateRange`가 있고 분석 기간이 4주 이상일 때 "시계열 추세" 섹션을 8번째 슬롯으로 추가할지 (현재 명세는 7개 고정).
 - **비율 합 보정**: `sentimentBreakdown`이 반올림으로 100이 안 될 때, 렌더링 직전 가장 큰 값에 ±1% 보정 룰 명문화 필요.
 - **Verbatim 익명화**: 고객 원문에 개인정보(이름·전화번호 등) 포함될 가능성. preprocessor에서 자동 마스킹 필요한지 결정.

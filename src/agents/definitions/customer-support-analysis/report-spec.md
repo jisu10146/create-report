@@ -8,7 +8,7 @@
 > - 도메인 지식 → [skills/customer-support.md](../../skills/customer-support.md), [skills/agent-performance.md](../../skills/agent-performance.md)
 > - 컴포넌트 데이터 스키마 → [src/lib/constants.ts](../../../lib/constants.ts) `COMPONENT_DATA_SCHEMAS`
 > - 콘텐츠 규칙 (두괄식 등) → [sample-generator.md](../../sample-generator.md), [strategy-writer.md](../../strategy-writer.md)
-> - 자매 명세 (참조용) → [voc-analysis/report-spec.md](../voc-analysis/report-spec.md)
+> - 자매 명세 (참조용) → [review-analysis/report-spec.md](../review-analysis/report-spec.md)
 
 ---
 
