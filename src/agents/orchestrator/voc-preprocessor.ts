@@ -3,8 +3,13 @@
  *
  * LLM에 원문을 보내지 않고, 통계·토픽분류·verbatim 추출을 코드로 처리.
  * 에이전트에는 요약 JSON만 전달하여 토큰을 절약한다.
+ *
+ * 규칙 소스: src/agents/skills/voc-analysis.md "전처리 키워드 사전" 섹션
+ * 토픽·긍정테마·경쟁사·임계치를 md에서 로드한다. 키워드 수정 시 md만 편집하면 자동 반영.
  */
 
+import { readFileSync } from "fs";
+import { join } from "path";
 import type { VocPreprocessOutput } from "./types";
 
 // ─── 입력 타입 ──────────────────────────────────────────────────
@@ -22,41 +27,65 @@ export interface VocRow {
   [key: string]: unknown;
 }
 
-// ─── 토픽 키워드 사전 (확장 가능) ──────────────────────────────
+// ─── md에서 키워드 사전 로드 ─────────────────────────────────────
 
 interface TopicDef {
   name: string;
   keywords: string[];
 }
 
-const DEFAULT_TOPICS: TopicDef[] = [
-  { name: "제품 기능/UX", keywords: ["기능", "UI", "UX", "인터페이스", "디자인", "레이아웃", "업데이트", "업뎃", "설정", "바뀌", "메뉴"] },
-  { name: "가격/비용", keywords: ["가격", "비용", "비싸", "요금", "결제", "구독", "환불", "돈", "유료", "무료", "한도", "제한", "프리", "플러스", "과금"] },
-  { name: "성능/안정성", keywords: ["느려", "버그", "오류", "크래시", "렉", "멈추", "다운", "최적화", "튕", "로딩", "강제종료"] },
-  { name: "로그인/계정", keywords: ["로그인", "로그아웃", "계정", "비밀번호", "인증", "구글", "애플", "SSO"] },
-  { name: "고객 지원", keywords: ["고객센터", "상담", "문의", "응답", "답변", "지원", "CS", "서비스"] },
-  { name: "온보딩/학습", keywords: ["처음", "시작", "가입", "온보딩", "튜토리얼", "학습", "공부", "배우"] },
-  { name: "콘텐츠/품질", keywords: ["품질", "정확", "거짓", "오답", "틀린", "잘못", "멍청", "허언", "신뢰", "사기", "거짓말", "할루", "검열", "필터", "차단"] },
-  { name: "이미지/파일", keywords: ["이미지", "사진", "파일", "업로드", "다운로드", "그림", "첨부"] },
-];
+/** voc-analysis.md 마커 사이의 JSON을 추출 */
+function extractJsonFromMd<T>(md: string, startMarker: string, endMarker: string, fallback: T): T {
+  const startIdx = md.indexOf(startMarker);
+  const endIdx = md.indexOf(endMarker);
+  if (startIdx === -1 || endIdx === -1) return fallback;
 
-const DEFAULT_POSITIVE_THEMES = [
-  { name: "편리성/만족", keywords: ["편리", "만족", "좋아", "추천", "유용", "도움", "편해", "최고"] },
-  { name: "학습/정보", keywords: ["공부", "학습", "정보", "분석", "궁금", "검색", "알려"] },
-  { name: "소통/감정", keywords: ["위로", "대화", "친구", "수다", "상담", "심심", "외로"] },
-  { name: "창작/생성", keywords: ["이미지", "그림", "캐릭터", "그려", "보정", "생성", "창작"] },
-];
+  const block = md.slice(startIdx + startMarker.length, endIdx).trim();
+  // md 안에 ```json ... ``` 으로 감싸져 있을 수 있으므로 코드펜스 제거
+  const cleaned = block.replace(/^```json\s*/i, "").replace(/\s*```$/i, "").trim();
+  try {
+    return JSON.parse(cleaned) as T;
+  } catch {
+    return fallback;
+  }
+}
 
-// ─── 경쟁사 키워드 ──────────────────────────────────────────────
+/** voc-analysis.md를 한 번만 로드해서 캐싱 */
+const VOC_SKILL_MD = (() => {
+  try {
+    return readFileSync(join(process.cwd(), "src/agents/skills/voc-analysis.md"), "utf-8");
+  } catch {
+    return "";
+  }
+})();
 
-const COMPETITOR_KEYWORDS: Array<{ name: string; keywords: string[] }> = [
-  { name: "Gemini", keywords: ["제미나이", "gemini", "재미나이"] },
-  { name: "Claude", keywords: ["클로드", "claude"] },
-  { name: "Grok", keywords: ["그록", "grok"] },
-  { name: "Copilot", keywords: ["코파일럿", "copilot"] },
-  { name: "DeepSeek", keywords: ["딥시크", "deepseek"] },
-  { name: "Perplexity", keywords: ["퍼플렉시티", "perplexity"] },
-];
+const DEFAULT_TOPICS: TopicDef[] = extractJsonFromMd(
+  VOC_SKILL_MD,
+  "<!-- VOC-TOPICS START -->",
+  "<!-- VOC-TOPICS END -->",
+  [
+    { name: "제품 기능/UX", keywords: ["기능", "UI", "UX", "인터페이스", "디자인"] },
+    { name: "가격/비용", keywords: ["가격", "비용", "결제", "구독", "환불", "돈"] },
+  ]
+);
+
+const DEFAULT_POSITIVE_THEMES: TopicDef[] = extractJsonFromMd(
+  VOC_SKILL_MD,
+  "<!-- VOC-POSITIVE-THEMES START -->",
+  "<!-- VOC-POSITIVE-THEMES END -->",
+  [
+    { name: "편리성/만족", keywords: ["편리", "만족", "좋아", "추천"] },
+  ]
+);
+
+const COMPETITOR_KEYWORDS: Array<{ name: string; keywords: string[] }> = extractJsonFromMd(
+  VOC_SKILL_MD,
+  "<!-- VOC-COMPETITORS START -->",
+  "<!-- VOC-COMPETITORS END -->",
+  [
+    { name: "Gemini", keywords: ["제미나이", "gemini"] },
+  ]
+);
 
 // ─── 소스 자동 감지 ─────────────────────────────────────────────
 
@@ -69,6 +98,17 @@ function detectSource(rows: VocRow[]): VocPreprocessOutput["source"] {
   if (first.score != null) return "app-review";
   return "general";
 }
+
+/** 임계치 — md의 VOC-THRESHOLDS 블록에서 로드, 없으면 기본값 */
+const THRESHOLDS = (() => {
+  const parsed = extractJsonFromMd<{
+    sentiment?: { score?: Record<string, string>; nps?: Record<string, string> };
+    polarization?: { extremeRateThreshold?: number };
+  }>(VOC_SKILL_MD, "<!-- VOC-THRESHOLDS START -->", "<!-- VOC-THRESHOLDS END -->", {});
+  return {
+    polarizationThreshold: parsed.polarization?.extremeRateThreshold ?? 70,
+  };
+})();
 
 // ─── 감성 분류 ──────────────────────────────────────────────────
 
@@ -149,7 +189,7 @@ export function preprocessVoc(
     }
 
     polarization = {
-      detected: extremeRate >= 70,
+      detected: extremeRate >= THRESHOLDS.polarizationThreshold,
       extremeRate,
       proxy: { avgLength, shortReviewRate: shortRate },
     };

@@ -1,10 +1,22 @@
 /**
  * Content Validator — Sample Generator 출력의 콘텐츠 룰 검증
  *
- * report-spec.md의 콘텐츠 규칙(두괄식, 명사구 헤드라인, 군집 이름, 인과 체인 등)을
- * 코드 휴리스틱으로 검증한다. LLM 호출 없음.
+ * 이 파일의 모든 규칙은 sample-generator.md의 서술 규칙을 코드 휴리스틱으로 구현한 것이다.
+ * 규칙 추가/수정 시 sample-generator.md를 먼저 업데이트하고, 이 파일의 코드를 맞춘다.
  *
- * 위반 발견 시 ContentValidationIssue 배열을 반환 → orchestrator가 부분 재생성 트리거.
+ * 규칙 출처 매핑:
+ *   headline-lead-with-message       → sample-generator.md §0-4
+ *   executive-summary-meta           → sample-generator.md §0-3
+ *   executive-summary-keyfindings    → sample-generator.md §0-3
+ *   clustercard-title-is-name        → sample-generator.md §0-2
+ *   clustercard-title-length         → sample-generator.md §0-2 (~15자)
+ *   insightcard-title-noun-phrase    → sample-generator.md §0-1
+ *   insightcard-title-length         → sample-generator.md §0-1 (~20자)
+ *   insightcard-title-no-verbatim    → sample-generator.md §0-1
+ *   insightcard-interpretation-overlap    → sample-generator.md §0-1
+ *   insightcard-interpretation-causal-chain → sample-generator.md §0-1
+ *
+ * LLM 호출 없음. 위반 발견 시 ContentValidationIssue 배열을 반환 → orchestrator가 부분 재생성 트리거.
  */
 
 import type { AgentBlueprint } from "./types";

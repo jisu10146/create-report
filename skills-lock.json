@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "customer-escalation": {
+      "source": "anthropics/knowledge-work-plugins",
+      "sourceType": "github",
+      "computedHash": "1282a97480e342c8ed5e436e37a829d97ea806c1b9488ea2b10638f255f6c4c2"
+    }
+  }
+}

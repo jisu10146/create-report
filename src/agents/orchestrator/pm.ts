@@ -41,6 +41,15 @@ const PM_SYSTEM_PROMPT = readFileSync(
   "utf-8"
 );
 
+/**
+ * pm.md에서 `<!-- PRE-CHECK START -->` ~ `<!-- PRE-CHECK END -->` 사이를 추출.
+ * preCheck 프롬프트의 단일 소스 — 규칙은 pm.md에서만 관리한다.
+ */
+const PRE_CHECK_RULES = (() => {
+  const match = PM_SYSTEM_PROMPT.match(/<!-- PRE-CHECK START -->([\s\S]*?)<!-- PRE-CHECK END -->/);
+  return match ? match[1].trim() : "";
+})();
+
 /* ═══ 유틸: DA 출력 → 요약 (토큰 절약) ═══ */
 
 function summarizeDA(da: DataAnalystOutput): DataAnalystSummary {
@@ -111,19 +120,31 @@ async function preCheck(
   strategy: StrategyWriterOutput
 ): Promise<{ passed: boolean; feedback?: string }> {
   const sectionSummary = strategy.sections.map((s) => s.id + ": " + s.label).join("\n");
-  const prompt = `너는 리포트 구조 검증자야. 아래 3가지만 확인하고 JSON으로 답해.
+  const keyFindingsSummary = (strategy.executiveSummary?.keyFindings ?? [])
+    .map((kf, i) => `  ${i + 1}) ${kf}`)
+    .join("\n");
 
-1. 섹션 수가 분량(${input.volume ?? "standard"}: compact=3-4, standard=6-8, detailed=8-12)에 맞는가?
-2. 독자(${input.audience ?? "실무자"})가 먼저 보는 항목이 ES 바로 다음에 오는가?
-3. 스토리가 논리적으로 이어지는가? (앞 섹션의 결론이 다음 섹션의 전제)
+  // 규칙은 pm.md에서만 관리. 여기서는 검증 대상 데이터만 주입.
+  const prompt = `너는 리포트 구조 검증자야. 아래 규칙을 기준으로 검증하고 JSON으로 답해.
 
-storyLine: ${strategy.storyLine}
-category: ${strategy.category}
-섹션:
+=== Pre-Check 규칙 (pm.md) ===
+${PRE_CHECK_RULES}
+=== /규칙 ===
+
+검증 대상:
+- 분량: ${input.volume ?? "standard"}
+- 독자: ${input.audience ?? "실무자"}
+- storyLine: ${strategy.storyLine}
+- category: ${strategy.category}
+
+섹션 헤드라인(순서대로):
 ${sectionSummary}
 
+ES keyFindings(순서대로):
+${keyFindingsSummary || "  (없음)"}
+
 통과: { "passed": true }
-실패: { "passed": false, "feedback": "구체적 수정 지시" }
+실패: { "passed": false, "feedback": "어떤 항목이 왜 위반됐는지 + 구체적 수정 지시" }
 JSON만 출력.`;
 
   const raw = await callClaude(prompt);

@@ -210,3 +210,51 @@ AI 앱(ChatGPT, Gemini, Claude 등) 리뷰는 일반 앱과 다른 고유 패턴
 | 셀프서비스/문서화 | 온보딩 토픽 부정 비율, FAQ 커버리지 |
 | 가격 전략 | "비싸다" vs "가치 대비" 비율, 경쟁사 가격 언급 빈도 |
 | AI 모델 품질 모니터링 | 업데이트 전후 부정률 변화, 할루시네이션 관련 리뷰 추세 |
+
+## 전처리 키워드 사전 (voc-preprocessor.ts가 참조)
+
+voc-preprocessor.ts의 토픽 분류·긍정 테마·경쟁사 감지·감성 임계치는 아래 정의를 단일 소스로 사용한다.
+키워드 수정 시 이 섹션만 편집하면 코드에 자동 반영된다.
+
+<!-- VOC-TOPICS START -->
+[
+  { "name": "제품 기능/UX", "keywords": ["기능", "UI", "UX", "인터페이스", "디자인", "레이아웃", "업데이트", "업뎃", "설정", "바뀌", "메뉴"] },
+  { "name": "가격/비용", "keywords": ["가격", "비용", "비싸", "요금", "결제", "구독", "환불", "돈", "유료", "무료", "한도", "제한", "프리", "플러스", "과금"] },
+  { "name": "성능/안정성", "keywords": ["느려", "버그", "오류", "크래시", "렉", "멈추", "다운", "최적화", "튕", "로딩", "강제종료"] },
+  { "name": "로그인/계정", "keywords": ["로그인", "로그아웃", "계정", "비밀번호", "인증", "구글", "애플", "SSO"] },
+  { "name": "고객 지원", "keywords": ["고객센터", "상담", "문의", "응답", "답변", "지원", "CS", "서비스"] },
+  { "name": "온보딩/학습", "keywords": ["처음", "시작", "가입", "온보딩", "튜토리얼", "학습", "공부", "배우"] },
+  { "name": "콘텐츠/품질", "keywords": ["품질", "정확", "거짓", "오답", "틀린", "잘못", "멍청", "허언", "신뢰", "사기", "거짓말", "할루", "검열", "필터", "차단"] },
+  { "name": "이미지/파일", "keywords": ["이미지", "사진", "파일", "업로드", "다운로드", "그림", "첨부"] }
+]
+<!-- VOC-TOPICS END -->
+
+<!-- VOC-POSITIVE-THEMES START -->
+[
+  { "name": "편리성/만족", "keywords": ["편리", "만족", "좋아", "추천", "유용", "도움", "편해", "최고"] },
+  { "name": "학습/정보", "keywords": ["공부", "학습", "정보", "분석", "궁금", "검색", "알려"] },
+  { "name": "소통/감정", "keywords": ["위로", "대화", "친구", "수다", "상담", "심심", "외로"] },
+  { "name": "창작/생성", "keywords": ["이미지", "그림", "캐릭터", "그려", "보정", "생성", "창작"] }
+]
+<!-- VOC-POSITIVE-THEMES END -->
+
+<!-- VOC-COMPETITORS START -->
+[
+  { "name": "Gemini", "keywords": ["제미나이", "gemini", "재미나이"] },
+  { "name": "Claude", "keywords": ["클로드", "claude"] },
+  { "name": "Grok", "keywords": ["그록", "grok"] },
+  { "name": "Copilot", "keywords": ["코파일럿", "copilot"] },
+  { "name": "DeepSeek", "keywords": ["딥시크", "deepseek"] },
+  { "name": "Perplexity", "keywords": ["퍼플렉시티", "perplexity"] }
+]
+<!-- VOC-COMPETITORS END -->
+
+<!-- VOC-THRESHOLDS START -->
+{
+  "sentiment": {
+    "score": { "positive": ">=4", "negative": "<=2", "neutral": "3" },
+    "nps": { "positive": ">=9", "negative": "<=6", "neutral": "7-8" }
+  },
+  "polarization": { "extremeRateThreshold": 70 }
+}
+<!-- VOC-THRESHOLDS END -->
