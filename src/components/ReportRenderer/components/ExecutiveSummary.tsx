@@ -73,12 +73,27 @@ export default function ExecutiveSummary({ data }: Props) {
   }
 
   const hasMetrics = topMetrics.length > 0;
-  const hasFindings = data.keyFindings.length > 0;
+  const hasFindings = (data.keyFindings ?? []).length > 0;
+
+  const headline = (data as unknown as Record<string, unknown>).headline as string | undefined;
 
   return (
     <div>
-      {/* 타이틀 + 설명 — 컨테이너 바깥, 다른 섹션과 좌측 정렬 통일 */}
-      <SectionHeader title="Executive Summary" description={data.description} />
+      {/* 타이틀 — 컨테이너 바깥 */}
+      <p className="text-xs font-medium text-report-text-secondary mb-1">Executive Summary</p>
+      {/* 헤드라인 — 가장 크고 굵게 */}
+      {headline ? (
+        <div className="mb-5">
+          <h3 className="report-section-title mb-3">{headline}</h3>
+          {data.description && (
+            <p className="text-[15px] text-report-text-secondary leading-[24px] whitespace-pre-line">
+              {data.description}
+            </p>
+          )}
+        </div>
+      ) : (
+        <SectionHeader title="Executive Summary" description={data.description} />
+      )}
 
       {/* #f7f7f8 배경 컨테이너 — 카드들만 포함 */}
       <div className="bg-report-bg rounded-section p-[8px] space-y-3">

@@ -1,7 +1,6 @@
 "use client";
 
 import type { ReportSchema, AgentDefinition } from "@/types";
-import { Chip } from "@cubig/design-system";
 import { renderComponent } from "../components";
 
 interface Props {
@@ -15,16 +14,17 @@ export default function SingleSectionLayout({ report, agent }: Props) {
   return (
     <div>
       {/* Page header */}
-      <div className="flex items-start justify-between mb-6">
+      <div className="flex items-start justify-between mb-4">
         <div>
           <h2 className="text-xl font-semibold text-report-text-primary">{agent.name}</h2>
           <p className="text-sm text-report-text-secondary mt-1">{agent.description}</p>
         </div>
-        <Chip type="outline" size="medium" text="내보내기" radius="rounded-2" />
       </div>
+      {/* 구분선 */}
+      <hr className="border-report-border mb-8" />
 
       {/* Sequential sections */}
-      <div className="space-y-8">
+      <div className="[&>*+*]:mt-12 [&>*+*]:pt-12 [&>*+*]:border-t [&>*+*]:border-report-border">
         {(() => {
           const elements: React.ReactNode[] = [];
           let i = 0;
@@ -91,7 +91,51 @@ export default function SingleSectionLayout({ report, agent }: Props) {
               continue;
             }
 
-            // 기본 — bg-report-bg 컨테이너로 감쌈
+            // 같은 타입 차트 2개 연속 + 두 번째에 label 없음 → 2열 그리드로 묶기
+            if (
+              i + 1 < sections.length &&
+              section.componentType === sections[i + 1].componentType &&
+              !sections[i + 1].label
+            ) {
+              const next = sections[i + 1];
+              const sectionLabel = (section as unknown as Record<string, unknown>).sectionLabel as string | undefined;
+              const sLabel = sectionLabel || (next as unknown as Record<string, unknown>).sectionLabel as string | undefined;
+              const sBody = (section.data as unknown as Record<string, unknown>)?.body as string | undefined;
+              const chartTitle1 = (section.data as unknown as Record<string, unknown>)?.chartTitle as string | undefined;
+              const chartTitle2 = (next.data as unknown as Record<string, unknown>)?.chartTitle as string | undefined;
+
+              elements.push(
+                <div key={section.id}>
+                  {sLabel && (
+                    <p className="text-xs font-medium text-report-text-secondary mb-4">{sLabel}</p>
+                  )}
+                  {section.label && (
+                    <h3 className="report-section-title mb-3">{section.label}</h3>
+                  )}
+                  {sBody && (
+                    <p className="text-[15px] text-report-text-secondary mb-8 leading-[24px]">{sBody}</p>
+                  )}
+                  <div className="grid grid-cols-2 gap-6">
+                    <div>
+                      {chartTitle1 && (
+                        <p className="text-[13px] font-semibold text-report-text-primary mb-2">{chartTitle1}</p>
+                      )}
+                      {renderComponent(section.componentType, section.data)}
+                    </div>
+                    <div>
+                      {chartTitle2 && (
+                        <p className="text-[13px] font-semibold text-report-text-primary mb-2">{chartTitle2}</p>
+                      )}
+                      {renderComponent(next.componentType, next.data)}
+                    </div>
+                  </div>
+                </div>
+              );
+              i += 2;
+              continue;
+            }
+
+            // 기본
             // 다음 섹션이 InterpretationBlock/ChecklistCard이면 같은 박스에 포함
             {
               const attached: typeof sections = [];
@@ -101,12 +145,29 @@ export default function SingleSectionLayout({ report, agent }: Props) {
                 j++;
               }
 
+              const sectionLabel = (section as unknown as Record<string, unknown>).sectionLabel as string | undefined;
+              const body = (section.data as unknown as Record<string, unknown>)?.body as string | undefined;
+              const chartTitle = (section.data as unknown as Record<string, unknown>)?.chartTitle as string | undefined;
+
               elements.push(
                 <div key={section.id}>
+                  {/* 섹션 레이블 */}
+                  {sectionLabel && (
+                    <p className="text-xs font-medium text-report-text-secondary mb-4">{sectionLabel}</p>
+                  )}
+                  {/* 헤드라인 */}
                   {section.label && (
                     <h3 className="report-section-title mb-3">{section.label}</h3>
                   )}
-                  <div className="bg-report-bg rounded-section p-[8px] flex flex-col gap-[8px]">
+                  {/* 본문 */}
+                  {body && (
+                    <p className="text-[15px] text-report-text-secondary mb-8 leading-[24px]">{body}</p>
+                  )}
+                  {/* 그래프/표 영역 */}
+                  <div className="flex flex-col gap-[8px]">
+                    {chartTitle && (
+                      <p className="text-[13px] font-semibold text-report-text-primary mb-2">{chartTitle}</p>
+                    )}
                     {renderComponent(section.componentType, section.data)}
                     {attached.map((att) => (
                       <div key={att.id}>{renderComponent(att.componentType, att.data)}</div>

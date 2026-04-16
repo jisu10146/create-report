@@ -13,6 +13,7 @@ export interface StackedBarChartData {
     values: number[];            // categories 순서에 대응하는 값
   }>;
   unit?: string;                 // 값 단위 (예: "h", "%")
+  layout?: "horizontal" | "vertical"; // 기본: horizontal
 }
 
 export default function StackedBarChart({ data }: { data: StackedBarChartData }) {
@@ -31,34 +32,48 @@ export default function StackedBarChart({ data }: { data: StackedBarChartData })
     return row;
   });
 
+  const isVertical = d.layout === "vertical";
+  const allValues = d.items.flatMap((item) => item.values);
+  const minValue = Math.min(...allValues);
   const maxTotal = Math.max(...d.items.map((item) => item.values.reduce((a, b) => a + b, 0)));
-  const leftMargin = Math.min(200, Math.max(80, Math.max(...d.items.map((i) => i.label.length)) * 8 + 16));
+  const leftMargin = isVertical ? 50 : Math.min(200, Math.max(80, Math.max(...d.items.map((i) => i.label.length)) * 8 + 16));
+  const chartHeight = isVertical ? 280 : Math.max(d.items.length * 64, 200);
 
   return (
     <div className="bg-report-card rounded-card p-[24px]">
       {d.title && (
         <p className="text-sm font-semibold text-report-text-primary mb-4">{d.title}</p>
       )}
-      <div style={{ height: Math.max(d.items.length * 64, 200) }}>
+      <div style={{ height: chartHeight }}>
         <ResponsiveBar
           data={chartData}
           keys={d.categories}
           indexBy="label"
-          layout="horizontal"
-          margin={{ top: 0, right: 120, bottom: 0, left: leftMargin }}
+          layout={isVertical ? "vertical" : "horizontal"}
+          margin={isVertical
+            ? { top: 30, right: 20, bottom: 40, left: 50 }
+            : { top: 0, right: 120, bottom: 0, left: leftMargin }
+          }
           padding={0.35}
-          valueScale={{ type: "linear", min: 0, max: Math.ceil(maxTotal * 1.1) }}
+          valueScale={{ type: "linear", min: minValue < 0 ? Math.floor(minValue * 1.2) : 0, max: Math.ceil(maxTotal * 1.1) }}
           colors={(bar) => {
             const idx = d.categories.indexOf(bar.id as string);
             return colors[idx % colors.length];
           }}
           borderRadius={0}
-          enableGridX={false}
+          enableGridX={isVertical}
           enableGridY={false}
           axisTop={null}
           axisRight={null}
-          axisBottom={null}
-          axisLeft={{
+          axisBottom={isVertical ? {
+            tickSize: 0,
+            tickPadding: 8,
+          } : null}
+          axisLeft={isVertical ? {
+            tickSize: 0,
+            tickPadding: 8,
+            format: (v: number) => `${v}${unit}`,
+          } : {
             tickSize: 0,
             tickPadding: 16,
           }}
@@ -89,31 +104,61 @@ export default function StackedBarChart({ data }: { data: StackedBarChartData })
             "grid",
             "axes",
             "bars",
-            /* 바 오른쪽에 합계 라벨 */
+            /* 값 라벨: 가로→바 오른쪽, 세로→바 위쪽 */
             (props) => {
               const grouped: Record<string, number> = {};
-              const barPositions: Record<string, { x: number; y: number; height: number }> = {};
+              const barPositions: Record<string, { x: number; y: number; width: number; height: number }> = {};
               for (const bar of props.bars) {
                 const idx = bar.data.indexValue as string;
                 grouped[idx] = (grouped[idx] ?? 0) + (bar.data.value as number);
-                if (!barPositions[idx] || bar.x + bar.width > (barPositions[idx]?.x ?? 0)) {
-                  barPositions[idx] = { x: bar.x + bar.width, y: bar.y, height: bar.height };
+                const prev = barPositions[idx];
+                if (!prev) {
+                  barPositions[idx] = { x: bar.x, y: bar.y, width: bar.width, height: bar.height };
+                } else {
+                  // 가로: 가장 오른쪽 끝, 세로: 가장 위쪽 끝
+                  if (isVertical) {
+                    if (bar.y < prev.y) {
+                      barPositions[idx] = { ...prev, y: bar.y };
+                    }
+                  } else {
+                    if (bar.x + bar.width > prev.x + prev.width) {
+                      barPositions[idx] = { x: bar.x, y: bar.y, width: bar.width, height: bar.height };
+                    }
+                  }
                 }
               }
               return (
                 <g>
-                  {Object.entries(barPositions).map(([idx, pos]) => (
-                    <text
-                      key={idx}
-                      x={pos.x + 10}
-                      y={pos.y + pos.height / 2}
-                      dominantBaseline="central"
-                      style={{ fontSize: 13, fontWeight: 600 }}
-                      fill={NIVO_TOKEN.textPrimary}
-                    >
-                      {grouped[idx]?.toFixed(1)}{unit}
-                    </text>
-                  ))}
+                  {Object.entries(barPositions).map(([idx, pos]) => {
+                    const val = grouped[idx] ?? 0;
+                    const displayVal = Number.isInteger(val) ? String(val) : val.toFixed(1);
+                    if (isVertical) {
+                      return (
+                        <text
+                          key={idx}
+                          x={pos.x + pos.width / 2}
+                          y={pos.y - 8}
+                          textAnchor="middle"
+                          style={{ fontSize: 12, fontWeight: 600 }}
+                          fill={NIVO_TOKEN.textPrimary}
+                        >
+                          {displayVal}{unit}
+                        </text>
+                      );
+                    }
+                    return (
+                      <text
+                        key={idx}
+                        x={pos.x + pos.width + 10}
+                        y={pos.y + pos.height / 2}
+                        dominantBaseline="central"
+                        style={{ fontSize: 13, fontWeight: 600 }}
+                        fill={NIVO_TOKEN.textPrimary}
+                      >
+                        {displayVal}{unit}
+                      </text>
+                    );
+                  })}
                 </g>
               );
             },
@@ -121,7 +166,7 @@ export default function StackedBarChart({ data }: { data: StackedBarChartData })
             "legends",
             "annotations",
           ]}
-          legends={[
+          legends={d.categories.length > 1 && !isVertical ? [
             {
               dataFrom: "keys",
               anchor: "top-right",
@@ -132,23 +177,25 @@ export default function StackedBarChart({ data }: { data: StackedBarChartData })
               symbolSize: 12,
               symbolShape: "circle",
             },
-          ]}
+          ] : []}
           animate={true}
           motionConfig="gentle"
         />
       </div>
-      {/* 범례 (fallback) */}
-      <div className="flex gap-5 mt-3 justify-center">
-        {d.categories.map((cat, i) => (
-          <div key={cat} className="flex items-center gap-1.5">
-            <div
-              className="w-3 h-3 rounded-full"
-              style={{ backgroundColor: colors[i % colors.length] }}
-            />
-            <span className="text-xs" style={{ color: NIVO_TOKEN.textSecondary }}>{cat}</span>
-          </div>
-        ))}
-      </div>
+      {/* 범례 — 카테고리 2개 이상 + 가로일 때만 */}
+      {d.categories.length > 1 && !isVertical && (
+        <div className="flex gap-5 mt-3 justify-center">
+          {d.categories.map((cat, i) => (
+            <div key={cat} className="flex items-center gap-1.5">
+              <div
+                className="w-3 h-3 rounded-full"
+                style={{ backgroundColor: colors[i % colors.length] }}
+              />
+              <span className="text-xs" style={{ color: NIVO_TOKEN.textSecondary }}>{cat}</span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
