@@ -6,57 +6,50 @@
   "inputType": "file",
   "layout": "single-section",
   "modalType": "none",
-  "storyLine": "별점 양극화(1점+5점 74.4%) → 1점은 63자·기능 52%로 깊게 쓰는 사용자, 5점은 16자·11%로 가볍게 쓰는 사용자 → 버그(영향도 13.8)·계정(9.0)·릴스(7.8)가 개선 1-3순위 → 버그 수정+계정 복구 개선+릴스 설정으로 부정률 42%→25%",
-  "keyDecision": "버그 수정 vs 계정 보안 강화 vs 릴스 UX 개선 중 어디에 우선 투자할 것인가",
-  "personaCritic": {
-    "persona": "소셜 미디어 앱 프로덕트 매니저. 주 관심사: 앱 스토어 평점, 사용자 이탈 원인, 제품 로드맵 우선순위",
-    "removed": [],
-    "kept": [
-      "모든 섹션 high"
-    ]
-  },
+  "storyLine": "별점 분포 현황 → 별점 그룹 간 차이 해석 → 영역별 감성 분석 → 부정 영역 심층 비교 → 긍정 가치와 리스크 → 개선 로드맵",
+  "keyDecision": "부정 영역 중 어디에 우선 투자할 것인가",
   "reportSections": [
     {
       "id": "executive-summary",
+      "headline": "리포트 전체 결론",
       "componentType": "ExecutiveSummary",
-      "reason": "전체 고객 감정 상태를 한눈에",
-      "headline": "Executive Summary"
+      "reason": "전체 요약 — 핵심 결론과 맥락을 한눈에 전달"
     },
     {
       "id": "sentiment-overview",
-      "componentType": "MetricHighlight",
-      "reason": "[건강] 전반적으로 어떤 상태인가",
-      "headline": "평균 별점 3.10, 부정 42% — 1점과 5점에 74.4%가 몰린 양극화 구조"
+      "headline": "별점 분포 현황",
+      "componentType": "HorizontalBarChart",
+      "reason": "[리뷰 현황] 별점 분포를 시각화하여 표면 점수와 실제 만족도의 괴리를 보여줌"
     },
     {
-      "id": "polarization-personas",
+      "id": "polarization-interpretation",
+      "headline": "별점 그룹 간 차이 해석",
       "componentType": "ClusterCard",
-      "reason": "[양극화 해석] 왜 중간이 없는가를 데이터 근거로 해석",
-      "headline": "1점은 평균 63자·기능 언급 52%, 5점은 16자·11% — 깊게 쓸수록 불만이 발생하는 구조"
+      "reason": "[별점 분석] 별점 그룹별 리뷰 특성(길이, 구체성 등)을 비교하여 어떤 리뷰가 더 유의미한지 해석"
     },
     {
       "id": "topic-impact",
+      "headline": "영역별 부정 집중도",
       "componentType": "StackedBarChart",
-      "reason": "[토픽×감성] 어떤 주제에서 부정적인가, 비중과 함께 우선순위 설득",
-      "headline": "버그(영향도 13.8)·계정(9.0)·릴스(7.8) — 비중×부정률 기준 개선 우선순위"
+      "reason": "[영역별 감성 분석] 영역×감성 분포를 시각화하여 자원을 먼저 써야 할 영역을 특정"
     },
     {
       "id": "negative-deep-dive",
-      "componentType": "InsightCard",
-      "reason": "[부정 심층] 부정 토픽의 근본 원인을 고객 원문으로 진단",
-      "headline": "버그 반복·계정 정지·릴스 강제 이동 — 세 가지 불만의 공통 뿌리는 사용자 통제권 부재"
+      "headline": "부정 영역 비교 분석",
+      "componentType": "DonutChart",
+      "reason": "[부정 심층 분석] 부정 리뷰의 영역별 비중을 시각화하고, 상위 영역의 공통 패턴을 설명으로 전달"
     },
     {
       "id": "positive-protect",
-      "componentType": "InsightCard",
-      "reason": "[긍정 분석] 고치면서 잃으면 안 되는 것 파악",
-      "headline": "긍정의 실체는 대체재 부재 기반의 습관적 만족 — 5점의 64%가 10자 이하"
+      "headline": "긍정 심층 분석",
+      "componentType": "DonutChart",
+      "reason": "[긍정 심층 분석] 긍정 리뷰의 영역별 비중을 시각화하고, 고유 가치와 이탈 리스크를 설명으로 전달"
     },
     {
       "id": "action-plan",
+      "headline": "개선 로드맵",
       "componentType": "StrategyTable",
-      "reason": "[결론] 고칠 것과 지킬 것을 분리한 로드맵",
-      "headline": "버그 핫픽스 + 계정 복구 개선 + 릴스 설정으로 부정률 42%→25%"
+      "reason": "[개선 로드맵] 즉시/단기/중기 실행 계획과 기대 효과를 정리"
     }
   ],
   "promptTemplate": ""

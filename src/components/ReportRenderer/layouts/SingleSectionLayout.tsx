@@ -31,8 +31,10 @@ export default function SingleSectionLayout({ report, agent }: Props) {
           while (i < sections.length) {
             const section = sections[i];
 
-            // DonutChart → 다음 섹션과 2열 그리드로 묶기
-            if (section.componentType === "DonutChart" && i + 1 < sections.length) {
+            // DonutChart → description 없으면 다음 섹션과 2열 그리드로 묶기
+            // description 있으면 독립 섹션으로 렌더링 (기본 경로)
+            const donutHasDesc = !!(section.data as Record<string, unknown>)?.description;
+            if (section.componentType === "DonutChart" && i + 1 < sections.length && !donutHasDesc && sections[i + 1].componentType !== "DonutChart") {
               const next = sections[i + 1];
               elements.push(
                 <div key={section.id}>
