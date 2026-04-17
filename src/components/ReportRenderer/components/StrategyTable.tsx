@@ -26,6 +26,22 @@ const PHASES: Array<{
 
 const COLUMNS = ["Strategy", "Objective", "Action Plan", "Expected Impact"];
 
+/** \n이 포함된 텍스트를 불렛 리스트로 렌더링 */
+function CellText({ text }: { text: string }) {
+  if (!text.includes("\n")) return <>{text}</>;
+  const lines = text.split("\n").filter(Boolean);
+  return (
+    <ul className="list-none space-y-[4px] m-0 p-0">
+      {lines.map((line, i) => (
+        <li key={i} className="flex items-start gap-[6px]">
+          <span className="mt-[10px] w-[4px] h-[4px] rounded-full bg-report-text-muted shrink-0" />
+          <span>{line}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function PhaseBadge({ label, bg, color }: { label: string; bg: string; color: string }) {
   return (
     <span
@@ -104,13 +120,13 @@ export default function StrategyTable({ data }: { data: StrategyTableData }) {
                   className="px-[16px] py-[18px] text-[16px] font-normal leading-[24px] align-top"
                   style={{ color: "#171719" }}
                 >
-                  {row.actionPlan}
+                  <CellText text={row.actionPlan} />
                 </td>
                 <td
                   className="px-[16px] py-[18px] text-[16px] font-normal leading-[24px] align-top"
                   style={{ color: "#171719" }}
                 >
-                  {row.expectedImpact}
+                  <CellText text={row.expectedImpact} />
                 </td>
               </tr>
             ));

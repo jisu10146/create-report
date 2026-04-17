@@ -95,25 +95,27 @@ export default function ExecutiveSummary({ data }: Props) {
         <SectionHeader title="Executive Summary" description={data.description} />
       )}
 
-      {/* #f7f7f8 배경 컨테이너 — 카드들만 포함 */}
-      <div className="bg-report-bg rounded-section p-[8px] space-y-3">
-        {/* 메트릭 카드들 */}
-        {hasMetrics && (
-          <div
-            className="grid gap-3"
-            style={{ gridTemplateColumns: `repeat(${topMetrics.length}, 1fr)` }}
-          >
-            {topMetrics.map((m, i) => (
-              <MetricBox key={i} label={m.label} value={m.value} />
-            ))}
-          </div>
-        )}
+      {/* #f7f7f8 배경 컨테이너 — 카드가 있을 때만 렌더링 */}
+      {(hasMetrics || hasFindings) && (
+        <div className="bg-report-bg rounded-section p-[8px] space-y-3">
+          {/* 메트릭 카드들 */}
+          {hasMetrics && (
+            <div
+              className="grid gap-3"
+              style={{ gridTemplateColumns: `repeat(${topMetrics.length}, 1fr)` }}
+            >
+              {topMetrics.map((m, i) => (
+                <MetricBox key={i} label={m.label} value={m.value} />
+              ))}
+            </div>
+          )}
 
-        {/* Key Findings */}
-        {hasFindings && (
-          <KeyFindingsCard findings={data.keyFindings} />
-        )}
-      </div>
+          {/* Key Findings */}
+          {hasFindings && (
+            <KeyFindingsCard findings={data.keyFindings} />
+          )}
+        </div>
+      )}
     </div>
   );
 }

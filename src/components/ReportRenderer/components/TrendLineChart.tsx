@@ -87,7 +87,7 @@ export default function TrendLineChart({ data }: { data: TrendLineChartData }) {
           </div>
         ))}
         {benchmarkData.map((b) => (
-          <div key={b.id} className="flex items-center gap-1.5">
+          <div key={`bm-${b.id}`} className="flex items-center gap-1.5">
             <div className="w-3 h-[2px] rounded-full" style={{ backgroundColor: b.color, borderTop: `2px dashed ${b.color}` }} />
             <span className="text-xs" style={{ color: b.color }}>{b.id}</span>
           </div>

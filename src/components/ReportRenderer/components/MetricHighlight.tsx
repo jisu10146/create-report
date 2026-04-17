@@ -13,7 +13,7 @@ import type { MetricHighlightData, MetricHighlightItem } from "@/types";
 
 function SingleCard({ item }: { item: MetricHighlightItem }) {
   return (
-    <div className="bg-report-card rounded-card p-[24px] flex flex-col gap-[16px]">
+    <div className="p-[24px] flex flex-col gap-[16px]">
       {/* Metric */}
       <div className="flex flex-col gap-[10px]">
         <span className="text-[14px] font-medium leading-[20px] text-report-text-primary">
@@ -46,7 +46,7 @@ export default function MetricHighlight({ data }: { data: MetricHighlightData })
   // items 배열 형태
   if ("items" in data && Array.isArray(data.items)) {
     return (
-      <div className="grid grid-cols-3 gap-3">
+      <div className={`grid gap-3 ${data.items.length >= 3 ? "grid-cols-3" : "grid-cols-2"}`}>
         {data.items.map((item, i) => (
           <SingleCard key={i} item={item} />
         ))}

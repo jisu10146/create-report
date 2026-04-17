@@ -17,7 +17,7 @@ import type { InsightCardData, InsightCardItem } from "@/types";
 
 function SingleCard({ item }: { item: InsightCardItem }) {
   return (
-    <div className="bg-report-card rounded-card p-[24px] flex flex-col gap-[24px]">
+    <div className="p-[24px] flex flex-col gap-[24px]">
       <div className="flex flex-col gap-[16px]">
         <div className="flex flex-col gap-[24px]">
           {item.badge && (
@@ -45,7 +45,7 @@ export default function InsightCard({ data }: { data: InsightCardData }) {
   // items 배열 형태
   if ("items" in data && Array.isArray(data.items)) {
     return (
-      <div className="grid grid-cols-3 gap-3">
+      <div className="flex flex-col gap-6">
         {data.items.map((item, i) => (
           <SingleCard key={i} item={item} />
         ))}

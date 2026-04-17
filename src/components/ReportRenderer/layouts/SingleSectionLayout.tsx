@@ -21,10 +21,10 @@ export default function SingleSectionLayout({ report, agent }: Props) {
         </div>
       </div>
       {/* 구분선 */}
-      <hr className="border-report-border mb-8" />
+      <hr className="border-report-border mb-14" />
 
       {/* Sequential sections */}
-      <div className="[&>*+*]:mt-12 [&>*+*]:pt-12 [&>*+*]:border-t [&>*+*]:border-report-border">
+      <div className="[&>*+*]:mt-16 [&>*+*]:pt-14 [&>*+*]:border-t [&>*+*]:border-report-border">
         {(() => {
           const elements: React.ReactNode[] = [];
           let i = 0;

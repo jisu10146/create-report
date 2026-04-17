@@ -23,7 +23,7 @@ export default function ClusterCard({ data }: { data: ClusterCardData }) {
       {data.items.map((cluster, i) => (
         <div
           key={i}
-          className="bg-report-card rounded-card p-[24px] flex flex-row gap-[24px]"
+          className="p-[24px] flex flex-row gap-[24px]"
         >
           <div className="flex flex-col gap-[32px] flex-1">
             {/* Badge pill */}
