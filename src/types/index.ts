@@ -25,7 +25,7 @@ export interface ReportTab {
 
 export interface ReportSection {
   id: string;
-  label: string;
+  headline: string;
   componentType: ComponentType;
   repeatsPerItem?: boolean;
   reason?: string;
@@ -61,7 +61,7 @@ export interface ExecutiveSummary {
 
 export interface ReportSectionData {
   id: string;
-  label: string;
+  headline: string;
   componentType: ComponentType;
   data: unknown;
 }

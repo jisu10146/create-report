@@ -38,7 +38,7 @@ export default async function PreviewPage({ params, searchParams }: Props) {
         </span>
       </nav>
 
-      <main className="max-w-[1720px] mx-auto px-6 py-8">
+      <main className="max-w-[1720px] mx-auto px-16 pt-10 pb-24">
         <ReportRenderer report={report!} agent={agent!} />
       </main>
     </div>

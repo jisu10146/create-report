@@ -125,7 +125,7 @@ export async function POST(req: NextRequest) {
           modalType: agent.modalType as "none" | "persona-detail",
           reportSections: (agent.reportSections ?? []).map((s) => ({
             id: s.id,
-            label: s.label,
+            headline: s.headline,
             componentType: s.componentType,
             reason: s.reason ?? "",
           })),

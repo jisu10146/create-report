@@ -8,23 +8,12 @@ interface Props {
   };
 }
 
-/* ─── Sub-blocks ─── */
+/**
+ * ExecutiveSummary — topMetrics + keyFindings 카드만 렌더링.
+ * sectionLabel / label(헤드라인) / body(디스크립션)는 레이아웃이 처리.
+ * topMetrics·keyFindings가 없으면 아무것도 렌더링하지 않음.
+ */
 
-/** 섹션 제목 + 설명 (재사용 가능) */
-function SectionHeader({ title, description }: { title: string; description?: string }) {
-  return (
-    <div className="mb-5">
-      <h3 className="report-section-title">{title}</h3>
-      {description && (
-        <p className="text-base text-report-text-secondary leading-relaxed mt-1">
-          {description}
-        </p>
-      )}
-    </div>
-  );
-}
-
-/** 메트릭 카드 한 장 (#ffffff 카드) */
 function MetricBox({ label, value }: { label: string; value: string | number }) {
   return (
     <div className="bg-report-card rounded-card p-[24px]">
@@ -34,7 +23,6 @@ function MetricBox({ label, value }: { label: string; value: string | number }) 
   );
 }
 
-/** Key Findings 카드 (#ffffff 카드) */
 function KeyFindingsCard({ findings }: { findings: string[] }) {
   return (
     <div className="bg-report-card rounded-card p-[24px]">
@@ -57,8 +45,6 @@ function KeyFindingsCard({ findings }: { findings: string[] }) {
   );
 }
 
-/* ─── Main ─── */
-
 export default function ExecutiveSummary({ data }: Props) {
   const topMetrics: Array<{ label: string; value: string | number }> =
     data.topMetrics ? [...data.topMetrics] : [];
@@ -75,49 +61,25 @@ export default function ExecutiveSummary({ data }: Props) {
   const hasMetrics = topMetrics.length > 0;
   const hasFindings = (data.keyFindings ?? []).length > 0;
 
-  const headline = (data as unknown as Record<string, unknown>).headline as string | undefined;
+  if (!hasMetrics && !hasFindings) return null;
 
   return (
-    <div>
-      {/* 타이틀 — 컨테이너 바깥 */}
-      <p className="text-xs font-medium text-report-text-secondary mb-1">Executive Summary</p>
-      {/* 헤드라인 — 가장 크고 굵게 */}
-      {headline ? (
-        <div className="mb-5">
-          <h3 className="report-section-title mb-3">{headline}</h3>
-          {data.description && (
-            <p className="text-[15px] text-report-text-secondary leading-[24px] whitespace-pre-line">
-              {data.description}
-            </p>
-          )}
+    <div className="bg-report-bg rounded-section p-[8px] space-y-3">
+      {hasMetrics && (
+        <div
+          className="grid gap-3"
+          style={{ gridTemplateColumns: `repeat(${topMetrics.length}, 1fr)` }}
+        >
+          {topMetrics.map((m, i) => (
+            <MetricBox key={i} label={m.label} value={m.value} />
+          ))}
         </div>
-      ) : (
-        <SectionHeader title="Executive Summary" description={data.description} />
       )}
-
-      {/* #f7f7f8 배경 컨테이너 — 카드가 있을 때만 렌더링 */}
-      {(hasMetrics || hasFindings) && (
-        <div className="bg-report-bg rounded-section p-[8px] space-y-3">
-          {/* 메트릭 카드들 */}
-          {hasMetrics && (
-            <div
-              className="grid gap-3"
-              style={{ gridTemplateColumns: `repeat(${topMetrics.length}, 1fr)` }}
-            >
-              {topMetrics.map((m, i) => (
-                <MetricBox key={i} label={m.label} value={m.value} />
-              ))}
-            </div>
-          )}
-
-          {/* Key Findings */}
-          {hasFindings && (
-            <KeyFindingsCard findings={data.keyFindings} />
-          )}
-        </div>
+      {hasFindings && (
+        <KeyFindingsCard findings={data.keyFindings} />
       )}
     </div>
   );
 }
 
-export { SectionHeader, MetricBox, KeyFindingsCard };
+export { MetricBox, KeyFindingsCard };

@@ -7,13 +7,48 @@
   "layout": "single-section",
   "modalType": "none",
   "reportSections": [
-    { "id": "executive-summary", "label": "Executive Summary", "componentType": "ExecutiveSummary", "reason": "핵심 발견 요약 (필수, 맨 앞)" },
-    { "id": "price-sensitivity-kpi", "label": "가격 민감도 핵심 지표", "componentType": "MetricHighlight", "reason": "Q1 대응 — PSM 핵심 수치(OPP, IDP, PME) 강조" },
-    { "id": "price-acceptance-chart", "label": "가격대별 수용도 분포", "componentType": "HorizontalBarChart", "reason": "Q2 대응 — 가격대별 수용률 시각화" },
-    { "id": "chart-interpretation", "label": "", "componentType": "InterpretationBlock", "reason": "차트 바로 뒤 AI 해석" },
-    { "id": "matched-personas", "label": "매칭된 소비자 프로필", "componentType": "UserCard", "reason": "Q3 대응 — 페르소나 DB 매칭 결과" },
-    { "id": "pricing-insight", "label": "가격 전략 인사이트", "componentType": "InsightCard", "reason": "Q4 대응 — 핵심 발견 강조" },
-    { "id": "execution-plan", "label": "실행 계획", "componentType": "StrategyTable", "reason": "실무 담당자 대상 → 구체적 실행안 필요" }
+    {
+      "id": "executive-summary",
+      "componentType": "ExecutiveSummary",
+      "reason": "핵심 발견 요약 (필수, 맨 앞)",
+      "headline": "Executive Summary"
+    },
+    {
+      "id": "price-sensitivity-kpi",
+      "componentType": "MetricHighlight",
+      "reason": "Q1 대응 — PSM 핵심 수치(OPP, IDP, PME) 강조",
+      "headline": "가격 민감도 핵심 지표"
+    },
+    {
+      "id": "price-acceptance-chart",
+      "componentType": "HorizontalBarChart",
+      "reason": "Q2 대응 — 가격대별 수용률 시각화",
+      "headline": "가격대별 수용도 분포"
+    },
+    {
+      "id": "chart-interpretation",
+      "componentType": "InterpretationBlock",
+      "reason": "차트 바로 뒤 AI 해석",
+      "headline": ""
+    },
+    {
+      "id": "matched-personas",
+      "componentType": "UserCard",
+      "reason": "Q3 대응 — 페르소나 DB 매칭 결과",
+      "headline": "매칭된 소비자 프로필"
+    },
+    {
+      "id": "pricing-insight",
+      "componentType": "InsightCard",
+      "reason": "Q4 대응 — 핵심 발견 강조",
+      "headline": "가격 전략 인사이트"
+    },
+    {
+      "id": "execution-plan",
+      "componentType": "StrategyTable",
+      "reason": "실무 담당자 대상 → 구체적 실행안 필요",
+      "headline": "실행 계획"
+    }
   ],
   "promptTemplate": ""
 }

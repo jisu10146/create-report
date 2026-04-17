@@ -102,7 +102,7 @@ storyLine: ${strategy.storyLine}
 category: ${strategy.category}
 
 섹션:
-${strategy.sections.map((s) => `- ${s.id} | ${s.label} | dataHint: "${s.dataHint}"`).join("\n")}
+${strategy.sections.map((s) => `- ${s.id} | ${s.headline} | dataHint: "${s.dataHint}"`).join("\n")}
 
 각 섹션의 dataHint를 보고, 가장 적합한 컴포넌트를 매칭해줘.
 섹션 id는 그대로 유지해.

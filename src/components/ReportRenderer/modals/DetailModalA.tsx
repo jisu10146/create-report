@@ -59,8 +59,8 @@ export default function DetailModalA({ data, onClose }: Props) {
       <div className="space-y-4 mt-4">
         {visibleSections.map((section) => (
           <div key={section.id}>
-            {section.label && (
-              <h4 className="text-sm font-semibold text-gray-700 mb-2">{section.label}</h4>
+            {section.headline && (
+              <h4 className="text-sm font-semibold text-gray-700 mb-2">{section.headline}</h4>
             )}
             {renderComponent(section.componentType, section.data)}
           </div>

@@ -107,7 +107,7 @@ export async function runTagAgent(
       .filter((s) => s.id !== context.sectionId)
       .map((s) => ({
         id: s.id,
-        label: (s as Record<string, unknown>).label,
+        headline: (s as Record<string, unknown>).headline,
         componentType: s.componentType,
       }));
     parts.push(`다른 섹션 (참고):\n${JSON.stringify(others, null, 2)}`);

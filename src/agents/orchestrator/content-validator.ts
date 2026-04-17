@@ -103,13 +103,13 @@ export function validateContent(
   // ── 1. 섹션 라벨 (블루프린트 기준) ──
   for (const bs of blueprint.reportSections) {
     if (bs.id === "executive-summary") continue;
-    if (!isHeadlineLeadWithMessage(bs.label)) {
+    if (!isHeadlineLeadWithMessage(bs.headline)) {
       issues.push({
         sectionId: bs.id,
         componentType: bs.componentType,
         field: "label",
         rule: "headline-lead-with-message",
-        message: `섹션 라벨이 수치/통계로 시작 — 두괄식 인사이트가 먼저 와야 함: "${bs.label}"`,
+        message: `섹션 라벨이 수치/통계로 시작 — 두괄식 인사이트가 먼저 와야 함: "${bs.headline}"`,
         fix: "라벨의 '—' 좌측을 인사이트(메시지)로 바꾸고, 수치는 우측으로 이동",
       });
     }

@@ -1,20 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
 import { loadAgentDefinition } from "@/lib/reportNormalizer";
-import { callClaude } from "@/lib/claude";
-import { normalizeReport } from "@/lib/reportNormalizer";
+import { resetTokenLog, getTotalTokens } from "@/lib/claude";
+import { runReportPipeline } from "@/agents/runner/pipeline";
 
 export async function POST(req: NextRequest) {
   try {
     const { agentId, input } = await req.json() as { agentId: string; input: string };
 
+    resetTokenLog();
+
     const agent = await loadAgentDefinition(agentId);
-    const prompt = agent.promptTemplate.replace("{input}", input ?? "");
+    const report = await runReportPipeline(agent, input ?? "");
 
-    const raw = await callClaude(prompt);
-    const parsed = JSON.parse(raw);
-    const report = normalizeReport(parsed, agent);
+    const tokenUsage = getTotalTokens();
+    console.log(`[token-usage] input: ${tokenUsage.input}, output: ${tokenUsage.output}, total: ${tokenUsage.total}`);
 
-    return NextResponse.json(report);
+    return NextResponse.json({ ...report, _tokenUsage: tokenUsage });
   } catch (err) {
     console.error("[run-agent]", err);
     return NextResponse.json(

@@ -157,9 +157,9 @@ function AgentStructureCard({ agent }: { agent: AgentDefinition }) {
   const sections =
     agent.layout === "tab-grid"
       ? agent.reportTabs?.flatMap((tab) =>
-          tab.sections.map((s) => ({ label: `[${tab.label}] ${s.label}`, componentType: s.componentType }))
+          tab.sections.map((s) => ({ label: `[${tab.label}] ${s.headline}`, componentType: s.componentType }))
         ) ?? []
-      : agent.reportSections?.map((s) => ({ label: s.label, componentType: s.componentType })) ?? [];
+      : agent.reportSections?.map((s) => ({ label: s.headline, componentType: s.componentType })) ?? [];
 
   return (
     <div className="bg-white border border-gray-200 rounded-xl p-6 space-y-5">
@@ -184,7 +184,7 @@ function AgentStructureCard({ agent }: { agent: AgentDefinition }) {
           <div key={i} className="flex items-center justify-between gap-3">
             <span className="text-sm text-gray-700">
               <span className="text-gray-400 font-mono text-xs mr-2">{String(i + 1).padStart(2, "0")}</span>
-              {s.label}
+              {s.headline}
             </span>
             <ComponentBadge type={s.componentType} />
           </div>

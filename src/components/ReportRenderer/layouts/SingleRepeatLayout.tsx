@@ -64,8 +64,8 @@ export default function SingleRepeatLayout({ report, agent }: Props) {
 
             elements.push(
               <div key={section.id}>
-                {section.label && (
-                  <h3 className="report-section-title mb-2">{section.label}</h3>
+                {section.headline && (
+                  <h3 className="report-section-title mb-2">{section.headline}</h3>
                 )}
                 <div className="bg-report-bg rounded-section p-[8px] flex flex-col gap-[8px]">
                   {renderComponent(section.componentType, section.data)}

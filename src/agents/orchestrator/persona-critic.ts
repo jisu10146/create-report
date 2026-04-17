@@ -27,7 +27,7 @@ export async function runPersonaCritic(
 설명: ${blueprint.description}
 
 agent.json 섹션 구성:
-${JSON.stringify(blueprint.reportSections.map(s => ({ id: s.id, label: s.label, componentType: s.componentType })), null, 2)}
+${JSON.stringify(blueprint.reportSections.map(s => ({ id: s.id, headline: s.headline, componentType: s.componentType })), null, 2)}
 
 sample.json (일부):
 ${JSON.stringify(sampleReport, null, 2).slice(0, 5000)}

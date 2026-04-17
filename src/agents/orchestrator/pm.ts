@@ -100,7 +100,7 @@ function summarizeSW(sw: StrategyWriterOutput): {
     storyLine: sw.storyLine,
     category: sw.category,
     keyDecision: sw.keyDecision,
-    sections: sw.sections.map((s) => ({ id: s.id, label: s.label, reason: s.reason })),
+    sections: sw.sections.map((s) => ({ id: s.id, headline: s.headline, reason: s.reason })),
   };
 }
 
@@ -119,7 +119,7 @@ async function preCheck(
   input: OrchestratorInput,
   strategy: StrategyWriterOutput
 ): Promise<{ passed: boolean; feedback?: string }> {
-  const sectionSummary = strategy.sections.map((s) => s.id + ": " + s.label).join("\n");
+  const sectionSummary = strategy.sections.map((s) => s.id + ": " + s.headline).join("\n");
   const keyFindingsSummary = (strategy.executiveSummary?.keyFindings ?? [])
     .map((kf, i) => `  ${i + 1}) ${kf}`)
     .join("\n");
