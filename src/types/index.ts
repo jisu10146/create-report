@@ -144,10 +144,23 @@ export interface StrategyTableRow {
   expectedImpact: string;
 }
 
+export interface StrategyTablePhaseLabel {
+  /** 뱃지 텍스트 (예: "Immediate", "즉시") */
+  label?: string;
+  /** 서브 텍스트 (예: "within 1 week", "1주 이내") */
+  sub?: string;
+}
+
 export interface StrategyTableData {
   immediate: StrategyTableRow[];
   short: StrategyTableRow[];
   mid: StrategyTableRow[];
+  /** 선택: phase 뱃지·서브텍스트 override. 생략 시 기본값(영문) 사용 */
+  phases?: {
+    immediate?: StrategyTablePhaseLabel;
+    short?: StrategyTablePhaseLabel;
+    mid?: StrategyTablePhaseLabel;
+  };
 }
 
 export interface RevenueScenario {

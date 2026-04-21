@@ -6,7 +6,7 @@
   "inputType": "file",
   "layout": "single-section",
   "modalType": "none",
-  "storyLine": "별점 분포 현황 → 별점 그룹 간 차이 해석 → 영역별 감성 분석 → 부정 영역 심층 비교 → 긍정 가치와 리스크 → 개선 로드맵",
+  "storyLine": "별점 분포 현황 → 영역별 긍정/부정 → 부정 영역 심층 비교 → 긍정 가치와 리스크 → 개선 로드맵",
   "keyDecision": "부정 영역 중 어디에 우선 투자할 것인가",
   "reportSections": [
     {
@@ -22,28 +22,22 @@
       "reason": "[리뷰 현황] 별점 분포를 시각화하여 표면 점수와 실제 만족도의 괴리를 보여줌"
     },
     {
-      "id": "polarization-interpretation",
-      "headline": "별점 그룹 간 차이 해석",
-      "componentType": "ClusterCard",
-      "reason": "[별점 분석] 별점 그룹별 리뷰 특성(길이, 구체성 등)을 비교하여 어떤 리뷰가 더 유의미한지 해석"
-    },
-    {
       "id": "topic-impact",
-      "headline": "영역별 부정 집중도",
+      "headline": "영역별 긍정/부정",
       "componentType": "StackedBarChart",
-      "reason": "[영역별 감성 분석] 영역×감성 분포를 시각화하여 자원을 먼저 써야 할 영역을 특정"
+      "reason": "[영역별 긍정/부정] 영역×감성 분포를 시각화하여 자원을 먼저 써야 할 영역을 특정"
     },
     {
       "id": "negative-deep-dive",
       "headline": "부정 영역 비교 분석",
       "componentType": "DonutChart",
-      "reason": "[부정 심층 분석] 부정 리뷰의 영역별 비중을 시각화하고, 상위 영역의 공통 패턴을 설명으로 전달"
+      "reason": "[부정 심층 분석] 부정 리뷰의 영역별 비중을 시각화하고, 부정 리뷰의 작성 특성(문제 집중도·표현 강도)과 상위 영역의 공통 패턴을 설명으로 전달"
     },
     {
       "id": "positive-protect",
       "headline": "긍정 심층 분석",
       "componentType": "DonutChart",
-      "reason": "[긍정 심층 분석] 긍정 리뷰의 영역별 비중을 시각화하고, 고유 가치와 이탈 리스크를 설명으로 전달"
+      "reason": "[긍정 심층 분석] 긍정 리뷰의 영역별 비중을 시각화하고, 긍정 리뷰의 작성 특성(만족 유형·구체성)과 고유 가치·이탈 리스크를 설명으로 전달"
     },
     {
       "id": "action-plan",

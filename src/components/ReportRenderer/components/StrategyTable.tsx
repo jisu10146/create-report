@@ -14,14 +14,16 @@ import type { StrategyTableData } from "@/types";
 const PHASE_BADGE = { bg: "#eff6ff", text: "#2b7fff" };
 const STRATEGY_BADGE = { bg: "#f3f4f6", text: "#171719" };
 
-const PHASES: Array<{
-  key: keyof StrategyTableData;
+type PhaseKey = "immediate" | "short" | "mid";
+
+const DEFAULT_PHASES: Array<{
+  key: PhaseKey;
   label: string;
   sub: string;
 }> = [
-  { key: "immediate", label: "Immediate", sub: "within 1 week" },
-  { key: "short", label: "Short-term", sub: "within 1 month" },
-  { key: "mid", label: "Mid-term", sub: "within 3 months" },
+  { key: "immediate", label: "즉시", sub: "1주 이내" },
+  { key: "short", label: "단기", sub: "1개월 이내" },
+  { key: "mid", label: "중기", sub: "3개월 이내" },
 ];
 
 const COLUMNS = ["Strategy", "Objective", "Action Plan", "Expected Impact"];
@@ -54,6 +56,12 @@ function PhaseBadge({ label, bg, color }: { label: string; bg: string; color: st
 }
 
 export default function StrategyTable({ data }: { data: StrategyTableData }) {
+  const phases = DEFAULT_PHASES.map((p) => ({
+    key: p.key,
+    label: data.phases?.[p.key]?.label ?? p.label,
+    sub: data.phases?.[p.key]?.sub ?? p.sub,
+  }));
+
   return (
     <div className="bg-report-card border border-report-border rounded-card overflow-hidden">
       <table className="w-full table-fixed">
@@ -78,7 +86,7 @@ export default function StrategyTable({ data }: { data: StrategyTableData }) {
           </tr>
         </thead>
         <tbody>
-          {PHASES.map((phase) => {
+          {phases.map((phase) => {
             const rows = data[phase.key] ?? [];
             if (rows.length === 0) return null;
             return rows.map((row, i) => (

@@ -157,6 +157,11 @@
       "label": "버그 핫픽스 + 계정 복구 개선 + 릴스 설정으로 부정률 42%→25%",
       "componentType": "StrategyTable",
       "data": {
+        "phases": {
+          "immediate": { "label": "즉시", "sub": "1주 이내" },
+          "short": { "label": "단기", "sub": "1개월 이내" },
+          "mid": { "label": "중기", "sub": "3개월 이내" }
+        },
         "immediate": [
           {
             "strategy": "영향도 상위 버그 핫픽스",

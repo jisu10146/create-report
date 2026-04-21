@@ -169,6 +169,11 @@
       "label": "NPS -22→+10 달성 — 자동 배정 + 셀프서비스 + 상담원 교육",
       "componentType": "StrategyTable",
       "data": {
+        "phases": {
+          "immediate": { "label": "즉시", "sub": "1주 이내" },
+          "short": { "label": "단기", "sub": "1개월 이내" },
+          "mid": { "label": "중기", "sub": "3개월 이내" }
+        },
         "immediate": [
           {
             "strategy": "기능 오류 자동 배정 도입",
