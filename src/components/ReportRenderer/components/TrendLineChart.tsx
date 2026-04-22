@@ -4,43 +4,110 @@ import { ResponsiveLine } from "@nivo/line";
 import { reportNivoTheme, NIVO_TOKEN } from "@/lib/design-system/nivo-theme";
 import { CHART_PALETTE } from "@/lib/design-system/chart-spec";
 
+export type MetricType = "nps" | "csat" | "time" | "percent" | "count" | "raw";
+
+export interface TrendLineReference {
+  id?: string;
+  label?: string;
+  value: number;
+  unit?: string;
+  color?: string;
+  contextText?: string;
+}
+
+export interface TrendLineSeries {
+  id: string;
+  values: number[];
+  unit?: string;
+  color?: string;
+  metricType?: MetricType;
+}
+
 export interface TrendLineChartData {
   title?: string;
   xLabels: string[];
-  series: Array<{
-    id: string;
-    values: number[];
-    unit?: string;
-    color?: string;
-  }>;
-  benchmarks?: Array<{
-    id: string;
-    value: number;
-    unit?: string;
-    color?: string;
-  }>;
+  series: TrendLineSeries[];
+  references?: TrendLineReference[];
+  /** @deprecated use `references` */
+  benchmarks?: TrendLineReference[];
+}
+
+const METRIC_CONFIG: Record<MetricType, {
+  minDisplayRange: number | ((max: number) => number);
+  bounds: [number, number];
+}> = {
+  nps:     { minDisplayRange: 10,  bounds: [-100, 100] },
+  csat:    { minDisplayRange: 0.5, bounds: [1, 5] },
+  time:    { minDisplayRange: (max) => Math.max(2, Math.abs(max) * 0.2), bounds: [0, Infinity] },
+  percent: { minDisplayRange: 5,   bounds: [0, 100] },
+  count:   { minDisplayRange: (max) => Math.max(Math.abs(max) * 0.2, 1), bounds: [0, Infinity] },
+  raw:     { minDisplayRange: 0,   bounds: [-Infinity, Infinity] },
+};
+
+function niceStep(range: number): number {
+  if (range <= 5)   return 1;
+  if (range <= 10)  return 2;
+  if (range <= 25)  return 5;
+  if (range <= 50)  return 10;
+  if (range <= 100) return 20;
+  if (range <= 250) return 50;
+  return 100;
+}
+
+const niceFloor = (v: number, s: number) => Math.floor(v / s) * s;
+const niceCeil  = (v: number, s: number) => Math.ceil (v / s) * s;
+
+function computeYScale(values: number[], metricType: MetricType, refs: TrendLineReference[]) {
+  const dataMin = Math.min(...values);
+  const dataMax = Math.max(...values);
+  const dataRange = dataMax - dataMin;
+
+  const cfg = METRIC_CONFIG[metricType] ?? METRIC_CONFIG.raw;
+  const minRange = typeof cfg.minDisplayRange === "function"
+    ? cfg.minDisplayRange(dataMax)
+    : cfg.minDisplayRange;
+
+  const effectiveRange = Math.max(dataRange, minRange);
+  const center = (dataMin + dataMax) / 2;
+  const padding = effectiveRange * 0.15 || 1;
+
+  const rawMin = center - effectiveRange / 2 - padding;
+  const rawMax = center + effectiveRange / 2 + padding;
+
+  const step = niceStep(effectiveRange) || 1;
+  const yMin = Math.max(niceFloor(rawMin, step), cfg.bounds[0]);
+  const yMax = Math.min(niceCeil (rawMax, step), cfg.bounds[1]);
+
+  const visibleRefs = refs.filter((r) => r.value >= yMin && r.value <= yMax);
+  const outOfRangeRefs = refs.filter((r) => r.value < yMin || r.value > yMax);
+
+  return { yMin, yMax, step, visibleRefs, outOfRangeRefs };
 }
 
 /** 시리즈별로 뚜렷하게 구분되는 색상 팔레트 */
 const SERIES_COLORS = [
-  CHART_PALETTE.blue500,       // #2b7fff — 파랑
-  CHART_PALETTE.lime500,       // #7ccf00 — 연두
-  CHART_PALETTE.deepPurple400, // #9f8deb — 보라
-  CHART_PALETTE.teal500,       // #00bba7 — 청록
-  CHART_PALETTE.yellow400,     // #fdc700 — 노랑
-  CHART_PALETTE.red400,        // #f87171 — 빨강
+  CHART_PALETTE.blue500,       // #2b7fff
+  CHART_PALETTE.lime500,       // #7ccf00
+  CHART_PALETTE.deepPurple400, // #9f8deb
+  CHART_PALETTE.teal500,       // #00bba7
+  CHART_PALETTE.yellow400,     // #fdc700
+  CHART_PALETTE.red400,        // #f87171
 ];
 
-const BENCHMARK_COLORS = [
-  "#a3a3a3", // gray
-  "#d4a574", // muted orange
-  "#8fa3bf", // muted blue
-];
+const REF_COLORS = ["#a3a3a3", "#d4a574", "#8fa3bf"];
 
 export default function TrendLineChart({ data }: { data: TrendLineChartData }) {
-  const d = data as TrendLineChartData;
+  const d = data;
+  const refs: TrendLineReference[] = d.references ?? d.benchmarks ?? [];
 
-  // 시리즈 데이터 → Nivo 형식
+  const metricType: MetricType = d.series[0]?.metricType ?? "raw";
+  const allSeriesValues = d.series.flatMap((s) => s.values);
+  const { yMin, yMax, step, visibleRefs, outOfRangeRefs } = computeYScale(
+    allSeriesValues,
+    metricType,
+    refs,
+  );
+
   const lineData = d.series.map((s, i) => ({
     id: s.id,
     color: s.color ?? SERIES_COLORS[i % SERIES_COLORS.length],
@@ -50,27 +117,19 @@ export default function TrendLineChart({ data }: { data: TrendLineChartData }) {
     })),
   }));
 
-  // 벤치마크 → 점선 시리즈
-  const benchmarkData = (d.benchmarks ?? []).map((b, i) => ({
-    id: b.id,
-    color: b.color ?? BENCHMARK_COLORS[i % BENCHMARK_COLORS.length],
-    data: d.xLabels.map((label) => ({
-      x: label,
-      y: b.value,
-    })),
+  const refLineData = visibleRefs.map((r, i) => ({
+    id: r.label ?? r.id ?? `ref-${i}`,
+    color: r.color ?? REF_COLORS[i % REF_COLORS.length],
+    data: d.xLabels.map((label) => ({ x: label, y: r.value })),
   }));
 
-  const allData = [...lineData, ...benchmarkData];
+  const allData = [...lineData, ...refLineData];
   const allColors = allData.map((s) => s.color);
 
-  // y축 범위
-  const allValues = [
-    ...d.series.flatMap((s) => s.values),
-    ...(d.benchmarks ?? []).map((b) => b.value),
-  ];
-  const minY = Math.min(...allValues);
-  const maxY = Math.max(...allValues);
-  const padding = (maxY - minY) * 0.15 || 1;
+  const tickValues = Array.from(
+    { length: Math.floor((yMax - yMin) / step) + 1 },
+    (_, i) => yMin + i * step,
+  );
 
   return (
     <div className="bg-report-card rounded-card p-[24px]">
@@ -78,7 +137,6 @@ export default function TrendLineChart({ data }: { data: TrendLineChartData }) {
         <p className="text-sm font-semibold text-report-text-primary mb-2">{d.title}</p>
       )}
 
-      {/* 커스텀 범례 — 색상별로 명확히 구분 */}
       <div className="flex flex-wrap gap-x-5 gap-y-1 mb-3">
         {lineData.map((s) => (
           <div key={s.id} className="flex items-center gap-1.5">
@@ -86,10 +144,10 @@ export default function TrendLineChart({ data }: { data: TrendLineChartData }) {
             <span className="text-xs" style={{ color: s.color, fontWeight: 600 }}>{s.id}</span>
           </div>
         ))}
-        {benchmarkData.map((b) => (
-          <div key={`bm-${b.id}`} className="flex items-center gap-1.5">
-            <div className="w-3 h-[2px] rounded-full" style={{ backgroundColor: b.color, borderTop: `2px dashed ${b.color}` }} />
-            <span className="text-xs" style={{ color: b.color }}>{b.id}</span>
+        {refLineData.map((r) => (
+          <div key={`ref-${r.id}`} className="flex items-center gap-1.5">
+            <div className="w-3 h-[2px] rounded-full" style={{ backgroundColor: r.color, borderTop: `2px dashed ${r.color}` }} />
+            <span className="text-xs" style={{ color: r.color }}>{r.id}</span>
           </div>
         ))}
       </div>
@@ -99,11 +157,7 @@ export default function TrendLineChart({ data }: { data: TrendLineChartData }) {
           data={allData}
           margin={{ top: 10, right: 24, bottom: 30, left: 50 }}
           xScale={{ type: "point" }}
-          yScale={{
-            type: "linear",
-            min: Math.floor(minY - padding),
-            max: Math.ceil(maxY + padding),
-          }}
+          yScale={{ type: "linear", min: yMin, max: yMax }}
           colors={allColors}
           lineWidth={2.5}
           pointSize={8}
@@ -113,15 +167,13 @@ export default function TrendLineChart({ data }: { data: TrendLineChartData }) {
           enableArea={false}
           enableSlices="x"
           curve="monotoneX"
-          axisBottom={{
-            tickSize: 0,
-            tickPadding: 10,
-          }}
+          axisBottom={{ tickSize: 0, tickPadding: 10 }}
           axisLeft={{
             tickSize: 0,
             tickPadding: 10,
-            tickValues: 5,
+            tickValues,
           }}
+          gridYValues={tickValues}
           enableGridX={false}
           enableGridY={true}
           theme={{
@@ -144,9 +196,9 @@ export default function TrendLineChart({ data }: { data: TrendLineChartData }) {
               </div>
               {slice.points.map((point) => {
                 const seriesIdx = allData.findIndex((s) => s.id === point.seriesId);
-                const isBenchmark = seriesIdx >= d.series.length;
-                const unitStr = isBenchmark
-                  ? d.benchmarks?.[seriesIdx - d.series.length]?.unit ?? ""
+                const isRef = seriesIdx >= d.series.length;
+                const unitStr = isRef
+                  ? visibleRefs[seriesIdx - d.series.length]?.unit ?? ""
                   : d.series[seriesIdx]?.unit ?? "";
                 return (
                   <div key={point.id} className="flex items-center gap-2 mt-0.5">
@@ -171,7 +223,6 @@ export default function TrendLineChart({ data }: { data: TrendLineChartData }) {
             "axes",
             "areas",
             "crosshair",
-            /* 벤치마크 점선 레이어 */
             ({ series, lineGenerator }) => (
               <g>
                 {series.slice(d.series.length).map((s) => {
@@ -201,6 +252,23 @@ export default function TrendLineChart({ data }: { data: TrendLineChartData }) {
           motionConfig="gentle"
         />
       </div>
+
+      {outOfRangeRefs.length > 0 && (
+        <div className="mt-2 space-y-0.5">
+          {outOfRangeRefs.map((r, i) => {
+            const label = r.label ?? r.id ?? `기준선`;
+            const unitStr = r.unit ?? "";
+            const text = r.contextText
+              ? `${label}(${r.value}${unitStr}): ${r.contextText}`
+              : `${label}은 현재 범위 밖 (${r.value}${unitStr})`;
+            return (
+              <p key={`oor-${i}`} className="text-[11px] text-report-text-secondary italic">
+                {text}
+              </p>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
