@@ -126,6 +126,19 @@ export interface UserCardData {
   personaModal?: PersonaModalData;
 }
 
+export interface QuoteCardItem {
+  /** 카테고리/영역 라벨 (예: "콘텐츠 품질") */
+  tag: string;
+  /** 부가 메타 (예: "1점 · 공감 99") */
+  meta?: string;
+  /** 인용 본문 — 원문 발췌 또는 전문 */
+  quote: string;
+}
+
+export interface QuoteCardData {
+  items: QuoteCardItem[];
+}
+
 export interface ClusterCardItem {
   badge: string;
   badgeColor?: string;

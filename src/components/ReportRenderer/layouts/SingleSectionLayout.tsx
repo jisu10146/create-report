@@ -81,6 +81,22 @@ export default function SingleSectionLayout({ report, agent }: Props) {
               continue;
             }
 
+            // InsightCard / UserCard / QuoteCard — headline 없으면 앞 섹션에 붙임 (독립 섹션일 땐 기본 경로)
+            if (
+              (section.componentType === "InsightCard" || section.componentType === "UserCard" || section.componentType === "QuoteCard") &&
+              !section.headline
+            ) {
+              elements.push(
+                <div key={section.id} className="-mt-4">
+                  <div className="bg-report-bg rounded-section p-[8px]">
+                    {renderComponent(section.componentType, section.data)}
+                  </div>
+                </div>
+              );
+              i++;
+              continue;
+            }
+
             // 같은 타입 차트 2개 연속 + 두 번째에 headline 없음 → 2열 그리드
             if (
               i + 1 < sections.length &&
@@ -129,7 +145,14 @@ export default function SingleSectionLayout({ report, agent }: Props) {
             {
               const attached: typeof sections = [];
               let j = i + 1;
-              while (j < sections.length && (sections[j].componentType === "InterpretationBlock" || sections[j].componentType === "ChecklistCard")) {
+              while (
+                j < sections.length &&
+                (
+                  sections[j].componentType === "InterpretationBlock" ||
+                  sections[j].componentType === "ChecklistCard" ||
+                  ((sections[j].componentType === "InsightCard" || sections[j].componentType === "UserCard" || sections[j].componentType === "QuoteCard") && !sections[j].headline)
+                )
+              ) {
                 attached.push(sections[j]);
                 j++;
               }

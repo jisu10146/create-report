@@ -30,14 +30,26 @@
     {
       "id": "negative-deep-dive",
       "headline": "부정 영역 비교 분석",
-      "componentType": "DonutChart",
-      "reason": "[부정 심층 분석] 부정 리뷰의 영역별 비중을 시각화하고, 부정 리뷰의 작성 특성(문제 집중도·표현 강도)과 상위 영역의 공통 패턴을 설명으로 전달"
+      "componentType": "HorizontalBarChart",
+      "reason": "[부정 심층 분석] 부정 리뷰의 영역별 언급률 또는 비중을 시각화 — 리뷰가 여러 영역을 동시에 언급 가능하므로(overlap) DonutChart보다 HorizontalBarChart가 적합. 부정 리뷰 작성 특성과 상위 영역의 공통 패턴을 설명으로 전달."
+    },
+    {
+      "id": "negative-samples",
+      "componentType": "QuoteCard",
+      "attached": true,
+      "reason": "[부정 대표 리뷰] 부정 심층 분석에 attached — 상위 영역별(기능/UX·가격/한도·콘텐츠 품질) 대표 리뷰를 원문 그대로 발췌. QuoteCard 구조(tag/meta/quote)로 영역 태그·별점·공감수·원문 발췌 표시. 유저 닉네임은 프라이버시 상 노출 안 함. headline 없이 앞 섹션에 붙음."
     },
     {
       "id": "positive-protect",
       "headline": "긍정 심층 분석",
-      "componentType": "DonutChart",
-      "reason": "[긍정 심층 분석] 긍정 리뷰의 영역별 비중을 시각화하고, 긍정 리뷰의 작성 특성(만족 유형·구체성)과 고유 가치·이탈 리스크를 설명으로 전달"
+      "componentType": "HorizontalBarChart",
+      "reason": "[긍정 심층 분석] 긍정 리뷰의 영역별 언급률 또는 비중을 시각화 — 긍정 리뷰는 여러 장점을 함께 언급하는 경우가 많아 overlap 허용. 긍정 리뷰 작성 특성과 고유 가치·이탈 리스크를 설명으로 전달."
+    },
+    {
+      "id": "positive-samples",
+      "componentType": "QuoteCard",
+      "attached": true,
+      "reason": "[긍정 대표 리뷰] 긍정 심층 분석에 attached — 상위 영역별(편리성·학습/정보·소통/감정) 대표 리뷰 원문 발췌 (단순 반응 '좋아요' 류는 제외). QuoteCard 구조(tag/meta/quote)로 영역 태그·별점·공감수·원문 발췌 표시. 유저 닉네임은 프라이버시 상 노출 안 함. headline 없이 앞 섹션에 붙음."
     },
     {
       "id": "action-plan",

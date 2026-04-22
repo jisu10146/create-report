@@ -10,6 +10,7 @@ import DonutChart from "./DonutChart";
 import DataTable from "./DataTable";
 import InsightCard from "./InsightCard";
 import UserCard from "./UserCard";
+import QuoteCard from "./QuoteCard";
 import ClusterCard from "./ClusterCard";
 import SectionTitle from "./SectionTitle";
 import PersonaModal from "./PersonaModal";
@@ -39,6 +40,7 @@ export const COMPONENT_REGISTRY: Record<string, React.ComponentType<{ data: unkn
   InsightCard: InsightCard as React.ComponentType<{ data: unknown }>,
   ClusterCard: ClusterCard as React.ComponentType<{ data: unknown }>,
   UserCard: UserCard as React.ComponentType<{ data: unknown }>,
+  QuoteCard: QuoteCard as React.ComponentType<{ data: unknown }>,
   StrategyTable: StrategyTable as React.ComponentType<{ data: unknown }>,
   PersonaModal: PersonaModal as React.ComponentType<{ data: unknown }>,
   MetricHighlight: MetricHighlight as React.ComponentType<{ data: unknown }>,
