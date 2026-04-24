@@ -1,0 +1,68 @@
+{
+  "id": "ad-performance-analysis",
+  "name": "광고 성과 분석",
+  "description": "매체·캠페인별 CPA/CTR/CVR 효율을 진단하고 예산 재배분 방향을 제시합니다.",
+  "category": "analysis",
+  "inputType": "file",
+  "layout": "single-section",
+  "modalType": "none",
+  "inputRequirements": {
+    "required": ["날짜", "매체", "캠페인명", "노출수", "클릭수", "비용"],
+    "recommended": ["전환수"],
+    "optional": ["매출", "디바이스", "타겟_세그먼트"],
+    "note": "전환수가 없으면 CPA/CVR 대신 CPC·CPM 중심으로 분석. 매출이 있으면 ROAS 섹션 추가. 최소 4주 이상 기간 권장 (주별 추이 섹션 유효성 확보)."
+  },
+  "storyLine": "전체 효율 KPI → 매체 비용 구성·효율 단면 → 효율 우수/낮은 캠페인 분리 비교 → 주별 추이로 악화 징후 확인 → 예산 재배분 로드맵",
+  "keyDecision": "비효율 매체·캠페인 예산을 축소·중단하고, 고효율 구간과 크리에이티브 개선에 재배분할 우선순위는 무엇인가",
+  "reportSections": [
+    {
+      "id": "executive-summary",
+      "componentType": "ExecutiveSummary",
+      "reason": "[전체 결론] 전체 광고비·전환 규모와 매체 간 편차의 방향성을 한눈에 전달하여 독자가 분석 맥락을 잡을 수 있게 함",
+      "headline": "Executive Summary"
+    },
+    {
+      "id": "efficiency-kpi",
+      "componentType": "MetricHighlight",
+      "reason": "[핵심 효율 KPI] CPA·CTR·CVR 3개 지표를 업계 벤치마크·매체 편차와 함께 제시하여 평균 뒤에 숨은 효율 격차를 인식하게 함",
+      "headline": "핵심 효율 KPI"
+    },
+    {
+      "id": "media-cost-share",
+      "componentType": "DonutChart",
+      "reason": "[매체 비용 구성] 매체별 비용 점유율을 시각화하여 '돈이 어디에 쏠려 있는가'의 현재 배분 구조를 파악. 다음 섹션(매체 효율 단면)과 2열 그리드로 자동 페어링됨.",
+      "headline": "매체 비용 구성"
+    },
+    {
+      "id": "media-breakdown",
+      "componentType": "DataTable",
+      "reason": "[매체 효율 단면] 매체별 비용·CTR·CPC·CVR·CPA를 한 표로 교차 비교하여 과대·과소 투자 매체를 특정. DonutChart와 2열 그리드로 페어링됨.",
+      "headline": "매체 효율 단면"
+    },
+    {
+      "id": "campaign-top",
+      "componentType": "DataTable",
+      "reason": "[효율 우수 캠페인 TOP] 매체 단면에서 비효율 매체를 확인한 독자가, CPA 하위 5개 캠페인(=효율 우수 5)을 지표별로 확인해 확대 투자 대상을 특정할 수 있게 함",
+      "headline": "효율 우수 캠페인 TOP 5"
+    },
+    {
+      "id": "campaign-bottom",
+      "componentType": "DataTable",
+      "reason": "[효율 낮은 캠페인 BOTTOM] 확대 대상을 파악한 독자가, CPA 상위 5개 캠페인(=효율 낮은 5)을 확인해 중단·재설계 대상을 특정할 수 있게 함",
+      "headline": "효율 낮은 캠페인 BOTTOM 5"
+    },
+    {
+      "id": "weekly-trend",
+      "componentType": "TrendLineChart",
+      "reason": "[주별 추이] 매체별 주별 CPA·CTR 추이를 통해 크리에이티브 피로·계절성 같은 동적 신호를 포착. 4주 미만이면 MetricHighlight로 대체.",
+      "headline": "주별 추이"
+    },
+    {
+      "id": "budget-reallocation",
+      "componentType": "StrategyTable",
+      "reason": "[예산 재배분 로드맵] 앞서 드러난 비효율 매체·캠페인·크리에이티브 신호에 대응하는 즉시/단기/중기 액션을 제시해 다음 달 CPA 목표까지 실행 계획을 수립",
+      "headline": "예산 재배분 로드맵"
+    }
+  ],
+  "promptTemplate": ""
+}

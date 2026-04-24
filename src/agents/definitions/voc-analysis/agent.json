@@ -1,18 +1,18 @@
 {
   "id": "voc-analysis",
   "name": "고객센터 VOC 분석 리포트",
-  "description": "고객센터(채팅·전화·이메일·앱 등)로 들어온 문의 데이터를 분석하여 처리 현황, 유형 분포, 미완료 패턴, 반복 문의를 진단하고 개선 우선순위를 제시합니다.",
+  "description": "고객 문의/VOC 텍스트 데이터를 분석하여 유형 분포, 반복 패턴, 주요 주제를 발굴하고 제품·서비스 개선 우선순위를 제시합니다.",
   "category": "operational",
   "inputType": "file",
   "layout": "single-section",
   "modalType": "none",
   "inputRequirements": {
-    "required": ["접수일시", "채널", "문의내용", "처리상태"],
-    "optional": ["카테고리", "우선순위", "담당자", "응답시간"],
-    "note": "처리상태는 운영 파이프라인의 성과 지표로 사용됨. 반복 문의 섹션은 텍스트 유사도 기반이므로 문의내용 컬럼이 필수. 카테고리가 없으면 문의내용 기반으로 자동 분류."
+    "required": ["접수일시", "문의내용"],
+    "optional": ["카테고리", "감정 점수/평점", "우선순위"],
+    "note": "문의내용 컬럼이 필수 — 반복 패턴 탐지·주제 클러스터링·카테고리 자동 분류 모두 텍스트 기반. 카테고리가 없으면 문의내용 기반으로 자동 분류. 운영 지표(처리시간·SLA·NPS)가 필요하면 customer-support-analysis 에이전트 사용."
   },
-  "storyLine": "문의 유형 분포 → 유형별 처리 현황 → 채널별 특성 비교 → 문의 패턴 → 개선 로드맵",
-  "keyDecision": "미완료율을 줄이기 위해 반복 문의 자동화, 유형별 프로세스 개선, 채널별 SLA 중 어디에 우선 투자할 것인가",
+  "storyLine": "문의 유형 분포 → 반복 문의 패턴 → 개선 로드맵",
+  "keyDecision": "어떤 고객 목소리에 우선 대응해 제품/서비스를 개선할 것인가",
   "reportSections": [
     {
       "id": "executive-summary",
@@ -27,18 +27,6 @@
       "reason": "[문의 내용] 어떤 문제로 고객이 문의하는지 유형별 비중을 시각화. 상위 집중도가 있으면 자원 배분·FAQ 후보가 식별됨."
     },
     {
-      "id": "category-status",
-      "headline": "유형별 처리 현황",
-      "componentType": "StackedBarChart",
-      "reason": "[처리 지연 진단] 유형별 완료/처리중/미완료 분포를 비교하여 어떤 유형이 가장 많이 막히는지 특정. 유형별 프로세스 개선 우선순위의 근거."
-    },
-    {
-      "id": "channel-comparison",
-      "headline": "채널별 특성 비교",
-      "componentType": "DataTable",
-      "reason": "[채널 성과] 각 채널의 문의량·완료율·미완료율을 개별 비교하여 채널별 SLA 관리 포인트 식별. 채널 수가 적으면 그룹핑보다 개별 비교가 명확함."
-    },
-    {
       "id": "repeat-patterns",
       "headline": "문의 패턴",
       "componentType": "DataTable",
@@ -48,7 +36,7 @@
       "id": "action-plan",
       "headline": "개선 로드맵",
       "componentType": "StrategyTable",
-      "reason": "[개선 로드맵] 반복 문의 자동화·유형별 프로세스·채널 SLA를 즉시/단기/중기로 정리"
+      "reason": "[개선 로드맵] 반복 문의 자동화·주제별 개선 방향을 즉시/단기/중기로 정리"
     }
   ],
   "promptTemplate": ""

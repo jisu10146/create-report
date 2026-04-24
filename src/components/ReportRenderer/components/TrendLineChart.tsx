@@ -190,7 +190,7 @@ export default function TrendLineChart({ data }: { data: TrendLineChartData }) {
             },
           }}
           sliceTooltip={({ slice }) => (
-            <div className="bg-report-card shadow-elevated rounded-sm px-4 py-3 border border-report-border">
+            <div className="bg-report-card shadow-elevated rounded-sm px-4 py-3 border border-report-border whitespace-nowrap">
               <div className="text-sm font-semibold text-report-text-primary mb-1">
                 {String(slice.points[0]?.data.x ?? "")}
               </div>
@@ -201,15 +201,15 @@ export default function TrendLineChart({ data }: { data: TrendLineChartData }) {
                   ? visibleRefs[seriesIdx - d.series.length]?.unit ?? ""
                   : d.series[seriesIdx]?.unit ?? "";
                 return (
-                  <div key={point.id} className="flex items-center gap-2 mt-0.5">
+                  <div key={point.id} className="flex items-center gap-2 mt-0.5 whitespace-nowrap">
                     <div
-                      className="w-2.5 h-2.5 rounded-full"
+                      className="w-2.5 h-2.5 rounded-full shrink-0"
                       style={{ backgroundColor: point.seriesColor }}
                     />
-                    <span className="text-xs" style={{ color: point.seriesColor, fontWeight: 600 }}>
+                    <span className="text-xs whitespace-nowrap" style={{ color: point.seriesColor, fontWeight: 600 }}>
                       {point.seriesId}:
                     </span>
-                    <span className="text-xs font-bold text-report-text-primary">
+                    <span className="text-xs font-bold text-report-text-primary whitespace-nowrap">
                       {String(point.data.yFormatted)}{unitStr}
                     </span>
                   </div>

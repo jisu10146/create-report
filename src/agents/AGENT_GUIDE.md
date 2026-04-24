@@ -16,6 +16,14 @@
    - skills/ 폴더에 .md 파일만 넣으면 **자동 감지** (index.ts 수동 등록 불필요)
    - 첫 줄에 `keywords:` 추가 → 에이전트 description과 키워드 매칭으로 자동 선택
 
+### 마케팅 도메인 참고 플레이북 (ai-marketing-skills)
+외부 출처(github.com/ericosiu/ai-marketing-skills)에서 가져온 15개 플레이북이 `skills/`에 포함됨:
+`growth-engine, sales-pipeline, content-ops, outbound-engine, seo-ops, finance-ops, revenue-intelligence, conversion-ops, podcast-ops, team-ops, sales-playbook, autoresearch, deck-generator, yt-competitive-analysis, x-longform-post`
+
+- **성격**: 실무 플레이북/프레임워크 참고 자료. 섹션 설계 시 도메인 용어·메트릭·플로우를 끌어쓰기 위함
+- **자동 매칭**: 각 파일 상단에 `keywords:` 있음 — 에이전트 description과 매칭되면 자동 로드
+- **실행 금지**: preamble 안의 `python3`/`bash` 스크립트는 이 프로젝트에서 실행하지 않음 (본 프로젝트는 리포트 생성기, 외부 스킬 러너 아님)
+
 ### 불필요 (자동 처리됨)
 - ~~skills/index.ts에 파일명 등록~~ → 자동 스캔
 - ~~generateStaticParams 수정~~ → definitions/ 폴더에서 자동 감지

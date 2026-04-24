@@ -53,7 +53,7 @@
 
 7. 담당자(에이전트) 성과 감지
    - agent_id/agent_name 컬럼이 존재하면 → 담당자별 성과 비교 분석 포함
-   - 분석 축: 처리량, 해결율(FCR), 에스컬레이션율, CSAT, 평균 해결시간
+   - 분석 축: 처리량, 해결율(FCR), 에스컬레이션율, CSAT, 평균 처리시간
    - 상위·하위 그룹 편차를 핵심 인사이트로 제안
    - agentPerformance 필드에 비교 축과 주목할 패턴 기술
    - 담당자 데이터 없으면 → agentPerformance.dataAvailable: false로 표시
@@ -67,7 +67,7 @@
 
    출력 필드:
    - funnelStages: 처리 단계 목록 + 각 단계별 예상 건수/이탈
-   - channelBreakdown: 채널 목록 + 분석 축 (첫 응답, 해결시간, SLA 초과율, 만족도)
+   - channelBreakdown: 채널 목록 + 분석 축 (첫 응답, 처리시간, SLA 초과율, 만족도)
    - timeBreakdown: 시간 분해 축 (대기 vs 처리) + 대상 카테고리/항목
 
 6. 분석 깊이
@@ -122,7 +122,7 @@
   ],
   "channelBreakdown": {
     "channels": ["채널 목록 (예: 이메일, 채팅, 전화, 소셜)"],
-    "metrics": ["분석 축 (예: 첫 응답시간, 해결시간, SLA 초과율, 만족도)"],
+    "metrics": ["분석 축 (예: 첫 응답시간, 처리시간, SLA 초과율, 만족도)"],
     "dataAvailable": true
   },
   "timeBreakdown": {
@@ -138,7 +138,7 @@
     "dataAvailable": true
   },
   "agentPerformance": {
-    "metrics": ["처리량", "FCR", "에스컬레이션율", "CSAT", "평균 해결시간"],
+    "metrics": ["처리량", "FCR", "에스컬레이션율", "CSAT", "평균 처리시간"],
     "topAgents": ["상위 성과자 패턴"],
     "bottomAgents": ["하위 성과자 패턴"],
     "gap": "상위-하위 편차 요약",

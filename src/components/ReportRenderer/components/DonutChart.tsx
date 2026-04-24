@@ -15,6 +15,7 @@ export interface DonutChartItem {
 export interface DonutChartData {
   title?: string;
   items: DonutChartItem[];
+  countUnit?: string;
 }
 
 const OTHERS_COLOR = CHART_PALETTE.gray200;
@@ -78,7 +79,7 @@ export default function DonutChart({ data }: { data: DonutChartData }) {
                     </span>
                     {item?.count !== undefined && (
                       <span className="text-base text-report-text-secondary">
-                        ({item.count.toLocaleString()})
+                        ({item.count.toLocaleString()}{data.countUnit ?? ""})
                       </span>
                     )}
                   </div>
@@ -104,7 +105,7 @@ export default function DonutChart({ data }: { data: DonutChartData }) {
               </span>
               {item.count !== undefined && (
                 <span className="text-sm text-report-text-secondary">
-                  ({item.count.toLocaleString()})
+                  ({item.count.toLocaleString()}{data.countUnit ?? ""})
                 </span>
               )}
             </div>

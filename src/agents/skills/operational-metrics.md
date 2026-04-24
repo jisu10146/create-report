@@ -1,6 +1,6 @@
 # 운영 지표 분석 (SLA / 처리시간 / 해결율)
 
-keywords: SLA, 처리시간, 해결시간, 해결율, 응답시간, 리드타임, 병목, bottleneck, resolution, response time, lead time, throughput, backlog, 대기, 큐, queue, 운영, operational
+keywords: SLA, 처리시간, 처리시간, 해결율, 응답시간, 리드타임, 병목, bottleneck, resolution, response time, lead time, throughput, backlog, 대기, 큐, queue, 운영, operational
 
 ## Benchmarks
 
@@ -9,7 +9,7 @@ keywords: SLA, 처리시간, 해결시간, 해결율, 응답시간, 리드타임
 | SLA 준수율 (상위) | 90-95% | SaaS CS | Zendesk Benchmark Report 2024 |
 | SLA 준수율 (평균) | 80-85% | SaaS CS | Zendesk Benchmark Report 2024 |
 | 평균 첫 응답시간 | 1-4시간 | SaaS CS | Freshdesk Benchmark 2024 |
-| 평균 해결시간 | 12-24시간 | SaaS CS | Zendesk Benchmark Report 2024 |
+| 평균 처리시간 | 12-24시간 | SaaS CS | Zendesk Benchmark Report 2024 |
 | 에스컬레이션율 (적정) | 10-20% | CS | TSIA 2024 |
 | 재접수율 (적정) | 5-10% | CS | Zendesk Benchmark Report 2024 |
 | 셀프서비스 해결율 (목표) | 30-50% | SaaS | Gartner 2024 |
@@ -28,7 +28,7 @@ keywords: SLA, 처리시간, 해결시간, 해결율, 응답시간, 리드타임
 | term | definition |
 |------|-----------|
 | SLA (Service Level Agreement) | 서비스 수준 계약. 유형/우선순위별 첫 응답·해결 목표 시간 정의 |
-| MTTR (Mean Time to Resolution) | 평균 해결시간. 접수~종료까지 소요 시간 |
+| MTTR (Mean Time to Resolution) | 평균 처리시간. 접수~종료까지 소요 시간 |
 | FRT (First Response Time) | 첫 응답시간. 접수~첫 응답까지 소요 시간 |
 | Backlog | 미해결 잔여 건수. 증가 추세면 인력 부족 신호 |
 | Throughput | 처리량. 단위 시간당 처리 완료 건수 |
@@ -44,12 +44,12 @@ keywords: SLA, 처리시간, 해결시간, 해결율, 응답시간, 리드타임
 | High | 주요 기능 장애, 핵심 고객 차단, SLA 위험 | 당일 | 내부 4h / 고객 4-8h |
 | Medium | 워크어라운드 있는 이슈, 긴급하지 않은 비즈니스 영향 | 금주 내 | 내부 일 1회 / 고객 1-2영업일 |
 
-## 해결시간 분해 프레임워크
+## 처리시간 분해 프레임워크
 
-느린 항목의 해결시간을 분해하는 표준 구조:
+느린 항목의 처리시간을 분해하는 표준 구조:
 
 ```
-전체 해결시간 = 큐 대기 + 배정 대기 + 실제 처리 + 고객 응답 대기
+전체 처리시간 = 큐 대기 + 배정 대기 + 실제 처리 + 고객 응답 대기
 ```
 
 - StackedBarChart로 항목별 내부 구성 분해
@@ -71,7 +71,7 @@ keywords: SLA, 처리시간, 해결시간, 해결율, 응답시간, 리드타임
 
 | decision | required_info |
 |----------|--------------|
-| SLA 기준 재정의 | 카테고리별 해결시간 분포, 우선순위별 위반율, 고객 기대 대비 실제 |
+| SLA 기준 재정의 | 카테고리별 처리시간 분포, 우선순위별 위반율, 고객 기대 대비 실제 |
 | 인력 충원 vs 자동화 | 1인당 처리량, 셀프서비스 해결율, 반복 문의 비율, 자동화 가능 비중 |
-| 에스컬레이션 프로세스 개선 | 에스컬레이션율, 단계별 소요시간, 에스컬레이션 후 해결시간, 불필요 에스컬레이션 비중 |
-| 채널 전략 | 채널별 CSAT, 해결시간, 비용, 선호도 |
+| 에스컬레이션 프로세스 개선 | 에스컬레이션율, 단계별 소요시간, 에스컬레이션 후 처리시간, 불필요 에스컬레이션 비중 |
+| 채널 전략 | 채널별 CSAT, 처리시간, 비용, 선호도 |
