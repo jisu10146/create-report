@@ -44,14 +44,17 @@ const METRIC_CONFIG: Record<MetricType, {
   raw:     { minDisplayRange: 0,   bounds: [-Infinity, Infinity] },
 };
 
-function niceStep(range: number): number {
-  if (range <= 5)   return 1;
-  if (range <= 10)  return 2;
-  if (range <= 25)  return 5;
-  if (range <= 50)  return 10;
-  if (range <= 100) return 20;
-  if (range <= 250) return 50;
-  return 100;
+function niceStep(range: number, targetTicks = 5): number {
+  if (range <= 0) return 1;
+  const rawStep = range / targetTicks;
+  const magnitude = Math.pow(10, Math.floor(Math.log10(rawStep)));
+  const normalized = rawStep / magnitude;
+  let nice: number;
+  if (normalized < 1.5) nice = 1;
+  else if (normalized < 3) nice = 2;
+  else if (normalized < 7) nice = 5;
+  else nice = 10;
+  return nice * magnitude;
 }
 
 const niceFloor = (v: number, s: number) => Math.floor(v / s) * s;
@@ -158,6 +161,7 @@ export default function TrendLineChart({ data }: { data: TrendLineChartData }) {
           margin={{ top: 10, right: 24, bottom: 30, left: 50 }}
           xScale={{ type: "point" }}
           yScale={{ type: "linear", min: yMin, max: yMax }}
+          yFormat={(v) => Number(v).toLocaleString()}
           colors={allColors}
           lineWidth={2.5}
           pointSize={8}
@@ -172,6 +176,7 @@ export default function TrendLineChart({ data }: { data: TrendLineChartData }) {
             tickSize: 0,
             tickPadding: 10,
             tickValues,
+            format: (v: number) => v.toLocaleString(),
           }}
           gridYValues={tickValues}
           enableGridX={false}

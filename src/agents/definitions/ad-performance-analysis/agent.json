@@ -12,7 +12,7 @@
     "optional": ["매출", "디바이스", "타겟_세그먼트"],
     "note": "전환수가 없으면 CPA/CVR 대신 CPC·CPM 중심으로 분석. 매출이 있으면 ROAS 섹션 추가. 최소 4주 이상 기간 권장 (주별 추이 섹션 유효성 확보)."
   },
-  "storyLine": "전체 효율 KPI → 매체 비용 구성·효율 단면 → 효율 우수/낮은 캠페인 분리 비교 → 주별 추이로 악화 징후 확인 → 예산 재배분 로드맵",
+  "storyLine": "매체 비용 구성 → 핵심 효율 KPI → 매체별 효율 비교 → 효율 우수/낮은 캠페인 분리 비교 → 주별 추이로 악화 징후 확인 → 예산 재배분 로드맵",
   "keyDecision": "비효율 매체·캠페인 예산을 축소·중단하고, 고효율 구간과 크리에이티브 개선에 재배분할 우선순위는 무엇인가",
   "reportSections": [
     {
@@ -22,22 +22,22 @@
       "headline": "Executive Summary"
     },
     {
-      "id": "efficiency-kpi",
-      "componentType": "MetricHighlight",
-      "reason": "[핵심 효율 KPI] CPA·CTR·CVR 3개 지표를 업계 벤치마크·매체 편차와 함께 제시하여 평균 뒤에 숨은 효율 격차를 인식하게 함",
-      "headline": "핵심 효율 KPI"
-    },
-    {
       "id": "media-cost-share",
       "componentType": "DonutChart",
-      "reason": "[매체 비용 구성] 매체별 비용 점유율을 시각화하여 '돈이 어디에 쏠려 있는가'의 현재 배분 구조를 파악. 다음 섹션(매체 효율 단면)과 2열 그리드로 자동 페어링됨.",
+      "reason": "[매체 비용 구성] 매체별 비용 점유율을 시각화하여 '돈이 어디에 쏠려 있는가'의 현재 배분 구조를 먼저 보여줌. 다음 섹션(핵심 효율 KPI)과 2열 그리드로 자동 페어링됨.",
       "headline": "매체 비용 구성"
+    },
+    {
+      "id": "efficiency-kpi",
+      "componentType": "MetricHighlight",
+      "reason": "[핵심 효율 KPI] CPA·CTR·CVR 3개 지표의 전체 평균과 매체 간 편차를 비용 분포 옆에 함께 보여줘 평균 뒤에 숨은 격차를 인식하게 함. DonutChart와 2열 그리드로 페어링됨.",
+      "headline": "핵심 효율 KPI"
     },
     {
       "id": "media-breakdown",
       "componentType": "DataTable",
-      "reason": "[매체 효율 단면] 매체별 비용·CTR·CPC·CVR·CPA를 한 표로 교차 비교하여 과대·과소 투자 매체를 특정. DonutChart와 2열 그리드로 페어링됨.",
-      "headline": "매체 효율 단면"
+      "reason": "[매체별 효율 비교] 매체별 CTR·CPC·CVR·CPA를 한 표로 교차 비교하여 과대·과소 투자 매체를 특정. 비용은 §3 도넛에 있으므로 효율 지표만 노출.",
+      "headline": "매체별 효율 비교"
     },
     {
       "id": "campaign-top",

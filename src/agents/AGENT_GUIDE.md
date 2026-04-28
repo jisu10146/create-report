@@ -51,8 +51,9 @@
 ## 프롬프트 수정 시
 
 ### 에이전트 프롬프트 (파이프라인 동작)
-- `.md` 파일만 수정하면 됨 (`.ts`는 건드리지 않음)
-- 7개: strategy-writer.md, chart-specialist.md, data-analyst.md, domain-expert.md, pm.md, sample-generator.md, persona-critic.md
+- `.md` 파일만 수정하면 됨
+- 7개: strategy-writer.md, chart-specialist.md, data-analyst.md, domain-expert.md, persona-critic.md, pm.md, sample-generator.md
+- 모두 Claude Code가 직접 참조 (자동 LLM 호출 없음). domain-expert·persona-critic은 JSON 스키마가 적혀 있어도 마크다운 표로 정리해 활용
 
 ### 스킬 프롬프트 (도메인 지식)
 - `src/agents/skills/{name}.md` 수정
@@ -72,10 +73,13 @@ cd src/design-system && git pull origin main
 ## 폴더 구조 요약
 ```
 src/agents/
-├── *.md (7개)              ← 에이전트 프롬프트 (수정 빈번)
-├── orchestrator/*.ts (8개)  ← 실행 로직 (수정 드묾)
-├── skills/*.md (19개)       ← 도메인 지식 (자동 스캔)
-└── definitions/*/           ← 생성된 에이전트 (agent.json + sample.json)
+├── *.md (7개)              ← 에이전트 프롬프트 (Claude Code가 직접 참조)
+│                              strategy-writer / chart-specialist / data-analyst / pm / sample-generator
+│                              domain-expert (§2-5 도메인) / persona-critic (§4-4 독자 검증)
+│                            + AGENT_GUIDE.md / CLAUDE_WORKFLOW.md (메타 문서)
+├── skills/*.md (34개)       ← 도메인 지식 라이브러리 (필요 시 Read로 직접 참조)
+├── orchestrator/skills/    ← 키워드 자동 매칭 인프라 (현재 dormant, 향후 재사용 대비 보존)
+└── definitions/*/           ← 생성된 에이전트 (agent.json + sample.json + report-spec.md)
 
 src/lib/
 ├── design-system/           ← DS 관련 파일 통합

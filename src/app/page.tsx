@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import type { AgentDefinition } from "@/types";
 import AgentDesigner from "@/components/AgentDesigner";
 
@@ -26,14 +25,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Top nav */}
-      <nav className="bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
+      <nav className="bg-white border-b border-gray-200 px-6 py-4 flex items-center">
         <h1 className="font-semibold text-gray-900">Agent Report System</h1>
-        <Link
-          href="/studio"
-          className="text-sm font-medium text-gray-700 hover:text-gray-900 border border-gray-200 hover:border-gray-400 rounded-lg px-3 py-1.5 transition-colors"
-        >
-          + 에이전트 만들기
-        </Link>
       </nav>
 
       <main className="max-w-[1720px] mx-auto px-6 py-8">
