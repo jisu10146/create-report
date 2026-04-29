@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   compiler: {
     styledComponents: true,
   },
+  outputFileTracingIncludes: {
+    "/preview/[agentId]": ["./src/agents/definitions/**/*.json"],
+  },
 };
 
 export default nextConfig;
