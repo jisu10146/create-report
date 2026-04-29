@@ -67,7 +67,7 @@ export default function DesignSystemClient() {
                   : "text-report-text-secondary hover:text-report-text-primary hover:bg-report-bg"
               }`}
             >
-              {s.headline}
+              {s.label}
             </button>
           ))}
         </nav>

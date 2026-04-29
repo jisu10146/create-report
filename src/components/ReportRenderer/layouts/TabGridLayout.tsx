@@ -24,7 +24,7 @@ export default function TabGridLayout({ report, agent }: Props) {
     const section = currentTabData?.sections.find((s) => s.id === sectionId);
     if (!section) return;
     const modalPayload: TabDetailData = {
-      title: section.label,
+      title: section.headline,
       tabs: [
         { id: "detail", label: "상세 데이터", sections: [section] },
       ],
